@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "concurrently \"next\" \"cd studio && sanity start\"",
+    "build": "echo 'Building Sanity to public/studio' && cd studio && sanity build ../public/studio -y && cd .. && next build",
+    "start": "vercel dev",
+    "postinstall": "lerna bootstrap",
     "lint": "next lint"
   },
   "dependencies": {
     "@portabletext/react": "^1.0.3",
+    "@sanity/cli": "^2.27.3",
     "@sanity/image-url": "^1.0.1",
     "next": "12.1.0",
     "next-sanity": "^0.5.0",
@@ -19,8 +21,10 @@
   "devDependencies": {
     "@types/node": "17.0.21",
     "@types/react": "17.0.39",
+    "concurrently": "^5.3.0",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
+    "lerna": "^3.22.1",
     "typescript": "4.6.2"
   }
 }
