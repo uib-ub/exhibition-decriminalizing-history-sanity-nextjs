@@ -9,5 +9,5 @@
   "@sanity/document-internationalization": "0b870519170ef892d834c7f92226e4c9600f418f342a02bf1bfaeb1d03e52386",
   "@sanity/language-filter": "c06bac93a64adba368cd76bea4195a097f4c6145330da337377f43c2e3ee18c2",
   "table": "e56785cc6cecbacf8ebe6bb99ffae32b973e233503c0714497ac7df3042863f1",
-  "@seidhr/sanity-plugin-muna-schemas": "d6280f37eda0bf52f00bee23a9d29946de5bf3871456ef081cdc91f0f0d7eee6"
+  "@seidhr/sanity-plugin-muna-schemas": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
 }

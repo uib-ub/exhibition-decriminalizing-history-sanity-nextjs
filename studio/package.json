@@ -28,6 +28,7 @@
     "@sanity/hierarchical-document-list": "^1.1.0",
     "@sanity/language-filter": "2.28.0",
     "@sanity/vision": "^2.29.2",
+    "@seidhr/sanity-plugin-muna-schemas": "^1.0.0-alpha.1",
     "@seidhr/sanity-plugin-timespan-input": "^2.0.1",
     "dayjs": "^1.11.0",
     "eslint": "^8.6.0",

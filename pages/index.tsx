@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { getClient } from '../lib/sanity.server'
@@ -10,6 +11,7 @@ const frontpageQuery = `
     "siteSettings": *[_id == "siteSettings"][0] {
       "label": coalesce(label[$language], label['en']),
       "description": coalesce(description[$language], description['en']),
+      // "content": *[_type == "course" && (references(^._id) || references(^.__i18n_base._ref))] { ... }
     }
   }
 `
@@ -37,6 +39,9 @@ const Home: NextPage = ({ data }: any) => {
         </h1>
 
         <p className={styles.description}>{data.siteSettings?.description}</p>
+        <p>
+          <Link href={`/studio`}>Studio</Link>
+        </p>
       </main>
     </div>
   )

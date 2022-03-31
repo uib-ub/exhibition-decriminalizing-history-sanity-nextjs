@@ -20,13 +20,13 @@ export default {
             category: 'Code',
           },
           {
-            title: 'Decriminalizing history',
-            value: 'Not deployed',
+            title: 'Preview',
+            value: 'https://decriminalizing-history.vercel.app',
             category: 'Web',
           },
           {
             title: 'Editor',
-            value: 'Not deployed',
+            value: 'https://decriminalizing-history.vercel.app/studio',
             category: 'Studio',
           },
         ],
