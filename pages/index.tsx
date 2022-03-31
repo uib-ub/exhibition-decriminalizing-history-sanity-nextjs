@@ -11,10 +11,10 @@ const frontpageQuery = `
     "siteSettings": *[_id == "siteSettings"][0] {
       "label": coalesce(label[$language], label['en']),
       "description": coalesce(description[$language], description['en']),
-      // "content": *[_type == "course" && (references(^._id) || references(^.__i18n_base._ref))] { ... }
     }
   }
-`
+  `
+// "content": *[_type == "course" && (references(^._id) || references(^.__i18n_base._ref))] { ... }
 
 export const getStaticProps: GetStaticProps = async ({ locale, preview = false }) => {
   const data = await getClient(preview).fetch(frontpageQuery, { language: locale })
@@ -40,7 +40,7 @@ const Home: NextPage = ({ data }: any) => {
 
         <p className={styles.description}>{data.siteSettings?.description}</p>
         <p>
-          <Link href={`/studio`}>Studio</Link>
+          <Link href={`/studio/dashboard`} locale={false}>Studio</Link>
         </p>
       </main>
     </div>
