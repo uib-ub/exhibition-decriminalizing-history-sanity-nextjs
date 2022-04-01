@@ -20,14 +20,14 @@ export default {
             category: 'Code',
           },
           {
-            title: 'Preview',
+            title: 'Web',
             value: 'https://decriminalizing-history.vercel.app',
-            category: 'Web',
+            category: 'Links',
           },
           {
-            title: 'Editor',
+            title: 'Studio',
             value: 'https://decriminalizing-history.vercel.app/studio',
-            category: 'Studio',
+            category: 'Links',
           },
         ],
       },
