@@ -39,8 +39,10 @@
     "react-icons": "^4.3.1",
     "react-paginate": "^8.1.2",
     "react-router-dom": "5.2.0",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
     "sanity-plugin-documents-pane": "^1.0.5",
     "sanity-plugin-iframe-pane": "^1.0.16",
+    "sanity-plugin-media": "^1.4.4",
     "sanity-plugin-table": "^2.3.0",
     "styled-components": "^5.2.0"
   }

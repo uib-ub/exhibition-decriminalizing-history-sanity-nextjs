@@ -16,10 +16,11 @@ export const chooseItem = async (uri) => {
     }
     // eslint-disable-next-line no-undef
     const results = await fetch(
-      `https://sparql.ub.uib.no/sparql/query?query=${encodeURIComponent(
+      `https://sparql.ub.uib.no/ska-prod/query?query=${encodeURIComponent(
         getQuery(dataUri),
       )}&output=json`,
     )
+    //console.log(JSON.stringify(results, null, 2))
     return results
   }
 

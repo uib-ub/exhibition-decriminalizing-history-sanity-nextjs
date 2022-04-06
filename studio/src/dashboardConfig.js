@@ -32,5 +32,14 @@ export default {
         ],
       },
     },
+    {
+      name: 'document-list',
+      options: {
+        title: 'Recently edited',
+        order: '_updatedAt desc',
+        limit: 10
+      },
+      layout: { width: 'small' },
+    },
   ],
 }

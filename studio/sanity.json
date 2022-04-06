@@ -17,13 +17,15 @@
     "@sanity/code-input",
     "table",
     "iframe-pane",
+    "dashboard-widget-document-list",
     "documents-pane",
     "@sanity/document-internationalization",
     "@sanity/language-filter",
     "@sanity/hierarchical-document-list",
     "@seidhr/sanity-plugin-muna-schemas",
     "@seidhr/sanity-plugin-timespan-input",
-    "import-tool"
+    "import-tool",
+    "media"
   ],
   "env": {
     "development": {

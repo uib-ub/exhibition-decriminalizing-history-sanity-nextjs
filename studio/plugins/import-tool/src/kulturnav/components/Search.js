@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react'
-import {Box, Card, Flex, TextInput, Text, Button, Inline, Radio, Select, Stack} from '@sanity/ui'
+import React, { useEffect, useState } from 'react'
+import { Box, Card, Flex, TextInput, Text, Button, Inline, Radio, Select, Stack } from '@sanity/ui'
 import { useStore } from './SearchProvider'
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState('')
-  const {state, dispatch} = useStore()
+  const { state, dispatch } = useStore()
 
   useEffect(() => {
     fetch(
@@ -99,70 +99,70 @@ const Search = () => {
   const handleSearchInputChanges = (e) => {
     setSearchValue(e.target.value)
   }
-  
+
   const handleClear = () => {
     setSearchValue('')
   }
-  
+
   const callSearchFunction = (e) => {
     e.preventDefault()
     search(searchValue)
   }
-  
+
   const callSetSearchTypeFunction = (e) => {
     setSearchType(e.target.value)
   }
-  
+
   const callSetImportTypeFunction = (e) => {
     setImportType(e.target.value)
   }
-  
-  const {totalElements} = state
+
+  const { totalElements } = state
 
   return (
     <form>
 
-        <Flex>
-          <Stack>
-            <Select
-              fontSize={[2, 2, 2, 3]}
-              padding={[2, 2, 3]}
-              space={[2, 2, 3]}
-              onChange={e => callSetSearchTypeFunction(e)}
-            >
-              <option value="Concept">Emneord</option>
-              <option value="Agent">Aktører</option>
-            </Select>
-          </Stack>
-          <Box flex={3}>
-            <TextInput
-              style={{backgroundColor: "white", border: "solid 1px #ccc"}}
-              fontSize={[2, 2, 2, 3]}
-              padding={[2, 2, 3]}
-              type="text"
-              onChange={handleSearchInputChanges}
-              value={searchValue}
-              isClearable
-              onClear={() => handleClear('')}
-            />
-          </Box>
-          <Box marginLeft={2}>
-            <Button 
-              fontSize={[2, 2, 2, 3]}
-              padding={[2, 2, 3]}
-              onClick={callSearchFunction} 
-              mode="default" 
-              type="submit" 
-              text="Søk" 
-            />
-          </Box>
-        </Flex>
+      <Flex>
+        <Stack>
+          <Select
+            fontSize={[2, 2, 2, 3]}
+            padding={[2, 2, 3]}
+            space={[2, 2, 3]}
+            onChange={e => callSetSearchTypeFunction(e)}
+          >
+            <option value="Concept">Emneord</option>
+            <option value="Agent">Aktører</option>
+          </Select>
+        </Stack>
+        <Box flex={3}>
+          <TextInput
+            style={{ backgroundColor: "white", border: "solid 1px #ccc" }}
+            fontSize={[2, 2, 2, 3]}
+            padding={[2, 2, 3]}
+            type="text"
+            onChange={handleSearchInputChanges}
+            value={searchValue}
+            isClearable
+            onClear={() => handleClear('')}
+          />
+        </Box>
+        <Box marginLeft={2}>
+          <Button
+            fontSize={[2, 2, 2, 3]}
+            padding={[2, 2, 3]}
+            onClick={callSearchFunction}
+            mode="default"
+            type="submit"
+            text="Søk"
+          />
+        </Box>
+      </Flex>
 
-      <Card padding={[2, 2, 3]} radius={2} shadow={1} marginY={[2,2,3]}>
+      <Card padding={[2, 2, 3]} radius={2} shadow={1} marginY={[2, 2, 3]}>
         <Stack space={3}>
           {state.searchType === 'Concept' && (
             <Inline space={3}>
-              Importér som: 
+              Importér som:
               <Radio
                 checked={state.importTo === 'Concept'}
                 name="concept"
@@ -175,6 +175,18 @@ const Search = () => {
                 onChange={e => callSetImportTypeFunction(e)}
                 value="ObjectType"
               /> Objekttype
+              <Radio
+                checked={state.importTo === 'TextType'}
+                name="concept"
+                onChange={e => callSetImportTypeFunction(e)}
+                value="TextType"
+              /> Teksttype
+              <Radio
+                checked={state.importTo === 'IdentifierType'}
+                name="concept"
+                onChange={e => callSetImportTypeFunction(e)}
+                value="IdentifierType"
+              /> Identifikatortype
             </Inline>
           )}
           {!state.loading && (

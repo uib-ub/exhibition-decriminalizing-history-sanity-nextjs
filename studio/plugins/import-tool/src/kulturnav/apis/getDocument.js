@@ -56,7 +56,7 @@ const getDescription = (desc) => {
       hasType: [
         {
           _key: nanoid(),
-          _ref: 'cad752ea-0888-415a-a691-9d5b92577389',
+          _ref: 'd4b31289-91f4-484d-a905-b3fb0970413c',
           _type: 'reference',
         },
       ],
@@ -75,10 +75,10 @@ export const getDocument = (item) => {
   const source = 'Kulturnav'
   const timestamp = new Date()
   const desc = item.properties['entity.description']?.[0]?.value ? Object.entries(item.properties['entity.description'][0].value) : {}
-  const birthB = `${item.properties["person.birth"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-01-01`
-  const birthE = `${item.properties["person.birth"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-12-31`
-  const deathB = `${item.properties["person.death"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-01-01`
-  const deathE = `${item.properties["person.death"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-12-31`
+  const birthB = item.properties["person.birth"] ? `${item.properties["person.birth"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-01-01` : null
+  const birthE = item.properties["person.birth"] ? `${item.properties["person.birth"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-12-31` : null
+  const deathB = item.properties["person.death"] ? `${item.properties["person.death"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-01-01` : null
+  const deathE = item.properties["person.death"] ? `${item.properties["person.death"]?.[0].value?.properties?.["event.time"]?.[0].value.slice(0, 4)}-12-31` : null
   // console.log(birthB, birthE, deathB, deathE)
 
   const doc = {
@@ -97,7 +97,7 @@ export const getDocument = (item) => {
         hasType: {
           _type: 'reference',
           _key: nanoid(),
-          _ref: 'de22df48-e3e7-47f2-9d29-cae1b5e4d728',
+          _ref: '3f3e8a7a-d09d-46d4-8dff-7fa5fbff1340',
         },
       },
     ],

@@ -12,7 +12,7 @@ export default function SearchSka() {
     <ReactiveBase app="ska2" url={ska}>
       <Box marginTop={5}>
         {/* <Search /> */}
-        <Flex marginTop="5" paddingX={2} style={{ borderTop: '1px solid #ccc' }}>
+        <Flex marginTop="5" paddingX={2} style={{ borderTop: '1px solid #ccc', alignItems: 'stretch' }}>
           <Filters />
           <Results />
         </Flex>

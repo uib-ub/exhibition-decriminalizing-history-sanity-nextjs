@@ -6,12 +6,12 @@ import SearchNB from './nb'
 import SearchMarcus from './marcus'
 import SearchSka from './ska'
 import SearchKN from './kulturnav'
-import { Box } from '@sanity/ui'
+import { Box, Flex } from '@sanity/ui'
 
 const App = () => {
   return (
     <Router hashType="noslash">
-      <Box style={{ backgroundColor: 'white' }}>
+      <Flex style={{ backgroundColor: 'white', display: 'flex', alignItems: 'stretch', flexDirection: 'column' }}>
 
         <Box paddingX={4}>
           <Header />
@@ -45,7 +45,7 @@ const App = () => {
         <Route path="/kulturnav">
           <SearchKN />
         </Route>
-      </Box>
+      </Flex>
     </Router>
   )
 }
