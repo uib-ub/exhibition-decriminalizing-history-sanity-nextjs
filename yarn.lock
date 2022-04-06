@@ -3247,6 +3247,11 @@ groq@^2.0.9, groq@^2.15.0:
   resolved "https://registry.yarnpkg.com/groq/-/groq-2.15.0.tgz#d5618e0424c866a7998722d6ed441b3cc97e8de3"
   integrity sha512-V3VLBLftaEylbeXDwb2VoGa87SFLGLbU9h6Lz7vuZK+wcs4Kk92qG3A8nWtsdCp63hYKft0/AaXuanbkch0GeA==
 
+groq@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/groq/-/groq-2.29.3.tgz#e767152202ab6aad64b2c33dfc904ee4e4c16d8e"
+  integrity sha512-j3HFq8Qwg36rREp2Xl2vecUz47LX6cedD8cqq+JKX0iNj9yiwelOSKpRS5jxhkDZQv5xBAiqtpU2Ylv5DQ5g2A==
+
 handlebars@^4.7.6:
   version "4.7.7"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.7.tgz#9ce33416aad02dbd6c8fafa8240d5d98004945a1"
@@ -5116,6 +5121,11 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+performant-array-to-tree@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/performant-array-to-tree/-/performant-array-to-tree-1.11.0.tgz#cbb6c4a1a41a89b3a209dca7a8715cbe7d5a6a33"
+  integrity sha512-YwCqIDvnaebXaKuKQhI5yJD6ryDc3FxvoeX/5ougXTKDUWb7s5S2BuBgIyftCa4sBe1+ZU5Kmi4RJy+pjjjrpw==
 
 picocolors@^1.0.0:
   version "1.0.0"

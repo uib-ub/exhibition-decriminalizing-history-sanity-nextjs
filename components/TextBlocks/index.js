@@ -9,9 +9,6 @@ const myPortableTextComponents = {
       ) : (
         <div className="callToAction">{value.text}</div>
       ),
-    SectionText: ({ value }) => (
-      <p>{value.label}</p>
-    )
   },
 
   marks: {
