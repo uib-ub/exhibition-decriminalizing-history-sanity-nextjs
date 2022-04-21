@@ -45,14 +45,19 @@ export const searchReducer = (state, action) => {
         ...state,
         searchType: action.searchType,
         filter: action.searchType === 'Concept' ? ',concept.isCollection:!true' : '',
-        importTo: action.importTo ===  'Agent' ? 'Actor' : action.importTo,
+        importTo: action.importTo === 'Agent' ? 'Actor' : action.importTo,
       }
     case 'SET_IMPORT_TYPE':
       return {
         ...state,
         importTo: action.importTo,
       }
+    case 'SET_FROM_COLLECTION':
+      return {
+        ...state,
+        fromCollection: action.fromCollection === true ? '94df5ca7-5407-4396-bfce-b678b1684a72' : '',
+      }
     default:
-      return {...state}
+      return { ...state }
   }
 }

@@ -16,6 +16,7 @@ const AllFilters = () => (
           showFilter
           filterLabel="Digitized"
           URLParams={false}
+          style={{ padding: 1 }}
         />
         <ToggleButton
           componentId="zoom"
@@ -26,6 +27,7 @@ const AllFilters = () => (
           showFilter
           filterLabel="Digitized"
           URLParams={false}
+          style={{ padding: 1 }}
         />
       </Inline>
     </Stack>

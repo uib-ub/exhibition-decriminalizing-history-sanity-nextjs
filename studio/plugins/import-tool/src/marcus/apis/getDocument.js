@@ -2,18 +2,36 @@ import { nanoid } from 'nanoid'
 import { parse } from 'date-fns'
 import { mapLicenses } from '../../shared/mapLicenses'
 import { mapOwner } from '../../shared/mapOwner'
+import { mapTypes } from '../../shared/mapTypes'
+import { mapEDTF } from '../../shared/mapEDTF'
+import edtf from 'edtf'
 
-export default function getDocument(item, types, assetID) {
-  const parseDate = (date) => {
-    if (!date) {
-      return null
-    }
-    const parsedDate = parse(date, 'yyyy-MM-dd', new Date())
-    return parsedDate
+const getTimespan = (date, after, before) => {
+  if (date) {
+    const e = edtf(date, { types: ['Year', 'Date', 'Interval', 'Season'] })
+    return mapEDTF(e)
   }
+  if (after && !before) {
+    const e = edtf(`${after}/`, { types: ['Year', 'Date', 'Interval', 'Season'] })
+    return mapEDTF(e)
+  }
+  if (!after && before) {
+    const e = edtf(`/${before}`, { types: ['Year', 'Date', 'Interval', 'Season'] })
+    return mapEDTF(e)
+  }
+  if (after && before) {
+    const e = edtf(`${after}/${before}`, { types: ['Year', 'Date', 'Interval', 'Season'] })
+    return mapEDTF(e)
+  }
+  return null
+}
 
-  const description = Array.isArray(item.description) ? item.description : [item.description]
+export default function getDocument(item, assetID) {
+  // Map type to Sanity types
+  const types = mapTypes(Array.isArray(item.type) ? item.type : [item.type])
 
+  const description = item.description ? Array.isArray(item.description) ? item.description : [item.description] : null
+  const date = getTimespan(item.created?.value, item.madeAfter?.value, item.madeBefore?.value)
   const subject = item.subject
     ? [
       ...item.subject.map((s) => {
@@ -91,9 +109,11 @@ export default function getDocument(item, types, assetID) {
           {
             _key: nanoid(),
             _type: 'Timespan',
+            ...date,
+            /* edtf: item.created.value,
             ...(item.madeAfter?.value ? { beginOfTheBegin: item.madeAfter?.value } : ''),
             ...(item.madeBefore?.value ? { endOfTheEnd: item.madeBefore?.value } : ''),
-            ...(item.created?.value ? { date: parseDate(item.created?.value) } : ''),
+            ...(item.created?.value ? { date: parseDate(item.created?.value) } : ''), */
           },
         ],
       }),
@@ -124,13 +144,13 @@ export default function getDocument(item, types, assetID) {
           hasType: {
             _type: 'reference',
             _key: nanoid(),
-            _ref: 'de22df48-e3e7-47f2-9d29-cae1b5e4d728',
+            _ref: '3f3e8a7a-d09d-46d4-8dff-7fa5fbff1340',
           },
         },
       ],
       license: mapLicenses(item.license),
       image: {
-        _type: 'DigitalImageObject',
+        _type: 'DigitalObjectImage',
         asset: {
           _type: 'reference',
           _ref: assetID,
@@ -139,7 +159,7 @@ export default function getDocument(item, types, assetID) {
       ...(Object.keys(activityStream[0]).length > 2 && {
         activityStream,
       }),
-      ...(description && {
+      ...(description && description.length > 0 && {
         referredToBy: [
           ...description.map(d => ({
             _key: nanoid(),
@@ -165,14 +185,10 @@ export default function getDocument(item, types, assetID) {
             hasType: [
               {
                 _key: nanoid(),
-                _ref: 'cad752ea-0888-415a-a691-9d5b92577389',
+                _ref: 'd4b31289-91f4-484d-a905-b3fb0970413c',
                 _type: 'reference',
               },
             ],
-            language: {
-              _ref: 'e81f617f-b767-4e7c-8495-93b745f47aa0',
-              _type: 'reference',
-            },
           })),
         ],
       }),
@@ -198,7 +214,7 @@ export default function getDocument(item, types, assetID) {
           }),
         ],
       }),
-      hasCurrentOwner: mapOwner(item.identifier),
+      // hasCurrentOwner: mapOwner(item.identifier),
       ...(types.length > 0 && { hasType: types }),
       wasOutputOf: {
         _type: 'DataTransferEvent',

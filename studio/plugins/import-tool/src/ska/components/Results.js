@@ -3,13 +3,13 @@ import { ReactiveList } from '@appbaseio/reactivesearch'
 import Card from './Card'
 import Search from './Search'
 import {
-  Container,
+  Box,
   Grid,
 } from '@sanity/ui'
 
 const Results = () => {
   return (
-    <Container padding={[4]} style={{ borderLeft: 'solid #ccc 1px' }}>
+    <Box padding={[4]} style={{ borderLeft: 'solid #ccc 1px' }}>
       <Search />
       <ReactiveList
         componentId="results"
@@ -30,7 +30,7 @@ const Results = () => {
           }
           if (data.length) {
             return (
-              <Grid columns={[1, 1, 2, 3]} gap={[1, 1, 2, 3]}>
+              <Grid columns={[1, 1, 2, 4]} gap={[1, 1, 2, 3]}>
                 {data.map((item) => (
                   <Card item={item} />
                 ))}
@@ -41,7 +41,7 @@ const Results = () => {
           }
         }}
       </ReactiveList>
-    </Container>
+    </Box>
   )
 }
 

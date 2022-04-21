@@ -27,7 +27,7 @@ export const getDocument = async (item) => {
         hasType: {
           _type: 'reference',
           _key: nanoid(),
-          _ref: 'de22df48-e3e7-47f2-9d29-cae1b5e4d728',
+          _ref: '3f3e8a7a-d09d-46d4-8dff-7fa5fbff1340',
         },
       },
     ],

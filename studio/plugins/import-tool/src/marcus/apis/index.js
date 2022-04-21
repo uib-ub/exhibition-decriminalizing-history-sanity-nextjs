@@ -1,8 +1,8 @@
-import {omit} from 'lodash'
+import { omit } from 'lodash'
 import getQuery from './getQuery'
 import getFrame from './getFrame'
 import getDocument from './getDocument'
-import {createDoc, getImageBlob, patchAssetMeta, uploadImageBlob} from '../../shared/storeFunctions'
+import { createDoc, getImageBlob, patchAssetMeta, uploadImageBlob } from '../../shared/storeFunctions'
 import { mapTypes } from '../../shared/mapTypes'
 const jsonld = require('jsonld/dist/jsonld.js')
 
@@ -51,9 +51,6 @@ export const chooseItem = async (uri) => {
     const cleanJSON = omit(framed, ['@context'])
     console.log(cleanJSON)
 
-    // Map type to Sanity types
-    const types = mapTypes([cleanJSON.type])
-
     const assetMeta = {
       source: {
         // The source this image is from
@@ -72,7 +69,7 @@ export const chooseItem = async (uri) => {
     await patchAssetMeta(asset._id, assetMeta)
 
     // Get the Sanity document
-    const doc = getDocument(cleanJSON, types, asset._id)
+    const doc = getDocument(cleanJSON, asset._id)
     await createDoc(doc)
 
     return {
