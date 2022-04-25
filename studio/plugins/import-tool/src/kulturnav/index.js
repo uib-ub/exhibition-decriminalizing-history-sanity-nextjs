@@ -20,6 +20,7 @@ export const initialState = {
   errorMessage: null,
   searchType: 'Concept',
   filter: ',concept.isCollection:!true',
+  fromCollection: '',
   importTo: 'Concept'
 }
 

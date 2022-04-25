@@ -8,7 +8,7 @@ const jsonld = require('jsonld/dist/jsonld.js')
 
 export const chooseItem = async (uri) => {
   // We get the web uri from ES, so we need to switch to the data uri
-  const dataUri = uri.replace('katalog.skeivtarkiv.no', 'data.ub.uib.no')
+  const dataUri = uri.replace('https://katalog.skeivtarkiv.no', 'http://data.ub.uib.no')
 
   async function getObject(id) {
     if (!id) {
@@ -16,7 +16,7 @@ export const chooseItem = async (uri) => {
     }
     // eslint-disable-next-line no-undef
     const results = await fetch(
-      `https://sparql.ub.uib.no/ska-prod/query?query=${encodeURIComponent(
+      `https://sparql.ub.uib.no/skeivtarkiv/query?query=${encodeURIComponent(
         getQuery(dataUri),
       )}&output=json`,
     )
@@ -52,13 +52,10 @@ export const chooseItem = async (uri) => {
     const cleanJSON = omit(framed, ['@context'])
     console.log(cleanJSON)
 
-    // Map type to Sanity types
-    const types = mapTypes([cleanJSON.type])
-
     const assetMeta = {
       source: {
         // The source this image is from
-        name: 'marcus.uib.no',
+        name: 'skeivtarkiv.no',
         url: dataUri,
         // A string that uniquely idenitfies it within the source.
         // In this example the URL is the closest thing we have as an actual ID.
@@ -73,7 +70,7 @@ export const chooseItem = async (uri) => {
     await patchAssetMeta(asset._id, assetMeta)
 
     // Get the Sanity document
-    const doc = getDocument(cleanJSON, types, asset._id)
+    const doc = getDocument(cleanJSON, asset._id)
     await createDoc(doc)
 
     return {

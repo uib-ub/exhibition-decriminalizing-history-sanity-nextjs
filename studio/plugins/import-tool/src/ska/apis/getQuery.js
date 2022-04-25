@@ -37,7 +37,7 @@ export default function getQuery(uri) {
         ?uri a ?type ;
           dct:title ?title ; 
           dct:identifier ?id .
-        BIND(iri(REPLACE(str(?uri), "data.ub.uib.no","katalog.skeivtarkiv.no","i")) as ?homepage) .
+        BIND(iri(REPLACE(str(?uri), "http://data.ub.uib.no","https://katalog.skeivtarkiv.no","i")) as ?homepage) .
         OPTIONAL { ?uri dct:description ?description . }
         OPTIONAL { ?uri dct:created ?created . }
         OPTIONAL { ?uri ubbont:madeAfter ?madeAfter . }

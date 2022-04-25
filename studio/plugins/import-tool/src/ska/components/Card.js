@@ -35,7 +35,7 @@ const Card = ({ item }) => {
   }
 
   return (
-    <SanityCard style={{ display: "flex", flexDirection: "column" }} key={item._id} padding={[2, 2, 3]} radius={2} shadow={1}>
+    <SanityCard style={{ display: "flex", flexDirection: "column" }} key={item.id} padding={[2, 2, 3]} radius={2} shadow={1}>
       <Box>
         <img style={{ width: "100%" }} src={item.hasThumbnail} />
       </Box>

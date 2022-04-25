@@ -32,24 +32,18 @@ export default function getDocument(item, assetID) {
   const description = item.description ? Array.isArray(item.description) ? item.description : [item.description] : null
   const date = getTimespan(item.created?.value, item.madeAfter?.value, item.madeBefore?.value)
 
-  const owner = item.subject
-    ? [
-      ...item.subject.map((s) => {
-        return {
-          _type: 'Actor',
-          _id: s.identifier,
-          _rev: nanoid(),
-          accessState: 'open',
-          editorialState: 'published',
-          label: {
-            _type: 'LocalizedString',
-            no: 'Skeivt arkiv',
-            en: 'The Norwegian archive for queer history',
-          },
-        }
-      }),
-    ]
-    : []
+  const skaAsOwner = [{
+    _type: 'Actor',
+    _id: '083c8e77-52d1-4968-a26c-e899792495b2',
+    _rev: nanoid(),
+    accessState: 'open',
+    editorialState: 'published',
+    label: {
+      _type: 'LocalizedString',
+      no: 'Skeivt arkiv',
+      en: 'The Norwegian archive for queer history',
+    },
+  }]
 
   const subject = item.subject
     ? [
@@ -143,7 +137,7 @@ export default function getDocument(item, assetID) {
     subject,
     maker,
     depicts,
-    owner,
+    skaAsOwner,
     doc: {
       _type: 'HumanMadeObject',
       _id: `${item.identifier}`,
@@ -234,18 +228,13 @@ export default function getDocument(item, assetID) {
           }),
         ],
       }),
-      ...(item.owner && {
-        hasCurrentOwner: [
-          ...item.hasCurrentOwner.map((s) => {
-            return {
-              _type: 'reference',
-              _key: nanoid(),
-              _ref: s.identifier,
-            }
-          }),
-        ],
-      }),
-      // hasCurrentOwner: mapOwner(item.identifier),
+      hasCurrentOwner: [
+        {
+          _type: 'reference',
+          _key: nanoid(),
+          _ref: '083c8e77-52d1-4968-a26c-e899792495b2'
+        }
+      ],
       ...(types.length > 0 && { hasType: types }),
       wasOutputOf: {
         _type: 'DataTransferEvent',

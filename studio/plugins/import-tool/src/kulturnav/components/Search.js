@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Card, Flex, TextInput, Text, Button, Inline, Radio, Select, Stack } from '@sanity/ui'
+import { Box, Card, Checkbox, Flex, TextInput, Text, Button, Inline, Radio, Select, Stack } from '@sanity/ui'
 import { useStore } from './SearchProvider'
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState('')
   const { state, dispatch } = useStore()
+  const { checked, setChecked } = useState(false)
 
   useEffect(() => {
     fetch(
@@ -59,7 +60,7 @@ const Search = () => {
     })
 
     fetch(
-      `${state.apiURL}entityType:${state.searchType}${state.filter},compoundName:${searchValue}/0/${state.max}`
+      `${state.apiURL}entityType:${state.searchType}${state.filter},compoundName:${searchValue}${state.fromCollection ? ',entity.dataset:' + state.fromCollection : ''}/0/${state.max}`
     )
       .then((response) => response.json())
       .then((jsonResponse) => {
@@ -96,6 +97,13 @@ const Search = () => {
     })
   }
 
+  const setFromCollection = (e) => {
+    dispatch({
+      type: 'SET_FROM_COLLECTION',
+      fromCollection: e
+    })
+  }
+
   const handleSearchInputChanges = (e) => {
     setSearchValue(e.target.value)
   }
@@ -117,11 +125,14 @@ const Search = () => {
     setImportType(e.target.value)
   }
 
+  const callSetFromCollectionFunction = (e) => {
+    setFromCollection(e)
+  }
+
   const { totalElements } = state
 
   return (
     <form>
-
       <Flex>
         <Stack>
           <Select
@@ -170,6 +181,12 @@ const Search = () => {
                 value="Concept"
               /> Emneord
               <Radio
+                checked={state.importTo === 'ActorType'}
+                name="concept"
+                onChange={e => callSetImportTypeFunction(e)}
+                value="ActorType"
+              /> Aktørtype
+              <Radio
                 checked={state.importTo === 'ObjectType'}
                 name="concept"
                 onChange={e => callSetImportTypeFunction(e)}
@@ -187,6 +204,14 @@ const Search = () => {
                 onChange={e => callSetImportTypeFunction(e)}
                 value="IdentifierType"
               /> Identifikatortype
+              <Flex align="center">
+                <Checkbox id="fromCollection" style={{ display: 'block' }} checked={checked} onChange={e => callSetFromCollectionFunction(e)} />
+                <Box flex={1} paddingLeft={3}>
+                  <Text>
+                    <label htmlFor="fromCollection">UB KN-dataset</label>
+                  </Text>
+                </Box>
+              </Flex>
             </Inline>
           )}
           {!state.loading && (

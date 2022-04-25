@@ -60,11 +60,11 @@ const getDescription = (desc) => {
           _type: 'reference',
         },
       ],
-      language: {
+      /* language: {
         _key: nanoid(),
         _ref: mapLanguage(k),
         _type: 'reference',
-      },
+      }, */
     })
   ))
   return arr

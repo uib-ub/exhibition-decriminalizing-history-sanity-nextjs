@@ -66,11 +66,15 @@ export const patchAssetMeta = async (id, meta) => {
 
 export const createDoc = async (docs) => {
   const transaction = client.transaction()
-  const { doc, depicts, subject, maker } = docs
+  const { doc, subject, maker, depicts, skaAsOwner } = docs
 
   transaction.createIfNotExists(doc)
 
-  const rest = [...depicts, ...subject, ...maker]
+  const rest = [
+    ...subject,
+    ...maker,
+    ...depicts,
+    ...skaAsOwner]
   rest.forEach((arr) => {
     transaction.createIfNotExists(arr)
   })
