@@ -1,5 +1,5 @@
 import { Box, Heading, Wrap, Tag, TagLabel, Avatar } from '@chakra-ui/react'
-import { imageBuilder } from '../../../lib/sanity'
+import { urlFor } from '../../../lib/sanity'
 import Link from '../../Link'
 import Timespan from '../../Timespan'
 
@@ -36,7 +36,7 @@ export default function BeginningOfExistence(props) {
                 ml={-1}
                 mr={2}
                 name={assignment.assignedActor.label.no}
-                src={imageBuilder
+                src={urlFor
                   .image(assignment.assignedActor.image)
                   .height(300)
                   .width(300)

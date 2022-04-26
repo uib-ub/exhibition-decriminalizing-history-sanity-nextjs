@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import { Container, Grid, Box, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
 import Image from 'next/image'
-import { getNextSanityImage } from '../../lib/sanity.server'
+import { GetImage } from '../../lib/sanity.server'
 
 export default function Hero(props) {
   if (!props || props.disabled === true) {
@@ -35,7 +35,7 @@ export default function Hero(props) {
               {item.illustration && (
                 <Image
                   alt=""
-                  {...getNextSanityImage(item.illustration.image)}
+                  {...GetImage(item.illustration.image)}
                   layout="intrinsic"
                   /* sizes="(max-width: 800px) 100vw, 800px" */
                   objectFit="cover"

@@ -15,6 +15,9 @@ const nextConfig = {
     defaultLocale: 'en',
     localeDetection: false,
   },
+  images: {
+    domains: ['cdn.sanity.io']
+  },
   rewrites: () => [STUDIO_REWRITE],
 }
 

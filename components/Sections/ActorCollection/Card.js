@@ -2,10 +2,10 @@ import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import TextBlocks from '../../TextBlocks'
 import { kebabCase } from 'lodash'
 import Link from '../../Link'
-import { imageBuilder } from '../../../lib/sanity'
+import { urlFor } from '../../../lib/sanity'
 import Date from '../../Date'
 // import Image from 'next/image'
-// import { getNextSanityImage } from '../../../lib/sanity.server'
+// import { GetImage } from '../../../lib/sanity.server'
 
 export default function ActorCollectionCard({ data }) {
   return (
@@ -18,8 +18,8 @@ export default function ActorCollectionCard({ data }) {
                 mx="auto"
                 borderRadius="50%"
                 alt={card.label || 'No label'}
-                //{...getNextSanityImage(item.image)}
-                src={imageBuilder.image(card.image).width('200').height('250').fit('fill').url()}
+                //{...GetImage(item.image)}
+                src={urlFor(card.image).width('200').height('250').fit('fill').url()}
                 objectFit="contain"
               />
             </Box>

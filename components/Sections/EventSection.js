@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { kebabCase } from 'lodash'
-import { getNextSanityImage } from '../../lib/sanity.server'
+import { GetImage } from '../../lib/sanity.server'
 import { Box, Container, Heading, Grid } from '@chakra-ui/layout'
 // import Link from '../Link'
 import TextBlocks from '../TextBlocks'
@@ -21,7 +21,7 @@ export default function EventSection(props) {
           {/* {item.image && !image && (
             <Image
               alt={label || 'No label'}
-              {...getNextSanityImage(item.image)}
+              {...GetImage(item.image)}
               layout="fill"
               objectFit="cover"
             />
@@ -29,7 +29,7 @@ export default function EventSection(props) {
           {image && !item.image && (
             <Image
               alt={item.label || 'No label'}
-              {...getNextSanityImage(image)}
+              {...GetImage(image)}
               layout="fill"
               objectFit="cover"
             />

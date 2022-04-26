@@ -1,5 +1,5 @@
 import { Container, Heading, /* Image, */ useColorModeValue } from '@chakra-ui/react'
-// import { imageBuilder } from '../../lib/sanity'
+// import { urlFor } from '../../lib/sanity'
 
 import TextBlocks from '../TextBlocks'
 
@@ -30,7 +30,7 @@ export default function PageHeader(props) {
           maxH="50vh"
           justifyContent="end"
           overflow="hidden"
-          src={imageBuilder.image(props.illustration?.image).width('800').fit('min').url()}
+          src={urlFor(props.illustration?.image).width('800').fit('min').url()}
           alt={''}
         />
       )} */}

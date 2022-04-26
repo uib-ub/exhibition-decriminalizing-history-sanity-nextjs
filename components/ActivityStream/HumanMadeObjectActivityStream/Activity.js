@@ -1,5 +1,5 @@
 import Link from '../../Link'
-import { imageBuilder } from '../../../lib/sanity'
+import { urlFor } from '../../../lib/sanity'
 import {
   Avatar,
   Box,
@@ -82,7 +82,7 @@ export default function Activity({ data }) {
                   ml={-1}
                   mr={2}
                   name={assignment.assignedActor.label.no}
-                  src={imageBuilder
+                  src={urlFor
                     .image(assignment.assignedActor.image)
                     .height(300)
                     .width(300)
@@ -105,7 +105,7 @@ export default function Activity({ data }) {
               <PopoverTrigger>
                 <Avatar
                   name={data.target.label.no}
-                  src={imageBuilder.image(data.target.image).height('300').width('300').url()}
+                  src={urlFor(data.target.image).height('300').width('300').url()}
                 />
               </PopoverTrigger>
               <Portal>

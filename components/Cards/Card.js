@@ -28,7 +28,7 @@ import {
   //useDisclosure,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { imageBuilder } from '../../lib/sanity'
+import { urlFor } from '../../lib/sanity'
 /* import { BiDotsVerticalRounded } from 'react-icons/bi'
 import { FiExternalLink } from 'react-icons/fi'
 import { VscJson } from 'react-icons/vsc' */
@@ -184,11 +184,11 @@ export default function Card(props) {
 
           <Spacer />
 
-          {hasCurrentOwner && (
+          {hasCurrentOwner?.image && (
             <Image
               display="inline-block"
               boxSize="5"
-              src={imageBuilder.image(hasCurrentOwner.image).height(20).width(20).url()}
+              src={urlFor(hasCurrentOwner.image).height(20).width(20).url()}
               alt=""
             />
           )}

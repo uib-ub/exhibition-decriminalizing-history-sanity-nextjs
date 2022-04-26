@@ -1,7 +1,7 @@
 import { Heading, Flex, Box, Icon, Image, Spacer, useColorModeValue } from '@chakra-ui/react'
 import TextBlocks from '../../TextBlocks'
 import { BsInfoCircle } from 'react-icons/bs'
-import { imageBuilder } from '../../../lib/sanity'
+import { urlFor } from '../../../lib/sanity'
 
 export default function ItemView(props) {
   const sourceColor = useColorModeValue('grey.600', 'grey.200')
@@ -27,7 +27,7 @@ export default function ItemView(props) {
             maxH="50vh"
             maxW={['100%', null, '90vw', null]}
             alt=""
-            src={imageBuilder.image(image).fit('max').height(500).url()}
+            src={urlFor(image).fit('max').height(500).url()}
             fit="contain"
           />
         )}

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Container, Divider, Box, Heading, Badge } from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
-import { getNextSanityImage } from '../../lib/sanity.server'
+import { GetImage } from '../../lib/sanity.server'
 
 export default function Hero(props) {
   const bg = useColorModeValue('gray.800', 'gray.300')
@@ -25,7 +25,7 @@ export default function Hero(props) {
         h={['50vh', null, null, '65vh', null]}
         position="relative"
       >
-        {image && <Image alt="" {...getNextSanityImage(image)} layout="fill" objectFit="cover" />}
+        {image && <Image alt="" {...GetImage(image)} layout="fill" objectFit="cover" />}
       </Box>
       <Container
         maxW="full"

@@ -4,7 +4,7 @@ import React from 'react'
 import TextBlocks from '../../TextBlocks'
 import { kebabCase } from 'lodash'
 import Link from '../../Link'
-import { getNextSanityImage } from '../../../lib/sanity.server'
+import { GetImage } from '../../../lib/sanity.server'
 
 export default function Profile({ data }) {
   return (
@@ -13,7 +13,7 @@ export default function Profile({ data }) {
         <React.Fragment key={item.item._id}>
           {item.image && (
             <Container maxW={['md', null, '2xl', null]} mb="5" mt="26" px="0">
-              <Image {...getNextSanityImage(item.image)} alt={item.label} layout="intrinsic" />
+              <Image {...GetImage(item.image)} alt={item.label} layout="intrinsic" />
             </Container>
           )}
 

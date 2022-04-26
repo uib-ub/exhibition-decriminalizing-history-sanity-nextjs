@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Box, Grid, Flex, Heading, Spacer } from '@chakra-ui/react'
 import Source from './Source'
 import TextBlocks from '../TextBlocks'
-import { getNextSanityImage } from '../../lib/sanity.server'
+import { GetImage } from '../../lib/sanity.server'
 
 export default function SingleObject(props) {
   if ((!props && !props.item) || props.disabled === true) {
@@ -26,7 +26,7 @@ export default function SingleObject(props) {
       <Box gridArea="content">
         {item?.image && (
           <Box mb="10" maxH="50vh">
-            <Image alt={title ?? ''} {...getNextSanityImage(item.image)} layout="responsive" />
+            <Image alt={title ?? ''} {...GetImage(item.image)} layout="responsive" />
             <Source {...item} />
           </Box>
         )}
@@ -81,7 +81,7 @@ export default function SingleObject(props) {
         {/* TODO: Fix grid and image size */}
         {forseesUseOf?.image && (
           <Box maxW="full" position="relative">
-            <Image alt={''} {...getNextSanityImage(forseesUseOf.image)} layout="responsive" />
+            <Image alt={''} {...GetImage(forseesUseOf.image)} layout="responsive" />
           </Box>
         )}
       </Box>

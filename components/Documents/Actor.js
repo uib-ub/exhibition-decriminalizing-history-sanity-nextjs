@@ -3,7 +3,7 @@ import { Badge, Box, Container, Divider, Flex, Heading, SimpleGrid, Text } from 
 import TextBlocks from '../TextBlocks'
 import Cards from '../Cards'
 import RenderMergedActivityStreamList from '../ActivityStream/MergedActivityStreamList/RenderMergedActivityStreamList'
-import { getNextSanityImage } from '../../lib/sanity.server'
+import { GetImage } from '../../lib/sanity.server'
 import Members from '../Members'
 import Date from '../Date'
 
@@ -19,7 +19,7 @@ export default function Actor(item) {
           <Box mr="4" w="3xs" position="relative">
             <Image
               alt={item.label.no}
-              {...getNextSanityImage(item.image)}
+              {...GetImage(item.image)}
               layout="responsive"
               objectFit="contain"
             />

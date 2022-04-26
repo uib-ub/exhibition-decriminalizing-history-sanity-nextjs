@@ -3,7 +3,7 @@ import { Container, Heading, Flex, Text, Box } from '@chakra-ui/react'
 import TextBlocks from '../../TextBlocks'
 import { kebabCase } from 'lodash'
 import Link from '../../Link'
-import { getNextSanityImage } from '../../../lib/sanity.server'
+import { GetImage } from '../../../lib/sanity.server'
 
 export default function Compact({ data }) {
   return (
@@ -14,7 +14,7 @@ export default function Compact({ data }) {
             <Box mr="4" mb="3">
               <Image
                 alt={item.label || 'No label'}
-                {...getNextSanityImage(item.image)}
+                {...GetImage(item.image)}
                 layout="fill"
                 /* sizes="(max-width: 800px) 100vw, 800px" */
                 objectFit="cover"
