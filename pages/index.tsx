@@ -9,6 +9,7 @@ import { LocaleSwitcher } from '../components/Locale'
 import TextBlocks from '../components/TextBlocks'
 import { arrayToTree } from 'performant-array-to-tree'
 import groq from 'groq'
+import { humanMadeObjectFields } from '../lib/queries/fragments/humanMadeObjectFields'
 
 const siteNav = groq`"siteNav": *[_id == "main-nav"][0]{
   tree[] {
@@ -41,7 +42,10 @@ const frontpageQuery = `
         frontpage-> {...}
       )
     },
-    ${siteNav}
+    ${siteNav},
+    "items": *[_type == "HumanMadeObject"] {
+      ${humanMadeObjectFields}
+    }
   }
   `
 
@@ -95,6 +99,11 @@ const Home: NextPage = ({ data, locale }: any) => {
         <p>
           <Link href={`/studio`} locale={false}>Studio</Link>
         </p>
+        <ul>
+          {data.items.map((item: any) => (
+            <li key={item._id}><Link href={`/id/${item._id}`} locale={false}>{item.label.no ?? item._id}</Link></li>
+          ))}
+        </ul>
       </main>
     </div>
   )

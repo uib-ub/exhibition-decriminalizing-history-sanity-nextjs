@@ -135,7 +135,7 @@ export default function getDocument(item, assetID) {
       },
       preferredIdentifier: item.identifier,
       homepage: item.homepage.id,
-      subjectOfManifest: `https://marcus-manifest-api.vercel.app/api/iiif/manifest/${item.identifier}`,
+      subjectOfManifest: `https://ub-iiif.vercel.app/api/manifest/marcus/${item.identifier}`,
       identifiedBy: [
         {
           _type: 'Identifier',

@@ -32,8 +32,6 @@ export async function getStaticPaths({ locales }) {
     }))
   )) || []
 
-  console.log(JSON.stringify(paths, null, 2))
-
   return {
     paths: paths[0],
     fallback: true,
