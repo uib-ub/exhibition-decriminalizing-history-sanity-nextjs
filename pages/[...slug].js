@@ -1,10 +1,15 @@
-// import Head from 'next/head'
-// import { NextSeo } from 'next-seo'
+import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 import { usePreviewSubscription } from '../lib/sanity'
 import { filterDataToSingleItem } from '../lib/functions'
 import { getClient } from '../lib/sanity.server'
 import { groq } from 'next-sanity'
 import { routeQuery } from '../lib/queries/routeQuery'
+import Layout from '../components/Layout'
+import Sections from '../components/Sections/Sections'
+import TextBlocks from '../components/TextBlocks'
+import { Heading } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 // import { Container, Text, useColorModeValue } from '@chakra-ui/react'
 
 export async function getStaticPaths({ locales }) {
@@ -64,6 +69,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
 
 
 export default function Page({ data, preview }) {
+  const { locale, defaultLocale } = useRouter()
   const { data: previewData } = usePreviewSubscription(data?.query, {
     params: data?.queryParams ?? {},
     // The hook will return this on first render
@@ -83,9 +89,42 @@ export default function Page({ data, preview }) {
   // of data existing when Editors are creating new documents.
   // It'll be completely blank when they start!
   return (
-    <div>
-      <pre>{JSON.stringify(page, null, 2)}</pre>
-    </div>
+    <>
+      {/* <NextSeo
+        title={page?.route[0]?.page?.label ?? page?.route[0]?.page?.title}
+        titleTemplate={`%s | ${data?.siteSettings?.title}`}
+        defaultTitle={data?.siteSettings?.title}
+        description={page?.route[0]?.page?.excerpt}
+        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/${page?.route[0].slug.current}`}
+        openGraph={{
+          url: `${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/${page?.route[0].slug.current}`,
+          title: page?.route[0]?.page?.label,
+          description: page?.route[0]?.page?.excerpt,
+          // images: openGraphImages,
+          site_name: page?.siteSettings?.title,
+        }}
+        twitter={{
+          handle: '@UiB_UB',
+          site: '@UiB_UB',
+          cardType: 'summary_large_image',
+        }}
+      />
+
+      <Head>
+        <title>
+          {`${page?.route[0]?.page?.label ?? page?.route[0]?.page?.title}
+           - ${page?.siteSettings?.title}`}
+        </title>
+      </Head> */}
+
+      <Layout site={page?.siteSettings}>
+        <Heading>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
+        {/* If LinguisticDocument the content is in the body field */}
+        {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}
+
+        <pre>{JSON.stringify(page, null, 2)}</pre>
+      </Layout>
+    </>
   )
 }
 

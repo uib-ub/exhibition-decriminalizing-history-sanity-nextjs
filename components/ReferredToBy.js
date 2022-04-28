@@ -29,7 +29,7 @@ export default function ReferredToBy(props) {
           />
         </Box>
       ))}
-      {props.description && <TextBlocks description={props.description} />}
+      {props.description && <TextBlocks value={props.description} />}
     </>
   )
 }
