@@ -2,35 +2,14 @@ import { nanoid } from 'nanoid'
 import { mapLicenses } from '../../shared/mapLicenses'
 import { mapOwner } from '../../shared/mapOwner'
 import { mapTypes } from '../../shared/mapTypes'
-import { mapEDTF } from '../../shared/mapEDTF'
-import edtf from 'edtf'
-
-const getTimespan = (date, after, before) => {
-  if (date) {
-    const e = edtf(date, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  if (after && !before) {
-    const e = edtf(`${after}/`, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  if (!after && before) {
-    const e = edtf(`/${before}`, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  if (after && before) {
-    const e = edtf(`${after}/${before}`, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  return null
-}
+import { getTimespan } from '../../shared/getTimespan'
 
 export default function getDocument(item, assetID) {
   // Map type to Sanity types
   const types = mapTypes(Array.isArray(item.type) ? item.type : [item.type])
 
   const description = item.description ? Array.isArray(item.description) ? item.description : [item.description] : null
-  const date = getTimespan(item.created?.value, item.madeAfter?.value, item.madeBefore?.value)
+  const date = getTimespan(item.created?.value ?? item.created, item.madeAfter?.value ?? item.madeAfter, item.madeBefore?.value ?? item.madeBefore)
 
   const skaAsOwner = [{
     _type: 'Actor',
@@ -117,7 +96,7 @@ export default function getDocument(item, assetID) {
           }),
         ],
       }),
-      ...((item.created || item.madeAfter || item.madeBefore) && {
+      ...(date && {
         timespan: [
           {
             _key: nanoid(),

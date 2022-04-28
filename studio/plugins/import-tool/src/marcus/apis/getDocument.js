@@ -3,28 +3,7 @@ import { parse } from 'date-fns'
 import { mapLicenses } from '../../shared/mapLicenses'
 import { mapOwner } from '../../shared/mapOwner'
 import { mapTypes } from '../../shared/mapTypes'
-import { mapEDTF } from '../../shared/mapEDTF'
-import edtf from 'edtf'
-
-const getTimespan = (date, after, before) => {
-  if (date) {
-    const e = edtf(date, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  if (after && !before) {
-    const e = edtf(`${after}/`, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  if (!after && before) {
-    const e = edtf(`/${before}`, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  if (after && before) {
-    const e = edtf(`${after}/${before}`, { types: ['Year', 'Date', 'Interval', 'Season'] })
-    return mapEDTF(e)
-  }
-  return null
-}
+import { getTimespan } from '../../shared/getTimespan'
 
 export default function getDocument(item, assetID) {
   // Map type to Sanity types
@@ -104,7 +83,7 @@ export default function getDocument(item, assetID) {
           }),
         ],
       }),
-      ...((item.created || item.madeAfter || item.madeBefore) && {
+      ...(date && {
         timespan: [
           {
             _key: nanoid(),
