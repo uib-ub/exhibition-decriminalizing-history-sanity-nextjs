@@ -3,8 +3,11 @@ import { Box, Grid, Flex, Heading, Spacer } from '@chakra-ui/react'
 import Source from './Source'
 import TextBlocks from '../TextBlocks'
 import { GetImage } from '../../lib/sanity.server'
+import { useRouter } from 'next/router'
 
 export default function SingleObject(props) {
+  const { locale, defaultLocale } = useRouter
+    ()
   if ((!props && !props.item) || props.disabled === true) {
     return null
   }
@@ -67,7 +70,7 @@ export default function SingleObject(props) {
           fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'xl' }}
           mb={1}
         >
-          {forseesUseOf.label.no}
+          {forseesUseOf.label[locale] ?? forseesUseOf.label[defaultLocale]}
         </Heading>
 
         {forseesUseOf?.referredToBy && (

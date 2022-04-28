@@ -1,8 +1,11 @@
 import Link from '../Link'
 import { Text, Icon, Flex } from '@chakra-ui/react'
 import { BsInfoCircle } from 'react-icons/bs'
+import { useRouter } from 'next/router'
 
 export default function Source(props) {
+  const { locale, defaultLocale } = useRouter()
+
   if (!props) {
     return null
   }
@@ -20,11 +23,11 @@ export default function Source(props) {
       <Text fontSize={{ base: 'xs', sm: 'xs', md: 'sm', xl: 'sm' }}>
         <i>
           <Link href={`/id/${_id}`} isExternal>
-            {label?.no ?? 'Mangler norsk tittel'}
+            {label[no] ?? label[defaultLocale]}
           </Link>
         </i>
 
-        {owner?.length && `. ${owner[0].label?.no ?? 'Mangler norsk tittel'}.`}
+        {owner?.length && `. ${owner[0].label[no] ?? owner[0].label[defaultLocale]}.`}
       </Text>
     </Flex>
   )

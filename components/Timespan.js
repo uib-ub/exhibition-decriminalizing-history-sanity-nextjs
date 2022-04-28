@@ -1,8 +1,11 @@
 import { Box, Flex } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 // import TextBlocks from './TextBlocks'
 import Date from './Date'
 
 export default function Timespan(props) {
+  const { locale, defaultLocale } = useRouter()
+
   if (!props && props.timespan) {
     return null
   }
@@ -50,7 +53,7 @@ export default function Timespan(props) {
             </Flex>
           )}
           {/* TODO: add popover with information about the timespan?
-          {time.description?.no && <TextBlocks blocks={time.description.no} />} */}
+          {time.description && <TextBlocks blocks={time.description[locale]} />} */}
         </Flex>
       ))}
     </Box>

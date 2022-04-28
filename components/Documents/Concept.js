@@ -1,12 +1,15 @@
 import { Box, Container, Heading } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
 import Cards from '../Cards'
+import { useRouter } from 'next/router'
 
 export default function Concept(item) {
+  const { locale, defaultLocale } = useRouter()
+
   return (
     <Container maxW="full" py="10" centerContent>
       <Heading pb="10" fontSize={['2xl', '4xl', '5xl', '6xl']}>
-        {item.label.no}
+        {item?.label?.[locale] ?? item?.label?.[defaultLocale]}
       </Heading>
 
       <Box maxW="2xl">

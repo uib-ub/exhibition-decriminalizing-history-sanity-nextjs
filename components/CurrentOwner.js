@@ -1,7 +1,10 @@
+import { useRouter } from 'next/router';
 import { Heading, Wrap, WrapItem } from '@chakra-ui/react'
 import Link from './Link'
 
 export default function CurrentOwner({ owners }) {
+  const { locale, defaultLocale } = useRouter();
+
   if (!owners) {
     return null
   }
@@ -15,7 +18,7 @@ export default function CurrentOwner({ owners }) {
         {owners.map((owner) => (
           <WrapItem key={owner._id}>
             <Link fontSize="sm" key={owner._id} href={`/id/${owner._id}`}>
-              {owner.label.no}
+              {owner.label[locale] ?? owner.label[defaultLocale]}
             </Link>
           </WrapItem>
         ))}

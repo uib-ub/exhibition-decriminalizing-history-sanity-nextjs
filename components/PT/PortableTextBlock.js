@@ -27,7 +27,7 @@ import {
 } from '../Sections'
 import ActorInsert from './Inserts/ActorInsert'
 import PlaceInsert from './Inserts/PlaceInsert'
-import { getFootnotesNumberArray } from '../../lib/utils'
+import { getFootnotesNumberArray } from '../../lib/functions'
 
 const BlockContent = require('@sanity/block-content-to-react')
 

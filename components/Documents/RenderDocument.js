@@ -44,6 +44,7 @@ RenderDocument.propTypes = {
       _type: PropTypes.string,
       _key: PropTypes.string,
       document: PropTypes.instanceOf(PropTypes.object),
+      locale: PropTypes.string,
     }),
   ),
 }

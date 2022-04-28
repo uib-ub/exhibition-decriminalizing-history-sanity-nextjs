@@ -6,8 +6,11 @@ import RenderMergedActivityStreamList from '../ActivityStream/MergedActivityStre
 import { GetImage } from '../../lib/sanity.server'
 import Members from '../Members'
 import Date from '../Date'
+import { useRouter } from 'next/router'
 
 export default function Actor(item) {
+  const { locale, defaultLocale } = useRouter()
+
   if (!item) {
     return null
   }
@@ -18,7 +21,7 @@ export default function Actor(item) {
         {item.image && (
           <Box mr="4" w="3xs" position="relative">
             <Image
-              alt={item.label.no}
+              alt={item.label[locale] ?? item.label[defaultLocale]}
               {...GetImage(item.image)}
               layout="responsive"
               objectFit="contain"
@@ -48,7 +51,7 @@ export default function Actor(item) {
 
         <Box pt="2">
           <Heading fontSize={['2xl', '4xl', '4xl', '5xl']}>
-            <a>{item.label.no}</a>
+            <a>{item.label[locale] ?? item.label[defaultLocale]}</a>
           </Heading>
 
           {item.shortDescription && <Text>{item.shortDescription}</Text>}
@@ -57,7 +60,7 @@ export default function Actor(item) {
             {item.hasType &&
               item.hasType.map((type) => (
                 <Badge key={type._id} borderRadius="full" px="2">
-                  {type.label?.no}
+                  {type.label[locale] ?? type.label[defaultLocale]}
                 </Badge>
               ))}
           </Box>

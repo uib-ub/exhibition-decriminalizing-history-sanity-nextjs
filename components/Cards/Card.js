@@ -35,9 +35,11 @@ import { VscJson } from 'react-icons/vsc' */
 import TextBlocks from '../TextBlocks'
 import CardImage from './CardImage'
 import Timespan from '../Timespan'
+import { useRouter } from 'next/router'
 
 
 export default function Card(props) {
+  const { locale, defaultLocale } = useRouter()
   const bg = useColorModeValue('white', 'transparent')
   const color = useColorModeValue('gray.600', 'gray.200')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
@@ -114,7 +116,7 @@ export default function Card(props) {
       <LinkBox>
         {image && (
           <Box bgColor="gray.100">
-            <CardImage id={_id} label={label.no ?? label} url={image} />
+            <CardImage id={_id} label={label[locale] ?? label[defaultLocale]} url={image} />
           </Box>
         )}
 
@@ -129,7 +131,7 @@ export default function Card(props) {
             lineHeight="tight"
           >
             <NextLink href={`${getBase(_type)}${encodeURIComponent(_id)}`} passHref>
-              <LinkOverlay>{label.no ?? label}</LinkOverlay>
+              <LinkOverlay>{label[locale] ?? label[defaultLocale]}</LinkOverlay>
             </NextLink>
           </Heading>
 
@@ -147,11 +149,10 @@ export default function Card(props) {
           {creation && creation[0].creators && (
             <Text fontSize={['xs', 'sm', 'sm', 'sm']} color={color} fontFamily="Montserrat" mb="1">
               {creation[0].creators
-                .filter((creator) => creator.name.no != 'Ukjent')
                 .map((creator, index) => (
                   <span key={creator._id}>
                     {index === 0 ? '' : ', '}
-                    {creator.name.no ?? creator.name}
+                    {creator.name[lobale] ?? creator.name[defaultLocale]}
                   </span>
                 ))}
             </Text>
@@ -174,7 +175,7 @@ export default function Card(props) {
                   fontSize={['xs', 'xs', 'xs', 'xs']}
                   colorScheme={tagColor}
                 >
-                  {type.label.no}
+                  {type.label[locale] ?? type.label[defaultLocale]}
                 </Tag>
               ))}
             </HStack>

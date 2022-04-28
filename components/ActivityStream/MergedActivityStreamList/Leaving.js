@@ -1,10 +1,12 @@
 import { Box } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import Link from '../../Link'
 import Timespan from '../../Timespan'
 
 export default function Leaving(props) {
-  // console.log(props)
-  if (!props.separated) {
+  const { locale, defaultLocale } = useRouter()
+
+  if (!props && !props.separated) {
     return null
   }
   const { separated, separatedFrom, timespan } = props
@@ -13,10 +15,10 @@ export default function Leaving(props) {
     <>
       <Timespan display="inline-block" fontWeight="bolder" timespan={timespan} />
       <Box>
-        <Link href={`id/${separated._id}`}>{separated.label.no ?? 'Mangler norsk navn'}</Link>{' '}
+        <Link href={`id/${separated._id}`}>{separated.label[locale] ?? separated.label[defaultLocale]}</Link>{' '}
         forlater{' '}
         <Link href={`id/${separatedFrom._id}`}>
-          {separatedFrom.label.no ?? 'Mangler norsk navn'}
+          {separatedFrom.label[locale] ?? separatedFrom.label[defaultLocale]}
         </Link>
       </Box>
     </>

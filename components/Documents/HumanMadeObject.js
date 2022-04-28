@@ -27,16 +27,18 @@ import Homepage from '../Homepage'
 import Subject from '../Subject'
 import CurrentOwner from '../CurrentOwner'
 import Description from '../Description'
+import { useRouter } from 'next/router'
 
 const MiradorWithNoSSR = dynamic(() => import('../MiradorViewer'), { ssr: false })
 
 export default function HumanMadeObject(item) {
+  const { locale, defaultLocale } = useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { hasCopied, onCopy } = useClipboard(JSON.stringify(item, null, 2))
 
   return (
     <Grid
-      w="100%"
+      maxW={'2xl'}
       p={5}
       gridGap={{ base: 0 }}
       alignContent="start"
@@ -45,7 +47,7 @@ export default function HumanMadeObject(item) {
     >
       <Container maxW="full" gridArea="metadata" p="0">
         <Heading fontFamily="EB Garamond" fontWeight="thin" mt={5} mb={5}>
-          {item.label.no}
+          {item.label[locale] ?? item.label.en}
 
           <Button variant="link" size="lg" onClick={onOpen}>
             <Icon as={BiDotsVerticalRounded} />

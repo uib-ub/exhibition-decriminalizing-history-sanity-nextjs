@@ -1,9 +1,12 @@
 import { Box, Heading, Wrap, Tag, TagLabel, Avatar } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import { urlFor } from '../../../lib/sanity'
 import Link from '../../Link'
 import Timespan from '../../Timespan'
 
 export default function BeginningOfExistence(props) {
+  const { locale, defaultLocale } = useRouter()
+
   if (!props) {
     return null
   }
@@ -35,7 +38,7 @@ export default function BeginningOfExistence(props) {
                 size="xs"
                 ml={-1}
                 mr={2}
-                name={assignment.assignedActor.label.no}
+                name={assignment.assignedActor.label[locale] ?? assignment.assignedActor.label[defaultLocale]}
                 src={urlFor
                   .image(assignment.assignedActor.image)
                   .height(300)
@@ -44,7 +47,7 @@ export default function BeginningOfExistence(props) {
               />
               <TagLabel>
                 <Link href={`/id/${assignment.assignedActor._id}`}>
-                  {assignment.assignedActor.label.no}
+                  {assignment.assignedActor.label[locale] ?? assignment.assignedActor.label[defaultLocale]}
                 </Link>
               </TagLabel>
             </Tag>

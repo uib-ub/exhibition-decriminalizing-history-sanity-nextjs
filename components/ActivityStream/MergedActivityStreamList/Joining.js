@@ -1,10 +1,11 @@
 import { Box } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import Link from '../../Link'
 import Timespan from '../../Timespan'
 
 export default function Joining(props) {
-  // console.log(props)
-  if (!props.joined) {
+  const { locale, defaultLocale } = useRouter()
+  if (!props && !props.joined) {
     return null
   }
   const { joined, joinedWith, timespan } = props
@@ -13,8 +14,8 @@ export default function Joining(props) {
     <>
       <Timespan display="inline-block" fontWeight="bolder" timespan={timespan} />
       <Box>
-        <Link href={`id/${joined._id}`}>{joined.label.no ?? 'Mangler norsk navn'}</Link> blir medlem
-        av <Link href={`id/${joinedWith._id}`}>{joinedWith.label.no ?? 'Mangler norsk navn'}</Link>
+        <Link href={`id/${joined._id}`}>{joined.label[locale] ?? joined.label[defaultLocale]}</Link> blir medlem
+        av <Link href={`id/${joinedWith._id}`}>{joinedWith.label[locale] ?? joinedWith.label[defaultLocale]}</Link>
       </Box>
     </>
   )

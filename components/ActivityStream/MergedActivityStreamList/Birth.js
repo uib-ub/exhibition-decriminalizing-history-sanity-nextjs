@@ -1,10 +1,11 @@
 import { Box } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import Link from '../../Link'
 import Timespan from '../../Timespan'
 
 export default function Birth(props) {
-  // console.log(JSON.stringify(props, null, 2))
-  if (!props.broughtIntoLife) {
+  const { locale, defaultLocale } = useRouter()
+  if (!props && !props.broughtIntoLife) {
     return null
   }
 
@@ -15,9 +16,9 @@ export default function Birth(props) {
       <Timespan display="inline-block" fontWeight="bolder" timespan={timespan} />
       <Box>
         <Link href={`id/${broughtIntoLife._id}`}>
-          {broughtIntoLife.label.no ?? 'Mangler norsk navn'}
+          {broughtIntoLife.label[locale] ?? broughtIntoLife.label[defaultLocale]}
         </Link>{' '}
-        blir født{tookPlaceAt ? ` i ${tookPlaceAt[0].label.no}` : ''}.
+        blir født{tookPlaceAt ? ` i ${tookPlaceAt[0].label[locale] ?? tookPlaceAt[0].label[defaultLocale]}` : ''}.
       </Box>
     </>
   )

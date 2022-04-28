@@ -1,7 +1,7 @@
 // import Head from 'next/head'
 // import { NextSeo } from 'next-seo'
 import { usePreviewSubscription } from '../lib/sanity'
-import filterDataToSingleItem from '../lib/functions/filterDataToSingleItem'
+import { filterDataToSingleItem } from '../lib/functions'
 import { getClient } from '../lib/sanity.server'
 import { groq } from 'next-sanity'
 import { routeQuery } from '../lib/queries/routeQuery'
@@ -84,7 +84,7 @@ export default function Page({ data, preview }) {
   // It'll be completely blank when they start!
   return (
     <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <pre>{JSON.stringify(page, null, 2)}</pre>
     </div>
   )
 }

@@ -1,10 +1,12 @@
 import { Box } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import Link from '../../Link'
 import Timespan from '../../Timespan'
 
 export default function Death(props) {
-  // console.log(props)
-  if (!props.deathOf) {
+  const { locale, defaultLocale } = useRouter()
+
+  if (!props && !props.deathOf) {
     return null
   }
   const { deathOf, timespan, tookPlaceAt } = props
@@ -13,8 +15,8 @@ export default function Death(props) {
     <>
       <Timespan display="inline-block" fontWeight="bolder" timespan={timespan} />
       <Box>
-        <Link href={`id/${deathOf._id}`}>{deathOf.label.no ?? 'Ups! Mangler norsk navn'}</Link> dør
-        {tookPlaceAt ? ` i ${tookPlaceAt[0].label.no}` : ''}.
+        <Link href={`id/${deathOf._id}`}>{deathOf.label[locale] ?? deathOf.label[defaultLocale]}</Link> dør
+        {tookPlaceAt ? ` i ${tookPlaceAt[0].label[locale] ?? tookPlaceAt[0].label[defaultLocale]}` : `${tookPlaceAt[0].label[locale] ?? tookPlaceAt[0].label[defaultLocale]}`}.
       </Box>
     </>
   )

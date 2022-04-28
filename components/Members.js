@@ -1,8 +1,11 @@
 import { urlFor } from '../lib/sanity'
 import { Avatar, Box, Heading, Wrap, Tag, TagLabel } from '@chakra-ui/react'
 import Link from './Link'
+import { useRouter } from 'next/router';
 
 export default function Members({ data }) {
+  const { locale, defaultLocale } = useRouter();
+
   if (!data) {
     return null
   }
@@ -19,11 +22,11 @@ export default function Members({ data }) {
               size="xs"
               ml={-1}
               mr={2}
-              name={actor.no}
+              name={actor[locale] ?? actor[defaultLocale]}
               src={urlFor(actor.image).height(300).width(300).url()}
             />
             <TagLabel>
-              <Link href={`/id/${actor._id}`}>{actor.label.no}</Link>
+              <Link href={`/id/${actor._id}`}>{actor.label[locale] ?? actor.label[defaultLocale]}</Link>
             </TagLabel>
           </Tag>
         ))}

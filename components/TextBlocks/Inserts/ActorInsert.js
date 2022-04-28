@@ -2,8 +2,10 @@ import Image from 'next/image'
 import { Container, Box, Flex, Heading, HStack, Text, useColorModeValue } from '@chakra-ui/react'
 import Link from '../../Link'
 import { GetImage } from '../../../lib/sanity.server'
+import { useRouter } from 'next/router'
 
 export default function ActorInsert(props) {
+  const { locale, defaultLocale } = useRouter()
   const color = useColorModeValue('gray.600', 'gray.200')
 
   if (!props) {
@@ -18,7 +20,7 @@ export default function ActorInsert(props) {
         {/* {image && (
           <Box mr="4">
             <Image
-              alt={label.no}
+              alt={label[locale]}
               {...GetImage(image)}
               layout="intrinsic"
               objectFit="cover"
@@ -29,14 +31,14 @@ export default function ActorInsert(props) {
         )} */}
         <Box>
           <Heading fontSize={['2xl', null, '3xl', null]} mb="1">
-            <Link href={`/id/${_id}`}>{label.no}</Link>
+            <Link href={`/id/${_id}`}>{label[locale] ?? label[defaultLocale]}</Link>
           </Heading>
           {memberOf &&
             memberOf.map((org) => (
               <HStack key={org._id} spacing={4} pb="1" justifyContent="baseline">
                 {org.image && (
                   <Image
-                    alt={label.no}
+                    alt={label[locale] ?? label[defaultLocale]}
                     {...GetImage(org.image)}
                     layout="fixed"
                     /* sizes="(max-width: 800px) 100vw, 800px" */
@@ -46,7 +48,7 @@ export default function ActorInsert(props) {
                   />
                 )}
                 <Heading fontSize={['lg', null, 'xl', null]} color={color} display="block">
-                  {org.label.no}
+                  {org.label[locale] ?? org.label[defaultLocale]}
                 </Heading>
               </HStack>
             ))}

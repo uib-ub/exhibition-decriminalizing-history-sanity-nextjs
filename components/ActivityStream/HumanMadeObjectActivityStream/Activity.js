@@ -23,9 +23,12 @@ import Timespan from '../../Timespan'
 import TextBlocks from '../../TextBlocks'
 import Map from '../../Map'
 import HasType from '../../HasType'
-import { capitalize } from '../../../lib/utils'
+import { capitalize } from '../../../lib/functions'
+import { useRouter } from 'next/router'
 
 export default function Activity({ data }) {
+  const { locale, defaultLocale } = useRouter()
+
   if (!data) {
     return null
   }
@@ -62,7 +65,7 @@ export default function Activity({ data }) {
               <TagLeftIcon boxSize="12px" as={SunIcon} />
               <TagLabel>
                 <Link href={`/id/${place._id}`}>
-                  <a>{place.label.no}</a>
+                  <a>{place.label[locale] ?? place.label[defaultLocale]}</a>
                 </Link>
               </TagLabel>
             </Tag>
@@ -81,7 +84,7 @@ export default function Activity({ data }) {
                   size="xs"
                   ml={-1}
                   mr={2}
-                  name={assignment.assignedActor.label.no}
+                  name={assignment.assignedActor.label[locale] ?? assignment.assignedActor.label[defaultLocale]}
                   src={urlFor
                     .image(assignment.assignedActor.image)
                     .height(300)
@@ -90,7 +93,7 @@ export default function Activity({ data }) {
                 />
                 <TagLabel>
                   <Link href={`/id/${assignment.assignedActor._id}`}>
-                    {assignment.assignedActor.label.no}
+                    {assignment.assignedActor.label[locale] ?? assignment.assignedActor.label[defaultLocale]}
                   </Link>
                 </TagLabel>
               </Tag>
@@ -104,7 +107,7 @@ export default function Activity({ data }) {
             <Popover>
               <PopoverTrigger>
                 <Avatar
-                  name={data.target.label.no}
+                  name={data.target.label[locale] ?? data.target.label[defaultLocale]}
                   src={urlFor(data.target.image).height('300').width('300').url()}
                 />
               </PopoverTrigger>
@@ -115,7 +118,7 @@ export default function Activity({ data }) {
                   <PopoverCloseButton />
                   <PopoverBody>
                     <Link key={data.target._id} href={`/id/${data.target._id}`}>
-                      <a>{data.target.label.no}</a>
+                      <a>{data.target.label[locale] ?? data.target.label[defaultLocale]}</a>
                     </Link>
                   </PopoverBody>
                 </PopoverContent>
@@ -128,7 +131,7 @@ export default function Activity({ data }) {
       {data.movedTo && (
         <p>
           <span role="img">➡️</span>
-          <Link href={`/id/${data.movedTo._id}`}>{data.movedTo.label.no}</Link>
+          <Link href={`/id/${data.movedTo._id}`}>{data.movedTo.label[locale] ?? data.movedTo.label[defaultLocale]}</Link>
         </p>
       )}
 
@@ -136,7 +139,7 @@ export default function Activity({ data }) {
         data.observedDimension.map((dimension) => (
           <span key={dimension._key}>
             <strong>{dimension.hasType}:</strong>
-            {dimension.value} {dimension.hasUnit.no}
+            {dimension.value} {dimension.hasUnit.label[locale] ?? dimension.hasUnit.label[defaultLocale]}
           </span>
         ))}
 
