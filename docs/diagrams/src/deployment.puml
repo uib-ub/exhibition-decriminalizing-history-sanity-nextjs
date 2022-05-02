@@ -1,0 +1,95 @@
+@startuml "deployment"
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Deployment.puml
+!define NREC_LOGO img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAfCAYAAAClDZ5ZAAAAAXNSR0IArs4c6QAAAXZJREFUWEfV1+sNgyAQAGDYpXs4UJt0FpN2H52j7kJzVCwPgTs4iPRvVfi8F0pR8ltXlb1tmmT2GsYLaIthAP7mOoHwkBKEQXXA4CA1iE6YPIQD0QGThsQQkCqcQAZoOQQWb4GB5xbUVB3kQpg4JPW2p0ne7rPa3s/f/ZTIUNKSEJkqCNz8AQwVgsX3gsB+yFGxN4d5AUhMVURMsyFhIC0fs9peyLTsCSFFZocIlYgmcvP2aYglIqTIWBDnBUQOkNBU7L+O6HvXhxBk3voLoDEexGBiz4sdkH2QC8Eg9oEVXVgKofM/cSqAGoHUqv3ZmD8Ei8hBcp3sJCI1IIOhDzQEJFn8zBCzVjNIFNMMQkkp65SKLc5gxjSAwLby3yPItpjKc41ZFiWk1CdbrmJ35gj2zXIUpO5kI0P8wTdsRPxhOTzkmOJMA7F7jQT1BS2GYbLbkdZdq0fB1zSL3L3QFYeHuEeUgaMSQEZLsfQxfk/Gq9fM2cfVF6rBHOmyKLuMAAAAAElFTkSuQmCC
+!define SANITY img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==
+!define VERCEL img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABU0lEQVRoQ+2ZWwqDMBBFR92j4joU3IKgCxFdo6akoNjSVmcyNxWZgF+dPM49yfw0ISJHNxiJgVzMohm5mBAyI2YElIBdLVCw4mXNiDg60EQzAgpWvKwZORudc478l6bp2SmiOqgRf/h5np8HSxK/FW5AQbyJ/UDCwECqqqK+719AvKF3OC1HMJBvB0ZZgYD8Sn0YBirLUkvEtk50ENTDVwc58wYQ7VgVZN9uj+6O9ltRBTljA9WO1UDquqau645EwNqxGgjXxkqkdcVUQKQQHmYcRyqKgmXyU/HfQbTacTBIiI01WY12HATCabdHdyf0rQSBaNjQasdikKZpqG3bo6BZv2dZRsuysOZs3U/6/4i2jdB2LDKCgvAw0zRRnudsK5cDkbZjEQg7rggTDCRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFtzHyAKakjAEBm5CuAAAAAElFTkSuQmCC
+!define NEXT img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC
+!define GITHUB img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACZElEQVRoQ+2YzUpCURDHJ/AZJNBcSJJIubBoUSs3iZCvEO0qyTfwI30Hoy8JcxFucivUE0RPIRYhIgjuXBhXuGCXe87MnHO4qFx3cubMf37zn+Px3o3ZbDaDNfhs+CBL5qLvyJIZAr4ja+1Ir9eDw4MDEuPvYECKowYZGa3NYJCq5xpnAkoLRBfASaUDpATy3e/Dfiql5YJosyoMG8S0C25AT40GnOZyrEaxQLyAsKs/yWTgpdUiw5BBvISwq6/c3MBVPk+C0QKx5rlSLsP93R1JTBT03GxCNpsFt2ZRzwwJROSGU4TrGnU/BQYFkRVHEeBYJdLaSybh/eNDmkoZJJ1Ow2u7zakTjdVpmhQEGxWvHLE6gGmtDAgGowyCdQidI0GA6ngpgVwXClAslVRrle4zDqKa0ASdSPvi8hKqtZqrhNCRZQSRnRMfxMQIiXKoTIPvyMo4sptIwHA4FNa7FvcIdsvquKVyPiw9pQvRLtS0Kzr/7bRATDqDQWBaUpDRaASJeBydFB1nxuMx7MRi2hrs5xG7aFkH3zodODo+di2uVCzC48MDWrgzAGsWCmIldBaNwWCilDFaBMHyoYfdTuYU/vz6gkgkMl92rvV/fiAQCEg7vhUKwXQ6JbtiDETkivXGMRQOw/nZGXS7XfQpbrFyqisUCLIjImeoIm6tp4Bw8pPOiKyTHDGOI9y8bBC3MeMeTFM5FnWVQGSFUDtJfelH/UVQBrEEJpMJbEej/7RUQaj7RGBaIHbS23odatXq/Cu1INsRajzmjBEQTMSLdR/Eiy5zNHxHON3yItZ3xIsuczT+ANqRwHq+fLT7AAAAAElFTkSuQmCC
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define GOVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/govicons
+!include DEVICONS/google_cloud_platform.puml
+!include GOVICONS/cloud_o.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+AddElementTag("fallback", $bgColor="#c0c0c0")
+AddRelTag("fallback", $textColor="#c0c0c0", $lineColor="#438DD5")
+
+WithoutPropertyHeader()
+
+' calculated legend is used (activated in last line)
+' LAYOUT_WITH_LEGEND()
+
+title Deployment Diagram for Muna
+
+Deployment_Node(vercel, "Vercel", "Node", "Vercel cloud", "VERCEL"){
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(vercel_studio, "studio", "Node"){
+      Deployment_Node_R(vercel_studio_server, "studio_server", "Node"){
+        Container(vercel_studio_spa, "Single Page Application", "JavaScript and React", "Provides all of the content editing functionality to the editor via their web browser.", "SANITY")
+      }
+    }
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(vercel_web, "web", "Node", "Provides the Next app to the visitors web browser and runs the Next API."){
+      Deployment_Node_R(vercel_web_server, "web_server", "Node"){
+        Container(vercel_web_next_app, "Next Application", "JavaScript and React", "Frontend SSG Next app.", "NEXT")
+        Container(vercel_web_next_app_api, "Next API", "JavaScript and React", "Provides manifests to the visitors app via their web browser.", "NEXT")
+      }
+    }
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(vercel_manifest, "marcus manifest", "Node"){
+      Deployment_Node_R(vercel_manifest_server, "manifest_server", "Node"){
+        Container(vercel_manifest_next_app_api, "Next API", "JavaScript and React", "Provides manifests to the visitors app via their web browser.", "NEXT")
+      }
+    }
+}
+
+Deployment_Node(sanity, "Sanity", "Go", "Google Cloud", "google_cloud_platform"){
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(sanity_API, "sanity-api", "Node", "An API residing in the Google Cloud."){
+      Container(sanitydb_api, "Sanity API", "JavaScript and React", "Provides all of the content editing functionality to the editor via their web browser.", "SANITY")
+    }
+    AddProperty("Location", "Google Cloud")
+    Deployment_Node_L(sanitydb_production, "sanity-dataset-production", "PostgreSQL", "The primary database server."){
+      ContainerDb(db_production, "Database", "Relational Database Schema", "Stores content", "SANITY")
+    }
+    AddProperty("Location", "Google Cloud")
+    Deployment_Node_L(sanitydb_test, "sanity-dataset-test", "PostgreSQL", "The primary database server."){
+      ContainerDb(db_test, "Database", "Relational Database Schema", "Stores content", "SANITY")
+    }
+}
+
+Deployment_Node(editor_device, "Editor's computer", "Mircosoft Windows, Apple macOS or mobile device"){
+    Deployment_Node(editor_browser, "Web Browser", "Google Chrome, Mozilla Firefox, Apple Safari or Microsoft Edge"){
+        Container(editor_spa, "Single Page Application", "JavaScript and React", "Provides all of the content editing functionality to the editor via their web browser.", "SANITY")
+    }
+}
+
+Deployment_Node(user_device, "Visitor's computer", "Mircosoft Windows, Apple macOS or mobile device"){
+    Deployment_Node(user_browser, "Web Browser", "Google Chrome, Mozilla Firefox, Apple Safari or Microsoft Edge"){
+        Container(user_spa, "Next Application", "JavaScript and React", "Frontend SSG Next app.", "NEXT")
+    }
+}
+
+Deployment_Node(nrec_cloud, "NREC", "Openstack", "UiB cloud service", "NREC_LOGO"){
+    Deployment_Node(nrec_instance, "Instance", "Fedora?"){
+        Container(proxy, "Proxy service", "Apache", "Reverse proxy used to change domain to UiB..", "NEXT")
+    }
+}
+
+Rel_D(vercel_studio_spa, editor_spa, "Delivers the app to the editors's web browser")
+Rel_D(vercel_web_next_app, proxy, "Delivers the app to the users's web browser")
+Rel_D(vercel_web_next_app_api, proxy, "Delivers data to the users's web browser")
+Rel_D(proxy, user_spa, "Delivers the app to the users's web browser")
+Rel_D(proxy, user_spa, "Delivers data to the users's web browser")
+Rel_D(sanitydb_api, vercel_web_next_app, "Delivers data to the web app build step")
+Rel_D(vercel_manifest_next_app_api, user_spa, "Delivers manifests to the web app")
+Rel_D(sanitydb_api, editor_spa, "Delivers data to the editor's SPA")
+Rel_D(db_production, sanitydb_api, "Delivers data to the api")
+Rel_D(db_test, sanitydb_api, "Delivers data to the api")
+
+SHOW_LEGEND()
+@enduml

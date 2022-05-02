@@ -1,0 +1,12 @@
+@startuml
+participant      ImportTool as plugin
+entity       NPM       as npm
+entity    Code    as code
+participant     "upgradeData()"     as upgrade
+database    Database    as db
+plugin -> npm : Publish v.X 
+code -> npm : Upgrade to v.X
+code -> upgrade : Call
+upgrade -> db : Map data to new model
+upgrade <- db : Response
+@enduml

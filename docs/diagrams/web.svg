@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="588px" preserveAspectRatio="none" style="width:280px;height:588px;background:#FFFFFF;" version="1.1" viewBox="0 0 280 588" width="280px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="271" x="2" y="17.4023">Container diagram for Web site</text><!--MD5=[84dda40acb3410cad7262261daba2aaf]
+cluster c1--><rect fill="#FFFFFF" height="204" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="198" x="45.5" y="28.1992"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="35" x="127" y="45.668">next</text><text fill="#444444" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="120.5" y="60.6445">[System]</text><!--MD5=[08af8945a84acfe1eabc0963aa87c412]
+entity web--><rect fill="#438DD5" height="135.9531" style="stroke:#3C7FC0;stroke-width:1.5;" width="166" x="61.5" y="80.1992"/><image height="50" width="50" x="119.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABfUlEQVR4XtWOAY7DIAwE+/9P36mVEm0HQ7wcTriRRmo9hvB6recn4bbwoa6Pwses8jb44QrL4QerXQ4/cKfL4MVP+Sd42dNOwUt20YKHd9KCh3czBQ/t6hAu7+wQLu9uCJf+iw1cuEOFLesXjI4K25UKW9YvGB0VtisVNscTBkfCPlJhczxhcIzgTk+FzfEDh64R3OmpsDl+4NC1B/ciFTbXZuA6grtUYXNtBq5K9H+kwubaDFyV0SxSYXNtBq5KNHvDM9Eem2szcFUyc3cnazNwVZyW6Y7NwFUZtTejzubaDFwVtqs+aq7NwFVhy+z05o4nDI4KW7TzJuqcOZ4wOCps2b1o5njC4KiwUYVt1gYuZFXYIhW2GRu4kFVhi1TYZgzhUsYDzkcqbI5duFipwpZ1CJerVNgyXsIDlSpsI9PwYKUKW08LHq70gPPIKXhJlQpbb8+Gl1WpsLFPw0urPOjNl8DLqzzQ3yXww6u9HT5glY/Bh8y6FXzcyKX8AqAq6Wv25cYoAAAAAElFTkSuQmCC" y="90.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="36" x="126.5" y="155.668">Next</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="70" x="109.5" y="170.6445">[React 16+]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="146.5" y="186.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="75.5" y="203.1992">SSG web application.</text><!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+entity user--><rect fill="#08427B" height="119.8203" style="stroke:#073B6F;stroke-width:1.5;" width="120" x="84.5" y="310.1992"/><image height="48" width="48" x="120.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="320.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="53" x="118" y="383.668">Visitor</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="146.5" y="400.5781"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="98.5" y="417.0664">Happy reader.</text><!--MD5=[3c8194be897d119737f0a87f1b26a7c9]
+reverse link web to user--><path d="M144.5,224.5522 C144.5,252.4272 144.5,283.6092 144.5,309.8632 " fill="none" id="web-backto-user" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="144.5,216.4022,141.5,224.4022,147.5,224.4022,144.5,216.4022" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="153.5" y="261.3008">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="145.5" y="275.4336">[HTTPS]</text><rect fill="#FFFFFF" height="129.418" rx="5" ry="5" style="stroke:#FFFFFF;stroke-width:1.0;" width="146" x="81.5" y="443.0195"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="87.5" y="463.5547">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="142.5" y="463.5547"/><rect fill="#08427B" height="16.4883" style="stroke:none;stroke-width:1.0;" width="134" x="87.5" y="466.5078"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="91.5" y="480.043">person</text><rect fill="#1168BD" height="16.4883" style="stroke:none;stroke-width:1.0;" width="134" x="87.5" y="482.9961"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="91.5" y="496.5313">system</text><rect fill="#438DD5" height="16.4883" style="stroke:none;stroke-width:1.0;" width="134" x="87.5" y="499.4844"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="91.5" y="513.0195">container</text><rect fill="#686868" height="16.4883" style="stroke:none;stroke-width:1.0;" width="134" x="87.5" y="515.9727"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="91.5" y="529.5078">external person</text><rect fill="#999999" height="16.4883" style="stroke:none;stroke-width:1.0;" width="134" x="87.5" y="532.4609"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="91.5" y="545.9961">external system</text><rect fill="#B3B3B3" height="16.4883" style="stroke:none;stroke-width:1.0;" width="134" x="87.5" y="548.9492"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="91.5" y="562.4844">external container</text><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="450.0195" y2="450.0195"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="466.5078" y2="466.5078"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="482.9961" y2="482.9961"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="499.4844" y2="499.4844"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="515.9727" y2="515.9727"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="532.4609" y2="532.4609"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="548.9492" y2="548.9492"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="221.5" y1="565.4375" y2="565.4375"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="87.5" x2="87.5" y1="450.0195" y2="565.4375"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="221.5" x2="221.5" y1="450.0195" y2="565.4375"/><!--MD5=[237f1ae16b48c183a7e8710bf279b30e]
+@startuml "web"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+!define SANITY img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==
+!define NEXT img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+!include DEVICONS/google_cloud_platform.puml
+
+LAYOUT_TOP_DOWN()
+'LAYOUT_AS_SKETCH()
+LAYOUT_WITH_LEGEND()
+
+title Container diagram for Web site
+
+Person(user, "Visitor", "Happy reader.")
+
+System_Boundary(c1, "next", "Next app"){
+    
+    Container(web, "Next", "React 16+", "SSG web application.", "NEXT")
+
+}
+'ContainerDb_Ext(sanity_db, "Sanity Cloud Storage", "Google Cloud", "Stores metadata and files.", "SANITY")
+
+Rel_U(user, web, "Uses", "HTTPS")
+
+@enduml
+
+@startuml "web"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam shadowing<<legendArea>> false
+skinparam rectangle<<legendArea>> {
+    backgroundcolor #00000000
+    bordercolor #00000000
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    shadowing false
+    style awesome
+}
+
+skinparam person {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontColor #444444
+    BorderColor #444444
+    BackgroundColor transparent
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam actor<<container>> {
+    StereotypeFontColor #438DD5
+    FontColor #438DD5
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam person<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam actor<<external_container>> {
+    StereotypeFontColor #B3B3B3
+    FontColor #B3B3B3
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam person<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sprite $google_cloud_platform [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000001111111111111100000000000000000
+000000000000004DFFFFFFFFFFFFFFFFD300000000000000
+00000000000002FFFFFFFFFFFFFFFFFFFF20000000000000
+0000000000000BFF7EFFFFFFFFFFFFE7FFB0000000000000
+0000000000004FFE2CFFFFFFFFFFFFC2EFF4000000000000
+000000000000DFFFFFFFFFFFFFFFFFFFFFFD000000000000
+000000000007FFFFFFFFFFFFFFFFFFFFFFFF700000000000
+00000000001FFFFFFF966666666669FFFFFFF10000000000
+00000000009FFFFFFD000000000000DFFFFFF90000000000
+0000000003FFFFFFF40000000000004FFFFFFF3000000000
+000000000CFFFFFFA00000000000000AFFFFFFC000000000
+000000005FFFFFFF2000000000000002FFFFFFF500000000
+00000000EFFFFFF80000028CC82000008FFFFFFE00000000
+00000008FFFFFFE000004FFFFFF400000EFFFFFF70000000
+0000001FFFFFFF500002FFFFFFFF200005FFFFFFF1000000
+000000AFFFFFFC000009FFFFFFFF800000CFFFFFF9000000
+000000FFA6FFF300000CFFFFFFFFC000003FFF6BFF000000
+000000FFA6FFF300000CFFFFFFFFC000003FFF6AFF000000
+000000AFFFFFFC000009FFFFFFFF800000CFFFFFF9000000
+0000002FFFFFFF500002FFFFFFFF200005FFFFFFF1000000
+00000008FFFFFFE000005FFFFFF500000EFFFFFF80000000
+00000000EFFFFFF80000029CC82000008FFFFFFE00000000
+000000005FFFFFFF2000000000000001FFFFFFF500000000
+000000000CFFFFFFA00000000000000AFFFFFFC000000000
+0000000003FFFFFFF30000000000003FFFFFFF3000000000
+0000000000AFFFFFFC000000000000CFFFFFF90000000000
+00000000001FFFFFFF966666666669FFFFFFF10000000000
+000000000007FFFFFFFFFFFFFFFFFFFFFFFF700000000000
+000000000000DFFFFFFFFFFFFFFFFFFFFFFD000000000000
+0000000000005FFE2CFFFFFFFFFFFFC2EFF4000000000000
+0000000000000BFF7EFFFFFFFFFFFFE7FFB0000000000000
+00000000000002FFFFFFFFFFFFFFFFFFFF20000000000000
+000000000000004DFFFFFFFFFFFFFFFFD400000000000000
+000000000000000001111111101111100000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+
+skinparam folderBackgroundColor<<DEV GOOGLE_CLOUD_PLATFORM>> White
+
+top to bottom direction
+hide stereotype
+legend right
+|<color:#000000>**Legend**</color> |
+|<#08427B> person |
+|<#1168BD> system |
+|<#438DD5> container |
+|<#686868> external person |
+|<#999999> external system |
+|<#B3B3B3> external container |
+endlegend
+
+title Container diagram for Web site
+
+rectangle "<$person>\n==Visitor\n\n Happy reader." <<person>> as user 
+
+rectangle "==next\n<size:12>[System]</size>" <<Next app>><<boundary>> as c1 {
+    
+    rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC>\n==Next\n//<size:12>[React 16+]</size>//\n\n SSG web application." <<container>> as web 
+
+}
+
+user -UP->> web : **Uses**\n//<size:12>[HTTPS]</size>//
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: US-ASCII
+Language: nb
+Country: NO
+--></g></svg>

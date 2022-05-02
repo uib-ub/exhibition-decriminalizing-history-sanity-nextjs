@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2353px" preserveAspectRatio="none" style="width:1443px;height:2353px;background:#FFFFFF;" version="1.1" viewBox="0 0 1443 2353" width="1443px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="268" x="581" y="17.4023">Deployment Diagram for Muna</text><!--MD5=[2169e2ba97fc11945987f08918aa5115]
+cluster vercel--><rect fill="#FFFFFF" height="572" style="stroke:#A2A2A2;stroke-width:1.5;" width="1163" x="7" y="874.1992"/><image height="50" width="50" x="563.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABEklEQVR4Xt3USwqDQBRE0dYtK7gk0UVqMKNQl6R/rweVgjO5MWoIdEop3X8CwRWCKwRXCK4QXCG4QnCF4ArBFYIrBFcIrhBcIbhCCPXsui70ARDCzPP8/iHP9LMBEMLo9PNgCCGWZdHfcU/ThOsCIYT4Nr0uEEK3X9v3HdcHQeiWm14fBKFLyQYdxwjNPo/b3PS7ARCa1U6/3wmhybqu+p7ZBR/HCE1ap/fpgFCtZ8dx4H6NEKr1Tu/XCKFKxIKOY4RiNcdtbnrvBgjFoqf3r4RQZNs2fY/uPf+wPqcCQpFR0+dUQMgaufM88bxCCFmjp88rhOAKwRWCKwRXCK4QXCG4QnCF4ArBFYIrBFcIrhAsvQD7l+LtBB33mgAAAABJRU5ErkJggg==" y="876.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="50" x="563.5" y="941.668">Vercel</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="569" y="956.6445">[Node]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="590.5" y="972.7109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="546.5" y="989.1992">Vercel cloud</text><!--MD5=[e035967652f84831e910c72a13ae6b69]
+cluster vercel_studio--><rect fill="#FFFFFF" height="340" style="stroke:#A2A2A2;stroke-width:1.5;" width="296" x="850" y="1082.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="52" x="1005" y="1099.668">studio</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="1018" y="1114.6445">[Node]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="943" y="1132.7109">Location</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="42" x="1010" y="1132.7109">Cloud</text><line style="stroke:#000000;stroke-width:1.5;" x1="939" x2="1057" y1="1119.1758" y2="1119.1758"/><line style="stroke:#000000;stroke-width:1.5;" x1="939" x2="1057" y1="1135.6641" y2="1135.6641"/><line style="stroke:#000000;stroke-width:1.5;" x1="939" x2="939" y1="1119.1758" y2="1135.6641"/><line style="stroke:#000000;stroke-width:1.5;" x1="1005" x2="1005" y1="1119.1758" y2="1135.6641"/><line style="stroke:#000000;stroke-width:1.5;" x1="1057" x2="1057" y1="1119.1758" y2="1135.6641"/><!--MD5=[fc0870cd2f7aeb82bdd724fb1720b73e]
+cluster vercel_studio_server--><rect fill="#FFFFFF" height="236" style="stroke:#A2A2A2;stroke-width:1.5;" width="248" x="874" y="1162.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="110" x="943" y="1179.668">studio_server</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="1014" y="1194.6445">[Node]</text><!--MD5=[854d6a5ee877211050450762737c385b]
+cluster vercel_web--><rect fill="#FFFFFF" height="406" style="stroke:#A2A2A2;stroke-width:1.5;" width="495" x="31" y="1016.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="34" x="347.5" y="1033.668">web</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="342.5" y="1048.6445">[Node]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="381.5" y="1064.7109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="187.5" y="1081.1992">Provides the Next app to the</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="175.5" y="1097.6875">visitors web browser and runs</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="293.5" y="1114.1758">the Next API.</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="267.5" y="1132.6641">Location</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="42" x="334.5" y="1132.6641">Cloud</text><line style="stroke:#000000;stroke-width:1.5;" x1="263.5" x2="381.5" y1="1119.1289" y2="1119.1289"/><line style="stroke:#000000;stroke-width:1.5;" x1="263.5" x2="381.5" y1="1135.6172" y2="1135.6172"/><line style="stroke:#000000;stroke-width:1.5;" x1="263.5" x2="263.5" y1="1119.1289" y2="1135.6172"/><line style="stroke:#000000;stroke-width:1.5;" x1="329.5" x2="329.5" y1="1119.1289" y2="1135.6172"/><line style="stroke:#000000;stroke-width:1.5;" x1="381.5" x2="381.5" y1="1119.1289" y2="1135.6172"/><!--MD5=[9c2475f70e30f271e515529665b5e41e]
+cluster vercel_web_server--><rect fill="#FFFFFF" height="236" style="stroke:#A2A2A2;stroke-width:1.5;" width="447" x="55" y="1162.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="92" x="232.5" y="1179.668">web_server</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="285.5" y="1194.6445">[Node]</text><!--MD5=[0b507f9316ff10a92b8196f8f9314e5b]
+cluster vercel_manifest--><rect fill="#FFFFFF" height="340" style="stroke:#A2A2A2;stroke-width:1.5;" width="276" x="550" y="1082.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="138" x="619" y="1099.668">marcus manifest</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="718" y="1114.6445">[Node]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="643" y="1132.7109">Location</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="42" x="710" y="1132.7109">Cloud</text><line style="stroke:#000000;stroke-width:1.5;" x1="639" x2="757" y1="1119.1758" y2="1119.1758"/><line style="stroke:#000000;stroke-width:1.5;" x1="639" x2="757" y1="1135.6641" y2="1135.6641"/><line style="stroke:#000000;stroke-width:1.5;" x1="639" x2="639" y1="1119.1758" y2="1135.6641"/><line style="stroke:#000000;stroke-width:1.5;" x1="705" x2="705" y1="1119.1758" y2="1135.6641"/><line style="stroke:#000000;stroke-width:1.5;" x1="757" x2="757" y1="1119.1758" y2="1135.6641"/><!--MD5=[58e74150d06bcfb28b5f10edddfd8888]
+cluster vercel_manifest_server--><rect fill="#FFFFFF" height="236" style="stroke:#A2A2A2;stroke-width:1.5;" width="228" x="574" y="1162.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="130" x="623" y="1179.668">manifest_server</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="714" y="1194.6445">[Node]</text><!--MD5=[9015f15a3729514c86a438a9dbb528fb]
+cluster sanity--><rect fill="#FFFFFF" height="784" style="stroke:#A2A2A2;stroke-width:1.5;" width="531" x="906" y="28.1992"/><image height="48" width="48" x="1147.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAB6ElEQVR4Xu2Y4Y3CMAyFu0JXYIWu0BVYgRVYgRVuBVZgBVZghVvBPCW6UJ7txC1CrU79fqHivLzGsZu2k43R8YW12Q212A21+BeGfsPwyAAzDN1ut8Ph0M0EQ+73O2v5RA09Hg+eag4YzooOUUPjOGbpy+XS9/37dDYIQ3D+jeGs6BAyhGSVOXCvwzC8pvVBGIKLe4iwrkXI0IKto4EI61q0DZVl/xxIsbqiYQily6qJ0+n0UwUBPCbR7AUNQ6ZucPHNREOQ496pGUL/YL1EcHuWUiDqbalmyKym4/HIcT4I5vGp+jhugmvoer2yUiLe4sRvpxDn0D9cQ2b3O5/PFIYpcXFI4Ie2i4uskvoZhRVsQ0EVc5foHWbem9cCDENeqdM6e+noVFq97JstwDAU3IlmR8jozJr1YbYAw1COhi30tzJY16o5R0a7n3YQyJZHNYXJWoZKEihMTEObS5m3W1fb1BIue3Mm3fTMstermLENSVgFi4GV/3pjFOfuO5WOOsGWNsU1JM5OXO3hKv7xQ7cAk2XDa4Zk0S0WzAU2S31Kw5C3CVY7wsrWDvkZ83Q8l+BJPGSotICtvCjK1l6lpfrkihBvp1FD8sHnmGCyMjMMFV4fpN7Rf/HIAEsMfZXdUIvdUIvdUIsnSLuEIXTX68cAAAAASUVORK5CYII=" y="30.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="49" x="1147" y="93.668">Sanity</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="1159.5" y="108.6445">[Go]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1173.5" y="124.7109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="1124.5" y="141.1992">Google Cloud</text><!--MD5=[4cceaeea65695fff80a71c7418cc426a]
+cluster sanity_API--><rect fill="#FFFFFF" height="306" style="stroke:#A2A2A2;stroke-width:1.5;" width="248" x="1029" y="482.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="84" x="1169.5" y="499.668">sanity-api</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="1214.5" y="514.6445">[Node]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1253.5" y="530.7109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="1052.5" y="547.1992">An API residing in the Google</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="1208.5" y="563.6875">Cloud.</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1139.5" y="582.1758">Location</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="42" x="1206.5" y="582.1758">Cloud</text><line style="stroke:#000000;stroke-width:1.5;" x1="1135.5" x2="1253.5" y1="568.6406" y2="568.6406"/><line style="stroke:#000000;stroke-width:1.5;" x1="1135.5" x2="1253.5" y1="585.1289" y2="585.1289"/><line style="stroke:#000000;stroke-width:1.5;" x1="1135.5" x2="1135.5" y1="568.6406" y2="585.1289"/><line style="stroke:#000000;stroke-width:1.5;" x1="1201.5" x2="1201.5" y1="568.6406" y2="585.1289"/><line style="stroke:#000000;stroke-width:1.5;" x1="1253.5" x2="1253.5" y1="568.6406" y2="585.1289"/><!--MD5=[9df30c70b4e96a36641cdfca6e1faf95]
+cluster sanitydb_production--><rect fill="#FFFFFF" height="266" style="stroke:#A2A2A2;stroke-width:1.5;" width="235" x="1178" y="168.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="219" x="1186" y="185.668">sanity-dataset-production</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="1186" y="200.6445">[PostgreSQL]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1190" y="216.7109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="1186" y="233.1992">The primary database server.</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1190" y="251.6875">Location</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="1257" y="251.6875">Google Cloud</text><line style="stroke:#000000;stroke-width:1.5;" x1="1186" x2="1359" y1="238.1523" y2="238.1523"/><line style="stroke:#000000;stroke-width:1.5;" x1="1186" x2="1359" y1="254.6406" y2="254.6406"/><line style="stroke:#000000;stroke-width:1.5;" x1="1186" x2="1186" y1="238.1523" y2="254.6406"/><line style="stroke:#000000;stroke-width:1.5;" x1="1252" x2="1252" y1="238.1523" y2="254.6406"/><line style="stroke:#000000;stroke-width:1.5;" x1="1359" x2="1359" y1="238.1523" y2="254.6406"/><!--MD5=[e356c19cbb028a8a29a3233c79c8e3c4]
+cluster sanitydb_test--><rect fill="#FFFFFF" height="266" style="stroke:#A2A2A2;stroke-width:1.5;" width="224" x="930" y="168.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="158" x="942.5" y="185.668">sanity-dataset-test</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="942.5" y="200.6445">[PostgreSQL]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="946.5" y="216.7109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="942.5" y="233.1992">The primary database server.</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="946.5" y="251.6875">Location</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="1013.5" y="251.6875">Google Cloud</text><line style="stroke:#000000;stroke-width:1.5;" x1="942.5" x2="1115.5" y1="238.1523" y2="238.1523"/><line style="stroke:#000000;stroke-width:1.5;" x1="942.5" x2="1115.5" y1="254.6406" y2="254.6406"/><line style="stroke:#000000;stroke-width:1.5;" x1="942.5" x2="942.5" y1="238.1523" y2="254.6406"/><line style="stroke:#000000;stroke-width:1.5;" x1="1008.5" x2="1008.5" y1="238.1523" y2="254.6406"/><line style="stroke:#000000;stroke-width:1.5;" x1="1115.5" x2="1115.5" y1="238.1523" y2="254.6406"/><!--MD5=[ad98df24f76285b14ecbe510560c3fd2]
+cluster editor_device--><rect fill="#FFFFFF" height="349" style="stroke:#A2A2A2;stroke-width:1.5;" width="296" x="974" y="1533.6992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="146" x="1049" y="1551.168">Editor's computer</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="211" x="1016.5" y="1566.1445">[Mircosoft Windows, Apple macOS or</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="84" x="1080" y="1580.2773">mobile device]</text><!--MD5=[40fb275774b3f96bc9164c72eff21553]
+cluster editor_browser--><rect fill="#FFFFFF" height="251" style="stroke:#A2A2A2;stroke-width:1.5;" width="248" x="998" y="1607.6992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="105" x="1069.5" y="1625.168">Web Browser</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="188" x="1028" y="1640.1445">[Google Chrome, Mozilla Firefox,</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="179" x="1032.5" y="1654.2773">Apple Safari or Microsoft Edge]</text><!--MD5=[1d637574dbb1df8721c8d8582a81e026]
+cluster user_device--><rect fill="#FFFFFF" height="316" style="stroke:#A2A2A2;stroke-width:1.5;" width="264" x="384" y="1944.6992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="150" x="441" y="1962.168">Visitor's computer</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="211" x="410.5" y="1977.1445">[Mircosoft Windows, Apple macOS or</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="84" x="474" y="1991.2773">mobile device]</text><!--MD5=[4a847362a43a6a9bd2f185fa8ebb8133]
+cluster user_browser--><rect fill="#FFFFFF" height="218" style="stroke:#A2A2A2;stroke-width:1.5;" width="216" x="408" y="2018.6992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="105" x="463.5" y="2036.168">Web Browser</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="188" x="422" y="2051.1445">[Google Chrome, Mozilla Firefox,</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="179" x="426.5" y="2065.2773">Apple Safari or Microsoft Edge]</text><!--MD5=[b82ce5f8c2c4b192017aa9453cec030d]
+cluster nrec_cloud--><rect fill="#FFFFFF" height="366" style="stroke:#A2A2A2;stroke-width:1.5;" width="258" x="230" y="1508.1992"/><image height="31" width="50" x="334" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAfCAYAAAClDZ5ZAAABN0lEQVR4Xt2SUQ6DIBBEOUx7unqZ3khP1mZNRfpcQHCJ6CTvB9idmahzNZqmT5auxbB76E4MWEI3YrAaThcDHeE0MUgYiGcWNBONaMhzK8xFA82Id1aYiYth8ni9675MyXsTcSkMpMhzKcP7FHv28+0hcSkMpEjVVwnFO43D4kIsX4oUl5HZoWDmsLiQYYIiRWVkdsjMmIrLGQZFksE4+yvyNxNR1CMrGmu4rcHGiDORIssM9+TwPqpoGsMljJf/nzOJIrUEyQPRMIVLFAkNOGdcRPBeUcMUEkZZqhpos4ZFBO+1McshYZSFRN0vs02KMOQedhZZTQKfBkUE71MqLkoxD4xj2yI8aIFvf/Uigi9z9SLCbYoItykyY1xk/WeVyytxiyK+xNXLsMcsPuoZZlfFod5gXtEXjeR50lh9IN0AAAAASUVORK5CYII=" y="1510.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="44" x="337" y="1556.668">NREC</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="324.5" y="1571.6445">[Openstack]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="361" y="1587.7109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="301.5" y="1604.1992">UiB cloud service</text><!--MD5=[b02977221d05089906cc90e7db5d572a]
+cluster nrec_instance--><rect fill="#FFFFFF" height="219" style="stroke:#A2A2A2;stroke-width:1.5;" width="210" x="254" y="1631.1992"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="69" x="324.5" y="1648.668">Instance</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="332.5" y="1663.6445">[Fedora?]</text><!--MD5=[996eb2870b69b1c5cbfdaf8ff747286c]
+entity vercel_studio_spa--><rect fill="#438DD5" height="168.9297" style="stroke:#3C7FC0;stroke-width:1.5;" width="216" x="890" y="1213.1992"/><image height="50" width="50" x="973" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABjklEQVR4Xu2YzU7CQBRGeSoTJa4NaHwNxY2LwsqXplI0rpBLwEzOtGXa3tuZxjnJ2c39+SgNtLNZJpPJdGVXvB5CrY6yPjpcsqvsNzpcaIj79SpOIC6iJeeYwuHacp4J5eLWG2wh56qzDQzCOqEqXrxzTbJWnWtBeL4O1jTJOjUkxMnHuTe0z2DWU55X4y9IzVXh2RC+N29eH8oaFdwgbphqwG8AF6c8rwKDbB9u7IZZ4gU5y3PJwwCuu+XddAJx+SZZlyRc+po/T/M0g3HRPsrfHPaNAhcb4mfMe0s+US6kIeeMglWYchHpCnERDaPeQ+Xxu86FhlguI4Zxka8Il+sqeyaBfMJcNET2SY7QK8a6pOHykw0iMMAkg+yL1em5hiFMgvDJjfJ8F9w+h+f7uEG+FB93owYRWRMCe5gHETiwTta0IVeR9Zce0YOEBKrON3ebZiEucKCV5kEEDrWQM02oNv5gTTnPHC6gIWeMxuHj3Vumj9U6YggXLhaqvMhmr6Rof9Pe/19AJpP55/wCwk7g9HfTvaAAAAAASUVORK5CYII=" y="1223.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="193" x="901.5" y="1288.668">Single Page Application</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="126" x="935" y="1303.6445">[JavaScript and React]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1000" y="1319.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="907" y="1336.1992">Provides all of the content</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="905.5" y="1352.6875">editing functionality to the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="900" y="1369.1758">editor via their web browser.</text><!--MD5=[44c2e0cc67c284e9c6805a17a4ab2932]
+entity vercel_web_next_app--><rect fill="#438DD5" height="135.9531" style="stroke:#3C7FC0;stroke-width:1.5;" width="183" x="71.5" y="1229.6992"/><image height="50" width="50" x="138" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABfUlEQVR4XtWOAY7DIAwE+/9P36mVEm0HQ7wcTriRRmo9hvB6recn4bbwoa6Pwses8jb44QrL4QerXQ4/cKfL4MVP+Sd42dNOwUt20YKHd9KCh3czBQ/t6hAu7+wQLu9uCJf+iw1cuEOFLesXjI4K25UKW9YvGB0VtisVNscTBkfCPlJhczxhcIzgTk+FzfEDh64R3OmpsDl+4NC1B/ciFTbXZuA6grtUYXNtBq5K9H+kwubaDFyV0SxSYXNtBq5KNHvDM9Eem2szcFUyc3cnazNwVZyW6Y7NwFUZtTejzubaDFwVtqs+aq7NwFVhy+z05o4nDI4KW7TzJuqcOZ4wOCps2b1o5njC4KiwUYVt1gYuZFXYIhW2GRu4kFVhi1TYZgzhUsYDzkcqbI5duFipwpZ1CJerVNgyXsIDlSpsI9PwYKUKW08LHq70gPPIKXhJlQpbb8+Gl1WpsLFPw0urPOjNl8DLqzzQ3yXww6u9HT5glY/Bh8y6FXzcyKX8AqAq6Wv25cYoAAAAAElFTkSuQmCC" y="1239.6992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="135" x="95.5" y="1305.168">Next Application</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="126" x="100" y="1320.1445">[JavaScript and React]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="165" y="1336.2109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="81.5" y="1352.6992">Frontend SSG Next app.</text><!--MD5=[364816defee13680d2b930251acf9690]
+entity vercel_web_next_app_api--><rect fill="#438DD5" height="168.9297" style="stroke:#3C7FC0;stroke-width:1.5;" width="196" x="290" y="1213.1992"/><image height="50" width="50" x="363" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABfUlEQVR4XtWOAY7DIAwE+/9P36mVEm0HQ7wcTriRRmo9hvB6recn4bbwoa6Pwses8jb44QrL4QerXQ4/cKfL4MVP+Sd42dNOwUt20YKHd9KCh3czBQ/t6hAu7+wQLu9uCJf+iw1cuEOFLesXjI4K25UKW9YvGB0VtisVNscTBkfCPlJhczxhcIzgTk+FzfEDh64R3OmpsDl+4NC1B/ciFTbXZuA6grtUYXNtBq5K9H+kwubaDFyV0SxSYXNtBq5KNHvDM9Eem2szcFUyc3cnazNwVZyW6Y7NwFUZtTejzubaDFwVtqs+aq7NwFVhy+z05o4nDI4KW7TzJuqcOZ4wOCps2b1o5njC4KiwUYVt1gYuZFXYIhW2GRu4kFVhi1TYZgzhUsYDzkcqbI5duFipwpZ1CJerVNgyXsIDlSpsI9PwYKUKW08LHq70gPPIKXhJlQpbb8+Gl1WpsLFPw0urPOjNl8DLqzzQ3yXww6u9HT5glY/Bh8y6FXzcyKX8AqAq6Wv25cYoAAAAAElFTkSuQmCC" y="1223.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="68" x="354" y="1288.668">Next API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="126" x="325" y="1303.6445">[JavaScript and React]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="390" y="1319.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="300" y="1336.1992">Provides manifests to the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="301" y="1352.6875">visitors app via their web</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="358" y="1369.1758">browser.</text><!--MD5=[b1e06c7667eb30e6d80b5b10471df3ed]
+entity vercel_manifest_next_app_api--><rect fill="#438DD5" height="168.9297" style="stroke:#3C7FC0;stroke-width:1.5;" width="196" x="590" y="1213.1992"/><image height="50" width="50" x="663" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABfUlEQVR4XtWOAY7DIAwE+/9P36mVEm0HQ7wcTriRRmo9hvB6recn4bbwoa6Pwses8jb44QrL4QerXQ4/cKfL4MVP+Sd42dNOwUt20YKHd9KCh3czBQ/t6hAu7+wQLu9uCJf+iw1cuEOFLesXjI4K25UKW9YvGB0VtisVNscTBkfCPlJhczxhcIzgTk+FzfEDh64R3OmpsDl+4NC1B/ciFTbXZuA6grtUYXNtBq5K9H+kwubaDFyV0SxSYXNtBq5KNHvDM9Eem2szcFUyc3cnazNwVZyW6Y7NwFUZtTejzubaDFwVtqs+aq7NwFVhy+z05o4nDI4KW7TzJuqcOZ4wOCps2b1o5njC4KiwUYVt1gYuZFXYIhW2GRu4kFVhi1TYZgzhUsYDzkcqbI5duFipwpZ1CJerVNgyXsIDlSpsI9PwYKUKW08LHq70gPPIKXhJlQpbb8+Gl1WpsLFPw0urPOjNl8DLqzzQ3yXww6u9HT5glY/Bh8y6FXzcyKX8AqAq6Wv25cYoAAAAAElFTkSuQmCC" y="1223.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="68" x="654" y="1288.668">Next API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="126" x="625" y="1303.6445">[JavaScript and React]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="690" y="1319.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="600" y="1336.1992">Provides manifests to the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="601" y="1352.6875">visitors app via their web</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="658" y="1369.1758">browser.</text><!--MD5=[79db17defd0669b9fd860a8226f6cb8d]
+entity sanitydb_api--><rect fill="#438DD5" height="168.9297" style="stroke:#3C7FC0;stroke-width:1.5;" width="216" x="1045" y="603.1992"/><image height="50" width="50" x="1128" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABjklEQVR4Xu2YzU7CQBRGeSoTJa4NaHwNxY2LwsqXplI0rpBLwEzOtGXa3tuZxjnJ2c39+SgNtLNZJpPJdGVXvB5CrY6yPjpcsqvsNzpcaIj79SpOIC6iJeeYwuHacp4J5eLWG2wh56qzDQzCOqEqXrxzTbJWnWtBeL4O1jTJOjUkxMnHuTe0z2DWU55X4y9IzVXh2RC+N29eH8oaFdwgbphqwG8AF6c8rwKDbB9u7IZZ4gU5y3PJwwCuu+XddAJx+SZZlyRc+po/T/M0g3HRPsrfHPaNAhcb4mfMe0s+US6kIeeMglWYchHpCnERDaPeQ+Xxu86FhlguI4Zxka8Il+sqeyaBfMJcNET2SY7QK8a6pOHykw0iMMAkg+yL1em5hiFMgvDJjfJ8F9w+h+f7uEG+FB93owYRWRMCe5gHETiwTta0IVeR9Zce0YOEBKrON3ebZiEucKCV5kEEDrWQM02oNv5gTTnPHC6gIWeMxuHj3Vumj9U6YggXLhaqvMhmr6Rof9Pe/19AJpP55/wCwk7g9HfTvaAAAAAASUVORK5CYII=" y="613.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="81" x="1112.5" y="678.668">Sanity API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="126" x="1090" y="693.6445">[JavaScript and React]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1155" y="709.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="1062" y="726.1992">Provides all of the content</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="1060.5" y="742.6875">editing functionality to the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="1055" y="759.1758">editor via their web browser.</text><!--MD5=[5a6a3fd7f9d825e3c3a4eda845361120]
+entity db_production--><path d="M1194.5,283.1992 C1194.5,273.1992 1290,273.1992 1290,273.1992 C1290,273.1992 1385.5,273.1992 1385.5,283.1992 L1385.5,408.1523 C1385.5,418.1523 1290,418.1523 1290,418.1523 C1290,418.1523 1194.5,418.1523 1194.5,408.1523 L1194.5,283.1992 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;"/><path d="M1194.5,283.1992 C1194.5,293.1992 1290,293.1992 1290,293.1992 C1290,293.1992 1385.5,293.1992 1385.5,283.1992 " fill="none" style="stroke:#3C7FC0;stroke-width:1.5;"/><image height="50" width="50" x="1265" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABjklEQVR4Xu2YzU7CQBRGeSoTJa4NaHwNxY2LwsqXplI0rpBLwEzOtGXa3tuZxjnJ2c39+SgNtLNZJpPJdGVXvB5CrY6yPjpcsqvsNzpcaIj79SpOIC6iJeeYwuHacp4J5eLWG2wh56qzDQzCOqEqXrxzTbJWnWtBeL4O1jTJOjUkxMnHuTe0z2DWU55X4y9IzVXh2RC+N29eH8oaFdwgbphqwG8AF6c8rwKDbB9u7IZZ4gU5y3PJwwCuu+XddAJx+SZZlyRc+po/T/M0g3HRPsrfHPaNAhcb4mfMe0s+US6kIeeMglWYchHpCnERDaPeQ+Xxu86FhlguI4Zxka8Il+sqeyaBfMJcNET2SY7QK8a6pOHykw0iMMAkg+yL1em5hiFMgvDJjfJ8F9w+h+f7uEG+FB93owYRWRMCe5gHETiwTta0IVeR9Zce0YOEBKrON3ebZiEucKCV5kEEDrWQM02oNv5gTTnPHC6gIWeMxuHj3Vumj9U6YggXLhaqvMhmr6Rof9Pe/19AJpP55/wCwk7g9HfTvaAAAAAASUVORK5CYII=" y="297.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="75" x="1252.5" y="362.668">Database</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="171" x="1204.5" y="377.6445">[Relational Database Schema]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1292" y="393.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="1240.5" y="410.1992">Stores content</text><!--MD5=[181ea5bdde64d2e09a601d4b6d1c7013]
+entity db_test--><path d="M946.5,283.1992 C946.5,273.1992 1042,273.1992 1042,273.1992 C1042,273.1992 1137.5,273.1992 1137.5,283.1992 L1137.5,408.1523 C1137.5,418.1523 1042,418.1523 1042,418.1523 C1042,418.1523 946.5,418.1523 946.5,408.1523 L946.5,283.1992 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;"/><path d="M946.5,283.1992 C946.5,293.1992 1042,293.1992 1042,293.1992 C1042,293.1992 1137.5,293.1992 1137.5,283.1992 " fill="none" style="stroke:#3C7FC0;stroke-width:1.5;"/><image height="50" width="50" x="1017" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABjklEQVR4Xu2YzU7CQBRGeSoTJa4NaHwNxY2LwsqXplI0rpBLwEzOtGXa3tuZxjnJ2c39+SgNtLNZJpPJdGVXvB5CrY6yPjpcsqvsNzpcaIj79SpOIC6iJeeYwuHacp4J5eLWG2wh56qzDQzCOqEqXrxzTbJWnWtBeL4O1jTJOjUkxMnHuTe0z2DWU55X4y9IzVXh2RC+N29eH8oaFdwgbphqwG8AF6c8rwKDbB9u7IZZ4gU5y3PJwwCuu+XddAJx+SZZlyRc+po/T/M0g3HRPsrfHPaNAhcb4mfMe0s+US6kIeeMglWYchHpCnERDaPeQ+Xxu86FhlguI4Zxka8Il+sqeyaBfMJcNET2SY7QK8a6pOHykw0iMMAkg+yL1em5hiFMgvDJjfJ8F9w+h+f7uEG+FB93owYRWRMCe5gHETiwTta0IVeR9Zce0YOEBKrON3ebZiEucKCV5kEEDrWQM02oNv5gTTnPHC6gIWeMxuHj3Vumj9U6YggXLhaqvMhmr6Rof9Pe/19AJpP55/wCwk7g9HfTvaAAAAAASUVORK5CYII=" y="297.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="75" x="1004.5" y="362.668">Database</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="171" x="956.5" y="377.6445">[Relational Database Schema]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1044" y="393.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="992.5" y="410.1992">Stores content</text><!--MD5=[2eaf6ef1808c42e4a457469ceaf5fb2c]
+entity editor_spa--><rect fill="#438DD5" height="168.9297" style="stroke:#3C7FC0;stroke-width:1.5;" width="216" x="1014" y="1673.6992"/><image height="50" width="50" x="1097" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABjklEQVR4Xu2YzU7CQBRGeSoTJa4NaHwNxY2LwsqXplI0rpBLwEzOtGXa3tuZxjnJ2c39+SgNtLNZJpPJdGVXvB5CrY6yPjpcsqvsNzpcaIj79SpOIC6iJeeYwuHacp4J5eLWG2wh56qzDQzCOqEqXrxzTbJWnWtBeL4O1jTJOjUkxMnHuTe0z2DWU55X4y9IzVXh2RC+N29eH8oaFdwgbphqwG8AF6c8rwKDbB9u7IZZ4gU5y3PJwwCuu+XddAJx+SZZlyRc+po/T/M0g3HRPsrfHPaNAhcb4mfMe0s+US6kIeeMglWYchHpCnERDaPeQ+Xxu86FhlguI4Zxka8Il+sqeyaBfMJcNET2SY7QK8a6pOHykw0iMMAkg+yL1em5hiFMgvDJjfJ8F9w+h+f7uEG+FB93owYRWRMCe5gHETiwTta0IVeR9Zce0YOEBKrON3ebZiEucKCV5kEEDrWQM02oNv5gTTnPHC6gIWeMxuHj3Vumj9U6YggXLhaqvMhmr6Rof9Pe/19AJpP55/wCwk7g9HfTvaAAAAAASUVORK5CYII=" y="1683.6992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="193" x="1025.5" y="1749.168">Single Page Application</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="126" x="1059" y="1764.1445">[JavaScript and React]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1124" y="1780.2109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="1031" y="1796.6992">Provides all of the content</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="1029.5" y="1813.1875">editing functionality to the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="1024" y="1829.6758">editor via their web browser.</text><!--MD5=[ba99e7ff49c654ac984e927aea4bc5c1]
+entity user_spa--><rect fill="#438DD5" height="135.9531" style="stroke:#3C7FC0;stroke-width:1.5;" width="183" x="424.5" y="2084.6992"/><image height="50" width="50" x="491" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABfUlEQVR4XtWOAY7DIAwE+/9P36mVEm0HQ7wcTriRRmo9hvB6recn4bbwoa6Pwses8jb44QrL4QerXQ4/cKfL4MVP+Sd42dNOwUt20YKHd9KCh3czBQ/t6hAu7+wQLu9uCJf+iw1cuEOFLesXjI4K25UKW9YvGB0VtisVNscTBkfCPlJhczxhcIzgTk+FzfEDh64R3OmpsDl+4NC1B/ciFTbXZuA6grtUYXNtBq5K9H+kwubaDFyV0SxSYXNtBq5KNHvDM9Eem2szcFUyc3cnazNwVZyW6Y7NwFUZtTejzubaDFwVtqs+aq7NwFVhy+z05o4nDI4KW7TzJuqcOZ4wOCps2b1o5njC4KiwUYVt1gYuZFXYIhW2GRu4kFVhi1TYZgzhUsYDzkcqbI5duFipwpZ1CJerVNgyXsIDlSpsI9PwYKUKW08LHq70gPPIKXhJlQpbb8+Gl1WpsLFPw0urPOjNl8DLqzzQ3yXww6u9HT5glY/Bh8y6FXzcyKX8AqAq6Wv25cYoAAAAAElFTkSuQmCC" y="2094.6992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="135" x="448.5" y="2160.168">Next Application</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="126" x="453" y="2175.1445">[JavaScript and React]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="518" y="2191.2109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="434.5" y="2207.6992">Frontend SSG Next app.</text><!--MD5=[e937783d151d78c9e87fd4c0d99f7485]
+entity proxy--><rect fill="#438DD5" height="152.4414" style="stroke:#3C7FC0;stroke-width:1.5;" width="178" x="270" y="1682.1992"/><image height="50" width="50" x="334" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABfUlEQVR4XtWOAY7DIAwE+/9P36mVEm0HQ7wcTriRRmo9hvB6recn4bbwoa6Pwses8jb44QrL4QerXQ4/cKfL4MVP+Sd42dNOwUt20YKHd9KCh3czBQ/t6hAu7+wQLu9uCJf+iw1cuEOFLesXjI4K25UKW9YvGB0VtisVNscTBkfCPlJhczxhcIzgTk+FzfEDh64R3OmpsDl+4NC1B/ciFTbXZuA6grtUYXNtBq5K9H+kwubaDFyV0SxSYXNtBq5KNHvDM9Eem2szcFUyc3cnazNwVZyW6Y7NwFUZtTejzubaDFwVtqs+aq7NwFVhy+z05o4nDI4KW7TzJuqcOZ4wOCps2b1o5njC4KiwUYVt1gYuZFXYIhW2GRu4kFVhi1TYZgzhUsYDzkcqbI5duFipwpZ1CJerVNgyXsIDlSpsI9PwYKUKW08LHq70gPPIKXhJlQpbb8+Gl1WpsLFPw0urPOjNl8DLqzzQ3yXww6u9HT5glY/Bh8y6FXzcyKX8AqAq6Wv25cYoAAAAAElFTkSuQmCC" y="1692.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="107" x="305.5" y="1757.668">Proxy service</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="51" x="333.5" y="1772.6445">[Apache]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="361" y="1788.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="281" y="1805.1992">Reverse proxy used to</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="280" y="1821.6875">change domain to UiB..</text><!--MD5=[61f835d7a880fddfb5c276e39b200ba8]
+link vercel_studio_spa to editor_spa--><path d="M1018.02,1382.2092 C1026.39,1416.3792 1036.39,1456.2492 1046,1492.1992 C1061.49,1550.1392 1080.03,1614.8592 1094.92,1665.8292 " fill="none" id="vercel_studio_spa-to-editor_spa" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1097.18,1673.5692,1097.8145,1665.0488,1092.0556,1666.7325,1097.18,1673.5692" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="143" x="1047" y="1474.8008">Delivers the app to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="137" x="1052" y="1488.9336">editors's web browser</text><!--MD5=[58794b3740ddb11dde73fcf971690206]
+link vercel_web_next_app to proxy--><path d="M179.35,1366.0792 C189.37,1403.7892 203.44,1451.2992 220,1492.1992 C245.61,1555.4392 281.52,1623.5292 310.43,1674.8592 " fill="none" id="vercel_web_next_app-to-proxy" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="314.46,1681.9792,313.133,1673.5389,307.9104,1676.4927,314.46,1681.9792" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="143" x="221" y="1474.8008">Delivers the app to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="127" x="231" y="1488.9336">users's web browser</text><!--MD5=[0b2106d88cf81e4ef0c4c01c42dbb76d]
+link vercel_web_next_app_api to proxy--><path d="M382.71,1382.2592 C377.47,1465.1292 369.49,1591.3592 364.26,1674.0692 " fill="none" id="vercel_web_next_app_api-to-proxy" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="363.74,1682.1892,367.2488,1674.399,361.2613,1674.0127,363.74,1682.1892" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="123" x="379" y="1474.8008">Delivers data to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="127" x="379" y="1488.9336">users's web browser</text><!--MD5=[3a5bc0cadd83318c9e5609b38da6079e]
+link proxy to user_spa--><path d="M435.32,1834.3392 C451.4,1853.8792 466.61,1875.8992 477,1898.6992 C502.58,1954.8392 511.89,2024.4892 515.05,2076.4892 " fill="none" id="proxy-to-user_spa" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="515.5,2084.6792,518.0524,2076.5254,512.0616,2076.8576,515.5,2084.6792" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="143" x="488" y="1911.3008">Delivers the app to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="127" x="498" y="1925.4336">users's web browser</text><!--MD5=[3a5bc0cadd83318c9e5609b38da6079e]
+link proxy to user_spa--><path d="M336.55,1834.6192 C331.21,1864.5692 329.66,1898.9092 340,1928.6992 C359.57,1985.0892 399.97,2037.9992 437.14,2078.1192 " fill="none" id="proxy-to-user_spa-1" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="443.07,2084.4492,439.7819,2076.5632,435.4074,2080.6697,443.07,2084.4492" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="123" x="341" y="1911.3008">Delivers data to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="127" x="341" y="1925.4336">users's web browser</text><!--MD5=[a01ce13f7f4d904e7760f488226bcfff]
+link sanitydb_api to vercel_web_next_app--><path d="M1044.73,696.3292 C834.52,713.3492 382.04,761.4392 272,866.1992 C174.74,958.7892 159.37,1124.6692 159.48,1221.2492 " fill="none" id="sanitydb_api-to-vercel_web_next_app" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="159.53,1229.5092,162.4871,1221.4933,156.4872,1221.5254,159.53,1229.5092" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="123" x="319" y="840.8008">Delivers data to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="119" x="323" y="854.9336">web app build step</text><!--MD5=[54643e45286b5d40ab7554c5fa3abe56]
+link vercel_manifest_next_app_api to user_spa--><path d="M693.86,1382.3892 C699.87,1505.1292 701.45,1739.8892 644,1928.6992 C627.81,1981.8992 597.07,2036.1192 569.77,2077.7792 " fill="none" id="vercel_manifest_next_app_api-to-user_spa" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="565.25,2084.6192,572.1664,2079.6029,567.1626,2076.292,565.25,2084.6192" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="134" x="697" y="1755.8008">Delivers manifests to</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="76" x="728" y="1769.9336">the web app</text><!--MD5=[ad8991972e27f13a04d2c98d133680a5]
+link sanitydb_api to editor_spa--><path d="M1168.65,772.4392 C1193.63,919.0492 1236.12,1231.4492 1199,1492.1992 C1190.6,1551.1892 1172.19,1615.3992 1155.48,1665.8492 " fill="none" id="sanitydb_api-to-editor_spa" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1152.92,1673.4992,1158.2959,1666.8584,1152.6038,1664.9611,1152.92,1673.4992" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="123" x="1214" y="1295.3008">Delivers data to the</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="74" x="1240.5" y="1309.4336">editor's SPA</text><!--MD5=[c67d2ea51f4794abc67302be1f562ab8]
+link db_production to sanitydb_api--><path d="M1261.11,418.3892 C1240.34,469.9292 1212.17,539.8492 1189.79,595.3792 " fill="none" id="db_production-to-sanitydb_api" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1186.68,603.1192,1192.4512,596.819,1186.8855,594.5777,1186.68,603.1192" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="146" x="1246" y="462.8008">Delivers data to the api</text><!--MD5=[3bb2387e5d7dc74763ef16e0fa2b5e59]
+link db_test to sanitydb_api--><path d="M1050.56,418.3892 C1053.24,434.2892 1056.67,450.9392 1061,466.1992 C1073.37,509.7792 1091.93,556.3092 1109.14,595.3392 " fill="none" id="db_test-to-sanitydb_api" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1112.57,603.0492,1112.0701,594.5199,1106.585,596.9517,1112.57,603.0492" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="146" x="1062" y="462.8008">Delivers data to the api</text><rect fill="#FFFFFF" height="63.4648" rx="5" ry="5" style="stroke:#FFFFFF;stroke-width:1.0;" width="105" x="1316" y="2273.6992"/><rect height="16.4883" style="stroke:none;stroke-width:1.0;fill:none;" width="93" x="1322" y="2280.6992"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="1322" y="2294.2344">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1377" y="2294.2344"/><rect fill="#438DD5" height="16.4883" style="stroke:none;stroke-width:1.0;" width="93" x="1322" y="2297.1875"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="1326" y="2310.7227">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1338" y="2310.7227"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="1342" y="2310.7227">container</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1415" y="2310.7227"/><rect fill="#FFFFFF" height="16.4883" style="stroke:none;stroke-width:1.0;" width="93" x="1322" y="2313.6758"/><text fill="#A2A2A2" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="1326" y="2327.2109">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1338" y="2327.2109"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="1342" y="2327.2109">node</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1385" y="2327.2109"/><line style="stroke:#00000000;stroke-width:1.0;" x1="1322" x2="1415" y1="2280.6992" y2="2280.6992"/><line style="stroke:#00000000;stroke-width:1.0;" x1="1322" x2="1415" y1="2297.1875" y2="2297.1875"/><line style="stroke:#00000000;stroke-width:1.0;" x1="1322" x2="1415" y1="2313.6758" y2="2313.6758"/><line style="stroke:#00000000;stroke-width:1.0;" x1="1322" x2="1415" y1="2330.1641" y2="2330.1641"/><line style="stroke:#00000000;stroke-width:1.0;" x1="1322" x2="1322" y1="2280.6992" y2="2330.1641"/><line style="stroke:#00000000;stroke-width:1.0;" x1="1415" x2="1415" y1="2280.6992" y2="2330.1641"/><!--MD5=[cba75b3968f4a4821bd274b46be2f6c1]
+@startuml "deployment"
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Deployment.puml
+!define NREC_LOGO img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAfCAYAAAClDZ5ZAAAAAXNSR0IArs4c6QAAAXZJREFUWEfV1+sNgyAQAGDYpXs4UJt0FpN2H52j7kJzVCwPgTs4iPRvVfi8F0pR8ltXlb1tmmT2GsYLaIthAP7mOoHwkBKEQXXA4CA1iE6YPIQD0QGThsQQkCqcQAZoOQQWb4GB5xbUVB3kQpg4JPW2p0ne7rPa3s/f/ZTIUNKSEJkqCNz8AQwVgsX3gsB+yFGxN4d5AUhMVURMsyFhIC0fs9peyLTsCSFFZocIlYgmcvP2aYglIqTIWBDnBUQOkNBU7L+O6HvXhxBk3voLoDEexGBiz4sdkH2QC8Eg9oEVXVgKofM/cSqAGoHUqv3ZmD8Ei8hBcp3sJCI1IIOhDzQEJFn8zBCzVjNIFNMMQkkp65SKLc5gxjSAwLby3yPItpjKc41ZFiWk1CdbrmJ35gj2zXIUpO5kI0P8wTdsRPxhOTzkmOJMA7F7jQT1BS2GYbLbkdZdq0fB1zSL3L3QFYeHuEeUgaMSQEZLsfQxfk/Gq9fM2cfVF6rBHOmyKLuMAAAAAElFTkSuQmCC
+!define SANITY img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==
+!define VERCEL img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABU0lEQVRoQ+2ZWwqDMBBFR92j4joU3IKgCxFdo6akoNjSVmcyNxWZgF+dPM49yfw0ISJHNxiJgVzMohm5mBAyI2YElIBdLVCw4mXNiDg60EQzAgpWvKwZORudc478l6bp2SmiOqgRf/h5np8HSxK/FW5AQbyJ/UDCwECqqqK+719AvKF3OC1HMJBvB0ZZgYD8Sn0YBirLUkvEtk50ENTDVwc58wYQ7VgVZN9uj+6O9ltRBTljA9WO1UDquqau645EwNqxGgjXxkqkdcVUQKQQHmYcRyqKgmXyU/HfQbTacTBIiI01WY12HATCabdHdyf0rQSBaNjQasdikKZpqG3bo6BZv2dZRsuysOZs3U/6/4i2jdB2LDKCgvAw0zRRnudsK5cDkbZjEQg7rggTDCRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFtzHyAKakjAEBm5CuAAAAAElFTkSuQmCC
+!define NEXT img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC
+!define GITHUB img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACZElEQVRoQ+2YzUpCURDHJ/AZJNBcSJJIubBoUSs3iZCvEO0qyTfwI30Hoy8JcxFucivUE0RPIRYhIgjuXBhXuGCXe87MnHO4qFx3cubMf37zn+Px3o3ZbDaDNfhs+CBL5qLvyJIZAr4ja+1Ir9eDw4MDEuPvYECKowYZGa3NYJCq5xpnAkoLRBfASaUDpATy3e/Dfiql5YJosyoMG8S0C25AT40GnOZyrEaxQLyAsKs/yWTgpdUiw5BBvISwq6/c3MBVPk+C0QKx5rlSLsP93R1JTBT03GxCNpsFt2ZRzwwJROSGU4TrGnU/BQYFkRVHEeBYJdLaSybh/eNDmkoZJJ1Ow2u7zakTjdVpmhQEGxWvHLE6gGmtDAgGowyCdQidI0GA6ngpgVwXClAslVRrle4zDqKa0ASdSPvi8hKqtZqrhNCRZQSRnRMfxMQIiXKoTIPvyMo4sptIwHA4FNa7FvcIdsvquKVyPiw9pQvRLtS0Kzr/7bRATDqDQWBaUpDRaASJeBydFB1nxuMx7MRi2hrs5xG7aFkH3zodODo+di2uVCzC48MDWrgzAGsWCmIldBaNwWCilDFaBMHyoYfdTuYU/vz6gkgkMl92rvV/fiAQCEg7vhUKwXQ6JbtiDETkivXGMRQOw/nZGXS7XfQpbrFyqisUCLIjImeoIm6tp4Bw8pPOiKyTHDGOI9y8bBC3MeMeTFM5FnWVQGSFUDtJfelH/UVQBrEEJpMJbEej/7RUQaj7RGBaIHbS23odatXq/Cu1INsRajzmjBEQTMSLdR/Eiy5zNHxHON3yItZ3xIsuczT+ANqRwHq+fLT7AAAAAElFTkSuQmCC
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define GOVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/govicons
+!include DEVICONS/google_cloud_platform.puml
+!include GOVICONS/cloud_o.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+AddElementTag("fallback", $bgColor="#c0c0c0")
+AddRelTag("fallback", $textColor="#c0c0c0", $lineColor="#438DD5")
+
+WithoutPropertyHeader()
+
+' calculated legend is used (activated in last line)
+' LAYOUT_WITH_LEGEND()
+
+title Deployment Diagram for Muna
+
+Deployment_Node(vercel, "Vercel", "Node", "Vercel cloud", "VERCEL"){
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(vercel_studio, "studio", "Node"){
+      Deployment_Node_R(vercel_studio_server, "studio_server", "Node"){
+        Container(vercel_studio_spa, "Single Page Application", "JavaScript and React", "Provides all of the content editing functionality to the editor via their web browser.", "SANITY")
+      }
+    }
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(vercel_web, "web", "Node", "Provides the Next app to the visitors web browser and runs the Next API."){
+      Deployment_Node_R(vercel_web_server, "web_server", "Node"){
+        Container(vercel_web_next_app, "Next Application", "JavaScript and React", "Frontend SSG Next app.", "NEXT")
+        Container(vercel_web_next_app_api, "Next API", "JavaScript and React", "Provides manifests to the visitors app via their web browser.", "NEXT")
+      }
+    }
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(vercel_manifest, "marcus manifest", "Node"){
+      Deployment_Node_R(vercel_manifest_server, "manifest_server", "Node"){
+        Container(vercel_manifest_next_app_api, "Next API", "JavaScript and React", "Provides manifests to the visitors app via their web browser.", "NEXT")
+      }
+    }
+}
+
+Deployment_Node(sanity, "Sanity", "Go", "Google Cloud", "google_cloud_platform"){
+    AddProperty("Location", "Cloud")
+    Deployment_Node_R(sanity_API, "sanity-api", "Node", "An API residing in the Google Cloud."){
+      Container(sanitydb_api, "Sanity API", "JavaScript and React", "Provides all of the content editing functionality to the editor via their web browser.", "SANITY")
+    }
+    AddProperty("Location", "Google Cloud")
+    Deployment_Node_L(sanitydb_production, "sanity-dataset-production", "PostgreSQL", "The primary database server."){
+      ContainerDb(db_production, "Database", "Relational Database Schema", "Stores content", "SANITY")
+    }
+    AddProperty("Location", "Google Cloud")
+    Deployment_Node_L(sanitydb_test, "sanity-dataset-test", "PostgreSQL", "The primary database server."){
+      ContainerDb(db_test, "Database", "Relational Database Schema", "Stores content", "SANITY")
+    }
+}
+
+Deployment_Node(editor_device, "Editor's computer", "Mircosoft Windows, Apple macOS or mobile device"){
+    Deployment_Node(editor_browser, "Web Browser", "Google Chrome, Mozilla Firefox, Apple Safari or Microsoft Edge"){
+        Container(editor_spa, "Single Page Application", "JavaScript and React", "Provides all of the content editing functionality to the editor via their web browser.", "SANITY")
+    }
+}
+
+Deployment_Node(user_device, "Visitor's computer", "Mircosoft Windows, Apple macOS or mobile device"){
+    Deployment_Node(user_browser, "Web Browser", "Google Chrome, Mozilla Firefox, Apple Safari or Microsoft Edge"){
+        Container(user_spa, "Next Application", "JavaScript and React", "Frontend SSG Next app.", "NEXT")
+    }
+}
+
+Deployment_Node(nrec_cloud, "NREC", "Openstack", "UiB cloud service", "NREC_LOGO"){
+    Deployment_Node(nrec_instance, "Instance", "Fedora?"){
+        Container(proxy, "Proxy service", "Apache", "Reverse proxy used to change domain to UiB..", "NEXT")
+    }
+}
+
+Rel_D(vercel_studio_spa, editor_spa, "Delivers the app to the editors's web browser")
+Rel_D(vercel_web_next_app, proxy, "Delivers the app to the users's web browser")
+Rel_D(vercel_web_next_app_api, proxy, "Delivers data to the users's web browser")
+Rel_D(proxy, user_spa, "Delivers the app to the users's web browser")
+Rel_D(proxy, user_spa, "Delivers data to the users's web browser")
+Rel_D(sanitydb_api, vercel_web_next_app, "Delivers data to the web app build step")
+Rel_D(vercel_manifest_next_app_api, user_spa, "Delivers manifests to the web app")
+Rel_D(sanitydb_api, editor_spa, "Delivers data to the editor's SPA")
+Rel_D(db_production, sanitydb_api, "Delivers data to the api")
+Rel_D(db_test, sanitydb_api, "Delivers data to the api")
+
+SHOW_LEGEND()
+@enduml
+
+@startuml "deployment"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam shadowing<<legendArea>> false
+skinparam rectangle<<legendArea>> {
+    backgroundcolor #00000000
+    bordercolor #00000000
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    shadowing false
+    style awesome
+}
+
+skinparam person {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontColor #444444
+    BorderColor #444444
+    BackgroundColor transparent
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam actor<<container>> {
+    StereotypeFontColor #438DD5
+    FontColor #438DD5
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam person<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam actor<<external_container>> {
+    StereotypeFontColor #B3B3B3
+    FontColor #B3B3B3
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam person<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<node>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #FFFFFF
+    BorderColor #A2A2A2
+}
+skinparam database<<node>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #FFFFFF
+    BorderColor #A2A2A2
+}
+skinparam queue<<node>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #FFFFFF
+    BorderColor #A2A2A2
+}
+skinparam actor<<node>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #FFFFFF
+    BorderColor #A2A2A2
+}
+skinparam person<<node>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #FFFFFF
+    BorderColor #A2A2A2
+}
+
+
+skinparam rectangle<<node>> {
+    FontStyle normal
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sprite $google_cloud_platform [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000001111111111111100000000000000000
+000000000000004DFFFFFFFFFFFFFFFFD300000000000000
+00000000000002FFFFFFFFFFFFFFFFFFFF20000000000000
+0000000000000BFF7EFFFFFFFFFFFFE7FFB0000000000000
+0000000000004FFE2CFFFFFFFFFFFFC2EFF4000000000000
+000000000000DFFFFFFFFFFFFFFFFFFFFFFD000000000000
+000000000007FFFFFFFFFFFFFFFFFFFFFFFF700000000000
+00000000001FFFFFFF966666666669FFFFFFF10000000000
+00000000009FFFFFFD000000000000DFFFFFF90000000000
+0000000003FFFFFFF40000000000004FFFFFFF3000000000
+000000000CFFFFFFA00000000000000AFFFFFFC000000000
+000000005FFFFFFF2000000000000002FFFFFFF500000000
+00000000EFFFFFF80000028CC82000008FFFFFFE00000000
+00000008FFFFFFE000004FFFFFF400000EFFFFFF70000000
+0000001FFFFFFF500002FFFFFFFF200005FFFFFFF1000000
+000000AFFFFFFC000009FFFFFFFF800000CFFFFFF9000000
+000000FFA6FFF300000CFFFFFFFFC000003FFF6BFF000000
+000000FFA6FFF300000CFFFFFFFFC000003FFF6AFF000000
+000000AFFFFFFC000009FFFFFFFF800000CFFFFFF9000000
+0000002FFFFFFF500002FFFFFFFF200005FFFFFFF1000000
+00000008FFFFFFE000005FFFFFF500000EFFFFFF80000000
+00000000EFFFFFF80000029CC82000008FFFFFFE00000000
+000000005FFFFFFF2000000000000001FFFFFFF500000000
+000000000CFFFFFFA00000000000000AFFFFFFC000000000
+0000000003FFFFFFF30000000000003FFFFFFF3000000000
+0000000000AFFFFFFC000000000000CFFFFFF90000000000
+00000000001FFFFFFF966666666669FFFFFFF10000000000
+000000000007FFFFFFFFFFFFFFFFFFFFFFFF700000000000
+000000000000DFFFFFFFFFFFFFFFFFFFFFFD000000000000
+0000000000005FFE2CFFFFFFFFFFFFC2EFF4000000000000
+0000000000000BFF7EFFFFFFFFFFFFE7FFB0000000000000
+00000000000002FFFFFFFFFFFFFFFFFFFF20000000000000
+000000000000004DFFFFFFFFFFFFFFFFD400000000000000
+000000000000000001111111101111100000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+
+skinparam folderBackgroundColor<<DEV GOOGLE_CLOUD_PLATFORM>> White
+sprite $cloud_o [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000243200000000000000000
+0000000000000000000000003AFFFFFEA300000000000000
+00000000000000000000001AFFFFFFFFFFA1000000000000
+0000000000000000000002EFFFC8668CFFFD200000000000
+000000000000000000001EFFC30000003CFFD10000000000
+00000000000000000000BFFA0000000000AFFB0000000000
+0000000000000006CFFFFFC000000000000CFF4000000000
+00000000000003DFFFFFFF20000000000002FFB000000000
+0000000000003FFFFB9AD800000000000000BFF000000000
+000000000001EFF9100000000000000000006FF300000000
+000000000008FF90000000000000000000004FF500000000
+000000027BDFFE00000000000000000000003FF800000000
+0000009FFFFFF700000000000000000000004FFFD3000000
+00000CFFFECDE200000000000000000000002BFFFF500000
+0000AFFD40000000000000000000000000000019FFF30000
+0004FFC0000000000000000000000000000000006FFC0000
+000AFF20000000000000000000000000000000000BFF3000
+000FFB000000000000000000000000000000000003FF7000
+001FF8000000000000000000000000000000000001FF9000
+000FF8000000000000000000000000000000000000FF9000
+000EFC000000000000000000000000000000000003FF7000
+000AFF30000000000000000000000000000000000AFF2000
+0003FFD1000000000000000000000000000000006FFB0000
+0000AFFE50000000000000000000000000000029FFF20000
+00000BFFFFDCCCCCCCCCCCCCCCCCCCCCCCCCCEFFFF500000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC3000000
+000000017ACCCCCCCCCCCCCCCCCCCCCCCCCCCB9400000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+
+skinparam folderBackgroundColor<<GOV CLOUD_O>> White
+
+skinparam rectangle<<fallback>> {
+    BackgroundColor #c0c0c0
+}
+skinparam database<<fallback>> {
+    BackgroundColor #c0c0c0
+}
+skinparam queue<<fallback>> {
+    BackgroundColor #c0c0c0
+}
+skinparam actor<<fallback>> {
+    StereotypeFontColor #c0c0c0
+    FontColor #c0c0c0
+    BackgroundColor #c0c0c0
+}
+skinparam person<<fallback>> {
+    BackgroundColor #c0c0c0
+}
+
+
+skinparam arrow<<fallback>> {
+    Color 438DD5;text:c0c0c0
+}
+
+
+
+
+
+title Deployment Diagram for Muna
+
+rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABU0lEQVRoQ+2ZWwqDMBBFR92j4joU3IKgCxFdo6akoNjSVmcyNxWZgF+dPM49yfw0ISJHNxiJgVzMohm5mBAyI2YElIBdLVCw4mXNiDg60EQzAgpWvKwZORudc478l6bp2SmiOqgRf/h5np8HSxK/FW5AQbyJ/UDCwECqqqK+719AvKF3OC1HMJBvB0ZZgYD8Sn0YBirLUkvEtk50ENTDVwc58wYQ7VgVZN9uj+6O9ltRBTljA9WO1UDquqau645EwNqxGgjXxkqkdcVUQKQQHmYcRyqKgmXyU/HfQbTacTBIiI01WY12HATCabdHdyf0rQSBaNjQasdikKZpqG3bo6BZv2dZRsuysOZs3U/6/4i2jdB2LDKCgvAw0zRRnudsK5cDkbZjEQg7rggTDCRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFtzHyAKakjAEBm5CuAAAAAElFTkSuQmCC>\n==Vercel\n<size:12>[Node]</size>\n\nVercel cloud" <<node>> as vercel {
+    
+    rectangle "==studio\r<size:12>[Node]</size>\r| Location |= Cloud |" <<node>> as vercel_studio {
+      rectangle "==studio_server\r<size:12>[Node]</size>" <<node>> as vercel_studio_server {
+        rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==>\n==Single Page Application\n//<size:12>[JavaScript and React]</size>//\n\nProvides all of the content editing functionality to the editor via their web browser." <<container>> as vercel_studio_spa 
+      }
+    }
+    
+    rectangle "==web\r<size:12>[Node]</size>\r\rProvides the Next app to the\nvisitors web browser and runs\nthe Next API.\r| Location |= Cloud |" <<node>> as vercel_web {
+      rectangle "==web_server\r<size:12>[Node]</size>" <<node>> as vercel_web_server {
+        rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC>\n==Next Application\n//<size:12>[JavaScript and React]</size>//\n\nFrontend SSG Next app." <<container>> as vercel_web_next_app 
+        rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC>\n==Next API\n//<size:12>[JavaScript and React]</size>//\n\nProvides manifests to the visitors app via their web browser." <<container>> as vercel_web_next_app_api 
+      }
+    }
+    
+    rectangle "==marcus manifest\r<size:12>[Node]</size>\r| Location |= Cloud |" <<node>> as vercel_manifest {
+      rectangle "==manifest_server\r<size:12>[Node]</size>" <<node>> as vercel_manifest_server {
+        rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC>\n==Next API\n//<size:12>[JavaScript and React]</size>//\n\nProvides manifests to the visitors app via their web browser." <<container>> as vercel_manifest_next_app_api 
+      }
+    }
+}
+
+rectangle "<$google_cloud_platform>\n==Sanity\n<size:12>[Go]</size>\n\nGoogle Cloud" <<node>> as sanity {
+    
+    rectangle "==sanity-api\r<size:12>[Node]</size>\r\rAn API residing in the Google\nCloud.\r| Location |= Cloud |" <<node>> as sanity_API {
+      rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==>\n==Sanity API\n//<size:12>[JavaScript and React]</size>//\n\nProvides all of the content editing functionality to the editor via their web browser." <<container>> as sanitydb_api 
+    }
+    
+    rectangle "==sanity-dataset-production\l<size:12>[PostgreSQL]</size>\l\lThe primary database server.\l| Location |= Google Cloud |" <<node>> as sanitydb_production {
+      database "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==>\n==Database\n//<size:12>[Relational Database Schema]</size>//\n\nStores content" <<container>> as db_production 
+    }
+    
+    rectangle "==sanity-dataset-test\l<size:12>[PostgreSQL]</size>\l\lThe primary database server.\l| Location |= Google Cloud |" <<node>> as sanitydb_test {
+      database "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==>\n==Database\n//<size:12>[Relational Database Schema]</size>//\n\nStores content" <<container>> as db_test 
+    }
+}
+
+rectangle "==Editor's computer\n<size:12>[Mircosoft Windows, Apple macOS or</size>\n<size:12>mobile device]</size>" <<node>> as editor_device {
+    rectangle "==Web Browser\n<size:12>[Google Chrome, Mozilla Firefox,</size>\n<size:12>Apple Safari or Microsoft Edge]</size>" <<node>> as editor_browser {
+        rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==>\n==Single Page Application\n//<size:12>[JavaScript and React]</size>//\n\nProvides all of the content editing functionality to the editor via their web browser." <<container>> as editor_spa 
+    }
+}
+
+rectangle "==Visitor's computer\n<size:12>[Mircosoft Windows, Apple macOS or</size>\n<size:12>mobile device]</size>" <<node>> as user_device {
+    rectangle "==Web Browser\n<size:12>[Google Chrome, Mozilla Firefox,</size>\n<size:12>Apple Safari or Microsoft Edge]</size>" <<node>> as user_browser {
+        rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC>\n==Next Application\n//<size:12>[JavaScript and React]</size>//\n\nFrontend SSG Next app." <<container>> as user_spa 
+    }
+}
+
+rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAfCAYAAAClDZ5ZAAAAAXNSR0IArs4c6QAAAXZJREFUWEfV1+sNgyAQAGDYpXs4UJt0FpN2H52j7kJzVCwPgTs4iPRvVfi8F0pR8ltXlb1tmmT2GsYLaIthAP7mOoHwkBKEQXXA4CA1iE6YPIQD0QGThsQQkCqcQAZoOQQWb4GB5xbUVB3kQpg4JPW2p0ne7rPa3s/f/ZTIUNKSEJkqCNz8AQwVgsX3gsB+yFGxN4d5AUhMVURMsyFhIC0fs9peyLTsCSFFZocIlYgmcvP2aYglIqTIWBDnBUQOkNBU7L+O6HvXhxBk3voLoDEexGBiz4sdkH2QC8Eg9oEVXVgKofM/cSqAGoHUqv3ZmD8Ei8hBcp3sJCI1IIOhDzQEJFn8zBCzVjNIFNMMQkkp65SKLc5gxjSAwLby3yPItpjKc41ZFiWk1CdbrmJ35gj2zXIUpO5kI0P8wTdsRPxhOTzkmOJMA7F7jQT1BS2GYbLbkdZdq0fB1zSL3L3QFYeHuEeUgaMSQEZLsfQxfk/Gq9fM2cfVF6rBHOmyKLuMAAAAAElFTkSuQmCC>\n==NREC\n<size:12>[Openstack]</size>\n\nUiB cloud service" <<node>> as nrec_cloud {
+    rectangle "==Instance\n<size:12>[Fedora?]</size>" <<node>> as nrec_instance {
+        rectangle "<img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC>\n==Proxy service\n//<size:12>[Apache]</size>//\n\nReverse proxy used to change domain to UiB.." <<container>> as proxy 
+    }
+}
+
+vercel_studio_spa -DOWN->> editor_spa : **Delivers the app to the editors's web browser**
+vercel_web_next_app -DOWN->> proxy : **Delivers the app to the users's web browser**
+vercel_web_next_app_api -DOWN->> proxy : **Delivers data to the users's web browser**
+proxy -DOWN->> user_spa : **Delivers the app to the users's web browser**
+proxy -DOWN->> user_spa : **Delivers data to the users's web browser**
+sanitydb_api -DOWN->> vercel_web_next_app : **Delivers data to the web app build step**
+vercel_manifest_next_app_api -DOWN->> user_spa : **Delivers manifests to the web app**
+sanitydb_api -DOWN->> editor_spa : **Delivers data to the editor's SPA**
+db_production -DOWN->> sanitydb_api : **Delivers data to the api**
+db_test -DOWN->> sanitydb_api : **Delivers data to the api**
+
+hide stereotype
+legend right
+<#00000000,#00000000>|<color:#000000>**Legend**</color> |
+|<#438DD5><color:#3C7FC0> <U+25AF></color> <color:#FFFFFF> container </color> |
+|<#FFFFFF><color:#A2A2A2> <U+25AF></color> <color:#000000> node </color> |
+endlegend
+@enduml
+
+PlantUML version 1.2022.0(Tue Jan 11 17:16:42 CET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: nb
+Country: NO
+--></g></svg>

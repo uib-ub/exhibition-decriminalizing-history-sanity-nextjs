@@ -1,3 +1,4 @@
 # import-tool
 
-Import objects from Marcus and NB and authority data from Kulturnav into Sanity.
+Import objects from The Norwegian archive for queer history, Marcus, NB and authority data from Kulturnav into Sanity.
+

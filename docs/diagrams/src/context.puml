@@ -1,0 +1,73 @@
+@startuml "context"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+!define NREC_LOGO img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAfCAYAAAClDZ5ZAAAAAXNSR0IArs4c6QAAAXZJREFUWEfV1+sNgyAQAGDYpXs4UJt0FpN2H52j7kJzVCwPgTs4iPRvVfi8F0pR8ltXlb1tmmT2GsYLaIthAP7mOoHwkBKEQXXA4CA1iE6YPIQD0QGThsQQkCqcQAZoOQQWb4GB5xbUVB3kQpg4JPW2p0ne7rPa3s/f/ZTIUNKSEJkqCNz8AQwVgsX3gsB+yFGxN4d5AUhMVURMsyFhIC0fs9peyLTsCSFFZocIlYgmcvP2aYglIqTIWBDnBUQOkNBU7L+O6HvXhxBk3voLoDEexGBiz4sdkH2QC8Eg9oEVXVgKofM/cSqAGoHUqv3ZmD8Ei8hBcp3sJCI1IIOhDzQEJFn8zBCzVjNIFNMMQkkp65SKLc5gxjSAwLby3yPItpjKc41ZFiWk1CdbrmJ35gj2zXIUpO5kI0P8wTdsRPxhOTzkmOJMA7F7jQT1BS2GYbLbkdZdq0fB1zSL3L3QFYeHuEeUgaMSQEZLsfQxfk/Gq9fM2cfVF6rBHOmyKLuMAAAAAElFTkSuQmCC
+!define SANITY img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==
+!define VERCEL img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABU0lEQVRoQ+2ZWwqDMBBFR92j4joU3IKgCxFdo6akoNjSVmcyNxWZgF+dPM49yfw0ISJHNxiJgVzMohm5mBAyI2YElIBdLVCw4mXNiDg60EQzAgpWvKwZORudc478l6bp2SmiOqgRf/h5np8HSxK/FW5AQbyJ/UDCwECqqqK+719AvKF3OC1HMJBvB0ZZgYD8Sn0YBirLUkvEtk50ENTDVwc58wYQ7VgVZN9uj+6O9ltRBTljA9WO1UDquqau645EwNqxGgjXxkqkdcVUQKQQHmYcRyqKgmXyU/HfQbTacTBIiI01WY12HATCabdHdyf0rQSBaNjQasdikKZpqG3bo6BZv2dZRsuysOZs3U/6/4i2jdB2LDKCgvAw0zRRnudsK5cDkbZjEQg7rggTDCRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFtzHyAKakjAEBm5CuAAAAAElFTkSuQmCC
+!define NEXT img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC
+!define GITHUB img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACZElEQVRoQ+2YzUpCURDHJ/AZJNBcSJJIubBoUSs3iZCvEO0qyTfwI30Hoy8JcxFucivUE0RPIRYhIgjuXBhXuGCXe87MnHO4qFx3cubMf37zn+Px3o3ZbDaDNfhs+CBL5qLvyJIZAr4ja+1Ir9eDw4MDEuPvYECKowYZGa3NYJCq5xpnAkoLRBfASaUDpATy3e/Dfiql5YJosyoMG8S0C25AT40GnOZyrEaxQLyAsKs/yWTgpdUiw5BBvISwq6/c3MBVPk+C0QKx5rlSLsP93R1JTBT03GxCNpsFt2ZRzwwJROSGU4TrGnU/BQYFkRVHEeBYJdLaSybh/eNDmkoZJJ1Ow2u7zakTjdVpmhQEGxWvHLE6gGmtDAgGowyCdQidI0GA6ngpgVwXClAslVRrle4zDqKa0ASdSPvi8hKqtZqrhNCRZQSRnRMfxMQIiXKoTIPvyMo4sptIwHA4FNa7FvcIdsvquKVyPiw9pQvRLtS0Kzr/7bRATDqDQWBaUpDRaASJeBydFB1nxuMx7MRi2hrs5xG7aFkH3zodODo+di2uVCzC48MDWrgzAGsWCmIldBaNwWCilDFaBMHyoYfdTuYU/vz6gkgkMl92rvV/fiAQCEg7vhUKwXQ6JbtiDETkivXGMRQOw/nZGXS7XfQpbrFyqisUCLIjImeoIm6tp4Bw8pPOiKyTHDGOI9y8bBC3MeMeTFM5FnWVQGSFUDtJfelH/UVQBrEEJpMJbEej/7RUQaj7RGBaIHbS23odatXq/Cu1INsRajzmjBEQTMSLdR/Eiy5zNHxHON3yItZ3xIsuczT+ANqRwHq+fLT7AAAAAElFTkSuQmCC
+!define DOCUSAURUS img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAqCAYAAADxughHAAAAAXNSR0IArs4c6QAAA1NJREFUaEPtmU9PE0EYxp+FlhKktg0EjAdo0KSNHEDLgbRJY0zaRINHSjwgPfAVTDz6BTjpxRsNXsgexNiDqRCltyp8gCYWiFGjIaRqjSIJ1MyUaWeX3c72z+42kbm03d2ZeX7zvO8701aCoEW3FsoSgM2plETeg3woVzpluWvZUIrcsa3pTh7dTpazoeWK+A5pZOH0pGje6CTxauF6MPqOdJATRmDOgHSyGzyQ2pmOAslOpajW6NZCVXNh6R0Ov/zC+NIthTFCkNOBNBOcTcRG5Ce0uh4IQfRCS71a5LPD3YPwm3tWM1RLPz/x2dDavl8G3TmUjQhXO6B1zSqqph05ePsRAzdHFDq/vfyA4btX26K9W+pG2DOBiPc6Ip4buOi4UHdcSZIUq21psm+GltsCTQYRgtRL9lZUGIEoFArY2dlBLBarTjU9PY1cLodyuVZ/EokEZFm2xxEehEQFEcZeiWpZljE7O0sBisUifD4fVldXMTc3R6+l02nMzMzQ9/l8HsFg0F4QXvxpiGBxcRHJZBKRSIQKdbvdKJVKiMfjyGQy9BoBI4DcItgL0kp4KsqtncnudbjxYuJxW1hsS/ZW1Ifc1xD2TiLsmcRl1xAdSghyfmhsZcmb6Cve2XWOKE3MpdtlM/Sj5eEkac2eqkWUr4yXMNJ70jJEJUcEIGbt7LcHjvDQ/6ctEIZArEj2nv5aVAw7T/Bs7GfDgLG8l/YhB/WNwLLyBGmWG7xKRy/Q5VCeVR9c+o2456ghGAZCOq0HNUDMhuHd4JWvB+ufjP3+PuzuxqtdhCBWhxZT9jrwvb2ORC0ovw4X0OWshdcTfBJCBAL9imeYIySsaPKrRzDLkXbsHcpDo037iOUgZiU7DyJJa8JQUj8wOtqHvb1asgs3xPPQEqwxc+R50YUh5wkefa78SkKq1cpBL+YHDhtyyTZHiEq9PaSZEkyqFqtYllYtEcgV1zEKf7upQ0aacEM0K9lFbjDxxfdfsT3/6gzL4GAP9vfv6O/sJLn5LylmJbtRkKYd4YVX/xM04m2DzxgFYQVANDwfWjRHzHJALeS/A2k0tMgPqRvsGG+FK0YcMQpB3NY8NFoBIiq/RnNDC0Kxj9gJM+Y6xlN/SZTf9L7aCdbpH3V3YzDpluRLAAAAAElFTkSuQmCC
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/google_cloud_platform.puml
+
+AddSystemTag("s", )
+
+LAYOUT_TOP_DOWN()
+' LAYOUT_AS_SKETCH()
+LAYOUT_WITH_LEGEND()
+
+AddRelTag("dashed", $textColor="black", $lineColor="black", $lineStyle = DashedLine())
+
+Person_Ext(visitor, "Visitor", "A visitor of website.")
+
+Person(editor, "Authenticated editor", "Content creator.")
+
+Person(developer, "Developer", "Developer of system.")
+
+' Enterprise_Boundary(c0, "UiB Library") {}
+
+System(studio, "Sanity Studio", "Allows editors to create content.", SANITY)
+
+SystemDb_Ext(sanity, "Sanity Cloud Storage", "Proprietary DB on top of Google Cloud PostgreSQL. Serves images with IIIF Image API and files from buckets.", SANITY)
+System_Ext(sanityManage, "Sanity Manage", "Sanity backend for projects, datasets, configs and access.", SANITY)
+
+System(website, "Website", "Frontend with static generated pages and APIs.", NEXT)
+' System(proxy, "Proxy", "Reverse proxy for serving Nansen with UiB domain.", NREC_LOGO)
+
+System_Ext(deployment, "Vercel", "Deploys studio and website.", VERCEL)
+
+System(marcusManifest, "Marcus manifest", "Temporary API for Marcus IIIF manifests.", NEXT)
+System(munaDocs, "Muna docs", "Documentation of Muna datamodel.", DOCUSAURUS)
+
+System(git, "GitHub", "Version control", GITHUB)
+
+System_Ext(google_auth, "Google Authentication", "Authenticates editors.", google_cloud_platform)
+
+Rel_R(studio, sanity, "Read/Write", "HTTPS")
+Rel_L(website, sanity, "Read", "HTTPS")
+
+Rel(studio, google_auth, "Authenticate", "HTTPS")
+
+Rel_R(website, marcusManifest, "Read", "HTTPS")
+
+'Rel_U(proxy, website, "Reverse proxy")
+'Rel_U(visitor, proxy, "Enjoys")
+Rel_U(visitor, website, "Enjoys")
+
+Rel_U(editor, studio, "Creates content")
+
+Rel_R(developer, git, "Pushes code")
+Rel_L(developer, sanityManage, "Manages Sanity")
+Rel_D(developer, deployment, "Manages deployment")
+
+Rel_D(git, deployment, "Triggers build", "Webhook")
+
+Rel_D(deployment, studio, "Serves", "HTTPS")
+Rel_D(deployment, website, "Serves", "HTTPS")
+Rel_D(deployment, marcusManifest, "Serves", "HTTPS")
+Rel_D(deployment, munaDocs, "Serves", "HTTPS", $tags="dashed")
+
+@enduml

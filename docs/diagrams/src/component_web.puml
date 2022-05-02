@@ -1,0 +1,74 @@
+@startuml "component_web"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+!define SANITY img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACeklEQVRoQ+2ZQU5bQQyGPe8hVWkT0mOgqlUldskNkos06aaLwIojlGzbHgTBCYA1C9hwiUYEWkQSI0cMekomE9vjlwBK1jO2P//2eObFwRv5uTfCARuQl6bkRpGQIje9DnKVogxW+3/MEmliSAIQAq0ZACWBpAIUoTLn4MPhb3U86o2WEEUgrToqkLIgPJAGRgwyaDUw+/SV29PqdVIYMcjfVgNzBkgokGHvGyJzBq8dhBMAtzQ5trzkIkVIjenGLIN858tc2Ugc0+ZlQBJ7OhAAmC0viVOfgX/733E0mUT7iGtXDULePYxzDqrKGWClShIITMaQf94FbtbURxhjYxrIk4OPJ+ciO4y4xEtEATw3e8BN7hzUjs9E9sTRRjaIHMdAij7WoZAIhILlwniwSp7Bu6NTsR+pWmIHUpBQQOS0btxXYhCNKrHs0vV926C3VCB0cWQ/BQU1ktJbKhCKrSwYBw7qJ/LTTw3iE23RM7OiaXooGcQHMWg3EQ0LzjmA+jF/0JqBzGZ10GoiQlonSXqmNJA5sHZDJRgXZmUgWsVePEgRLHZgvCqQ2JB9VSC3vS5OAGF8dTE3Ps1BrF5yoUFftF29voTBw+h52cpB6D3y3ui5W1Rm5SCUQs2TN6R0qSAU6LLyksLc7XVxHLgNUEL8SWauCBfEF3dMnWGvu3TqkypcCPIpHogcVQQ394VLSweRKqOFkvabWBEKbLjfQYx/INTGP90nhVCVVjHCMspMA5EMQgbw4AcO/98nKTANxAFUD/V/jqpKa9l0llBtZRlUfv5KjiPZwKKg41/aHdT6+j8+Qz5LA5GoYrF2A2KRRUsbG0Uss2lh6xFkswBC9e0BzQAAAABJRU5ErkJggg==
+!define VERCEL img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABU0lEQVRoQ+2ZWwqDMBBFR92j4joU3IKgCxFdo6akoNjSVmcyNxWZgF+dPM49yfw0ISJHNxiJgVzMohm5mBAyI2YElIBdLVCw4mXNiDg60EQzAgpWvKwZORudc478l6bp2SmiOqgRf/h5np8HSxK/FW5AQbyJ/UDCwECqqqK+719AvKF3OC1HMJBvB0ZZgYD8Sn0YBirLUkvEtk50ENTDVwc58wYQ7VgVZN9uj+6O9ltRBTljA9WO1UDquqau645EwNqxGgjXxkqkdcVUQKQQHmYcRyqKgmXyU/HfQbTacTBIiI01WY12HATCabdHdyf0rQSBaNjQasdikKZpqG3bo6BZv2dZRsuysOZs3U/6/4i2jdB2LDKCgvAw0zRRnudsK5cDkbZjEQg7rggTDCRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFZiRCyKwtzAgrrgjFtzHyAKakjAEBm5CuAAAAAElFTkSuQmCC
+!define NEXT img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABm0lEQVRoQ92Z25LDMAhDt///0dtJpu4kDhgBimPaZ0x0LPCtrz/+7x9I+QJiXCGshIj4kbC0jkyCrHgNLKQpMugugCOYW5d3wAyIEBAKMhvADYOAPAkBA1kgq0A0IFXvCGQ1iCGMBrIqxAYjaq4IIsJIICu7oTZ/D1IF4uJKZZATzBGkkhuXEnsahPH9PUdLlHEjIyYz9rSv/ALIbggbZEvqcZfhyG0gHhgqiGcGpVtdZlNdHgR1hQWyr1p3ONKcs3IvC7IJ94jzxA6fh9iONAdQgWic+cY1A2TUL8uD9KdTrVdKgCAwJUGkEisDYrlSCgSFsfac4SM4+9CINLVWYiVAEFfKgFgw5qanBJxuiOghzzr9IrNKa/CPmN8FiboSWTBYrnzz9JcipDSitdyPY8CoIFFXInBZkJMJmWtqRDzLlYtuCWSmK9ElGQZ5CgbpUXHyNUfQOzejvDyuqHotkJnOWM0/1IqAPAHTl5ip0ww41A5Sv4xSO26wsD44cCJQRJP8Dyk4rXc5NB2EvbKFAJqI1GDBOY9L1G+/AToZcCqjfA/hAAAAAElFTkSuQmCC
+!define GITHUB img:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACZElEQVRoQ+2YzUpCURDHJ/AZJNBcSJJIubBoUSs3iZCvEO0qyTfwI30Hoy8JcxFucivUE0RPIRYhIgjuXBhXuGCXe87MnHO4qFx3cubMf37zn+Px3o3ZbDaDNfhs+CBL5qLvyJIZAr4ja+1Ir9eDw4MDEuPvYECKowYZGa3NYJCq5xpnAkoLRBfASaUDpATy3e/Dfiql5YJosyoMG8S0C25AT40GnOZyrEaxQLyAsKs/yWTgpdUiw5BBvISwq6/c3MBVPk+C0QKx5rlSLsP93R1JTBT03GxCNpsFt2ZRzwwJROSGU4TrGnU/BQYFkRVHEeBYJdLaSybh/eNDmkoZJJ1Ow2u7zakTjdVpmhQEGxWvHLE6gGmtDAgGowyCdQidI0GA6ngpgVwXClAslVRrle4zDqKa0ASdSPvi8hKqtZqrhNCRZQSRnRMfxMQIiXKoTIPvyMo4sptIwHA4FNa7FvcIdsvquKVyPiw9pQvRLtS0Kzr/7bRATDqDQWBaUpDRaASJeBydFB1nxuMx7MRi2hrs5xG7aFkH3zodODo+di2uVCzC48MDWrgzAGsWCmIldBaNwWCilDFaBMHyoYfdTuYU/vz6gkgkMl92rvV/fiAQCEg7vhUKwXQ6JbtiDETkivXGMRQOw/nZGXS7XfQpbrFyqisUCLIjImeoIm6tp4Bw8pPOiKyTHDGOI9y8bBC3MeMeTFM5FnWVQGSFUDtJfelH/UVQBrEEJpMJbEej/7RUQaj7RGBaIHbS23odatXq/Cu1INsRajzmjBEQTMSLdR/Eiy5zNHxHON3yItZ3xIsuczT+ANqRwHq+fLT7AAAAAElFTkSuQmCC
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+!include DEVICONS/google_cloud_platform.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Next frontend
+
+Container(frontend, "Next frontend", "Javascript and React", "Provides all content to the user via their web browser.", NEXT)
+ContainerDb_Ext(sanity_db, "Sanity Cloud Storage", "Google Cloud", "Stores metadata and files.", SANITY)
+
+Container(ubbIIIFManifest, "Marcus manifest", "Next", "Temporary API for creating UBB IIIF manifests.", NEXT)
+ContainerDb(sparql, "SPARQL endpoint", "Fuseki", "Data endpoint for Marcus.")
+
+Container_Boundary(next, "Next app", "", NEXT) {
+
+    Container_Boundary(app, "Pages") {
+        Component(pages, "/items", "Route", "Serves static page.")
+        Component(id, "/id/[id]", "Route", "Serves static page based on id variable.")
+    }
+
+    Container_Boundary(api, "Server side API") {
+        Component(api_manifest, "/api/manifest/[id]", "Route", "Fetch basic metadata and connected images by id from Sanity DB")
+    }
+
+    Container_Boundary(components, "Components") {
+        Component(mirador_viewer, "/miradorViewer", "React", "Fetch basic metadata and connected images by id from Sanity DB")
+    }
+
+    Container_Boundary(functions, "Functions") {
+        Component(getStaticProps, "getStaticProps", "function", "Static Generation: Fetch data at build time.")
+        Component(getStaticPaths, "getStaticPaths", "function", "Static Generation: Specify dynamic routes to pre-render pages based on data.")
+        Component(getServerSideProps, "getServerSideProps", "function", "Server-side Rendering: Fetch data on each request.")
+    }
+
+    Container_Boundary(app, "Preview fetch") {
+        Component(overlay, "/*", "Route", "Serves static page.")
+    }
+
+    Container_Boundary(next_api, "Server side API") {
+        Component(api_preview, "/api/preview?token=[]&slug=[]", "Route", "Validates token and sets preview variable to true")
+        Component(api_exit_preview, "/api/exit-preview", "Route", "Sets preview variable to false")
+    }
+    Rel_R(api_preview, overlay, "Redirects", "JSON/HTTPS")
+    'Rel_U(overlay, preview, "Streams changes", "JSON/HTTPS")
+
+    
+    Rel_D(app, components, "Uses", "JSON/HTTPS")
+    Rel_R(app, getStaticPaths, "Lists paths to generate", "JSON/HTTPS")
+    Rel_D(getStaticPaths, getStaticProps, "Builds static page", "JSON/HTTPS")
+    Rel_D(id, mirador_viewer, "Uses", "JSON/HTTPS")
+    Rel_D(mirador_viewer, api_manifest, "Uses", "JSON/HTTPS")
+
+}
+
+
+'Rel_L(frontend, sanity_db, "Uses", "JSON/HTTPS")
+Rel_D(frontend, next, "Uses", "JSON/HTTPS")
+Rel_D(mirador_viewer, ubbIIIFManifest, "Fetches UBB IIIF manifests", "JSON/HTTPS")
+Rel_D(ubbIIIFManifest, sparql, "Fetches data", "JSON/HTTPS")
+Rel(api_manifest, sanity_db, "Uses", "JSON/HTTPS")
+
+@enduml
