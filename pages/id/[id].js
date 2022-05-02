@@ -13,7 +13,9 @@ import {
 import { NextSeo } from 'next-seo'
 import RenderDocument from '../../components/Documents/RenderDocument'
 import Layout from '../../components/Layout'
+import Alert from '../../components/Layout/Alert'
 import { useOpenGraphImages } from '../../lib/functions'
+import TextBlocks from '../../components/TextBlocks'
 /**
  * Helper function to return the correct version of the document
  * If we're in "preview mode" and have multiple documents, return the draft
@@ -79,9 +81,15 @@ export default function Document({ data, preview }) {
         <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
       </Head>
 
-      {/* <pre>{JSON.stringify(page, null, 2)}</pre> */}
+      {preview && <Alert />}
+
       <Layout site={page?.siteSettings}>
         {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
+
+        {/* If this is a PREVIEW request comming from a LinguisticDocument in SANITY, the content is in the body field */}
+        {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
+
+        {/*  <pre>{JSON.stringify(page, null, 2)}</pre> */}
       </Layout>
     </>
   )

@@ -1,5 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 import * as Structure from '@sanity/document-internationalization/lib/structure'
+import Iframe from 'sanity-plugin-iframe-pane'
+import resolveProductionUrl from '../resolveProductionUrl'
 import { RiMapPinLine } from 'react-icons/ri'
 import { FaMapMarkedAlt } from 'react-icons/fa'
 import { MdEvent } from 'react-icons/md'
@@ -89,13 +91,25 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
   if (['Page', 'LinguisticDocument'].includes(schemaType)) {
     return S.document().views([
       ...Structure.getDocumentNodeViewsForSchemaType(schemaType),
-      references
+      references,
+      S.view
+        .component(Iframe)
+        .options({
+          url: (doc) => resolveProductionUrl(doc),
+        })
+        .title('Preview'),
     ])
   }
 
   return S.document().views([
     S.view.form(),
     references,
+    S.view
+      .component(Iframe)
+      .options({
+        url: (doc) => resolveProductionUrl(doc),
+      })
+      .title('Preview'),
   ])
 }
 

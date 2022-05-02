@@ -25,7 +25,8 @@
     "@seidhr/sanity-plugin-muna-schemas",
     "@seidhr/sanity-plugin-timespan-input",
     "import-tool",
-    "media"
+    "media",
+    "@sanity/production-preview"
   ],
   "env": {
     "development": {
@@ -50,6 +51,10 @@
     {
       "name": "part:@sanity/language-filter/config",
       "path": "./src/languageFilterConfig.js"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./src/resolveProductionUrl.js"
     }
   ]
 }

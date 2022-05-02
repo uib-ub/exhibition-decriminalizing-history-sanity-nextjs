@@ -8,8 +8,9 @@ import { routeQuery } from '../lib/queries/routeQuery'
 import Layout from '../components/Layout'
 import Sections from '../components/Sections/Sections'
 import TextBlocks from '../components/TextBlocks'
-import { Heading } from '@chakra-ui/react'
+import { Container, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import Alert from '../components/Layout/Alert'
 // import { Container, Text, useColorModeValue } from '@chakra-ui/react'
 
 export async function getStaticPaths({ locales }) {
@@ -48,14 +49,14 @@ export async function getStaticProps({ params, locale, preview = false }) {
   const slug = typeof params.slug === 'string' ? params.slug : params.slug.join('/')
   const query = routeQuery
   const queryParams = { slug: slug, language: locale }
-  const data = await getClient(preview).fetch(routeQuery, queryParams)
+  const page = await getClient(preview).fetch(routeQuery, queryParams)
   // console.log(JSON.stringify(data, null, 2))
 
   // Escape hatch, if our query failed to return data
-  if (!data) return { notFound: true }
+  if (!page) return { notFound: true }
 
   // Helper function to reduce all returned documents down to just one
-  const page = filterDataToSingleItem(data, preview)
+  // const page = filterDataToSingleItem(data, preview)
 
   return {
     props: {
@@ -78,7 +79,6 @@ export default function Page({ data, preview }) {
     // The passed-down preview context determines whether this function does anything
     enabled: preview,
   })
-
 
   // Client-side uses the same query, so we may need to filter it down again
   const page = filterDataToSingleItem(previewData, preview)
@@ -117,12 +117,17 @@ export default function Page({ data, preview }) {
         </title>
       </Head> */}
 
-      <Layout site={page?.siteSettings}>
-        <Heading>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
-        {/* If LinguisticDocument the content is in the body field */}
-        {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}
+      {preview && <Alert />}
 
-        <pre>{JSON.stringify(page, null, 2)}</pre>
+      <Layout site={page?.siteSettings}>
+        <Container>
+          <Heading>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
+
+          {/* If LinguisticDocument the content is in the body field */}
+          {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}
+        </Container>
+
+        <pre>{JSON.stringify(data, null, 2)}</pre>
       </Layout>
     </>
   )
