@@ -8,5 +8,5 @@ plugin -> npm : Publish v.X
 code -> npm : Upgrade to v.X
 code -> upgrade : Call
 upgrade -> db : Map data to new model
-upgrade <- db : Response
+upgrade <-- db : Response
 @enduml

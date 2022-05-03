@@ -61,7 +61,18 @@ WIP!
 
 ![](./diagrams/container_vercel.svg) -->
 
-## TODO! Schema upgrade strategy
+## Future tasks
+
+### One-click installer
+
+Create new one-click installer for UBB exhibitions and a simple starter for external users.
+
+### New import-tool plugin
+The `import-tool` needs to be rewritten. The current PoC is... quite horrible.
+
+Next version must use TS, xstate
+
+### Schema upgrade strategy
 
 The main reason for having the schemas as an external library is to facilitate a data migration strategy. Every version of the schema must be accompanied by a migration script. Nothing revolutionary.
 

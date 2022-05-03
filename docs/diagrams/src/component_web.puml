@@ -20,7 +20,7 @@ title Component diagram for Next frontend
 Container(frontend, "Next frontend", "Javascript and React", "Provides all content to the user via their web browser.", NEXT)
 ContainerDb_Ext(sanity_db, "Sanity Cloud Storage", "Google Cloud", "Stores metadata and files.", SANITY)
 
-Container(ubbIIIFManifest, "Marcus manifest", "Next", "Temporary API for creating UBB IIIF manifests.", NEXT)
+Container(ubbIIIFManifest, "UBB IIIF manifest", "Next", "Temporary API for creating UBB IIIF manifests.", NEXT)
 ContainerDb(sparql, "SPARQL endpoint", "Fuseki", "Data endpoint for Marcus.")
 
 Container_Boundary(next, "Next app", "", NEXT) {

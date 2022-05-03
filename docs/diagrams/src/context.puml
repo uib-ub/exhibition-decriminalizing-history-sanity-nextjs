@@ -39,8 +39,8 @@ System(website, "Website", "Frontend with static generated pages and APIs.", NEX
 
 System_Ext(deployment, "Vercel", "Deploys studio and website.", VERCEL)
 
-System(marcusManifest, "Marcus manifest", "Temporary API for Marcus IIIF manifests.", NEXT)
-System(munaDocs, "Muna docs", "Documentation of Muna datamodel.", DOCUSAURUS)
+System(ubbIIIFManifest, "UBB IIIF manifest", "Temporary API for UBB IIIF manifests.", NEXT)
+' System(munaDocs, "Muna docs", "Documentation of Muna datamodel.", DOCUSAURUS)
 
 System(git, "GitHub", "Version control", GITHUB)
 
@@ -51,10 +51,10 @@ Rel_L(website, sanity, "Read", "HTTPS")
 
 Rel(studio, google_auth, "Authenticate", "HTTPS")
 
-Rel_R(website, marcusManifest, "Read", "HTTPS")
+Rel_R(website, ubbIIIFManifest, "Read", "HTTPS")
 
-'Rel_U(proxy, website, "Reverse proxy")
-'Rel_U(visitor, proxy, "Enjoys")
+' Rel_U(proxy, website, "Reverse proxy")
+' Rel_U(visitor, proxy, "Enjoys")
 Rel_U(visitor, website, "Enjoys")
 
 Rel_U(editor, studio, "Creates content")
@@ -67,7 +67,7 @@ Rel_D(git, deployment, "Triggers build", "Webhook")
 
 Rel_D(deployment, studio, "Serves", "HTTPS")
 Rel_D(deployment, website, "Serves", "HTTPS")
-Rel_D(deployment, marcusManifest, "Serves", "HTTPS")
-Rel_D(deployment, munaDocs, "Serves", "HTTPS", $tags="dashed")
+Rel_D(deployment, ubbIIIFManifest, "Serves", "HTTPS")
+' Rel_D(deployment, munaDocs, "Serves", "HTTPS", $tags="dashed")
 
 @enduml
