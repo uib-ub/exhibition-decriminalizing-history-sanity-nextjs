@@ -49,7 +49,7 @@ const Card = ({ item }) => {
           </Inline>
           {item.description && (
             <Text muted size={[1, 1, 2]}>
-              {item.description}
+              {item.description.slice(0, 250)}
             </Text>
           )}
         </Stack>

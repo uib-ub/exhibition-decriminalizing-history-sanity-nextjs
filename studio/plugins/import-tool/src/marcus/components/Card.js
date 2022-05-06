@@ -46,10 +46,11 @@ const Card = ({ item }) => {
         <Stack paddingY={2} space={3}>
           <Inline space={2}>
             <Badge tone="primary">{item.type}</Badge>
+            <Badge tone="default">{item.identifier}</Badge>
           </Inline>
           {item.description && (
             <Text muted size={[1, 1, 2]}>
-              {item.description}
+              {item.description.slice(0, 250)}
             </Text>
           )}
         </Stack>
@@ -66,7 +67,7 @@ const Card = ({ item }) => {
             onClick={() => onChooseItem(item.uri)}
             tone='positive'
           />
-          <a href={item._id} target="_blank" rel="noopener noreferrer">Åpne i SKA-katalog</a>
+          <a href={item._id} target="_blank" rel="noopener noreferrer">Åpne i Marcus</a>
         </Inline>
       </Stack>
     </SanityCard>
