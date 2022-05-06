@@ -1,7 +1,7 @@
-@startuml
-participant      ImportTool as plugin
+@startuml "Upgrade sequence"
+participant      "muna-schemas" as plugin
 entity       NPM       as npm
-entity    Code    as code
+entity    "Editor/CMS"    as code
 participant     "upgradeData()"     as upgrade
 database    Database    as db
 plugin -> npm : Publish v.X 
