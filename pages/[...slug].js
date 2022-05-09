@@ -117,9 +117,7 @@ export default function Page({ data, preview }) {
         </title>
       </Head> */}
 
-      {preview && <Alert />}
-
-      <Layout site={page?.siteSettings}>
+      <Layout site={page?.siteSettings} preview>
         <Container>
           <Heading>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
 

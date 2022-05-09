@@ -1,10 +1,12 @@
 import { Box } from '@chakra-ui/react'
 import Header from './Header'
+import Alert from './Alert'
 // import Meta from './Meta'
 
-export default function Layout({ preview, children, site }) {
+export default function Layout({ children, site, preview }) {
   return (
     <>
+      {preview && <Alert />}
       {/* <Meta /> */}
       <Header data={{ ...site }} />
 

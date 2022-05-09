@@ -39,11 +39,10 @@ export default function BeginningOfExistence(props) {
                 ml={-1}
                 mr={2}
                 name={assignment.assignedActor.label[locale] ?? assignment.assignedActor.label[defaultLocale]}
-                src={urlFor
-                  .image(assignment.assignedActor.image)
+                src={assignment?.assignedActor?.image ? urlFor(assignment?.assignedActor?.image)
                   .height(300)
                   .width(300)
-                  .url()}
+                  .url() : ''}
               />
               <TagLabel>
                 <Link href={`/id/${assignment.assignedActor._id}`}>

@@ -16,6 +16,7 @@ import Layout from '../../components/Layout'
 import Alert from '../../components/Layout/Alert'
 import { useOpenGraphImages } from '../../lib/functions'
 import TextBlocks from '../../components/TextBlocks'
+import { Heading } from '@chakra-ui/react'
 /**
  * Helper function to return the correct version of the document
  * If we're in "preview mode" and have multiple documents, return the draft
@@ -81,15 +82,21 @@ export default function Document({ data, preview }) {
         <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
       </Head>
 
-      {preview && <Alert />}
-
-      <Layout site={page?.siteSettings}>
+      <Layout site={page?.siteSettings} preview>
         {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
 
-        {/* If this is a PREVIEW request comming from a LinguisticDocument in SANITY, the content is in the body field */}
-        {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
 
-        {/*  <pre>{JSON.stringify(page, null, 2)}</pre> */}
+        {/* If this is a PREVIEW request comming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
+        {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
+          <>
+            <Heading>{page?.item[0]?.label ?? 'Missing title'}</Heading>
+            {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
+            {/* {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />} */}
+          </>
+        )
+
+        }
+        <pre>{JSON.stringify(page, null, 2)}</pre>
       </Layout>
     </>
   )
@@ -128,7 +135,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
       // Pass down the "preview mode" boolean to the client-side
       preview,
       // Pass down the initial content, and our query
-      data: { page, query, queryParams },
+      data: { page, query, queryParams, preview },
     },
   }
 }

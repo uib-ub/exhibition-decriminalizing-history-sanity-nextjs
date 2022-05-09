@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false }
   }
 }
 
-const Home: NextPage = ({ data, locale }: any) => {
+const Home: NextPage = ({ data, locale, preview }: any) => {
   const { locales, defaultLocale }: NextRouter = useRouter()
   const tree = arrayToTree(data.siteNav)
   const { page, siteNav, siteSettings, items } = data
@@ -70,7 +70,7 @@ const Home: NextPage = ({ data, locale }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout preview={false} site={siteSettings}>
+      <Layout site={siteSettings} preview={preview}>
         <h1 className={styles.title}>
           {siteSettings?.label[locale]}
         </h1>
