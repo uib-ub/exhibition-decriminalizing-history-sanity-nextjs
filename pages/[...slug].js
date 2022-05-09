@@ -1,16 +1,12 @@
-import Head from 'next/head'
-import { NextSeo } from 'next-seo'
-import { usePreviewSubscription } from '../lib/sanity'
-import { filterDataToSingleItem } from '../lib/functions'
-import { getClient } from '../lib/sanity.server'
-import { groq } from 'next-sanity'
-import { routeQuery } from '../lib/queries/routeQuery'
-import Layout from '../components/Layout'
-import Sections from '../components/Sections/Sections'
-import TextBlocks from '../components/TextBlocks'
 import { Container, Heading } from '@chakra-ui/react'
+import { groq } from 'next-sanity'
 import { useRouter } from 'next/router'
-import Alert from '../components/Layout/Alert'
+import Layout from '../components/Layout'
+import TextBlocks from '../components/TextBlocks'
+import { filterDataToSingleItem } from '../lib/functions'
+import { routeQuery } from '../lib/queries/routeQuery'
+import { usePreviewSubscription } from '../lib/sanity'
+import { getClient } from '../lib/sanity.server'
 // import { Container, Text, useColorModeValue } from '@chakra-ui/react'
 
 export async function getStaticPaths({ locales }) {
@@ -117,9 +113,8 @@ export default function Page({ data, preview }) {
         </title>
       </Head> */}
 
-      {preview && <Alert />}
 
-      <Layout site={page?.siteSettings}>
+      <Layout site={page?.siteSettings} preview>
         <Container>
           <Heading>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
 

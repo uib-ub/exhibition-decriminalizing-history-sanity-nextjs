@@ -1,19 +1,18 @@
-import { Box } from '@chakra-ui/react'
-import Header from './Header'
-// import Meta from './Meta'
+import { Box } from '@components/Box'
+import { Header } from './Header'
+import PreviewAlert from './PreviewAlert'
 
 export default function Layout({ preview, children, site }) {
+
   return (
     <>
-      {/* <Meta /> */}
+      {preview == true && <PreviewAlert />}
       <Header data={{ ...site }} />
 
       <Box as="main">
-        {/* {loading ? (
-          <h1>Loading...</h1>
-        ) : null} */}
         {children}
+        <p>{preview}</p>
       </Box>
     </>
   )
-}
+};

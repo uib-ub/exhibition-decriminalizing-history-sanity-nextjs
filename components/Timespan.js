@@ -1,4 +1,5 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box } from '@components/Box'
+import { Flex } from '@components/Flex'
 import { useRouter } from 'next/router'
 // import TextBlocks from './TextBlocks'
 import Date from './Date'

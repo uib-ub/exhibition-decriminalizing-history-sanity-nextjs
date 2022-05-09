@@ -1,21 +1,19 @@
+import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { usePreviewSubscription } from '../../lib/sanity'
-import { getClient } from '../../lib/sanity.server'
+import RenderDocument from '../../components/Documents/RenderDocument'
+import Layout from '../../components/Layout'
 import { getIdPaths, getType } from '../../lib/api'
 import {
   groupFields,
   humanMadeObjectFields,
   linguisticDocumentFields,
   pageFields,
-  siteSettings,
+  siteSettings
 } from '../../lib/queries/fragments'
-import { NextSeo } from 'next-seo'
-import RenderDocument from '../../components/Documents/RenderDocument'
-import Layout from '../../components/Layout'
-import Alert from '../../components/Layout/Alert'
-import { useOpenGraphImages } from '../../lib/functions'
-import TextBlocks from '../../components/TextBlocks'
+import { usePreviewSubscription } from '../../lib/sanity'
+import { getClient } from '../../lib/sanity.server'
+
 /**
  * Helper function to return the correct version of the document
  * If we're in "preview mode" and have multiple documents, return the draft
@@ -81,15 +79,13 @@ export default function Document({ data, preview }) {
         <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
       </Head>
 
-      {preview && <Alert />}
-
-      <Layout site={page?.siteSettings}>
+      <Layout site={page?.siteSettings} preview>
         {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
 
         {/* If this is a PREVIEW request comming from a LinguisticDocument in SANITY, the content is in the body field */}
-        {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
+        {/* {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />} */}
 
-        {/*  <pre>{JSON.stringify(page, null, 2)}</pre> */}
+        <pre>{JSON.stringify(page, null, 2)}</pre>
       </Layout>
     </>
   )
