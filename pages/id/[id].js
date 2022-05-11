@@ -59,7 +59,7 @@ export default function Document({ data, preview }) {
   // Client-side uses the same query, so we may need to filter it down again
   const page = filterDataToSingleItem(previewData, preview)
   // Get Open Graph images in different sizes
-  const openGraphImages = getOpenGraphImages(page?.item[0]?.image, page?.item[0]?.label[locale])
+  // const openGraphImages = getOpenGraphImages(page?.item[0]?.image, page?.item[0]?.label[locale])
 
   // Notice the optional?.chaining conditionals wrapping every piece of content?
   // This is extremely important as you can't ever rely on a single field
@@ -76,7 +76,7 @@ export default function Document({ data, preview }) {
           url: `${process.env.NEXT_PUBLIC_DOMAIN}/${page?.item[0]._id}`,
           title: page?.item[0]?.label[locale],
           description: page?.item[0]?.excerpt,
-          images: openGraphImages,
+          // images: openGraphImages,
           site_name: page?.siteSettings?.label[locale],
         }}
         twitter={{

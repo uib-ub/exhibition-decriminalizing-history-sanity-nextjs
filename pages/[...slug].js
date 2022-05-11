@@ -45,7 +45,6 @@ export async function getStaticPaths({ locales }) {
 }
 
 export async function getStaticProps({ params, locale, preview = false }) {
-  // console.log(params)
   const slug = typeof params.slug === 'string' ? params.slug : params.slug.join('/')
   const query = routeQuery
   const queryParams = { slug: slug, language: locale }

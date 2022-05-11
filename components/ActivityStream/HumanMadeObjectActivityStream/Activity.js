@@ -145,7 +145,7 @@ export default function Activity({ data }) {
 
       <Box>
         {/* TODO: FIX */}
-        {data.tookPlaceAt?.length > 0 &&
+        {/* {data.tookPlaceAt?.length > 0 &&
           data.tookPlaceAt.map((place) => (
             <>
               {place.definedByGeoJSON && (
@@ -154,14 +154,14 @@ export default function Activity({ data }) {
                 </div>
               )}
             </>
-          ))}
+          ))} */}
 
         {/* TODO: Check this */}
-        {data.geoJSON && (
+        {/* {data.geoJSON && (
           <div>
             <Map data={data.geoJSON} />
           </div>
-        )}
+        )} */}
       </Box>
     </Box>
   )
