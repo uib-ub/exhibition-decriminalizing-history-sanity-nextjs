@@ -174,12 +174,12 @@ export default function TimelineSection(props) {
       <div id="timeline-embed" style={{ width: '100%', height: '500px' }}></div>
       <Box>
         <Box size="md">
-          <TextBlocksQuote fontSize="2xl" blocks={props.content} />
+          <TextBlocksQuote fontSize="2xl" value={props.content} />
         </Box>
       </Box>
       {props?.credit && (
         <Box size="xl">
-          <TextBlocks blocks={props.credit} />
+          <TextBlocks value={props.credit} />
         </Box>
       )} */}
     </Container>

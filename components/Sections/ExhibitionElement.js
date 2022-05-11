@@ -56,7 +56,7 @@ export default function SingleObject(props) {
             <TextBlocks
               fontSize={{ base: 'sm', sm: 'sm', md: 'sm', xl: 'md' }}
               fontWeight="200"
-              blocks={content}
+              value={content}
             />
           )}
           <Spacer />
@@ -77,7 +77,7 @@ export default function SingleObject(props) {
           <TextBlocks
             fontSize={{ base: 'sm', sm: 'sm', md: 'sm', xl: 'md' }}
             fontWeight="200"
-            blocks={forseesUseOf.referredToBy[0].body}
+            value={forseesUseOf.referredToBy[0].body}
           />
         )}
 

@@ -1,4 +1,5 @@
 import { Flex, Heading, Spacer, Icon, useColorModeValue } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import { BsInfoCircle } from 'react-icons/bs'
 import TextBlocks from '../../TextBlocks'
 import Source from '../Source'
@@ -10,11 +11,11 @@ export default function Caption(props) {
     return null
   }
 
-  const { title, content, source, sourceItem } = props
+  const { label, content, source, sourceItem } = props
 
   return (
     <Flex direction="column" fontFamily="Montserrat" pr="10" overflowY={{ xl: 'scroll' }}>
-      {title && (
+      {label && (
         <Heading
           fontFamily="Montserrat"
           fontWeight="semibold"
@@ -22,7 +23,7 @@ export default function Caption(props) {
           fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'md' }}
           mb={1}
         >
-          {title}
+          {label}
         </Heading>
       )}
 
@@ -32,7 +33,7 @@ export default function Caption(props) {
           maxW={['xl', null, '2xl', null]}
           fontWeight="200"
           mx="inherit"
-          blocks={content}
+          value={content}
         />
       )}
 
@@ -51,7 +52,7 @@ export default function Caption(props) {
             fontSize={{ base: 'xs', sm: 'xs', md: 'sm', xl: 'sm' }}
             mb="0"
             mx="0"
-            blocks={source}
+            value={source}
           />
         </Flex>
       )}

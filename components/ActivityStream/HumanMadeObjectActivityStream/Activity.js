@@ -73,7 +73,7 @@ export default function Activity({ data }) {
         </HStack>
       )}
 
-      {data.description && <TextBlocks blocks={data.description} />}
+      {data.description && <TextBlocks value={data.description} />}
 
       <HStack>
         {data.contributionAssignedBy?.length > 0 && (

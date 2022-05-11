@@ -61,7 +61,7 @@ export default function EventSection(props) {
 
           <TextBlocks
             fontSize={['sm', 'lg', null, null]}
-            blocks={description ?? item.referredToBy?.[0].body}
+            value={description ?? item.referredToBy?.[0].body}
           />
 
           {/* <pre>{JSON.stringify(item, null, 2)}</pre> */}

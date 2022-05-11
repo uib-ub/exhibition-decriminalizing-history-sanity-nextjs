@@ -11,7 +11,7 @@ export default function SectionText(props) {
       <TextBlocks
         fontSize={{ base: 'lg', sm: '2xl', md: '2xl', xl: '3xl' }}
         fontWeight="500"
-        blocks={props.content}
+        value={props.content}
       />
     </Box>
   )

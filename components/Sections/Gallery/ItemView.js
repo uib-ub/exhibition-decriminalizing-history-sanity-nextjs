@@ -53,7 +53,7 @@ export default function ItemView(props) {
             fontWeight="200"
             mx="0"
             maxW={['xs', 'lg', 'lg', null]}
-            blocks={description}
+            value={description}
           />
         )}
 
@@ -74,7 +74,7 @@ export default function ItemView(props) {
               mb="0"
               mx="0"
               maxW={['xs', 'md', 'lg', null]}
-              blocks={source}
+              value={source}
             />
           </Flex>
         )}

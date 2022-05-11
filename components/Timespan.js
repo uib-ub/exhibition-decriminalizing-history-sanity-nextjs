@@ -53,7 +53,7 @@ export default function Timespan(props) {
             </Flex>
           )}
           {/* TODO: add popover with information about the timespan?
-          {time.description && <TextBlocks blocks={time.description[locale]} />} */}
+          {time.description && <TextBlocks value={time.description[locale]} />} */}
         </Flex>
       ))}
     </Box>

@@ -32,7 +32,7 @@ export default function Profile({ data }) {
               {item.item.shortDescription}
             </Text>
           )}
-          <TextBlocks blocks={item.description} />
+          <TextBlocks value={item.description} />
         </React.Fragment>
       ))}
     </Container>

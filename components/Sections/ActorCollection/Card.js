@@ -64,7 +64,7 @@ export default function ActorCollectionCard({ data }) {
                 {card.item.shortDescription}
               </Text>
             )}
-            <TextBlocks fontSize={['sm', 'lg', null, null]} blocks={card.description} />
+            <TextBlocks fontSize={['sm', 'lg', null, null]} value={card.description} />
           </Box>
         </Box>
       ))}

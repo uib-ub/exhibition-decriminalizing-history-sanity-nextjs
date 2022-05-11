@@ -169,5 +169,5 @@ export default function PortableTextBlock(props) {
     },
   }
 
-  return <BlockContent blocks={blocks} serializers={serializers} />
+  return <BlockContent value={blocks} serializers={serializers} />
 }

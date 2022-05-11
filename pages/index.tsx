@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter, NextRouter } from 'next/router'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import { getClient } from '../lib/sanity.server'
 import { LocaleSwitcher } from '../components/Locale'
 import TextBlocks from '../components/TextBlocks'
@@ -12,6 +11,7 @@ import { arrayToTree } from 'performant-array-to-tree'
 import { humanMadeObjectFields } from '../lib/queries/fragments/humanMadeObjectFields'
 import { groq } from 'next-sanity'
 import { siteSettings } from '../lib/queries/fragments/siteSettings'
+import { Box, Container, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react'
 
 const siteNav = groq`"siteNav": *[_id == "main-nav"][0]{
   tree[] {
@@ -71,38 +71,41 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
       </Head>
 
       <Layout site={siteSettings} preview={preview}>
-        <h1 className={styles.title}>
-          {siteSettings?.label[locale]}
-        </h1>
+        <Container maxW={"4xl"} my={20}>
+          <Heading size={"4xl"} my={20}>
+            {siteSettings?.label[locale]}
+          </Heading>
 
-        <p className={styles.description}>{siteSettings?.description[locale]}</p>
+          <Text>{siteSettings?.description[locale]}</Text>
 
-        <div className={styles.card}>
-          <h2>
-            {page?.label}
-          </h2>
-          {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))}
-          {/* <pre>{JSON.stringify(page?.content, null, 2)}</pre> */}
-        </div>
+          <Box my={10}>
+            <h2>
+              {page?.label}
+            </h2>
+            {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))}
+            {/* <pre>{JSON.stringify(page?.content, null, 2)}</pre> */}
+          </Box>
 
-        <ul>
-          {siteNav?.tree && siteNav?.tree.map((child: any) => (
-            <li key={child._key}>
-              <Link href={`${child.value.reference.route}`}>
-                {child.value.reference.label[locale] ?? 'Uten tittel'}
-              </Link>
-            </li>
-          ))}
-        </ul>
 
-        <p>
-          <Link href={`/studio`} locale={false}>Studio</Link>
-        </p>
-        <ul>
-          {items.map((item: any) => (
-            <li key={item._id}><Link href={`/id/${item._id}`} /* locale={false} */>{item.label[locale] ?? item._id}</Link></li>
-          ))}
-        </ul>
+          <UnorderedList marginStart={0}>
+            {siteNav?.tree && siteNav?.tree.map((child: any) => (
+              <ListItem key={child._key}>
+                <Link href={`${child.value.reference.route}`}>
+                  {child.value.reference.label[locale] ?? 'Uten tittel'}
+                </Link>
+              </ListItem>
+            ))}
+          </UnorderedList>
+
+          <UnorderedList marginStart={0}>
+            {items.map((item: any) => (
+              <ListItem key={item._id}><Link href={`/id/${item._id}`} /* locale={false} */>{item.label[locale] ?? item._id}</Link></ListItem>
+            ))}
+            <ListItem>
+              <Link href={`/studio`} locale={false}>Studio</Link>
+            </ListItem>
+          </UnorderedList>
+        </Container>
       </Layout >
     </>
   )

@@ -13,10 +13,11 @@ import {
 import { NextSeo } from 'next-seo'
 import RenderDocument from '../../components/Documents/RenderDocument'
 import Layout from '../../components/Layout'
-import Alert from '../../components/Layout/Alert'
-import { useOpenGraphImages } from '../../lib/functions'
 import TextBlocks from '../../components/TextBlocks'
-import { Heading } from '@chakra-ui/react'
+import { Container, Heading } from '@chakra-ui/react'
+import { getOpenGraphImages } from '../../lib/functions'
+import ErrorPage from 'next/error'
+
 /**
  * Helper function to return the correct version of the document
  * If we're in "preview mode" and have multiple documents, return the draft
@@ -30,7 +31,7 @@ function filterDataToSingleItem(data, preview) {
 }
 
 export default function Document({ data, preview }) {
-  const { locale, defaultLocale } = useRouter()
+  const { locale, defaultLocale, isFallback } = useRouter()
 
   const { data: previewData } = usePreviewSubscription(data?.query, {
     params: data?.queryParams ?? {},
@@ -41,15 +42,24 @@ export default function Document({ data, preview }) {
     enabled: preview,
   })
 
-  /*
-  if (!router.isFallback && !data.item._id) {
-    return <ErrorPage statusCode={404} />
-  } */
+
+  // This includes setting the noindex header because static files always return a status 200 but the rendered not found page page should obviously not be indexed
+  if (!isFallback && !data?.page?.item[0]?._id) {
+    return <>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <ErrorPage statusCode={404} />
+    </>
+  }
+
+
+
 
   // Client-side uses the same query, so we may need to filter it down again
   const page = filterDataToSingleItem(previewData, preview)
-
-  // const openGraphImages = useOpenGraphImages(page?.item[0]?.image, page?.item[0]?.label[locale])
+  // Get Open Graph images in different sizes
+  const openGraphImages = getOpenGraphImages(page?.item[0]?.image, page?.item[0]?.label[locale])
 
   // Notice the optional?.chaining conditionals wrapping every piece of content?
   // This is extremely important as you can't ever rely on a single field
@@ -59,14 +69,14 @@ export default function Document({ data, preview }) {
   return (
     <>
       <NextSeo
-        title={`${page?.item[0]?.label[locale]} - ${page?.siteSettings?.label[locale]}`}
+        title={`${page?.item[0]?.label[locale ?? defaultLocale]} - ${page?.siteSettings?.label[locale ?? defaultLocale]}`}
         description={page?.item[0]?.excerpt}
-        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/${page?.item[0]._id}`}
+        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}/${page?.item[0]._id}`}
         openGraph={{
-          url: `${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/${page?.item[0]._id}`,
+          url: `${process.env.NEXT_PUBLIC_DOMAIN}/${page?.item[0]._id}`,
           title: page?.item[0]?.label[locale],
           description: page?.item[0]?.excerpt,
-          // images: openGraphImages,
+          images: openGraphImages,
           site_name: page?.siteSettings?.label[locale],
         }}
         twitter={{
@@ -82,9 +92,8 @@ export default function Document({ data, preview }) {
         <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
       </Head>
 
-      <Layout site={page?.siteSettings} preview>
+      <Layout site={page?.siteSettings} preview={preview}>
         {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
-
 
         {/* If this is a PREVIEW request comming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
         {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
@@ -96,7 +105,6 @@ export default function Document({ data, preview }) {
         )
 
         }
-        <pre>{JSON.stringify(page, null, 2)}</pre>
       </Layout>
     </>
   )
@@ -104,9 +112,11 @@ export default function Document({ data, preview }) {
 
 export async function getStaticProps({ params, locale, preview = false }) {
   const ID = typeof params.id === 'string' ? params.id : params.id.pop()
-  const { _type: type } = await getType(ID, preview)
+  const { _type: type, notFound = false } = await getType(ID, preview)
+  if (notFound === true) return { notFound }
+
   const query = `{
-    "item": *[_id == $id] {
+    'item': *[_id == $id] {
       ${type === 'HumanMadeObject' ? humanMadeObjectFields : ''}
       ${type === 'Actor' ? groupFields : ''}
       ${type === 'Group' ? groupFields : ''}
@@ -135,7 +145,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
       // Pass down the "preview mode" boolean to the client-side
       preview,
       // Pass down the initial content, and our query
-      data: { page, query, queryParams, preview },
+      data: { page, query, queryParams },
     },
   }
 }

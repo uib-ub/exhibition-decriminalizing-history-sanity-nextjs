@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { Flex, Grid, Skeleton } from '@chakra-ui/react'
 import Caption from './shared/Caption'
 
-const MiradorWithNoSSR = dynamic(() => import('../MiradorViewer'), { ssr: false })
+const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), { ssr: false })
 
 export default function MiradorGallery(props) {
   const { ref, inView } = useInView({

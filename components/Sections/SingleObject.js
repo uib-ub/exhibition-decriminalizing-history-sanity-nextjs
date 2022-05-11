@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { Flex, Grid, Skeleton } from '@chakra-ui/react'
 import Caption from './shared/Caption'
 
-const MiradorWithNoSSR = dynamic(() => import('../MiradorViewer'), {
+const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), {
   ssr: false,
 })
 
@@ -19,7 +19,7 @@ const SingleObject = (props) => {
     return null
   }
 
-  const { title, description, item, canvasUrl } = props
+  const { label, description, item, canvasUrl } = props
   const height = '60vh'
 
   return (
@@ -52,7 +52,7 @@ const SingleObject = (props) => {
       {!item.manifest && <Flex gridArea="image">Mangler manifest</Flex>}
       {!inView && <Skeleton height="60vh" />}
 
-      {inView && <Caption title={title} content={description} sourceItem={item} />}
+      {inView && <Caption label={label} content={description} sourceItem={item} />}
     </Grid>
   )
 }

@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 export default function Source(props) {
   const { locale, defaultLocale } = useRouter()
 
-  if (!props) {
+  if (!props && !props.label[locale]) {
     return null
   }
 
@@ -23,11 +23,11 @@ export default function Source(props) {
       <Text fontSize={{ base: 'xs', sm: 'xs', md: 'sm', xl: 'sm' }}>
         <i>
           <Link href={`/id/${_id}`} isExternal>
-            {label[no] ?? label[defaultLocale]}
+            {label[locale] ?? label[defaultLocale]}
           </Link>
         </i>
 
-        {owner?.length && `. ${owner[0].label[no] ?? owner[0].label[defaultLocale]}.`}
+        {owner?.length && `. ${owner[0].label[locale] ?? owner[0].label[defaultLocale]}.`}
       </Text>
     </Flex>
   )

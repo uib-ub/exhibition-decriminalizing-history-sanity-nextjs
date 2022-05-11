@@ -41,7 +41,7 @@ export default function PageHeader(props) {
       >
         {props.title}
       </Heading>
-      {props?.subtitle && <TextBlocks textAlign="center" blocks={props.subtitle} />}
+      {props?.subtitle && <TextBlocks textAlign="center" value={props.subtitle} />}
     </Container>
   )
 }

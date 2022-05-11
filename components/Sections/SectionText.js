@@ -10,9 +10,9 @@ export default function SectionText(props) {
     <Container maxW={['md', null, '2xl', null]}>
       {props?.title && <Heading fontSize="xl">{props.title}</Heading>}
 
-      {props?.subtitle && <TextBlocks blocks={props.subtitle} />}
+      {props?.subtitle && <TextBlocks value={props.subtitle} />}
 
-      <TextBlocks blocks={props.content} />
+      <TextBlocks value={props.content} />
     </Container>
   )
 }

@@ -11,14 +11,14 @@ export default function Quote(props) {
       <Box as="blockquote">
         <TextBlocks
           fontSize={['lg', null, '2xl', null]}
-          blocks={props.content}
+          value={props.content}
           color="red"
         />
       </Box>
 
       {props.credit && (
         <figcaption>
-          <TextBlocks pl="20" textAlign="right" blocks={props.credit} />
+          <TextBlocks pl="20" textAlign="right" value={props.credit} />
         </figcaption>
       )}
     </Box>

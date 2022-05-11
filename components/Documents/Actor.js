@@ -69,7 +69,7 @@ export default function Actor(item) {
             <Box maxWidth={['xl', null, '2xl', null]} my="10">
               {item.referredToBy?.map((ref) => (
                 <>
-                  <TextBlocks key={ref._key} blocks={ref.body} />
+                  <TextBlocks key={ref._key} value={ref.body} />
                 </>
               ))}
             </Box>

@@ -117,9 +117,10 @@ export default function Page({ data, preview }) {
         </title>
       </Head> */}
 
+
       <Layout site={page?.siteSettings} preview>
-        <Container>
-          <Heading>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
+        <Container maxW={"4xl"} my={20}>
+          <Heading size={"4xl"} mb={10}>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
 
           {/* If LinguisticDocument the content is in the body field */}
           {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}

@@ -45,7 +45,6 @@ export default function Header(props) {
         boxSizing="border-box"
         px="4"
         py="2"
-        borderBottom="solid 1px"
         {...rest}
       >
         <Flex direction="row" alignItems="center">

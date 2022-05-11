@@ -14,7 +14,7 @@ export default function Concept(item) {
 
       <Box maxW="2xl">
         {item?.referredToBy?.map((ref) => (
-          <TextBlocks key={ref._key} blocks={ref.body} />
+          <TextBlocks key={ref._key} value={ref.body} />
         ))}
       </Box>
 

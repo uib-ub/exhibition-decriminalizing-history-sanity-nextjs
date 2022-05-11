@@ -39,7 +39,7 @@ export default function Compact({ data }) {
                 {item.item.shortDescription}
               </Text>
             )}
-            <TextBlocks blocks={item.description} />
+            <TextBlocks value={item.description} />
           </Box>
         </Flex>
       ))}

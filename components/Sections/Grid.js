@@ -52,7 +52,7 @@ export default function Hero(props) {
 
               {item.content && (
                 <Box>
-                  <TextBlocks fontSize={['md', 'xl']} blocks={item.content} />
+                  <TextBlocks fontSize={['md', 'xl']} value={item.content} />
                 </Box>
               )}
             </LinkBox>

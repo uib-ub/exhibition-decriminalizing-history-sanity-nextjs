@@ -29,7 +29,8 @@ import CurrentOwner from '../CurrentOwner'
 import Description from '../Description'
 import { useRouter } from 'next/router'
 
-const MiradorWithNoSSR = dynamic(() => import('../MiradorViewer'), { ssr: false })
+const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), { ssr: false })
+//const YithViewerWithNoSSR = dynamic(() => import('../IIIF/YithViewer'), { ssr: false })
 
 export default function HumanMadeObject(item) {
   const { locale, defaultLocale } = useRouter()
@@ -37,86 +38,100 @@ export default function HumanMadeObject(item) {
   const { hasCopied, onCopy } = useClipboard(JSON.stringify(item, null, 2))
 
   return (
-    <Grid
-      maxW={'2xl'}
-      p={5}
-      gridGap={{ base: 0 }}
-      alignContent="start"
-      gridTemplateAreas={{ base: '"image" "metadata"' }}
-      gridTemplateColumns={{ base: '1fr' }}
-    >
-      <Container maxW="full" gridArea="metadata" p="0">
-        <Heading fontFamily="EB Garamond" fontWeight="thin" mt={5} mb={5}>
-          {item.label[locale] ?? item.label.en}
+    <Container maxW={"4xl"} my={20}>
+      <Grid
+        maxW={'4xl'}
+        p={5}
+        gridGap={{ base: 0 }}
+        alignContent="start"
+        gridTemplateAreas={{ base: '"image" "metadata"' }}
+        gridTemplateColumns={{ base: '1fr' }}
+      >
+        <Container maxW="full" gridArea="metadata" p="0">
+          <Heading fontFamily="EB Garamond" fontWeight="thin" mt={5} mb={5}>
+            {item.label[locale] ?? item.label[defaultLocale]}
 
-          <Button variant="link" size="lg" onClick={onOpen}>
-            <Icon as={BiDotsVerticalRounded} />
-          </Button>
-        </Heading>
+            <Button variant="link" size="lg" onClick={onOpen}>
+              <Icon as={BiDotsVerticalRounded} />
+            </Button>
+          </Heading>
 
-        {item.description && <Description description={item.description} />}
+          {item.description && <Description description={item.description} />}
 
-        {item?.referredToBy && (
-          <Box>
-            <ReferredToBy array={item.referredToBy} />
+          {item?.referredToBy && (
+            <Box>
+              <ReferredToBy array={item.referredToBy} />
+            </Box>
+          )}
+
+          {item.image?.palette && <Palette colors={item.image?.palette} />}
+
+          <Grid as="dl" pt="4" templateColumns={['2fr', '2fr', '160px auto']}>
+            {item.hasType && <HasType types={item.hasType} />}
+
+            {item.subject && <Subject subjects={item.subject} />}
+
+            {item.depicts && <Depicts depicted={item.depicts} />}
+
+            {item.homepage && <Homepage homepage={item.homepage} />}
+
+            {item.hasCurrentOwner && <CurrentOwner owners={item.hasCurrentOwner} />}
+          </Grid>
+
+          {item.activityStream && <ActivityStream stream={item.activityStream} />}
+        </Container>
+
+
+        {item.subjectOfManifest && (
+          <Box gridArea="image">
+            <MiradorWithNoSSR manifests={[{ manifest: item.subjectOfManifest }]} height="70vh" variant="basic" />
           </Box>
         )}
 
-        {item.image?.palette && <Palette colors={item.image?.palette} />}
+        {item.manifest && !item.subjectOfManifest && (
+          <Box gridArea="image">
+            <MiradorWithNoSSR
+              hideWindowTitle="true"
+              manifests={[{ manifest: item.manifest }]}
+              height="70vh"
+            />
+          </Box>
+        )}
 
-        <Grid as="dl" pt="4" templateColumns={['2fr', '2fr', '160px auto']}>
-          {item.hasType && <HasType types={item.hasType} />}
-
-          {item.subject && <Subject subjects={item.subject} />}
-
-          {item.depicts && <Depicts depicted={item.depicts} />}
-
-          {item.homepage && <Homepage homepage={item.homepage} />}
-
-          {item.hasCurrentOwner && <CurrentOwner owners={item.hasCurrentOwner} />}
-        </Grid>
-
-        {item.activityStream && <ActivityStream stream={item.activityStream} />}
-      </Container>
-
-      {item.subjectOfManifest && (
+        {/* {item.subjectOfManifest && (
         <Box gridArea="image">
-          <MiradorWithNoSSR manifests={[{ manifest: item.subjectOfManifest }]} height="70vh" />
+          <YithViewerWithNoSSR id={item.subjectOfManifest} type="projection" preview="figure" size={300} />
         </Box>
-      )}
-
-      {item.manifest && !item.subjectOfManifest && (
+      )} */}
+        {/*   {item.manifest && !item.subjectOfManifest && (
         <Box gridArea="image">
-          <MiradorWithNoSSR
-            hideWindowTitle="true"
-            manifests={[{ manifest: item.manifest }]}
-            height="70vh"
-          />
+          <YithViewerWithNoSSR id={item.manifest} type="presentation" preview="figure" size={300} />
         </Box>
-      )}
+      )} */}
 
-      <Modal isOpen={isOpen} size="4xl" onClose={onClose} scrollBehavior="inside">
-        <ModalOverlay>
-          <ModalContent>
-            <ModalHeader>JSON</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Code w="full" fontSize="xs" p="2">
-                <pre>{JSON.stringify(item, null, 2)}</pre>
-              </Code>
-            </ModalBody>
+        <Modal isOpen={isOpen} size="4xl" onClose={onClose} scrollBehavior="inside">
+          <ModalOverlay>
+            <ModalContent>
+              <ModalHeader>JSON</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Code w="full" fontSize="xs" p="2">
+                  <pre>{JSON.stringify(item, null, 2)}</pre>
+                </Code>
+              </ModalBody>
 
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-              <Button onClick={onCopy} ml={2}>
-                {hasCopied ? 'Copied' : 'Copy'}
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </ModalOverlay>
-      </Modal>
-    </Grid>
+              <ModalFooter>
+                <Button colorScheme="blue" mr={3} onClick={onClose}>
+                  Close
+                </Button>
+                <Button onClick={onCopy} ml={2}>
+                  {hasCopied ? 'Copied' : 'Copy'}
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </ModalOverlay>
+        </Modal>
+      </Grid>
+    </Container>
   )
 }

@@ -1,4 +1,9 @@
-export default function preview(req, res) {
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+export default function preview(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (!req?.query?.secret) {
     return res.status(401).json({ message: 'No secret token' })
   }

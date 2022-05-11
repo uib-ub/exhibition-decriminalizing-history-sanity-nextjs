@@ -53,7 +53,7 @@ export default function Hero(props) {
             <TextBlocks
               fontSize={['xl', null, '2xl', '3xl']}
               textAlign="center"
-              blocks={props.tagline}
+              value={props.tagline}
             />
           </Box>
         )}

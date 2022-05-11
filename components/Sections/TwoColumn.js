@@ -14,19 +14,19 @@ export default function TwoColumn(props) {
       <Center>
         {props?.subtitle && (
           <Box size="xl">
-            <TextBlocks blocks={props.subtitle} />
+            <TextBlocks value={props.subtitle} />
           </Box>
         )}
       </Center>
       <Grid templateColumns="repeat(auto-fit, minmax(300px, 1fr))" gap={6} p="10">
         {props?.firstColumn && (
           <Box size="xl">
-            <TextBlocks blocks={props.firstColumn} />
+            <TextBlocks value={props.firstColumn} />
           </Box>
         )}
         {props?.secondColumn && (
           <Box size="xl">
-            <TextBlocks blocks={props.secondColumn} />
+            <TextBlocks value={props.secondColumn} />
           </Box>
         )}
       </Grid>

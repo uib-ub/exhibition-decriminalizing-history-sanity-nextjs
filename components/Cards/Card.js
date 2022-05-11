@@ -106,11 +106,11 @@ export default function Card(props) {
     <GridItem
       as="article"
       alignSelf="flex-start"
-      borderColor={borderColor}
+      /* borderColor={borderColor}
       borderWidth="1px"
       borderRadius="md"
       boxShadow="sm"
-      bgColor={bg}
+      bgColor={bg} */
       {...spanObj}
     >
       <LinkBox>
@@ -140,7 +140,7 @@ export default function Card(props) {
               noOfLines="2"
               color={color}
               fontSize={['md', 'md', 'lg', 'lg']}
-              blocks={description[0].body}
+              value={description[0].body}
               maxW="full"
               mx="0"
             />
@@ -152,7 +152,7 @@ export default function Card(props) {
                 .map((creator, index) => (
                   <span key={creator._id}>
                     {index === 0 ? '' : ', '}
-                    {creator.name[lobale] ?? creator.name[defaultLocale]}
+                    {creator.name[locale] ?? creator.name[defaultLocale]}
                   </span>
                 ))}
             </Text>
@@ -160,13 +160,14 @@ export default function Card(props) {
 
           {creation && creation[0].timespan && (
             <Box fontFamily="Montserrat" fontSize={['xs', 'sm', 'sm', 'sm']} color={color}>
-              <Timespan timespan={creation[0].timespan} />
+              <Box>{creation[0].timespan[0].edtf}</Box>
+              {/* <Timespan timespan={creation[0].timespan} /> */}
             </Box>
           )}
         </Box>
 
         <Flex borderTop="dashed 1px" borderColor={borderColor} px="4" pt="2">
-          {hasType && (
+          {/*  {hasType && (
             <HStack spacing={4} mb="2" mr="2">
               {hasType.map((type) => (
                 <Tag
@@ -180,7 +181,7 @@ export default function Card(props) {
               ))}
             </HStack>
           )}
-
+ */}
           {/* <Text alignSelf="center" fontSize="sm">{aspectRatio}</Text> */}
 
           <Spacer />

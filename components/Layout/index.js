@@ -9,6 +9,7 @@ export default function Layout({ children, site, preview }) {
       {preview && <Alert />}
       {/* <Meta /> */}
       <Header data={{ ...site }} />
+      <p>{preview}</p>
 
       <Box as="main">
         {/* {loading ? (

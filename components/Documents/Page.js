@@ -9,7 +9,7 @@ export default function Page(data) {
       {data.content && <Sections sections={data.content} />}
 
       {/* If LinguisticDocument the content is in the body field */}
-      {data.body && <TextBlocks blocks={data.body} />}
+      {data.body && <TextBlocks value={data.body} />}
     </Container>
   )
 }
