@@ -4,14 +4,64 @@ import Link from 'next/link'
 import { useRouter, NextRouter } from 'next/router'
 import Image from 'next/image'
 import { getClient } from '../lib/sanity.server'
-import { LocaleSwitcher } from '../components/Locale'
 import TextBlocks from '../components/TextBlocks'
+import Sections from '../components/Sections/Sections'
 import Layout from '../components/Layout'
 import { arrayToTree } from 'performant-array-to-tree'
 import { humanMadeObjectFields } from '../lib/queries/fragments/humanMadeObjectFields'
 import { groq } from 'next-sanity'
 import { siteSettings } from '../lib/queries/fragments/siteSettings'
+import { pageFields } from '../lib/queries/fragments/pageFields'
 import { Box, Container, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react'
+
+const fields = groq`
+  ...,
+  content[] {
+    disabled != true => {
+      ...
+    },
+    _type == 'MiradorGallery' && disabled != true => @{
+      ...,
+      items[] {
+        "manifest": coalesce(manifestRef->.subjectOfManifest, manifestUrl),
+        canvasUrl,
+      },
+    },
+    _type == 'SingleObject' && disabled != true => @{
+      ...,
+      item-> {
+        _id,
+        label,
+        referredToBy[] {
+          ...
+        },
+        image,
+        "manifest": coalesce(subjectOfManifest, manifestUrl),
+        canvasUrl,
+      }
+    },
+    _type == 'EventSection' && disabled != true => @{
+      ...,
+      item-> {
+        _id,
+        label,
+        timespan,
+        location,
+        referredToBy[] {
+          ...
+        },
+        image,
+      }
+    },
+    _type == 'Grid'  && disabled != true => @{
+      ...,
+      items[] {
+        ...,
+        "route": coalesce(landingPageRoute->.slug.current,landingPageRoute->.link,landingPageRoute->.route)
+      }
+    }
+  }
+`
 
 const siteNav = groq`"siteNav": *[_id == "main-nav"][0]{
   tree[] {
@@ -42,8 +92,12 @@ const frontpageQuery = groq`
     ${siteNav},
     "page": *[_id == "siteSettings"][0] {
       ...coalesce(
-        *[__i18n_base._ref == ^.frontpage._ref && __i18n_lang == $language][0] {...},
-        frontpage-> {...}
+        *[__i18n_base._ref == ^.frontpage._ref && __i18n_lang == $language][0] {
+          ${fields}
+        },
+        frontpage-> {
+          ${fields}
+        }
       )
     }
   }
@@ -77,20 +131,20 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
           </Heading>
 
           <Text>{siteSettings?.description[locale]}</Text>
+        </Container>
 
-          <Box my={10}>
-            <h2>
-              {page?.label}
-            </h2>
-            {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))}
-            {/* <pre>{JSON.stringify(page?.content, null, 2)}</pre> */}
-          </Box>
+        <Box my={10}>
+          {/* {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))} */}
+          {page?.content && <Sections sections={page?.content} />}
+          {/* <pre>{JSON.stringify(page, null, 2)}</pre> */}
+        </Box>
 
+        <Container maxW={"4xl"} my={20}>
 
           <UnorderedList marginStart={0}>
             {siteNav?.tree && siteNav?.tree.map((child: any) => (
               <ListItem key={child._key}>
-                <Link href={`${child.value.reference.route}`}>
+                <Link href={`/${child.value.reference.route}`}>
                   {child.value.reference.label[locale] ?? 'Uten tittel'}
                 </Link>
               </ListItem>

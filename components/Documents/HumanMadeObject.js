@@ -28,6 +28,7 @@ import Subject from '../Subject'
 import CurrentOwner from '../CurrentOwner'
 import Description from '../Description'
 import { useRouter } from 'next/router'
+import CanvasPanel from '../IIIF/CanvasPanel'
 
 const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), { ssr: false })
 //const YithViewerWithNoSSR = dynamic(() => import('../IIIF/YithViewer'), { ssr: false })
@@ -80,6 +81,7 @@ export default function HumanMadeObject(item) {
 
           {item.activityStream && <ActivityStream stream={item.activityStream} />}
         </Container>
+
 
 
         {item.subjectOfManifest && (

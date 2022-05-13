@@ -18,6 +18,7 @@ import {
   ExhibitionElement,
   EventSection,
   ActorCollection,
+  Grid,
   Gallery,
 } from '../Sections'
 import ActorInsert from './Inserts/ActorInsert'
@@ -41,6 +42,7 @@ const myPortableTextComponents = {
     IllustrationWithCaption: ({ value }) => <IllustrationWithCaption {...value} />,
     InstagramPost: ({ value }) => <InstagramPost {...value} />,
     Gallery: ({ value }) => <Gallery {...value} />,
+    Grid: ({ value }) => <Grid {...value} />,
     MiradorGallery: ({ value }) => <MiradorGallery {...value} />,
     PageHeader: ({ value }) => <PageHeader {...value} />,
     Quote: ({ value }) => <Quote {...value} />,

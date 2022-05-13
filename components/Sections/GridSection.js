@@ -2,9 +2,10 @@ import NextLink from 'next/link'
 import { Container, Grid, Box, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
 import Image from 'next/image'
-import { GetImage } from '../../lib/sanity.server'
+import { urlFor } from '../../lib/sanity'
 
-export default function Hero(props) {
+export default function GridSection(props) {
+  console.log(JSON.stringify(props, null, 2))
   if (!props || props.disabled === true) {
     return null
   }
@@ -12,10 +13,10 @@ export default function Hero(props) {
   const { items } = props
 
   return (
-    <Container px={[5, 5, 5, 0]} maxW={['sm', '2xl', '2xl', '6xl']} centerContent>
+    <Container px={[5, 5, 5, 0]} maxW={['sm', '2xl', 'full', 'full']} centerContent>
       <Grid
         templateColumns="1fr 1fr"
-        maxW="4xl"
+        maxW="full"
         mb="10"
         boxSizing="border-box"
         gap={[5, null, 10, null]}
@@ -32,23 +33,29 @@ export default function Hero(props) {
               >
                 {romanize(index + 1)}.
               </Text> */}
-              {item.illustration && (
+              {item.illustration?.image && (
                 <Image
                   alt=""
-                  {...GetImage(item.illustration.image)}
+                  src={urlFor(item.illustration.image).url()}
                   layout="intrinsic"
-                  /* sizes="(max-width: 800px) 100vw, 800px" */
-                  objectFit="cover"
+                  objectFit="contain"
                   width={500}
                   height={500}
                 />
               )}
 
-              <Heading fontSize={['xl', '2xl', '4xl', '5xl']}>
-                <NextLink href={`/${item.route}`} passHref>
-                  <LinkOverlay>{item.title}</LinkOverlay>
-                </NextLink>
-              </Heading>
+              {item.route && item.label && (
+                <Heading fontSize={['xl', '2xl', '4xl', '5xl']}>
+                  <NextLink href={`/${item.route}`} passHref>
+                    <LinkOverlay>{item.label}</LinkOverlay>
+                  </NextLink>
+                </Heading>
+              )}
+              {!item.route && item.label && (
+                <Heading fontSize={['xl', '2xl', '4xl', '5xl']}>
+                  {item.label}
+                </Heading>
+              )}
 
               {item.content && (
                 <Box>
