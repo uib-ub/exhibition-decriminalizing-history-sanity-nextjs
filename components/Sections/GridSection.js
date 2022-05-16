@@ -1,11 +1,10 @@
 import NextLink from 'next/link'
-import { Container, Grid, Box, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react'
+import { AspectRatio, Grid, Box, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
 import Image from 'next/image'
 import { urlFor } from '../../lib/sanity'
 
 export default function GridSection(props) {
-  console.log(JSON.stringify(props, null, 2))
   if (!props || props.disabled === true) {
     return null
   }
@@ -13,34 +12,28 @@ export default function GridSection(props) {
   const { items } = props
 
   return (
-    <Container px={[5, 5, 5, 0]} maxW={['sm', '2xl', 'full', 'full']} centerContent>
+    <AspectRatio ratio={24 / 11}>
       <Grid
-        templateColumns="1fr 1fr"
+        templateColumns={[
+          "1fr 1fr",
+          "1fr 1fr",
+          "1fr 1fr 1fr 1fr",
+        ]}
         maxW="full"
-        mb="10"
         boxSizing="border-box"
-        gap={[5, null, 10, null]}
+        backgroundColor={"green.200"}
       >
         {items &&
-          items.map((item) => (
-            <LinkBox key={item._key} position="relative">
-              {/* <Text
-                display="block"
-                position="absolute"
-                bgColor="white"
-                p="2"
-                textTransform="lowercase"
-              >
-                {romanize(index + 1)}.
-              </Text> */}
+          items.map((item, i) => (
+            <LinkBox key={item._key + i} backgroundColor={`yellow.${i + 2}00`} position="relative" maxW={"full"} maxH={"full"}>
               {item.illustration?.image && (
                 <Image
                   alt=""
                   src={urlFor(item.illustration.image).url()}
                   layout="intrinsic"
-                  objectFit="contain"
-                  width={500}
-                  height={500}
+                  height={3667}
+                  width={2000}
+                  objectFit={'contain'}
                 />
               )}
 
@@ -65,6 +58,6 @@ export default function GridSection(props) {
             </LinkBox>
           ))}
       </Grid>
-    </Container>
+    </AspectRatio>
   )
 }

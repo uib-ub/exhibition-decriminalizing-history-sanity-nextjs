@@ -1,26 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import {
-  Button,
   Container,
   Flex,
-  List,
-  ListItem,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuList,
-  MenuItem,
   Heading,
-  Icon,
   useColorMode,
   useColorModeValue,
   Spacer,
-  Portal,
   // Image,
 } from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
-import ActiveLink from '../Link/ActiveLink'
 import LocaleSwitcher from '../Locale/LocaleSwitcher'
 import { useRouter } from 'next/router'
 // import { imageBuilder } from '../../lib/sanity'
@@ -46,6 +34,7 @@ export default function Header(props) {
         px="4"
         py="2"
         {...rest}
+        backgroundColor="yellow.100"
       >
         <Flex direction="row" alignItems="center">
           {/* <Image
@@ -56,19 +45,18 @@ export default function Header(props) {
           /> */}
           <Heading
             fontSize={['lg', 'xl', '2xl', '2xl']}
-            fontWeight={{ base: 'normal' }}
-            fontFamily="EB Garamond"
           >
             <Link href="/">
-              <a>{label?.[locale] ?? label?.[defaultLocale]}</a>
+              {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
+              <a>#DecrimHist</a>
             </Link>
           </Heading>
 
         </Flex>
-
         <Spacer />
 
         <LocaleSwitcher />
+
       </Container>
     </>
   )

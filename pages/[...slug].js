@@ -123,9 +123,9 @@ export default function Page({ data, preview }) {
 
           {/* If LinguisticDocument the content is in the body field */}
           {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}
+          {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
         </Container>
 
-        <pre>{JSON.stringify(data, null, 2)}</pre>
       </Layout>
     </>
   )

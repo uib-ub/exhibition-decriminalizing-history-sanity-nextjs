@@ -11,7 +11,6 @@ import { arrayToTree } from 'performant-array-to-tree'
 import { humanMadeObjectFields } from '../lib/queries/fragments/humanMadeObjectFields'
 import { groq } from 'next-sanity'
 import { siteSettings } from '../lib/queries/fragments/siteSettings'
-import { pageFields } from '../lib/queries/fragments/pageFields'
 import { Box, Container, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react'
 
 const fields = groq`
@@ -85,9 +84,6 @@ const siteNav = groq`"siteNav": *[_id == "main-nav"][0]{
 
 const frontpageQuery = groq`
   {
-    "items": *[_type == "HumanMadeObject"] {
-      ${humanMadeObjectFields}
-    },
     ${siteSettings},
     ${siteNav},
     "page": *[_id == "siteSettings"][0] {
@@ -113,8 +109,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false }
 
 const Home: NextPage = ({ data, locale, preview }: any) => {
   const { locales, defaultLocale }: NextRouter = useRouter()
-  const tree = arrayToTree(data.siteNav)
-  const { page, siteNav, siteSettings, items } = data
+  const { page, siteNav, siteSettings } = data
 
   return (
     <>
@@ -124,42 +119,22 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout site={siteSettings} preview={preview}>
-        <Container maxW={"4xl"} my={20}>
-          <Heading size={"4xl"} my={20}>
-            {siteSettings?.label[locale]}
-          </Heading>
+      <Layout site={siteSettings} preview={preview} nav={siteNav}>
+        <Container maxW={"full"} backgroundColor="yellow.300">
+          <Container maxW={"4xl"} py={20}>
+            <Heading size={"4xl"} textTransform="uppercase">
+              {siteSettings?.label[locale]}
+            </Heading>
 
-          <Text>{siteSettings?.description[locale]}</Text>
+            <Text>{siteSettings?.description[locale]}</Text>
+          </Container>
         </Container>
 
-        <Box my={10}>
+        <Box>
           {/* {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))} */}
           {page?.content && <Sections sections={page?.content} />}
           {/* <pre>{JSON.stringify(page, null, 2)}</pre> */}
         </Box>
-
-        <Container maxW={"4xl"} my={20}>
-
-          <UnorderedList marginStart={0}>
-            {siteNav?.tree && siteNav?.tree.map((child: any) => (
-              <ListItem key={child._key}>
-                <Link href={`/${child.value.reference.route}`}>
-                  {child.value.reference.label[locale] ?? 'Uten tittel'}
-                </Link>
-              </ListItem>
-            ))}
-          </UnorderedList>
-
-          <UnorderedList marginStart={0}>
-            {items.map((item: any) => (
-              <ListItem key={item._id}><Link href={`/id/${item._id}`} /* locale={false} */>{item.label[locale] ?? item._id}</Link></ListItem>
-            ))}
-            <ListItem>
-              <Link href={`/studio`} locale={false}>Studio</Link>
-            </ListItem>
-          </UnorderedList>
-        </Container>
       </Layout >
     </>
   )
