@@ -40,7 +40,7 @@ export default S.listItem()
               .schemaType('Page')
               .filter(`_type == "Page" && !(_id match "**home") && __i18n_lang == $baseLanguage`)
               .params({ baseLanguage: config.base })
-              .menuItems(S.documentTypeList('Page').getMenuItems())
+              .canHandleIntent(S.documentTypeList('Page').getCanHandleIntent())
           ),
         S.listItem()
           .title('Tekster')
@@ -59,7 +59,7 @@ export default S.listItem()
                       .schemaType('LinguisticDocument')
                       .filter(`_type == "LinguisticDocument" && __i18n_lang == $baseLanguage`)
                       .params({ baseLanguage: config.base })
-                      .menuItems(S.documentTypeList('LinguisticDocument').getMenuItems())
+                      .canHandleIntent(S.documentTypeList('LinguisticDocument').getCanHandleIntent())
                   ),
                 S.listItem()
                   .title('Tekster etter type')
@@ -76,7 +76,8 @@ export default S.listItem()
                           .schemaType('LinguisticDocument')
                           .title('Tekster')
                           .filter('_type == "LinguisticDocument" && $id in hasType[]._ref && __i18n_lang == $baseLanguage')
-                          .params({ id: catId, baseLanguage: config.base }),
+                          .params({ id: catId, baseLanguage: config.base })
+                          .canHandleIntent(S.documentTypeList('LinguisticDocument').getCanHandleIntent())
                       ),
                   ),
                 S.divider(),
