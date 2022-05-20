@@ -33,6 +33,7 @@ import { urlFor } from '../../lib/sanity'
 import { FiExternalLink } from 'react-icons/fi'
 import { VscJson } from 'react-icons/vsc' */
 import TextBlocks from '../TextBlocks'
+import Palette from '../Palette'
 import CardImage from './CardImage'
 import Timespan from '../Timespan'
 import { useRouter } from 'next/router'
@@ -60,6 +61,7 @@ export default function Card(props) {
     //homepage,
     hasType,
     aspectRatio,
+    palette,
     creation,
     hasCurrentOwner,
   } = props.item
@@ -80,7 +82,7 @@ export default function Card(props) {
     }
 
     /* Landscape */
-    if (ratio >= 1.4) {
+    if (ratio >= 1.3) {
       spans.colSpan = [1, 2, 2, 2, 2]
       spans.rowSpan = [1, 1, 1, 1, 1]
       /* spans.aspectRatio = "1 / 2" */
@@ -102,52 +104,55 @@ export default function Card(props) {
 
   const spanObj = calculateSpans(aspectRatio)
 
+  /* palette= { "darkMuted", "darkVibrant", "dominant", "lightMuted", "lightVibrant", "muted", "vibrant" } */
+
   return (
     <GridItem
       as="article"
-      alignSelf="flex-start"
+      transform=""
       /* borderColor={borderColor}
       borderWidth="1px"
       borderRadius="md"
-      boxShadow="sm"
-      bgColor={bg} */
+      boxShadow="sm"*/
       {...spanObj}
+      display="flex"
+      flexDirection={'column'}
+      bgColor={palette.lightVibrant.background}
+      color={palette.lightVibrant.foreground}
+      p={5}
     >
       <LinkBox>
         {image && (
-          <Box bgColor="gray.100">
+          <Box>
             <CardImage id={_id} label={label[locale] ?? label[defaultLocale]} url={image} />
           </Box>
         )}
 
-        <Box px={4} pt="2" pb="2">
+        <Box pt="2" pb="2">
           <Heading
             mt="1"
-            fontFamily="Montserrat"
-            fontWeight="semibold"
             as="h3"
-            color={color}
-            fontSize={['xs', 'sm', 'md', 'md']}
+            fontSize={['sm', 'md', 'lg', 'xl', '2xl']}
             lineHeight="tight"
           >
             <NextLink href={`${getBase(_type)}${encodeURIComponent(_id)}`} passHref>
-              <LinkOverlay>{label[locale] ?? label[defaultLocale]}</LinkOverlay>
+              <LinkOverlay>{label[locale] || label[defaultLocale] || 'Missing default language label'}</LinkOverlay>
             </NextLink>
           </Heading>
 
-          {description && description.length > 0 && (
+          {/*           {description && description.length > 0 && (
             <TextBlocks
               noOfLines="2"
-              color={color}
+
               fontSize={['md', 'md', 'lg', 'lg']}
               value={description[0].body}
               maxW="full"
               mx="0"
             />
-          )}
+          )} */}
 
           {creation && creation[0].creators && (
-            <Text fontSize={['xs', 'sm', 'sm', 'sm']} color={color} fontFamily="Montserrat" mb="1">
+            <Text fontSize={['xs', 'sm', 'sm', 'sm']} mb="1">
               {creation[0].creators
                 .map((creator, index) => (
                   <span key={creator._id}>
@@ -159,20 +164,20 @@ export default function Card(props) {
           )}
 
           {creation && creation[0].timespan && (
-            <Box fontFamily="Montserrat" fontSize={['xs', 'sm', 'sm', 'sm']} color={color}>
+            <Box fontSize={['sm', 'sm', 'md', 'md']} >
               <Box>{creation[0].timespan[0].edtf}</Box>
               {/* <Timespan timespan={creation[0].timespan} /> */}
             </Box>
           )}
         </Box>
 
-        <Flex borderTop="dashed 1px" borderColor={borderColor} px="4" pt="2">
+        <Flex px="4" pt="2">
           {/*  {hasType && (
             <HStack spacing={4} mb="2" mr="2">
               {hasType.map((type) => (
                 <Tag
                   key={type._id}
-                  fontFamily="Montserrat"
+                
                   fontSize={['xs', 'xs', 'xs', 'xs']}
                   colorScheme={tagColor}
                 >
@@ -204,7 +209,7 @@ export default function Card(props) {
               variant="link"
               rightIcon={<Icon w={[2, 4, 4, 5]} h={[2, 4, 4, 5]} as={BiDotsVerticalRounded} />}
             />
-            <MenuList fontFamily="Montserrat">
+            <MenuList>
               <MenuItem
                 onClick={onOpen}
                 icon={<Icon w={[2, 4, 5, 5]} h={[2, 4, 5, 5]} as={VscJson} />}
@@ -239,6 +244,6 @@ export default function Card(props) {
           </Modal> */}
         </Flex>
       </LinkBox>
-    </GridItem>
+    </GridItem >
   )
 }

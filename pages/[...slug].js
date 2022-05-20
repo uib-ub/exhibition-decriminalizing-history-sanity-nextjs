@@ -117,7 +117,7 @@ export default function Page({ data, preview }) {
       </Head> */}
 
 
-      <Layout site={page?.siteSettings} preview>
+      <Layout site={page?.siteSettings} nav={page?.siteNav} preview={preview}>
         <Container maxW={"4xl"} my={20}>
           <Heading size={"4xl"} mb={10}>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
 
@@ -125,7 +125,6 @@ export default function Page({ data, preview }) {
           {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}
           {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
         </Container>
-
       </Layout>
     </>
   )

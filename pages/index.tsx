@@ -8,7 +8,8 @@ import TextBlocks from '../components/TextBlocks'
 import Sections from '../components/Sections/Sections'
 import Layout from '../components/Layout'
 import { arrayToTree } from 'performant-array-to-tree'
-import { humanMadeObjectFields } from '../lib/queries/fragments/humanMadeObjectFields'
+import { humanMadeObjectFields } from '../lib/queries/fragments'
+import { siteNav } from '../lib/queries/fragments'
 import { groq } from 'next-sanity'
 import { siteSettings } from '../lib/queries/fragments/siteSettings'
 import { Box, Container, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react'
@@ -62,26 +63,6 @@ const fields = groq`
   }
 `
 
-const siteNav = groq`"siteNav": *[_id == "main-nav"][0]{
-  tree[] {
-    // Make sure you include each item's _key and parent
-    _key,
-    parent,
-    // "Expand" the reference to the node
-    value {
-      reference->{
-        // Get whatever property you need from your documents
-        "label": coalesce(
-          label,
-          *[__i18n_base._ref == ^.page._ref && __i18n_lang == $language][0].label,
-          page->.label,
-        ),
-        "route": coalesce(slug.current,link,route)
-      }
-    }
-  }
-}`
-
 const frontpageQuery = groq`
   {
     ${siteSettings},
@@ -121,13 +102,13 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
 
       <Layout site={siteSettings} preview={preview} nav={siteNav}>
         <Container maxW={"full"} backgroundColor="yellow.300">
-          <Container maxW={"4xl"} py={20}>
-            <Heading size={"4xl"} textTransform="uppercase">
+          <Box py={20}>
+            <Heading fontSize={"9xl"} textTransform="uppercase">
               {siteSettings?.label[locale]}
             </Heading>
 
-            <Text>{siteSettings?.description[locale]}</Text>
-          </Container>
+            <Text fontSize={"3xl"} maxW={"6xl"}>{siteSettings?.description[locale]}</Text>
+          </Box>
         </Container>
 
         <Box>

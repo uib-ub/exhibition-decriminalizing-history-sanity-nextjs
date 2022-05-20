@@ -5,13 +5,15 @@ import { getAllHumanMadeObjects } from '../../lib/api'
 import Layout from '../../components/Layout'
 import Cards from '../../components/Cards'
 import { useTranslations } from 'next-intl';
+import { getClient } from '../../lib/sanity.server'
+import { humanMadeObjectsQuery } from '../../lib/queries'
 
 export default function Items({ data, preview }) {
   const t = useTranslations('Items');
-  const { items, siteSettings } = data
+  const { items, siteSettings, siteNav } = data
 
   return (
-    <Layout preview={preview} site={siteSettings}>
+    <Layout preview={preview} site={siteSettings} nav={siteNav}>
       <NextSeo
         title="Ting"
         titleTemplate={`%s | ${data?.siteSettings?.title}`}
@@ -34,13 +36,16 @@ export default function Items({ data, preview }) {
         <title>Ting – {siteSettings.title}</title>
       </Head>
 
-      <Container my="10" maxWidth="6xl">
+      <Container
+        py="10"
+        maxWidth="full"
+        bgColor={'#50BFE6'}
+        color={'white'}
+      >
         <Heading
           pb="5"
           mb="5"
-          borderBottom="solid 1px"
-          borderColor="gray.300"
-          fontSize={['2xl', '3xl', '4xl', '5xl']}
+          fontSize={['9xl']}
         >
           {t("title")}
         </Heading>
@@ -52,10 +57,12 @@ export default function Items({ data, preview }) {
 }
 
 export async function getStaticProps({ locale, preview = false }) {
-  const data = await getAllHumanMadeObjects(preview)
+  const data = await getClient(preview).fetch(humanMadeObjectsQuery, { language: locale })
+
   return {
     props: {
       data,
+      locale,
       preview,
       messages: (await import(`../../messages/${locale}.json`)).default
     },

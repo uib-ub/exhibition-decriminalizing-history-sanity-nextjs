@@ -109,6 +109,7 @@ export default function MiradorViewer(props) {
     gridArea,
     catalog,
     height = '60vh',
+    bgColor = '#eeeeee',
   } = props
 
   const { variantSettings, plugins } = getVariant(variant)
@@ -145,7 +146,7 @@ export default function MiradorViewer(props) {
             shades: {
               dark: '#000000',
               main: '#424242',
-              light: '#616161',
+              light: bgColor ?? '#616161',
             },
           },
         },
@@ -157,6 +158,11 @@ export default function MiradorViewer(props) {
             },
             secondary: {
               main: '#789a5b',
+            },
+            shades: {
+              dark: bgColor ?? '#000000',
+              main: bgColor ?? '#424242',
+              light: bgColor ?? '#616161',
             },
           },
         },
@@ -179,11 +185,13 @@ export default function MiradorViewer(props) {
       // console.log(`unmounting... ${ID}`)
       miradorInstance = null
     }
-  }, [ID, catalog, mode, plugins, windows, workspaceControlPanel])
+  }, [ID, catalog, mode, plugins, windows, workspaceControlPanel, bgColor])
 
   return (
-    <Box h={height} position="relative" gridArea={gridArea} bgColor="#eeeeee">
+    <Box h={height} position="relative" gridArea={gridArea} bgColor={bgColor}>
       <Box h="100%" id={ID} />
     </Box>
   )
 }
+
+

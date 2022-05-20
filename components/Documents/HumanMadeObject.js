@@ -39,7 +39,7 @@ export default function HumanMadeObject(item) {
   const { hasCopied, onCopy } = useClipboard(JSON.stringify(item, null, 2))
 
   return (
-    <Container maxW={"4xl"} my={20}>
+    <Container maxW={"4xl"} py={20}>
       <Grid
         maxW={'4xl'}
         p={5}
@@ -49,7 +49,7 @@ export default function HumanMadeObject(item) {
         gridTemplateColumns={{ base: '1fr' }}
       >
         <Container maxW="full" gridArea="metadata" p="0">
-          <Heading fontFamily="EB Garamond" fontWeight="thin" mt={5} mb={5}>
+          <Heading mt={5} mb={5}>
             {item.label[locale] ?? item.label[defaultLocale]}
 
             <Button variant="link" size="lg" onClick={onOpen}>
@@ -64,8 +64,6 @@ export default function HumanMadeObject(item) {
               <ReferredToBy array={item.referredToBy} />
             </Box>
           )}
-
-          {item.image?.palette && <Palette colors={item.image?.palette} />}
 
           <Grid as="dl" pt="4" templateColumns={['2fr', '2fr', '160px auto']}>
             {item.hasType && <HasType types={item.hasType} />}
@@ -82,11 +80,14 @@ export default function HumanMadeObject(item) {
           {item.activityStream && <ActivityStream stream={item.activityStream} />}
         </Container>
 
-
-
         {item.subjectOfManifest && (
           <Box gridArea="image">
-            <MiradorWithNoSSR manifests={[{ manifest: item.subjectOfManifest }]} height="70vh" variant="basic" />
+            <MiradorWithNoSSR
+              manifests={[{ manifest: item.subjectOfManifest }]}
+              height="70vh"
+              variant="basic"
+              bgColor={item.image?.palette.darkVibrant.background}
+            />
           </Box>
         )}
 
@@ -96,6 +97,7 @@ export default function HumanMadeObject(item) {
               hideWindowTitle="true"
               manifests={[{ manifest: item.manifest }]}
               height="70vh"
+              bgColor={item.image?.palette.darkVibrant.background}
             />
           </Box>
         )}

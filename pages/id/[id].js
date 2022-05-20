@@ -8,6 +8,7 @@ import {
   humanMadeObjectFields,
   linguisticDocumentFields,
   pageFields,
+  siteNav,
   siteSettings,
 } from '../../lib/queries/fragments'
 import { NextSeo } from 'next-seo'
@@ -53,9 +54,6 @@ export default function Document({ data, preview }) {
     </>
   }
 
-
-
-
   // Client-side uses the same query, so we may need to filter it down again
   const page = filterDataToSingleItem(previewData, preview)
   // Get Open Graph images in different sizes
@@ -92,19 +90,24 @@ export default function Document({ data, preview }) {
         <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
       </Head>
 
-      <Layout site={page?.siteSettings} preview={preview}>
-        {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
+      <Layout site={page?.siteSettings} preview={preview} nav={page?.siteNav}>
+        <Container
+          maxW={'full'}
+          color={page?.item[0]?.image?.palette?.dominant?.foreground}
+          bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
+        >
 
-        {/* If this is a PREVIEW request comming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
-        {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
-          <>
-            <Heading>{page?.item[0]?.label ?? 'Missing title'}</Heading>
-            {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
-            {/* {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />} */}
-          </>
-        )
+          {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
 
-        }
+          {/* If this is a PREVIEW request comming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
+          {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
+            <>
+              <Heading>{page?.item[0]?.label ?? 'Missing title'}</Heading>
+              {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
+              {/* {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />} */}
+            </>
+          )}
+        </Container>
       </Layout>
     </>
   )
@@ -116,6 +119,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
   if (notFound === true) return { notFound }
 
   const query = `{
+    ${siteNav},
     'item': *[_id == $id] {
       ${type === 'HumanMadeObject' ? humanMadeObjectFields : ''}
       ${type === 'Actor' ? groupFields : ''}

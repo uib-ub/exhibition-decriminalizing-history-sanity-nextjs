@@ -13,7 +13,7 @@ export default function Cards(props) {
       as="section"
       maxW="full"
       boxSizing="border-box"
-      overflowX="hidden"
+      overflow="hidden"
       gap={5}
       templateColumns={{
         base: 'repeat(auto-fill, minmax(160px, 1fr))',
