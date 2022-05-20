@@ -26,7 +26,8 @@
     "@seidhr/sanity-plugin-timespan-input",
     "import-tool",
     "media",
-    "@sanity/production-preview"
+    "@sanity/production-preview",
+    "vercel-deploy"
   ],
   "env": {
     "development": {
