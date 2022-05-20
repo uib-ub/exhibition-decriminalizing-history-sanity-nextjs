@@ -28,7 +28,7 @@ export default async function resolveProductionUrl(doc) {
   // If a document is referenced by a route use that, else we have a WIP text that will use the /id/[id].js page
   const getSlug = async (document) => {
     if (document._type === 'Route') {
-      return document.slug.current
+      return document.slug?.current || document.route || document.link
     }
 
     if (!['LinguisticDocument', 'Page'].includes(document._type)) {
