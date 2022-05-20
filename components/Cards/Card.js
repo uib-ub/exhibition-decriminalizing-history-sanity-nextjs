@@ -117,8 +117,8 @@ export default function Card(props) {
       {...spanObj}
       display="flex"
       flexDirection={'column'}
-      bgColor={palette.lightVibrant.background}
-      color={palette.lightVibrant.foreground}
+      bgColor={palette?.lightVibrant?.background}
+      color={palette?.lightVibrant?.foreground}
       p={5}
     >
       <LinkBox>
