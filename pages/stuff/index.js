@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 import { Container, Heading } from '@chakra-ui/react'
-import { getAllHumanMadeObjects } from '../../lib/api'
 import Layout from '../../components/Layout'
 import Cards from '../../components/Cards'
 import { useTranslations } from 'next-intl';
@@ -33,19 +32,19 @@ export default function Items({ data, preview }) {
         }}
       />
       <Head>
-        <title>Ting – {siteSettings.title}</title>
+        <title>{t("title")} – {siteSettings.title}</title>
       </Head>
 
       <Container
-        py="10"
         maxWidth="full"
         bgColor={'#50BFE6'}
-        color={'white'}
+      /* color={'white'} */
       >
         <Heading
           pb="5"
           mb="5"
-          fontSize={['9xl']}
+          pt={1}
+          fontSize={['3xl']}
         >
           {t("title")}
         </Heading>

@@ -10,7 +10,6 @@ import Sections from '../components/Sections/Sections'
 import TextBlocks from '../components/TextBlocks'
 import { Container, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import Alert from '../components/Layout/Alert'
 // import { Container, Text, useColorModeValue } from '@chakra-ui/react'
 
 export async function getStaticPaths({ locales }) {
@@ -63,6 +62,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
       preview,
       // Pass down the initial content, and our query
       data: { page, query, queryParams },
+      messages: (await import(`../messages/${locale}.json`)).default
     },
   }
 }

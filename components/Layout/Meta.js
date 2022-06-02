@@ -35,7 +35,7 @@ export default function Meta() {
         <meta
           name="description"
           content={
-            'I 2021 feirer Universitetet i Bergen 75 år. Universitetet har imidlertid røtter helt tilbake til grunnleggelsen av Bergens Museum i 1825. Museet hadde flere eminente forskere, deriblant den unge Fridtjof Nansen, som skulle bety mye for Bergen og bergenserne.'
+            ''
           }
         />
         {/* <meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}

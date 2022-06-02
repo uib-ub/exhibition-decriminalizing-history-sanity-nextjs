@@ -165,7 +165,7 @@ export default function Card(props) {
 
           {creation && creation[0].timespan && (
             <Box fontSize={['sm', 'sm', 'md', 'md']} >
-              <Box>{creation[0].timespan[0].edtf}</Box>
+              <Box>{creation[0].timespan[0]?.edtf}</Box>
               {/* <Timespan timespan={creation[0].timespan} /> */}
             </Box>
           )}

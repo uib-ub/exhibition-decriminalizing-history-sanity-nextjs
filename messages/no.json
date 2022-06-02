@@ -4,5 +4,12 @@
   },
   "Items": {
     "title": "Ting"
+  },
+  "Layout": {
+    "skipToContent": "Hopp til innholdet"
+  },
+  "Footer": {
+    "usesCookies": "Denne nettsiden benytter informasjonskapsler.",
+    "readAboutCookies": "Les mer om våre informasjonskapsler."
   }
 }

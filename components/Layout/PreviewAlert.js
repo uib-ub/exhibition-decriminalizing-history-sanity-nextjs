@@ -1,6 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react'
 
-export default function Alert() {
+export default function PreviewAlert() {
   return (
     <Flex bgColor="red.600" color="white" maxW="full" alignContent={'center'} justifyContent={'center'}>
       <a href={`/api/exit-preview`}>

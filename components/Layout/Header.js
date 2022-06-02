@@ -25,39 +25,36 @@ export default function Header(props) {
   const { label, /* logo, */ } = data
 
   return (
-    <>
-      <Container
-        as="header"
-        maxW="full"
-        display="flex"
-        boxSizing="border-box"
-        px="4"
-        py="2"
-        {...rest}
-        backgroundColor="yellow.100"
-      >
-        <Flex direction="row" alignItems="center">
-          {/* <Image
+    <Container
+      as="header"
+      maxW="full"
+      display="flex"
+      boxSizing="border-box"
+      px="4"
+      py="2"
+      {...rest}
+    >
+      <Flex direction="row">
+        {/* <Image
             src={imageBuilder.image(logo).height(100).url()}
             alt="site logo"
             h={{ base: '25px' }}
             mr="4"
           /> */}
-          <Heading
-            fontSize={['lg', 'xl', '2xl', '2xl']}
-          >
-            <Link href="/">
-              {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
-              <a>#DecrimHist</a>
-            </Link>
-          </Heading>
+        <Heading
+          fontSize={['lg', 'xl', '2xl', '2xl']}
+        >
+          <Link href="/">
+            {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
+            <a>#DecrimHist</a>
+          </Link>
+        </Heading>
 
-        </Flex>
-        <Spacer />
+      </Flex>
+      <Spacer />
 
-        <LocaleSwitcher />
+      <LocaleSwitcher />
 
-      </Container>
-    </>
+    </Container>
   )
 }

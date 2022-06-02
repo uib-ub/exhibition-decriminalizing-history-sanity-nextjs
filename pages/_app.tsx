@@ -3,7 +3,7 @@ import { NextIntlProvider } from 'next-intl'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
       <NextIntlProvider messages={pageProps.messages}>
@@ -13,4 +13,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default App

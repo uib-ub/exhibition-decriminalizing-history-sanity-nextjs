@@ -1,24 +1,53 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Grid } from '@chakra-ui/react'
+import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
+import { useTranslations } from 'next-intl';
 import Header from './Header'
-import Alert from './Alert'
+import PreviewAlert from './PreviewAlert'
+import Footer from './Footer'
 import Nav from './Nav'
 // import Meta from './Meta'
 
-export default function Layout({ children, site, nav, preview }) {
+const Wrapper = ({ children }) => {
+  return (
+    <Grid
+      maxW={"full"}
+      display="grid"
+      autoRows="minmax(10px, auto) auto"
+      templateColumns='auto 1fr'
+      templateAreas='
+        "nav main"
+        "nav main"
+        "nav footer"'
+    >
+      {children}
+    </Grid>
+  )
+}
+
+export default function Layout({ children, site, nav, preview = false }) {
+  const t = useTranslations('Layout');
+
   return (
     <>
-      {preview && <Alert />}
-      {/* <Meta /> */}
-      <Header data={{ ...site }} />
-      <Nav value={nav} />
+      <SkipNavLink>{t("skipToContent")}</SkipNavLink>
+      <Wrapper>
+        {preview && <PreviewAlert />}
+        {/* <Meta /> */}
+        <Box gridArea="nav" bgColor={'yellow.300'} position='sticky' top={0} height='100vh'>
+          <Header data={{ ...site }} />
+          <Nav value={nav} />
+        </Box>
 
-      <Box as="main">
-        <p>{preview ?? 'no preview'}</p>
-        {/* {loading ? (
-          <h1>Loading...</h1>
-        ) : null} */}
-        {children}
-      </Box>
+        <Box
+          as="main"
+          gridArea="main"
+          maxW='full'
+        >
+          <SkipNavContent />
+          {children}
+        </Box>
+        <Footer />
+      </Wrapper>
     </>
   )
 }

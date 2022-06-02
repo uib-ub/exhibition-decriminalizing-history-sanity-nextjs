@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter, NextRouter } from 'next/router'
 import Image from 'next/image'
 import { getClient } from '../lib/sanity.server'
-import TextBlocks from '../components/TextBlocks'
 import Sections from '../components/Sections/Sections'
 import Layout from '../components/Layout'
 import { arrayToTree } from 'performant-array-to-tree'
@@ -84,7 +83,12 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false }
   const data = await getClient(preview).fetch(frontpageQuery, { language: locale })
   // console.log(JSON.stringify(data, null, 2))
   return {
-    props: { data, locale, preview },
+    props: {
+      data,
+      locale,
+      preview,
+      messages: (await import(`../messages/${locale}.json`)).default
+    },
   }
 }
 
@@ -101,21 +105,21 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
       </Head>
 
       <Layout site={siteSettings} preview={preview} nav={siteNav}>
-        <Container maxW={"full"} backgroundColor="yellow.300">
+        <Container maxW={"100%"} backgroundColor="yellow.300">
           <Box py={20}>
-            <Heading fontSize={"9xl"} textTransform="uppercase">
+            <Heading fontSize={"8vw"} textTransform="uppercase">
               {siteSettings?.label[locale]}
             </Heading>
-
-            <Text fontSize={"3xl"} maxW={"6xl"}>{siteSettings?.description[locale]}</Text>
           </Box>
         </Container>
 
-        <Box>
-          {/* {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))} */}
-          {page?.content && <Sections sections={page?.content} />}
-          {/* <pre>{JSON.stringify(page, null, 2)}</pre> */}
-        </Box>
+        {/* {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))} */}
+        {page?.content && <Sections sections={page?.content} />}
+
+        <Container maxW={"100%"} backgroundColor="yellow.300" p={8}>
+          <Text fontSize={"3xl"} maxW={"6xl"}>{siteSettings?.description[locale]}</Text>
+        </Container>
+        {/* <pre>{JSON.stringify(page, null, 2)}</pre> */}
       </Layout >
     </>
   )

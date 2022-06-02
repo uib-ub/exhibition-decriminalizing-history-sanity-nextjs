@@ -150,6 +150,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
       preview,
       // Pass down the initial content, and our query
       data: { page, query, queryParams },
+      messages: (await import(`../../messages/${locale}.json`)).default
     },
   }
 }
