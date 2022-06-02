@@ -2,6 +2,11 @@ import { Box } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+const langLabels: any = {
+  "no": "Norsk",
+  "en": "English",
+}
+
 export default function LocaleSwitcher() {
   const router = useRouter()
   const { locales, locale: activeLocale } = router
@@ -14,7 +19,7 @@ export default function LocaleSwitcher() {
         return (
           <span key={locale}>
             <Link href={{ pathname, query }} as={asPath} locale={locale}>
-              <a>{locale}</a>
+              <a>{langLabels[locale]}</a>
             </Link>
           </span>
         )

@@ -16,10 +16,10 @@ import ActiveLink from '../Link/ActiveLink'
 import { useTranslations } from 'next-intl'
 
 export default function Footer(props) {
+  const t = useTranslations('Layout')
   const { colorMode, toggleColorMode } = useColorMode()
   const color = useColorModeValue('gray.500', 'gray.400')
   const navColor = useColorModeValue('black', 'white')
-  const t = useTranslations('Footer')
 
   if (!props) {
     return null
@@ -35,11 +35,11 @@ export default function Footer(props) {
       minH="100px"
       py="6"
       px="0"
-      bgColor={'yellow.400'}
+      bgColor={'teal.400'}
     >
 
       <Container maxW="2xl" px="4" centerContent>
-        <Box>
+        <Box fontSize="xl">
           <Link href={`/studio`} locale={false}>Studio</Link>
         </Box>
 
@@ -51,10 +51,10 @@ export default function Footer(props) {
           </Box>
         )}
 
-        <Container p="0" centerContent>
-          <Text fontSize="3xl" textAlign="center">
+        <Container p="0">
+          <Text fontSize="xl" textAlign="center">
             {t('usesCookies')}{' '}
-            <Link href={`/informasjonskapsler`}>{t('readAboutCookies')}</Link>
+            <Link href={`/cookie-policy`}>{t('readAboutCookies')}</Link>
           </Text>
         </Container>
       </Container>

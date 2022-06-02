@@ -34,27 +34,15 @@ export default function Header(props) {
       py="2"
       {...rest}
     >
-      <Flex direction="row">
-        {/* <Image
-            src={imageBuilder.image(logo).height(100).url()}
-            alt="site logo"
-            h={{ base: '25px' }}
-            mr="4"
-          /> */}
-        <Heading
-          fontSize={['lg', 'xl', '2xl', '2xl']}
-        >
-          <Link href="/">
-            {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
-            <a>#DecrimHist</a>
-          </Link>
-        </Heading>
-
-      </Flex>
-      <Spacer />
-
-      <LocaleSwitcher />
-
+      <Heading
+        transform="skew(0deg, -17deg) translate(0px, 30px)"
+        fontSize={['lg', '2xl', '3xl', '3xl']}
+      >
+        <Link href="/">
+          {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
+          <a>#DecrimHist</a>
+        </Link>
+      </Heading>
     </Container>
   )
 }

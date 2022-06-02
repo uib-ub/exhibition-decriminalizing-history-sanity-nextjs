@@ -1,11 +1,11 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { NextIntlProvider } from 'next-intl'
-import '../styles/globals.css'
+import theme from '../theme'
 import type { AppProps } from 'next/app'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <NextIntlProvider messages={pageProps.messages}>
         <Component {...pageProps} />
       </NextIntlProvider>

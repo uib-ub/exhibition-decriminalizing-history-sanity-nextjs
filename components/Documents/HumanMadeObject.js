@@ -39,23 +39,22 @@ export default function HumanMadeObject(item) {
   const { hasCopied, onCopy } = useClipboard(JSON.stringify(item, null, 2))
 
   return (
-    <Container maxW={"4xl"} py={20}>
+    <Container maxW={"4xl"}>
+      <Heading pt="14" mb={5} fontSize={'5xl'}>
+        {item.label[locale] ?? item.label[defaultLocale]}
+
+        <Button variant="link" size="lg" onClick={onOpen}>
+          <Icon as={BiDotsVerticalRounded} />
+        </Button>
+      </Heading>
       <Grid
         maxW={'4xl'}
-        p={5}
         gridGap={{ base: 0 }}
         alignContent="start"
         gridTemplateAreas={{ base: '"image" "metadata"' }}
         gridTemplateColumns={{ base: '1fr' }}
       >
         <Container maxW="full" gridArea="metadata" p="0">
-          <Heading mt={5} mb={5}>
-            {item.label[locale] ?? item.label[defaultLocale]}
-
-            <Button variant="link" size="lg" onClick={onOpen}>
-              <Icon as={BiDotsVerticalRounded} />
-            </Button>
-          </Heading>
 
           {item.description && <Description description={item.description} />}
 

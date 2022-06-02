@@ -25,7 +25,7 @@ const Wrapper = ({ children }) => {
 }
 
 export default function Layout({ children, site, nav, preview = false }) {
-  const t = useTranslations('Layout');
+  const t = useTranslations("Layout");
 
   return (
     <>

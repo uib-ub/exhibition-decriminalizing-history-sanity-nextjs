@@ -107,7 +107,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
       <Layout site={siteSettings} preview={preview} nav={siteNav}>
         <Container maxW={"100%"} backgroundColor="yellow.300">
           <Box py={20}>
-            <Heading fontSize={"8vw"} textTransform="uppercase">
+            <Heading fontSize={locale === 'no' ? '7vw' : "8vw"} textTransform="uppercase">
               {siteSettings?.label[locale]}
             </Heading>
           </Box>
@@ -116,8 +116,8 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
         {/* {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))} */}
         {page?.content && <Sections sections={page?.content} />}
 
-        <Container maxW={"100%"} backgroundColor="yellow.300" p={8}>
-          <Text fontSize={"3xl"} maxW={"6xl"}>{siteSettings?.description[locale]}</Text>
+        <Container maxW={"100%"} backgroundColor="yellow.300" p={3}>
+          <Text fontSize={"3vw"} maxW={"6xl"}>{siteSettings?.description[locale]}</Text>
         </Container>
         {/* <pre>{JSON.stringify(page, null, 2)}</pre> */}
       </Layout >

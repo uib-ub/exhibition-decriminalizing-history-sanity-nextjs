@@ -36,15 +36,16 @@ export default function Items({ data, preview }) {
       </Head>
 
       <Container
-        maxWidth="full"
-        bgColor={'#50BFE6'}
-      /* color={'white'} */
+        maxW={"full"}
+        bgColor="purple.200"
+        p={0}
+        pt={14}
       >
         <Heading
-          pb="5"
-          mb="5"
-          pt={1}
-          fontSize={['3xl']}
+          size={"4xl"}
+          mb={5}
+          px={5}
+          color="green.500"
         >
           {t("title")}
         </Heading>

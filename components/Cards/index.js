@@ -14,7 +14,6 @@ export default function Cards(props) {
       maxW="full"
       boxSizing="border-box"
       overflow="hidden"
-
       templateColumns={{
         base: 'repeat(auto-fill, minmax(160px, 1fr))',
         sm: 'repeat(auto-fill, minmax(180px, 1fr))',

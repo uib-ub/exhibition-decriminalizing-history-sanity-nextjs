@@ -14,7 +14,7 @@ export default function Timespan(props) {
 
   return (
     <Box {...rest}>
-      {timespan.map((time) => (
+      {timespan.length > 0 && timespan.map((time) => (
         <Flex key={time._key}>
           {time.date && <Date>{time.date}</Date>}
 
@@ -56,6 +56,48 @@ export default function Timespan(props) {
           {time.description && <TextBlocks value={time.description[locale]} />} */}
         </Flex>
       ))}
+      {timespan && (
+        <Flex key={timespan._key}>
+          {timespan.date && <Date>{timespan.date}</Date>}
+
+          {!timespan.date && (timespan.beginOfTheBegin || timespan.endOfTheBegin) && (
+            <Flex direction="column">
+              {timespan.beginOfTheBegin && <Date>{timespan.beginOfTheBegin}</Date>}
+
+              {timespan.beginOfTheBegin && timespan.endOfTheBegin && (
+                <Box textAlign="center" color="gray.500" lineHeight="0.3">
+                  &nbsp;/&nbsp;
+                </Box>
+              )}
+
+              {timespan.endOfTheBegin && <Date>{timespan.endOfTheBegin}</Date>}
+            </Flex>
+          )}
+
+          {(timespan.beginOfTheBegin || timespan.endOfTheBegin) &&
+            (timespan.beginOfTheEnd || timespan.endOfTheEnd) && (
+              <Box alignSelf="center" fontSize="2xl" px="1" color="gray.500" lineHeight="0.3">
+                &nbsp;–&nbsp;
+              </Box>
+            )}
+
+          {!timespan.date && (timespan.beginOfTheEnd || timespan.endOfTheEnd) && (
+            <Flex direction="column">
+              {timespan.beginOfTheEnd && <Date>{timespan.beginOfTheEnd}</Date>}
+
+              {timespan.beginOfTheEnd && timespan.endOfTheEnd && (
+                <Box textAlign="center" color="gray.500" lineHeight="0.3">
+                  &nbsp;/&nbsp;
+                </Box>
+              )}
+
+              {timespan.endOfTheEnd && <Date>{timespan.endOfTheEnd}</Date>}
+            </Flex>
+          )}
+          {/* TODO: add popover with information about the timespan?
+          {time.description && <TextBlocks value={time.description[locale]} />} */}
+        </Flex>
+      )}
     </Box>
   )
 }

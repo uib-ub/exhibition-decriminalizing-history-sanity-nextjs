@@ -7,10 +7,8 @@
     "title": "Stuff"
   },
   "Layout": {
-    "skipToContent": "Skip to content"
-  },
-  "Footer": {
-    "usesCookies": "This site uses cookies",
+    "skipToContent": "Skip to content",
+    "usesCookies": "This site uses cookies.",
     "readAboutCookies": "Read more on how we use cookies."
   }
 }

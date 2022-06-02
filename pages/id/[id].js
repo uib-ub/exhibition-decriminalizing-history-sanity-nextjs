@@ -172,6 +172,6 @@ export async function getStaticPaths({ locales }) {
         },
       }))
     ] || [],
-    fallback: true,
+    fallback: 'blocking',
   }
 }

@@ -6,7 +6,6 @@ import { getClient } from '../lib/sanity.server'
 import { groq } from 'next-sanity'
 import { routeQuery } from '../lib/queries/routeQuery'
 import Layout from '../components/Layout'
-import Sections from '../components/Sections/Sections'
 import TextBlocks from '../components/TextBlocks'
 import { Container, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
@@ -39,7 +38,7 @@ export async function getStaticPaths({ locales }) {
 
   return {
     paths: paths[0],
-    fallback: true,
+    fallback: 'blocking',
   }
 }
 
@@ -118,8 +117,16 @@ export default function Page({ data, preview }) {
 
 
       <Layout site={page?.siteSettings} nav={page?.siteNav} preview={preview}>
-        <Container maxW={"4xl"} my={20}>
-          <Heading size={"4xl"} mb={10}>{page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}</Heading>
+        <Container
+          maxW={"4xl"}
+          my={14}
+        >
+          <Heading
+            size={"4xl"}
+            mb={10}
+          >
+            {page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}
+          </Heading>
 
           {/* If LinguisticDocument the content is in the body field */}
           {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}

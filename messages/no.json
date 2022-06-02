@@ -1,14 +1,13 @@
 {
   "Index": {
-    "title": "Hjem"
+    "title": "Hjem",
+    "description": "Dette er første siden."
   },
   "Items": {
     "title": "Ting"
   },
   "Layout": {
-    "skipToContent": "Hopp til innholdet"
-  },
-  "Footer": {
+    "skipToContent": "Hopp til innholdet",
     "usesCookies": "Denne nettsiden benytter informasjonskapsler.",
     "readAboutCookies": "Les mer om våre informasjonskapsler."
   }
