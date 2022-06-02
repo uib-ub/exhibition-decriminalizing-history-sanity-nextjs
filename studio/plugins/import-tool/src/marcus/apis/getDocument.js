@@ -84,17 +84,15 @@ export default function getDocument(item, assetID) {
         ],
       }),
       ...(date && {
-        timespan: [
-          {
-            _key: nanoid(),
-            _type: 'Timespan',
-            ...date,
-            /* edtf: item.created.value,
-            ...(item.madeAfter?.value ? { beginOfTheBegin: item.madeAfter?.value } : ''),
-            ...(item.madeBefore?.value ? { endOfTheEnd: item.madeBefore?.value } : ''),
-            ...(item.created?.value ? { date: parseDate(item.created?.value) } : ''), */
-          },
-        ],
+        timespan: {
+          _key: nanoid(),
+          _type: 'Timespan',
+          ...date,
+          /* edtf: item.created.value,
+          ...(item.madeAfter?.value ? { beginOfTheBegin: item.madeAfter?.value } : ''),
+          ...(item.madeBefore?.value ? { endOfTheEnd: item.madeBefore?.value } : ''),
+          ...(item.created?.value ? { date: parseDate(item.created?.value) } : ''), */
+        },
       }),
     },
   ]

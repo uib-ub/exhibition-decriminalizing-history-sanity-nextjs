@@ -126,26 +126,22 @@ export const getDocument = (item) => {
           _key: nanoid(),
           _type: 'Birth',
           timespan:
-            [
-              {
-                _key: nanoid(),
-                _type: 'Timespan',
-                beginOfTheBegin: birthB,
-                endOfTheEnd: birthE
-              },
-            ]
+          {
+            _key: nanoid(),
+            _type: 'Timespan',
+            beginOfTheBegin: birthB,
+            endOfTheEnd: birthE
+          },
         }),
         (deathB && {
           _key: nanoid(),
           _type: 'Death',
-          timespan: [
-            {
-              _key: nanoid(),
-              _type: 'Timespan',
-              beginOfTheBegin: deathB,
-              endOfTheEnd: deathE
-            },
-          ],
+          timespan: {
+            _key: nanoid(),
+            _type: 'Timespan',
+            beginOfTheBegin: deathB,
+            endOfTheEnd: deathE
+          },
         })
       ]
     }),
