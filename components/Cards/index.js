@@ -6,7 +6,7 @@ export default function Cards(props) {
     return null
   }
 
-  const { items } = props
+  const { items, ...rest } = props
 
   return (
     <Grid
@@ -22,6 +22,8 @@ export default function Cards(props) {
         xl: 'repeat(auto-fill, minmax(300px,1fr))',
       }}
       autoFlow="dense"
+      autoRows='min-content'
+      {...rest}
     >
       {items.map((item, index) => (
         <Card key={index} item={item} />

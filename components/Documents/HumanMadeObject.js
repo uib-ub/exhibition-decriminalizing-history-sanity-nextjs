@@ -41,7 +41,7 @@ export default function HumanMadeObject(item) {
   return (
     <Container maxW={"4xl"}>
       <Heading pt="14" mb={5} fontSize={'5xl'}>
-        {item.label[locale] ?? item.label[defaultLocale]}
+        {item.label[locale] || item.label[defaultLocale] || 'Missing default language label'}
 
         <Button variant="link" size="lg" onClick={onOpen}>
           <Icon as={BiDotsVerticalRounded} />
@@ -59,7 +59,7 @@ export default function HumanMadeObject(item) {
           {item.description && <Description description={item.description} />}
 
           {item?.referredToBy && (
-            <Box>
+            <Box mt={5}>
               <ReferredToBy array={item.referredToBy} />
             </Box>
           )}
@@ -75,8 +75,6 @@ export default function HumanMadeObject(item) {
 
             {item.hasCurrentOwner && <CurrentOwner owners={item.hasCurrentOwner} />}
           </Grid>
-
-          {item.activityStream && <ActivityStream stream={item.activityStream} />}
         </Container>
 
         {item.subjectOfManifest && (
@@ -111,29 +109,6 @@ export default function HumanMadeObject(item) {
           <YithViewerWithNoSSR id={item.manifest} type="presentation" preview="figure" size={300} />
         </Box>
       )} */}
-
-        <Modal isOpen={isOpen} size="4xl" onClose={onClose} scrollBehavior="inside">
-          <ModalOverlay>
-            <ModalContent>
-              <ModalHeader>JSON</ModalHeader>
-              <ModalCloseButton />
-              <ModalBody>
-                <Code w="full" fontSize="xs" p="2">
-                  <pre>{JSON.stringify(item, null, 2)}</pre>
-                </Code>
-              </ModalBody>
-
-              <ModalFooter>
-                <Button colorScheme="blue" mr={3} onClick={onClose}>
-                  Close
-                </Button>
-                <Button onClick={onCopy} ml={2}>
-                  {hasCopied ? 'Copied' : 'Copy'}
-                </Button>
-              </ModalFooter>
-            </ModalContent>
-          </ModalOverlay>
-        </Modal>
       </Grid>
     </Container>
   )

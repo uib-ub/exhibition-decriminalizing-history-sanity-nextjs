@@ -12,12 +12,11 @@ const Wrapper = ({ children }) => {
     <Grid
       maxW={"full"}
       display="grid"
-      autoRows="minmax(10px, auto) auto"
       templateColumns='auto 1fr'
       templateAreas='
         "nav main"
-        "nav main"
-        "nav footer"'
+        ". main"
+        "footer footer"'
     >
       {children}
     </Grid>
@@ -33,7 +32,7 @@ export default function Layout({ children, site, nav, preview = false }) {
       <Wrapper>
         {preview && <PreviewAlert />}
         {/* <Meta /> */}
-        <Box gridArea="nav" bgColor={'yellow.300'} position='sticky' top={0} height='100vh'>
+        <Box gridArea="nav" position='sticky' top={0} height='100%'>
           <Header data={{ ...site }} />
           <Nav value={nav} />
         </Box>

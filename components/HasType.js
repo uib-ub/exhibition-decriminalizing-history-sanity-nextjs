@@ -9,13 +9,13 @@ export default function HasType({ types }) {
 
   return (
     <>
-      <Heading as="dt" fontFamily="Montserrat" fontWeight="semibold" fontSize="sm" pb="2">
+      <Heading as="dt" fontWeight="semibold" fontSize="md" pb="2">
         Klassifisering
       </Heading>
-      <Wrap as="dd" fontFamily="Montserrat" marginBottom={5}>
+      <Wrap as="dd" marginBottom={5}>
         {types.map((type) => (
           <WrapItem key={type._id}>
-            <Tag key={type._id} size="sm">
+            <Tag key={type._id} size="md">
               {type.label[locale] ?? type.label[defaultLocale]}
             </Tag>
           </WrapItem>

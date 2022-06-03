@@ -106,7 +106,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
 
       <Layout site={siteSettings} preview={preview} nav={siteNav}>
         <Container maxW={"100%"} backgroundColor="yellow.300">
-          <Box py={20}>
+          <Box py={8}>
             <Heading fontSize={locale === 'no' ? '7vw' : "8vw"} textTransform="uppercase">
               {siteSettings?.label[locale]}
             </Heading>

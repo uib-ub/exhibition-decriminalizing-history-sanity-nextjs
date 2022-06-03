@@ -17,7 +17,7 @@ export default function ReferredToBy(props) {
   return (
     <>
       {sorted?.map((ref) => (
-        <Box key={ref._key ? ref._key : ref._id} maxW="xl" marginBottom={5}>
+        <Box key={ref._key ? ref._key : ref._id} marginBottom={5}>
           {/* <Box>
             {ref.hasType[0].label.no} - {ref.language.label.no}
           </Box> */}

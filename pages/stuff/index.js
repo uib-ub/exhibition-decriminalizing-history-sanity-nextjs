@@ -37,7 +37,6 @@ export default function Items({ data, preview }) {
 
       <Container
         maxW={"full"}
-        bgColor="purple.200"
         p={0}
         pt={14}
       >
@@ -50,7 +49,7 @@ export default function Items({ data, preview }) {
           {t("title")}
         </Heading>
 
-        <Cards items={items} />
+        <Cards items={items} gap={5} />
       </Container>
     </Layout>
   )

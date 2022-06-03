@@ -10,12 +10,12 @@ export default function Homepage(props) {
 
   return (
     <>
-      <Heading as="dt" fontFamily="Montserrat" fontWeight="semibold" fontSize="sm" pb="2">
+      <Heading as="dt" fontWeight="semibold" fontSize="md" pb="2">
         Hjemmeside
       </Heading>
-      <Wrap as="dd" fontFamily="Montserrat" marginBottom={5}>
+      <Wrap as="dd" marginBottom={5}>
         <WrapItem>
-          <Link fontSize="sm" href={homepage} isExternal>
+          <Link fontSize="md" href={homepage} isExternal>
             {homepage} <ExternalLinkIcon mx="2px" />
           </Link>
         </WrapItem>

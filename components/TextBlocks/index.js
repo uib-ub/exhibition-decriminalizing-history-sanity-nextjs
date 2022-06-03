@@ -1,3 +1,4 @@
+import { Text } from '@chakra-ui/react'
 import { PortableText } from '@portabletext/react'
 import {
   BigText,
@@ -27,12 +28,6 @@ import PlaceInsert from './Inserts/PlaceInsert'
 const myPortableTextComponents = {
   types: {
     //image: ({value}) => <img src={value.imageUrl} />,
-    callToAction: ({ value, isInline }) =>
-      isInline ? (
-        <a href={value.url}>{value.text}</a>
-      ) : (
-        <div className="callToAction">{value.text}</div>
-      ),
     ActorCollection: ({ value }) => <ActorCollection {...value} />,
     BigText: ({ value }) => <BigText {...value} />,
     ExhibitionElement: ({ value }) => <ExhibitionElement {...value} />,

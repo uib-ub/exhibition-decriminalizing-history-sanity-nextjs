@@ -56,14 +56,12 @@ export default function Card(props) {
     _id,
     _type,
     label,
-    description,
+    excerpt,
     image,
-    //homepage,
     hasType,
     aspectRatio,
     palette,
     creation,
-    hasCurrentOwner,
   } = props.item
 
   const getBase = (type) => {
@@ -104,22 +102,16 @@ export default function Card(props) {
 
   const spanObj = calculateSpans(aspectRatio)
 
-  /* palette= { "darkMuted", "darkVibrant", "dominant", "lightMuted", "lightVibrant", "muted", "vibrant" } */
+  /* palette={ "darkMuted", "darkVibrant", "dominant", "lightMuted", "lightVibrant", "muted", "vibrant" } */
 
   return (
     <GridItem
       as="article"
-      transform=""
-      /* borderColor={borderColor}
-      borderWidth="1px"
-      borderRadius="md"
-      boxShadow="sm"*/
-      {...spanObj}
-      display="flex"
-      flexDirection={'column'}
+
       bgColor={palette?.lightVibrant?.background}
       color={palette?.lightVibrant?.foreground}
       p={5}
+      {...spanObj}
     >
       <LinkBox>
         {image && (
@@ -140,16 +132,14 @@ export default function Card(props) {
             </NextLink>
           </Heading>
 
-          {/*           {description && description.length > 0 && (
-            <TextBlocks
-              noOfLines="2"
-
+          {excerpt && (
+            <Text
+              noOfLines={2}
               fontSize={['md', 'md', 'lg', 'lg']}
-              value={description[0].body}
-              maxW="full"
-              mx="0"
-            />
-          )} */}
+            >
+              {excerpt}
+            </Text>
+          )}
 
           {creation && creation[0].creators && (
             <Text fontSize={['xs', 'sm', 'sm', 'sm']} mb="1">
@@ -166,83 +156,24 @@ export default function Card(props) {
           {creation && creation[0].timespan && (
             <Box fontSize={['sm', 'sm', 'md', 'md']} >
               <Box>{creation[0].timespan[0]?.edtf}</Box>
-              {/* <Timespan timespan={creation[0].timespan} /> */}
             </Box>
           )}
         </Box>
 
-        <Flex px="4" pt="2">
-          {/*  {hasType && (
-            <HStack spacing={4} mb="2" mr="2">
-              {hasType.map((type) => (
-                <Tag
-                  key={type._id}
-                
-                  fontSize={['xs', 'xs', 'xs', 'xs']}
-                  colorScheme={tagColor}
-                >
-                  {type.label[locale] ?? type.label[defaultLocale]}
-                </Tag>
-              ))}
-            </HStack>
-          )}
- */}
-          {/* <Text alignSelf="center" fontSize="sm">{aspectRatio}</Text> */}
+        {hasType && (
+          <HStack spacing={4} mb="2" mr="2">
+            {hasType.map((type) => (
+              <Tag
+                key={type._id}
 
-          <Spacer />
-
-          {hasCurrentOwner?.image && (
-            <Image
-              display="inline-block"
-              boxSize="5"
-              src={urlFor(hasCurrentOwner.image).height(20).width(20).url()}
-              alt=""
-            />
-          )}
-
-          {/* <Menu>
-            <MenuButton
-              alignSelf="flex-start"
-              as={IconButton}
-              aria-label="Options"
-              size="xs"
-              variant="link"
-              rightIcon={<Icon w={[2, 4, 4, 5]} h={[2, 4, 4, 5]} as={BiDotsVerticalRounded} />}
-            />
-            <MenuList>
-              <MenuItem
-                onClick={onOpen}
-                icon={<Icon w={[2, 4, 5, 5]} h={[2, 4, 5, 5]} as={VscJson} />}
+                fontSize={['xs', 'xs', 'xs', 'xs']}
+                colorScheme={tagColor}
               >
-                Data
-              </MenuItem>
-              {homepage && (
-                <NextLink href={homepage} passHref>
-                  <MenuItem
-                    as={Link}
-                    isExternal
-                    icon={<Icon w={[2, 4, 5, 5]} h={[2, 4, 5, 5]} as={FiExternalLink} />}
-                  >
-                    Åpne hjemmeside
-                  </MenuItem>
-                </NextLink>
-              )}
-            </MenuList>
-          </Menu>
-
-          <Modal size="4xl" isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalCloseButton />
-              <ModalHeader>JSON</ModalHeader>
-              <ModalBody overflowY="scroll">
-                <Code w="full" fontSize="xs" p="2">
-                  <pre>{JSON.stringify(props.item, null, 2)}</pre>
-                </Code>
-              </ModalBody>
-            </ModalContent>
-          </Modal> */}
-        </Flex>
+                {type.label[locale] ?? type.label[defaultLocale]}
+              </Tag>
+            ))}
+          </HStack>
+        )}
       </LinkBox>
     </GridItem >
   )

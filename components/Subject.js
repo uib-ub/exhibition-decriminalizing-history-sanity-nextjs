@@ -11,14 +11,14 @@ export default function Subject({ subjects }) {
 
   return (
     <>
-      <Heading as="dt" fontFamily="Montserrat" fontWeight="semibold" fontSize="sm" pb="2">
+      <Heading as="dt" fontWeight="semibold" fontSize="md" pb="2">
         Emner
       </Heading>
-      <Wrap as="dd" fontFamily="Montserrat" marginBottom={5}>
+      <Wrap as="dd" marginBottom={5}>
         {subjects.map((subject) => (
           <WrapItem key={subject._id}>
-            <Tag colorScheme="blackAlpha" size="sm">
-              <Link href={`/id/${subject._id}`}>{subject.label[locale] ?? subject.label[defaultLocale]}</Link>
+            <Tag colorScheme="blackAlpha" size="md">
+              <Link href={`/id/${subject._id}`}>{subject.label[locale] || subject.label[defaultLocale] || 'Missing default language label'}</Link>
             </Tag>
           </WrapItem>
         ))}
