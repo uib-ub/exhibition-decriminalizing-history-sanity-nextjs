@@ -1,7 +1,7 @@
 import { AspectRatio, Container, Flex } from '@chakra-ui/react'
 import Caption from './shared/Caption'
 
-export default function Video(props) {
+export default function VideoBlock(props) {
   if (!props || props.disabled === true) {
     return null
   }

@@ -108,7 +108,7 @@ export default function MiradorViewer(props) {
     workspaceControlPanel = false,
     gridArea,
     catalog,
-    height = '60vh',
+    height = '50vh',
     bgColor = '#eeeeee',
   } = props
 

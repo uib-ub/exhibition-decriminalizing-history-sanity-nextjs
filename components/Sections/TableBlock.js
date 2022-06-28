@@ -1,6 +1,6 @@
 import { Container, Table, Thead, Tbody, Tr, Th, Td, TableCaption } from '@chakra-ui/react'
 
-export default function SectionText(props) {
+export default function TableBlock(props) {
   if (!props || props.disabled === true) {
     return null
   }

@@ -35,7 +35,6 @@ const SingleObject = (props) => {
       gridTemplateColumns={{ base: 'auto', lg: '10fr 3fr' }}
       gridTemplateRows="1fr auto"
       mx="auto"
-      px={[4, 4, null, null]}
     >
       {item.manifest && inView && (
         <MiradorWithNoSSR

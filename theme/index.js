@@ -8,8 +8,8 @@ const theme = extendTheme({
     global: {
       // styles for the `body`
       body: {
-        bg: 'yellow.300',
-        color: 'purple.900',
+        bg: '#FFFFF5',
+        // color: 'purple.900',
       },
       // styles for the `a`
       a: {
@@ -18,6 +18,12 @@ const theme = extendTheme({
           textDecoration: 'underline',
         },
       },
+      '.scrollspy': {
+        scrollSnapType: 'y proximity',
+      },
+      '.scrollspy > *': {
+        scrollSnapAlign: 'start',
+      }
     },
   },
 })

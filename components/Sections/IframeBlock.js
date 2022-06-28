@@ -1,7 +1,7 @@
 import { AspectRatio, Container } from '@chakra-ui/react'
 import Caption from './shared/Caption'
 
-export default function Iframe(props) {
+export default function IframeBlock(props) {
   if (!props || props.disabled === true) {
     return null
   }

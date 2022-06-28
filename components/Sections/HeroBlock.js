@@ -4,7 +4,7 @@ import { useColorModeValue } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
 import { GetImage } from '../../lib/sanity.server'
 
-export default function Hero(props) {
+export default function HeroBlock(props) {
   const bg = useColorModeValue('gray.800', 'gray.300')
   const color = useColorModeValue('white', 'gray.800')
 

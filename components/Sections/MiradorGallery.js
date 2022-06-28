@@ -32,7 +32,6 @@ export default function MiradorGallery(props) {
       gridTemplateColumns={{ base: 'auto', lg: '10fr 3fr' }}
       gridTemplateRows="1fr auto"
       mx="auto"
-      px={[4, 4, null, null]}
     >
       {items && inView && (
         <MiradorWithNoSSR gridArea="image" variant="standard" manifests={items} />

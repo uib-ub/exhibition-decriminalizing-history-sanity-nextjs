@@ -39,7 +39,7 @@ export default function HumanMadeObject(item) {
   const { hasCopied, onCopy } = useClipboard(JSON.stringify(item, null, 2))
 
   return (
-    <Container maxW={"4xl"}>
+    <Box maxW={"4xl"}>
       <Heading pt="14" mb={5} fontSize={'5xl'}>
         {item.label[locale] || item.label[defaultLocale] || 'Missing default language label'}
 
@@ -110,6 +110,6 @@ export default function HumanMadeObject(item) {
         </Box>
       )} */}
       </Grid>
-    </Container>
+    </Box>
   )
 }

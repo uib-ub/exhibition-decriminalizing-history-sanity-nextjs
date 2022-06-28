@@ -7,7 +7,7 @@ import TextBlocks from '../TextBlocks'
 import Timespan from '../Timespan'
 // import Map from '../Map'
 
-export default function EventSection(props) {
+export default function EventBlock(props) {
   if (!props || props.disabled === true) {
     return null
   }

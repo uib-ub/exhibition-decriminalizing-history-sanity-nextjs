@@ -17,7 +17,7 @@ export default function Subject({ subjects }) {
       <Wrap as="dd" marginBottom={5}>
         {subjects.map((subject) => (
           <WrapItem key={subject._id}>
-            <Tag colorScheme="blackAlpha" size="md">
+            <Tag size="md">
               <Link href={`/id/${subject._id}`}>{subject.label[locale] || subject.label[defaultLocale] || 'Missing default language label'}</Link>
             </Tag>
           </WrapItem>

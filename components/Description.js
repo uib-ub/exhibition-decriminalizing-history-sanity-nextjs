@@ -8,7 +8,7 @@ export default function Description(props) {
   return (
     <Box maxW="xl" marginBottom={5}>
       <Text
-        fontSize={{ base: 'lg', sm: 'lg', md: 'md', xl: 'lg' }}
+        fontSize={{ base: 'lg', sm: 'lg', md: '2xl', xl: '2xl' }}
         dangerouslySetInnerHTML={{ __html: props.description }}
       />
     </Box>

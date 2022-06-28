@@ -25,7 +25,7 @@ export default function ReferredToBy(props) {
             value={ref.body}
             fontFamily="Montserrat"
             fontWeight="light"
-            fontSize={{ base: 'md', sm: 'lg', md: 'lg', xl: 'xl' }}
+            fontSize={{ base: 'md', sm: 'xl', md: '2xl', xl: '2xl' }}
           />
         </Box>
       ))}

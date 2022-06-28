@@ -3,12 +3,7 @@ import { Container, Heading, /* Image, */ useColorModeValue } from '@chakra-ui/r
 
 import TextBlocks from '../TextBlocks'
 
-export default function PageHeader(props) {
-  const border = useColorModeValue(
-    `${process.env.NEXT_PUBLIC_BASE_PATH}/img/taakeheimen-border/light.svg`,
-    `${process.env.NEXT_PUBLIC_BASE_PATH}/img/taakeheimen-border/dark.svg`,
-  )
-
+export default function PageHeaderBlock(props) {
   if (!props || props.disabled === true) {
     return null
   }
@@ -20,9 +15,6 @@ export default function PageHeader(props) {
       pb={['12', null, '14', null]}
       mb={['4', null, '8', null]}
       maxW={['90vw', '90vw', '2xl', '3xl']}
-      backgroundImage={`url('${border}')`}
-      backgroundPosition="40% 100%"
-      backgroundRepeat="no-repeat"
     >
       {/* {props.illustration?.image && (
         <Image

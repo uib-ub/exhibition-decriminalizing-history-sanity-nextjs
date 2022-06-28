@@ -32,27 +32,21 @@ export default function Footer(props) {
       as="footer"
       gridArea="footer"
       maxW="full"
-      minH="100px"
       py="6"
       px="0"
-      bgColor={'teal.400'}
     >
 
       <Container maxW="2xl" px="4" centerContent>
-        <Box fontSize="xl">
+        {/* <Box fontSize="xl">
           <Link href={`/studio`} locale={false}>Studio</Link>
-        </Box>
-
-        <Divider my="5" />
+        </Box> */}
 
         {content && (
-          <Box textAlign="center">
-            <RenderSections sections={content} />
-          </Box>
+          <RenderSections sections={content} />
         )}
 
         <Container p="0">
-          <Text fontSize="xl" textAlign="center">
+          <Text textAlign="center">
             {t('usesCookies')}{' '}
             <Link href={`/cookie-policy`}>{t('readAboutCookies')}</Link>
           </Text>

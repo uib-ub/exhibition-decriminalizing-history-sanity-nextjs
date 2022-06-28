@@ -1,7 +1,7 @@
 import { Grid, Box, Center, Heading } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
 
-export default function TwoColumn(props) {
+export default function TwoColumnBlock(props) {
   if (!props || props.disabled === true) {
     return null
   }

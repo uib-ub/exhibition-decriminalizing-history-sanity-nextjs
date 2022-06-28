@@ -1,7 +1,7 @@
 import { Box, Heading } from '@chakra-ui/react'
 import InstagramEmbed from 'react-instagram-embed'
 
-export default function InstagramPost(props) {
+export default function InstagramBlock(props) {
   if (!props || props.disabled === true) {
     return null
   }

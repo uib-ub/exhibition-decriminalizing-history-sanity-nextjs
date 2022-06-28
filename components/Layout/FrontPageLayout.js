@@ -23,7 +23,7 @@ const Wrapper = ({ children }) => {
   )
 }
 
-export default function Layout({ children, site, nav, preview = false }) {
+export default function FrontPageLayout({ children, site, nav, preview = false }) {
   const t = useTranslations("Layout");
 
   return (
@@ -32,7 +32,7 @@ export default function Layout({ children, site, nav, preview = false }) {
       <SkipNavLink>{t("skipToContent")}</SkipNavLink>
       <Wrapper>
         {preview && <PreviewAlert />}
-        <Header gridArea="header" data={{ ...site, nav }} />
+        {/* <Header gridArea="header" data={{ ...site, nav }} /> */}
 
         {/* <Nav gridArea="nav" value={nav} /> */}
 
