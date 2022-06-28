@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter, NextRouter } from 'next/router'
 import Image from 'next/image'
-import { getClient, useImage } from '../lib/sanity.server'
+import { getClient, GetImage } from '../lib/sanity.server'
 import Sections from '../components/Sections/Sections'
 import FrontPageLayout from '../components/Layout/FrontPageLayout'
 import NavMegaMenu from '../components/Layout/NavMegaMenu'
@@ -138,7 +138,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                 h={'full'}
               >
                 <Image
-                  {...useImage('image-ffe0010bd000b13d7335f4a826f5a2ff84a949f8-11799x18568-jpg')}
+                  {...GetImage('image-ffe0010bd000b13d7335f4a826f5a2ff84a949f8-11799x18568-jpg')}
                   alt='Test'
                   layout='fill'
                   objectFit='contain'
@@ -166,14 +166,14 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                 <Spacer />
                 <Box w={'clamp(220px, 19vw, 560px)'}>
                   <Image
-                    {...useImage('image-39fb1a3516f84fa78ca9980ad1898e8914a4674d-8001x5334-png')}
+                    {...GetImage('image-39fb1a3516f84fa78ca9980ad1898e8914a4674d-8001x5334-png')}
                     alt='Test'
                     layout='responsive'
                   />
                 </Box>
                 <Box w={'clamp(100px, 10vw, 200px)'}>
                   <Image
-                    {...useImage('image-e2e78c37304ad709d2c811625039d92a40fd3a2c-99x99-svg')}
+                    {...GetImage('image-e2e78c37304ad709d2c811625039d92a40fd3a2c-99x99-svg')}
                     alt='Test'
                     layout='responsive'
                   />
@@ -194,7 +194,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
             >
               <Box w={'full'}>
                 <Image
-                  {...useImage('image-7e9fb3f0c32f5c3fe4b62971d033fa643de29bfd-3402x6236-jpg')}
+                  {...GetImage('image-7e9fb3f0c32f5c3fe4b62971d033fa643de29bfd-3402x6236-jpg')}
                   alt='Test'
                   layout='responsive'
                   objectFit='cover'
@@ -202,7 +202,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
               </Box>
               <Box w={'full'}>
                 <Image
-                  {...useImage('image-4aaf7fb6ac6100449789b1a04def1ccf8794c5d7-3402x6236-jpg')}
+                  {...GetImage('image-4aaf7fb6ac6100449789b1a04def1ccf8794c5d7-3402x6236-jpg')}
                   alt='Test'
                   layout='responsive'
                   objectFit='cover'
@@ -210,7 +210,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
               </Box>
               <Box w={'full'}>
                 <Image
-                  {...useImage('image-76d069d7f318c8fda66347fc4209e0cd4389c71e-3402x6236-jpg')}
+                  {...GetImage('image-76d069d7f318c8fda66347fc4209e0cd4389c71e-3402x6236-jpg')}
                   alt='Test'
                   layout='responsive'
                   objectFit='cover'
@@ -218,7 +218,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
               </Box>
               <Box w={'full'}>
                 <Image
-                  {...useImage('image-ad22c6cbae98421ad7c5536b288530f4d7d8f1d0-3402x6236-jpg')}
+                  {...GetImage('image-ad22c6cbae98421ad7c5536b288530f4d7d8f1d0-3402x6236-jpg')}
                   alt='Test'
                   layout='responsive'
                   objectFit='cover'
@@ -265,21 +265,21 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                 <Spacer />
                 <Box w={'clamp(320px, 19vw, 560px)'}>
                   <Image
-                    {...useImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
+                    {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
                     alt='Test'
                     layout='responsive'
                   />
                 </Box>
                 {/* <Box w={'clamp(320px, 19vw, 560px)'}>
                   <Image
-                    {...useImage('image-39fb1a3516f84fa78ca9980ad1898e8914a4674d-8001x5334-png')}
+                    {...GetImage('image-39fb1a3516f84fa78ca9980ad1898e8914a4674d-8001x5334-png')}
                     alt='Test'
                     layout='responsive'
                   />
                 </Box>
                 <Box w={'clamp(150px, 10vw, 200px)'}>
                   <Image
-                    {...useImage('image-e2e78c37304ad709d2c811625039d92a40fd3a2c-99x99-svg')}
+                    {...GetImage('image-e2e78c37304ad709d2c811625039d92a40fd3a2c-99x99-svg')}
                     alt='Test'
                     layout='responsive'
                   />
@@ -328,7 +328,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
             >
               <Box w={'full'}>
                 <Image
-                  {...useImage('image-51627288c9a428a675897f2ea60b7d531fb15ae4-874x1240-jpg')}
+                  {...GetImage('image-51627288c9a428a675897f2ea60b7d531fb15ae4-874x1240-jpg')}
                   alt='Test'
                   layout='responsive'
                   objectFit='contain'
@@ -352,7 +352,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
               display={['none', 'block']}
             >
               <Image
-                {...useImage('image-75bccfb6d13adf13bb37b230c0cf03a44e03dead-2160x2160-png')}
+                {...GetImage('image-75bccfb6d13adf13bb37b230c0cf03a44e03dead-2160x2160-png')}
                 alt='Test'
                 layout='responsive'
               />
@@ -367,7 +367,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
             >
               <Box w={'full'}>
                 <Image
-                  {...useImage('image-f215b22598b883732a41f542a5d7d8685a57f611-5454x8188-jpg')}
+                  {...GetImage('image-f215b22598b883732a41f542a5d7d8685a57f611-5454x8188-jpg')}
                   alt='Test'
                   layout='responsive'
                 />
@@ -397,7 +397,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                 h={'full'}
               >
                 <Image
-                  {...useImage('image-7a3b0c3d45545416c98c91b66c0f9a7246151984-5137x2341-jpg')}
+                  {...GetImage('image-7a3b0c3d45545416c98c91b66c0f9a7246151984-5137x2341-jpg')}
                   alt='Test'
                   layout='responsive'
                 />
@@ -425,7 +425,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                 position='relative'
               >
                 <Image
-                  {...useImage('image-2b89431974991517e0beae16b17d9cadcdb34598-397x559-jpg')}
+                  {...GetImage('image-2b89431974991517e0beae16b17d9cadcdb34598-397x559-jpg')}
                   alt='Test'
                   layout='responsive'
                   objectFit='cover'
@@ -458,7 +458,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                   position='relative'
                 >
                   <Image
-                    {...useImage('image-915f75972eafe8b38b8af5202d9b982f1c6a6f14-1572x2371-jpg')}
+                    {...GetImage('image-915f75972eafe8b38b8af5202d9b982f1c6a6f14-1572x2371-jpg')}
                     alt='Test'
                     layout='responsive'
                     objectFit='cover'
@@ -471,7 +471,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                   filter='contrast(185%)'
                 >
                   <Image
-                    {...useImage('image-97a253e4e9fd1c6911fe2e5410ca51d12e7edd43-559x792-jpg')}
+                    {...GetImage('image-97a253e4e9fd1c6911fe2e5410ca51d12e7edd43-559x792-jpg')}
                     alt='Test'
                     layout='fill'
                     objectFit='cover'
@@ -482,7 +482,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
                   position='relative'
                 >
                   <Image
-                    {...useImage('image-3630c1457c77f3418a2baefb1a31a44d2eaf9bc0-710x1024-jpg')}
+                    {...GetImage('image-3630c1457c77f3418a2baefb1a31a44d2eaf9bc0-710x1024-jpg')}
                     alt='Test'
                     layout='fill'
                     objectFit='cover'
@@ -495,7 +495,7 @@ const Home: NextPage = ({ data, locale, preview }: any) => {
 
                 >
                   <Image
-                    {...useImage('image-05ff3e88a06195ed9c45d2e48feeeb5445d5cb61-3371x3287-jpg')}
+                    {...GetImage('image-05ff3e88a06195ed9c45d2e48feeeb5445d5cb61-3371x3287-jpg')}
                     alt='Test'
                     layout='fill'
                     objectFit='cover'

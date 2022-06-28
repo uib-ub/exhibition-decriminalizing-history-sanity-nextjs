@@ -7,7 +7,7 @@ const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), {
   ssr: false,
 })
 
-const SingleObject = (props) => {
+const ObjectBlock = (props) => {
   const { ref, inView } = useInView({
     root: null,
     rootMargin: '600px 0px',
@@ -56,4 +56,4 @@ const SingleObject = (props) => {
   )
 }
 
-export default SingleObject
+export default ObjectBlock
