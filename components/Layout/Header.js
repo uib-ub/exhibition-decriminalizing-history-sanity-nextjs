@@ -36,12 +36,12 @@ export default function Header(props) {
       {...rest}
     >
       <Heading
-        fontSize={locale === 'no' ? '6vw' : "7vw"}
-        textTransform="uppercase"
+        fontSize={'1.5vw'}
+      //textTransform="uppercase"
       >
         <Link href="/">
-          <a>{label?.[locale] ?? label?.[defaultLocale]}</a>
-          {/* <a>#DecrimHist</a> */}
+          {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
+          <a>#decrimhist</a>
         </Link>
       </Heading>
 

@@ -8,44 +8,131 @@ import {
   Skeleton,
   Divider,
   // Image,
-  keyframes
+  keyframes,
+  Menu,
+  MenuButton,
+  Button,
+  MenuList,
+  MenuItem,
+  Flex,
+  ButtonGroup,
+  Stack,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Text,
+  Icon
 } from '@chakra-ui/react'
 import ActiveLink from '../Link/ActiveLink'
 import { NextRouter, useRouter } from 'next/router'
 import { LocaleSwitcher } from '../Locale'
+import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons'
 
-const slideFrames = keyframes`
-  from {
-    transform: translateY(1000px) skew(0deg, 0deg);
-    position: static;
-    bottom: 0px;
-  }
-  to {
-    position: relative;
-    bottom: unset;
-  }
-`
-
-const animation = `${slideFrames} 1 1.2s ease-out`;
-
-export default function Nav({ value }: any) {
-  const { locale, defaultLocale }: NextRouter = useRouter()
+export default function Nav({ value }) {
+  const { locale, defaultLocale } = useRouter()
   // const { colorMode, toggleColorMode } = useColorMode()
   if (!value) {
     return null
   }
 
   return (
-    <Container
+    <Flex
       as="nav"
       maxW="full"
-      display={{ base: 'none', md: "flex" }}
-      boxSizing="border-box"
-      px="4"
-      py="2"
-      position={'relative'}
+      alignItems={'center'}
+      zIndex='6'
+      bgColor={'pink.300'}
+      gap={2}
     >
-      <HStack
+      <Stack
+        direction={'row'}
+        spacing={4}
+      >
+        <Box>
+          <Popover trigger={'hover'} placement={'bottom-start'}>
+            <PopoverTrigger>
+              <a>
+                Menu
+              </a>
+            </PopoverTrigger>
+
+            <PopoverContent
+              border={0}
+              boxShadow={'xl'}
+
+              p={4}
+              rounded={'sm'}
+              minW={'sm'}>
+              <Stack>
+                {value && value.tree?.map((child, index) => (
+                  <Link
+                    key={child._key}
+                    href={`/${child.value.reference.route}`}
+                    passHref
+                    role={'group'}
+                    display={'block'}
+                    p={2}
+                    rounded={'md'}
+                    bgColor={child.value.reference.backgroundColor?.hex}
+                  >
+                    <Stack
+                      direction={'row'}
+                      align={'center'}
+                      bgColor={child.value.reference.backgroundColor?.hex}
+                    >
+                      <Box>
+                        <Text
+                          bgColor={child.value.reference.backgroundColor?.hex}
+                          transition={'all .3s ease'}
+                          _groupHover={{ color: 'pink.400' }}
+                          fontWeight={500}
+                        >
+                          {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}{child.value.reference.backgroundColor?.hex}
+                        </Text>
+                        <Text fontSize={'sm'}>
+                          {child.value.reference.description?.[locale] || child.value.reference.description?.[defaultLocale] || 'Uten beskrivelse'}
+                        </Text>
+                      </Box>
+                      <Flex
+                        transition={'all .3s ease'}
+                        transform={'translateX(-10px)'}
+                        opacity={0}
+                        _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+                        justify={'flex-end'}
+                        align={'center'}
+                        flex={1}>
+                        <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+                      </Flex>
+                    </Stack>
+                  </Link>
+                ))}
+              </Stack>
+            </PopoverContent>
+
+          </Popover>
+        </Box>
+      </Stack>
+      {/* <Menu>
+          <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            Menu
+          </MenuButton>
+          <MenuList>
+            {value && value.tree?.map((child: any, index: number) => (
+              <MenuItem key={child._key}>
+                <Link href={`/${child.value.reference.route}`}>
+                  {child.value.reference.label[locale!] || child.value.reference.label[defaultLocale!] || 'Uten tittel'}
+                </Link>
+              </MenuItem>
+            ))}
+          </MenuList>
+        </Menu> */}
+      <LocaleSwitcher />
+    </Flex >
+  )
+}
+
+/* 
+<HStack
         m={0}
         as="ul"
         style={{ listStyle: 'none' }}
@@ -120,6 +207,4 @@ export default function Nav({ value }: any) {
           <Divider my={2} />
         </Box>
       </HStack>
-    </Container >
-  )
-}
+       */
