@@ -13,7 +13,7 @@ export default function LocaleSwitcher() {
   const otherLocales = locales?.filter((locale) => locale !== activeLocale)
 
   return (
-    <Box>
+    <>
       {otherLocales?.map((locale) => {
         const { pathname, query, asPath } = router
         return (
@@ -24,6 +24,6 @@ export default function LocaleSwitcher() {
           </span>
         )
       })}
-    </Box>
+    </>
   )
 }

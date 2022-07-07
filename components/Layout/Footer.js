@@ -34,6 +34,7 @@ export default function Footer(props) {
       maxW="full"
       py="6"
       px="0"
+      bgColor={'pink.400'}
     >
 
       <Container maxW="2xl" px="4" centerContent>

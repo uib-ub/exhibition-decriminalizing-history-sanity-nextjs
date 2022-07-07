@@ -1,6 +1,6 @@
 import {
   Box,
-  Button,
+  IconButton,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -22,23 +22,35 @@ export default function DrawerMenu({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Box>
-      <Button
+    <Box
+      display={{ base: 'block', md: 'none' }}
+    >
+      <IconButton
         display={{ base: 'block', md: 'none' }}
         onClick={() => onOpen()}
-        leftIcon={<HamburgerIcon />}
+        icon={<HamburgerIcon w={10} h={10} />}
+        size='lg'
+        w={10}
+        h={10}
+        color={'pink.400'}
+        variant={'link'}
       />
       <Drawer
-        placement="bottom"
+        placement="right"
         onClose={onClose}
         isOpen={isOpen}
-        size="full"
+        size="xs"
         onOverlayClick={onClose}
-        motionPreset="scale"
+      //motionPreset="scale"
       >
         <DrawerOverlay>
-          <DrawerContent bgColor="yellow.400">
-            <DrawerCloseButton />
+          <DrawerContent
+            //bgColor="transparent"
+            bgColor="whiteAlpha.600"
+          >
+            <DrawerCloseButton
+              bgColor="yellow.400"
+            />
             <DrawerBody>
               <Center>
                 {children}
@@ -46,9 +58,7 @@ export default function DrawerMenu({ children }) {
             </DrawerBody>
           </DrawerContent>
         </DrawerOverlay>
-        <Button
-          onClick={() => onClose()}
-        />
+
       </Drawer>
     </Box>
   )

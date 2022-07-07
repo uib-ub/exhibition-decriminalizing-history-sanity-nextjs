@@ -26,7 +26,7 @@
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.8.2",
     "mirador": "^3.3.0",
-    "next": "12.1.5",
+    "next": "^12.2.0",
     "next-intl": "^2.7.1",
     "next-sanity": "^0.5.1",
     "next-sanity-image": "^3.2.1",
