@@ -26,7 +26,7 @@ export default function DrawerMenu({ children }) {
       display={{ base: 'block', md: 'none' }}
     >
       <IconButton
-        display={{ base: 'block', md: 'none' }}
+        display={{ base: 'block', lg: 'none' }}
         onClick={() => onOpen()}
         icon={<HamburgerIcon w={10} h={10} />}
         size='lg'

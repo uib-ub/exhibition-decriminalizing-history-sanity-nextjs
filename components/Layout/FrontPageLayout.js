@@ -10,6 +10,7 @@ import Image from '../SanityImage';
 import { GetImage } from '../../lib/sanity.server';
 import { useRouter } from 'next/router';
 import { transform } from 'lodash';
+import Link from '../Link';
 
 const Wrapper = ({ children }) => {
   return (
@@ -52,8 +53,8 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
 
         <Grid
           templateAreas={`
-              'heroContent'
               'heroTitle'
+              'heroContent'
             `}
           h={'auto'}
         >
@@ -81,7 +82,9 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
                 letterSpacing={-3}
                 pb={1}
               >
-                {siteSettings?.label[locale]}
+                <Link href={`/`}>
+                  {siteSettings?.label[locale]}
+                </Link>
               </Heading>
               {/* DESCRIPTION
             <Text textTransform="uppercase" bgColor='black' color={'white'} lineHeight='1.2' mt='5' p={2} fontSize={"clamp(0.8rem, 2vw, 3rem)"} maxW={"3xl"} > {siteSettings?.description[locale]} </Text> */}
@@ -95,7 +98,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             filter='contrast(80%) brightness(140%)'
           >
             <Box w={'full'}>
-              <Image
+              {/*   <Image
                 {...GetImage('image-7e9fb3f0c32f5c3fe4b62971d033fa643de29bfd-3402x6236-jpg')}
                 alt='Test'
                 layout='responsive'
@@ -124,7 +127,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
                 alt='Test'
                 layout='responsive'
                 objectFit='cover'
-              />
+              /> */}
               {/* <Image
                   {...GetImage('image-ad22c6cbae98421ad7c5536b288530f4d7d8f1d0-3402x6236-jpg')}
                   alt='Test'
@@ -208,21 +211,21 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             >
               <Heading
                 color={'RGB(245, 245, 245)'}
-                fontSize={["6vw", "", "", "", "clamp(2rem, 3vw, 3rem)"]}
+                fontSize={["6vw", "", "", "", "clamp(2rem, 4.5vw, 4rem)"]}
                 // fontSize={["6vw", "", "", "", "3vw"]}
                 lineHeight='0.9'
                 textTransform="uppercase"
               >
                 Genders & Genres
               </Heading>
-              <Text
+              {/* <Text
                 color={'RGB(245, 245, 245)'}
                 fontSize={["1rem", "", "1.5rem", "", "clamp(1rem, 2vw, 1.5rem)"]}
                 lineHeight='1.2'
                 maxW={"6xl"}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Text>
+              </Text> */}
             </Box>
           </Flex>
 

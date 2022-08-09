@@ -48,7 +48,7 @@ export default function Nav({ value }) {
       zIndex='6'
       //justifyContent={'space-between'}
       fontWeight={800}
-      fontSize={['clamp(1rem, 1.5vw, 1.3rem)']}
+      fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', '', '']}
       p={2}
     >
       <DrawerMenu>
@@ -125,7 +125,9 @@ export default function Nav({ value }) {
           </Box>
         </Flex>
       </DrawerMenu >
+
       <Flex
+        display={{ base: 'none', lg: 'flex' }}
         gap={0}
         wrap='wrap'
         justifyContent={'center'}
