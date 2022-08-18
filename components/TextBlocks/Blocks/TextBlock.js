@@ -1,5 +1,5 @@
 import { Container, Heading } from '@chakra-ui/react'
-import TextBlocks from '../TextBlocks'
+import TextBlocks from '../'
 
 export default function TextBlock(props) {
   if (!props || props.disabled === true) {

@@ -7,7 +7,7 @@ import Footer from './Footer'
 import Nav from './Nav'
 import Meta from './Meta'
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children, ...rest }) => {
   return (
     <Grid
       maxW={"full"}
@@ -15,26 +15,31 @@ const Wrapper = ({ children }) => {
       templateColumns='auto 1fr'
       templateAreas='
         "header header"
-        "nav main"
+        "nav nav"
+        "main main"
         "footer footer"'
+      {...rest}
     >
       {children}
     </Grid>
   )
 }
 
-export default function Layout({ children, site, nav, preview = false }) {
+export default function Layout({ children, site, nav, color, bgColor, preview = false }) {
   const t = useTranslations("Layout");
 
   return (
     <>
       <Meta />
       <SkipNavLink>{t("skipToContent")}</SkipNavLink>
-      <Wrapper>
+      <Wrapper
+        color={color}
+        bgColor={bgColor}
+      >
         {preview && <PreviewAlert />}
-        <Header gridArea="header" data={{ ...site, nav }} />
+        <Header gridArea="header" data={{ ...site, nav, color, bgColor, }} />
 
-        {/* <Nav gridArea="nav" value={nav} /> */}
+        <Nav gridArea="nav" value={nav} />
 
         <Box
           as="main"

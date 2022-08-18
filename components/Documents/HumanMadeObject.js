@@ -1,23 +1,10 @@
 import dynamic from 'next/dynamic'
 import {
   Box,
-  Button,
   Grid,
   Container,
   Heading,
-  Icon,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  useClipboard,
-  Code,
 } from '@chakra-ui/react'
-import { BiDotsVerticalRounded } from 'react-icons/bi'
 import ReferredToBy from '../ReferredToBy'
 import Palette from '../Palette'
 import Depicts from '../Depicts'
@@ -31,22 +18,16 @@ import { useRouter } from 'next/router'
 import CanvasPanel from '../IIIF/CanvasPanel'
 
 const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), { ssr: false })
-//const YithViewerWithNoSSR = dynamic(() => import('../IIIF/YithViewer'), { ssr: false })
 
 export default function HumanMadeObject(item) {
   const { locale, defaultLocale } = useRouter()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const { hasCopied, onCopy } = useClipboard(JSON.stringify(item, null, 2))
 
   return (
-    <Box maxW={"4xl"}>
+    <Container maxW={"4xl"}>
       <Heading pt="14" mb={5} fontSize={'5xl'}>
         {item.label[locale] || item.label[defaultLocale] || 'Missing default language label'}
-
-        <Button variant="link" size="lg" onClick={onOpen}>
-          <Icon as={BiDotsVerticalRounded} />
-        </Button>
       </Heading>
+
       <Grid
         maxW={'4xl'}
         gridGap={{ base: 0 }}
@@ -92,24 +73,14 @@ export default function HumanMadeObject(item) {
           <Box gridArea="image">
             <MiradorWithNoSSR
               hideWindowTitle="true"
+              variant="basic"
               manifests={[{ manifest: item.manifest }]}
               height="70vh"
               bgColor={item.image?.palette.darkVibrant.background}
             />
           </Box>
         )}
-
-        {/* {item.subjectOfManifest && (
-        <Box gridArea="image">
-          <YithViewerWithNoSSR id={item.subjectOfManifest} type="projection" preview="figure" size={300} />
-        </Box>
-      )} */}
-        {/*   {item.manifest && !item.subjectOfManifest && (
-        <Box gridArea="image">
-          <YithViewerWithNoSSR id={item.manifest} type="presentation" preview="figure" size={300} />
-        </Box>
-      )} */}
       </Grid>
-    </Box>
+    </Container>
   )
 }

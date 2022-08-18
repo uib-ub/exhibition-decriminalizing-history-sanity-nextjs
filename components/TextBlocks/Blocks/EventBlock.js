@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { kebabCase } from 'lodash'
-import { GetImage } from '../../lib/sanity.server'
+import { GetImage } from '../../../lib/sanity.server'
 import { Box, Container, Heading, Grid } from '@chakra-ui/layout'
-// import Link from '../Link'
-import TextBlocks from '../TextBlocks'
-import Timespan from '../Timespan'
+// import Link from '../../Link'
+import TextBlocks from '../'
+import Timespan from '../../Timespan'
 // import Map from '../Map'
 
 export default function EventBlock(props) {

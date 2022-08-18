@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Flex, Box, useColorModeValue } from '@chakra-ui/react'
 import Caption from '../shared/Caption'
-import { GetImage } from '../../../lib/sanity.server'
+import { GetImage } from '../../../../lib/sanity.server'
 import WrapperGrid from '../WrapperGrid'
 
 export default function IllustrationWithCaption(props) {
@@ -11,26 +11,24 @@ export default function IllustrationWithCaption(props) {
     return null
   }
 
-  const { title, content, illustration, source, view } = props
+  const { image } = props
 
   return (
     <WrapperGrid>
-      {illustration ? (
+      {image ? (
         <Box minH="50vh" w="100%" gridArea="image" bgColor={bg} color="" position="relative">
-          {illustration && (
+          {image && (
             <Image
               alt=""
-              {...GetImage(illustration.image)}
+              {...GetImage(image)}
               layout="fill"
-              objectFit={view ?? 'contain'}
+              objectFit={'contain'}
             />
           )}
         </Box>
       ) : (
         <Flex gridArea="image">Mangler illustrasjon</Flex>
       )}
-
-      <Caption title={title} content={content} source={source} />
     </WrapperGrid>
   )
 }

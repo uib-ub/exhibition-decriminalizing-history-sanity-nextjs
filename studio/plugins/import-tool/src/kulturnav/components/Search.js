@@ -187,11 +187,29 @@ const Search = () => {
                 value="ActorType"
               /> Aktørtype
               <Radio
+                checked={state.importTo === 'Role'}
+                name="concept"
+                onChange={e => callSetImportTypeFunction(e)}
+                value="Role"
+              /> Rolle
+              <Radio
                 checked={state.importTo === 'ObjectType'}
                 name="concept"
                 onChange={e => callSetImportTypeFunction(e)}
                 value="ObjectType"
               /> Objekttype
+              <Radio
+                checked={state.importTo === 'Material'}
+                name="concept"
+                onChange={e => callSetImportTypeFunction(e)}
+                value="Material"
+              /> Materiale
+              <Radio
+                checked={state.importTo === 'Technique'}
+                name="concept"
+                onChange={e => callSetImportTypeFunction(e)}
+                value="Technique"
+              /> Teknikk
               <Radio
                 checked={state.importTo === 'TextType'}
                 name="concept"

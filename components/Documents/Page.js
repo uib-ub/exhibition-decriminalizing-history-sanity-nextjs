@@ -1,6 +1,6 @@
 import { Container } from '@chakra-ui/react'
 import TextBlocks from '../TextBlocks'
-import Sections from '../Sections/Sections'
+import Sections from '../TextBlocks/Blocks/'
 
 /* Used for preview */
 export default function Page(data) {

@@ -24,7 +24,7 @@ import {
   EventSection,
   ActorCollection,
   Gallery,
-} from '../Sections'
+} from '../Blocks'
 import ActorInsert from './Inserts/ActorInsert'
 import PlaceInsert from './Inserts/PlaceInsert'
 import { getFootnotesNumberArray } from '../../lib/functions'

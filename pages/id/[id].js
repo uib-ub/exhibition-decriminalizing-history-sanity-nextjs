@@ -90,7 +90,13 @@ export default function Document({ data, preview }) {
         <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
       </Head>
 
-      <Layout site={page?.siteSettings} preview={preview} nav={page?.siteNav}>
+      <Layout
+        site={page?.siteSettings}
+        preview={preview}
+        nav={page?.siteNav}
+        color={page?.item[0]?.image?.palette?.dominant?.foreground}
+        bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
+      >
         <Container
           maxW={'full'}
           color={page?.item[0]?.image?.palette?.dominant?.foreground}
@@ -99,12 +105,14 @@ export default function Document({ data, preview }) {
 
           {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
 
-          {/* If this is a PREVIEW request comming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
+          {/* If this is a PREVIEW request coming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
           {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
             <>
               <Heading>{page?.item[0]?.label ?? 'Missing title'}</Heading>
+              <p>dfsdf</p>
               {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
               {/* {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />} */}
+              <pre>{JSON.stringify(page, null, 2)}</pre>
             </>
           )}
         </Container>

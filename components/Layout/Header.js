@@ -16,6 +16,8 @@ import {
 import LocaleSwitcher from '../Locale/LocaleSwitcher'
 import { useRouter } from 'next/router'
 import DrawerMenu from './DrawerMenu'
+import { ArrowBackIcon } from '@chakra-ui/icons'
+import Nav from './Nav'
 
 export default function Header(props) {
   const { locale, defaultLocale } = useRouter()
@@ -25,7 +27,7 @@ export default function Header(props) {
   }
 
   const { data, ...rest } = props
-  const { label, siteNav, /* logo, */ } = data
+  const { label, siteNav, color, bgColor /* logo, */ } = data
 
   return (
     <Container
@@ -34,17 +36,24 @@ export default function Header(props) {
       alignItems={'center'}
       justifyContent={'space-between'}
       maxW='full'
+      color={color}
+      bgColor={bgColor}
+      p={2}
       {...rest}
     >
       <Heading
-        fontSize={'clamp(1.5rem, 2vw , 4rem)'}
+        fontSize={'clamp(1.5rem, 1vw , 3rem)'}
+        fontWeight='400'
       //textTransform="uppercase"
       >
+        <ArrowBackIcon />
         <Link href="/">
-          {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
           #decrimhist
+          {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
         </Link>
       </Heading>
+
+      <Nav value={siteNav} />
 
       <DrawerMenu>
         <Flex

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { Box, Grid, Flex, Heading, Spacer } from '@chakra-ui/react'
-import Source from './Source'
-import TextBlocks from '../TextBlocks'
-import { GetImage } from '../../lib/sanity.server'
+import Source from './shared/Source'
+import TextBlocks from '../'
+import { GetImage } from '../../../lib/sanity.server'
 import { useRouter } from 'next/router'
 
 export default function SingleObject(props) {

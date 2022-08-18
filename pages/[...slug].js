@@ -7,7 +7,7 @@ import { groq } from 'next-sanity'
 import { routeQuery } from '../lib/queries/routeQuery'
 import Layout from '../components/Layout'
 import TextBlocks from '../components/TextBlocks'
-import { Container, Heading } from '@chakra-ui/react'
+import { Container, Grid, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 // import { Container, Text, useColorModeValue } from '@chakra-ui/react'
 
@@ -82,6 +82,9 @@ export default function Page({ data, preview }) {
   const page = filterDataToSingleItem(previewData, preview)
   // console.log(JSON.stringify(page, null, 2))
 
+  {/* If LinguisticDocument the content is in the body field */ }
+  const linguisticDocumentBody = page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body
+
   // Notice the optional?.chaining conditionals wrapping every piece of content?
   // This is extremely important as you can't ever rely on a single field
   // of data existing when Editors are creating new documents.
@@ -116,22 +119,33 @@ export default function Page({ data, preview }) {
       </Head> */}
 
 
-      <Layout site={page?.siteSettings} nav={page?.siteNav} preview={preview}>
-        <Container
-          maxW={"4xl"}
-          my={14}
+      <Layout
+        site={page?.siteSettings}
+        nav={page?.siteNav}
+        preview={preview}
+        color={page?.route[0]?.foregroundColor.hex}
+        bgColor={page?.route[0]?.backgroundColor.hex}
+      >
+        <Grid
+          maxW={'6xl'}
+          templateColumns='1em minmax(1.2rem, 1fr) 1em minmax(42ch, 82ch) 1em minmax(1.2rem, 1fr) 1em'
+          margin='auto'
         >
           <Heading
-            size={"4xl"}
-            mb={10}
+            as={'h1'}
+            fontSize={{ base: "4xl", md: '6xl', lg: '8xl' }}
+            my={8}
+            gridColumn={'2 / -2'}
+            mx='auto'
           >
             {page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}
           </Heading>
 
-          {/* If LinguisticDocument the content is in the body field */}
-          {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />}
+
+          {linguisticDocumentBody && <TextBlocks value={linguisticDocumentBody} variant="center-column" />}
+
           {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
-        </Container>
+        </Grid>
       </Layout>
     </>
   )

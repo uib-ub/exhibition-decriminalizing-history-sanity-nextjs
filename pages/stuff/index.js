@@ -49,7 +49,7 @@ export default function Items({ data, preview }) {
           {t("title")}
         </Heading>
 
-        <Cards items={items} gap={5} />
+        <Cards items={items} />
       </Container>
     </Layout>
   )

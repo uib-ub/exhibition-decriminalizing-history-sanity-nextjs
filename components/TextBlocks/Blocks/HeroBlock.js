@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { Container, Divider, Box, Heading, Badge } from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/react'
-import TextBlocks from '../TextBlocks'
-import { GetImage } from '../../lib/sanity.server'
+import TextBlocks from '../'
+import { GetImage } from '../../../lib/sanity.server'
 
 export default function HeroBlock(props) {
   const bg = useColorModeValue('gray.800', 'gray.300')

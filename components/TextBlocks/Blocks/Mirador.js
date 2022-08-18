@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { Flex, Grid, Skeleton } from '@chakra-ui/react'
 import Caption from './shared/Caption'
 
-const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), {
+const MiradorWithNoSSR = dynamic(() => import('../../IIIF/MiradorViewer'), {
   ssr: false,
 })
 
@@ -18,6 +18,8 @@ const ObjectBlock = (props) => {
   if ((!props && !props.item) || props.disabled === true) {
     return null
   }
+
+  console.log(JSON.stringify(props, null, 2))
 
   const { label, description, item, canvasUrl } = props
   const height = '60vh'

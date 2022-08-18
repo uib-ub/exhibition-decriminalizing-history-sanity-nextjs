@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import Link from '../Link'
-import RenderSections from '../Sections/RenderSection'
+import RenderSections from '../TextBlocks/Blocks/RenderSection'
 import React from 'react'
 import ActiveLink from '../Link/ActiveLink'
 import { useTranslations } from 'next-intl'

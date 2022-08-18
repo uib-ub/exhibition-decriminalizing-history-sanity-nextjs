@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react'
-import TextBlocks from '../TextBlocks'
+import TextBlocks from '../'
 
 export default function BigTextBlock(props) {
   if (!props || props.disabled === true) {

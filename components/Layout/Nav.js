@@ -48,7 +48,7 @@ export default function Nav({ value }) {
       zIndex='6'
       //justifyContent={'space-between'}
       fontWeight={800}
-      fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', '', '']}
+      fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 1.5vw, 2.2rem)', '']}
       p={2}
     >
       <DrawerMenu>

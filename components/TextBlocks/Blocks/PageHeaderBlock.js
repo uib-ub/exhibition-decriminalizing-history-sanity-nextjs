@@ -1,7 +1,7 @@
 import { Container, Heading, /* Image, */ useColorModeValue } from '@chakra-ui/react'
-// import { urlFor } from '../../lib/sanity'
+// import { urlFor } from '../../../lib/sanity'
 
-import TextBlocks from '../TextBlocks'
+import TextBlocks from '../'
 
 export default function PageHeaderBlock(props) {
   if (!props || props.disabled === true) {

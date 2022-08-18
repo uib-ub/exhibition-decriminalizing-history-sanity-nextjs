@@ -1,8 +1,8 @@
 import NextLink from 'next/link'
 import { AspectRatio, Grid, Box, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react'
-import TextBlocks from '../TextBlocks'
+import TextBlocks from '../'
 import Image from 'next/image'
-import { urlFor } from '../../lib/sanity'
+import { urlFor } from '../../../lib/sanity'
 
 export default function GridBlock(props) {
   if (!props || props.disabled === true) {

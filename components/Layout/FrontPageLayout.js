@@ -15,7 +15,7 @@ import Link from '../Link';
 const Wrapper = ({ children }) => {
   return (
     <Container
-      maxW={'8xl'}
+      maxW={'full'}
       boxShadow={'dark-lg'}
       p={0}
     >
@@ -32,123 +32,76 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
     <>
       <Meta />
       <SkipNavLink>{t("skipToContent")}</SkipNavLink>
+      {preview && <PreviewAlert />}
       <Wrapper>
-        {preview && <PreviewAlert />}
-        {/* <Flex
-          w={'full'}
-          position={'sticky'}
-          top='0'
-          gridArea="header"
-          zIndex={10}
-          boxShadow='md'
-          p={2}
-          bgColor={'rgb(244, 227, 60)'}
+        <Container
+          centerContent
+          bgColor={'black'}
+          maxW='full'
+          position={'relative'}
         >
-          <Header
-            data={{ ...siteSettings, siteNav }}
-          />
-
-          <Nav value={siteNav} />
-        </Flex> */}
-
-        <Grid
-          templateAreas={`
-              'heroTitle'
-              'heroContent'
-            `}
-          h={'auto'}
-        >
-
-          <Box
-            position={'sticky'}
-            top='0'
-            alignSelf='start'
-            gridArea={'heroTitle'}
-            zIndex={100}
+          <Heading
+            color='rgba(255,255,255)'
+            fontSize={locale === 'no' ? 'clamp(1.5rem, 8vw, 4.5rem)' : "clamp(1.5rem, 7.5vw, 7vw)"}
+            textTransform="uppercase"
+            fontWeight={'800'}
+            letterSpacing={-6}
+            lineHeight={0.9}
+            pb={1}
+            mx='auto'
           >
-            <Flex
-              zIndex={4}
-              bgColor={'black'}
-              justify='center'
-              px={2}
-            >
-              <Heading
-                color='rgba(255,255,255)'
-                //bgColor={'rgba(134, 112,178)'}
-                lineHeight='.9'
-                fontSize={locale === 'no' ? 'clamp(1.5rem, 8vw, 4.5rem)' : "clamp(1.5rem, 7.5vw, 7rem)"}
-                textTransform="uppercase"
-                fontWeight={'900'}
-                letterSpacing={-3}
-                pb={1}
-              >
-                <Link href={`/`}>
-                  {siteSettings?.label[locale]}
-                </Link>
-              </Heading>
-              {/* DESCRIPTION
-            <Text textTransform="uppercase" bgColor='black' color={'white'} lineHeight='1.2' mt='5' p={2} fontSize={"clamp(0.8rem, 2vw, 3rem)"} maxW={"3xl"} > {siteSettings?.description[locale]} </Text> */}
-              <Nav value={siteNav} />
-            </Flex>
-          </Box>
+            <Link href={`/`}>
+              {siteSettings?.label[locale]}
+            </Link>
+          </Heading>
 
           <Flex
-            //h={['auto', 'auto', 'auto', '100vh']}
-            gridArea={'heroContent'}
-            filter='contrast(80%) brightness(140%)'
-          >
-            <Box w={'full'}>
-              {/*   <Image
-                {...GetImage('image-7e9fb3f0c32f5c3fe4b62971d033fa643de29bfd-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              />
-            </Box>
-            <Box w={'full'}>
-              <Image
-                {...GetImage('image-4aaf7fb6ac6100449789b1a04def1ccf8794c5d7-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              />
-            </Box>
-            <Box w={'full'}>
-              <Image
-                {...GetImage('image-76d069d7f318c8fda66347fc4209e0cd4389c71e-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              />
-            </Box>
-            <Box w={'full'}>
-              <Image
-                {...GetImage('image-ad22c6cbae98421ad7c5536b288530f4d7d8f1d0-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              /> */}
-              {/* <Image
-                  {...GetImage('image-ad22c6cbae98421ad7c5536b288530f4d7d8f1d0-3402x6236-jpg')}
-                  alt='Test'
-                  layout='responsive'
-                  objectFit='cover'
-                /> */}
-
-            </Box>
-          </Flex>
-
-
-          <Box
-            gridArea={'heroContent'}
-            position='relative'
-            zIndex={2}
+            zIndex={4}
+            align='start'
+            direction='row'
+            px={20}
+            pb={10}
           >
             <Box
-              position={'absolute'}
-              bottom={[2, 5, 5, 10]}
-              right={[2, 5, 5, 10]}
-              w={'clamp(150px, 22vw, 400px)'}
+              w={'full'}
+              h={'full'}
+              display={['none', 'block']}
+              position='relative'
+            >
+              <Image
+                {...GetImage('image-ffe0010bd000b13d7335f4a826f5a2ff84a949f8-11799x18568-jpg')}
+                alt='Test'
+                layout='responsive'
+                objectFit='cover'
+              />
+            </Box>
+
+            <Flex
+              justify='center'
+              direction='column'
+              px={10}
+              pb={10}
+            >
+              <Text
+                textTransform="uppercase"
+                bgColor='black'
+                color={'white'}
+                lineHeight='1.2'
+                mt='5'
+                p={4}
+                fontSize={"clamp(0.8rem, 2vw, 3rem)"}
+              > {siteSettings?.description[locale]}
+              </Text>
+
+              <Nav value={siteNav} />
+            </Flex>
+
+            <Box
+              w={'clamp(150px, 42vw, 250px)'}
+              position='absolute'
+              bottom={10}
+              right={10}
+
             >
               <Image
                 {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
@@ -156,8 +109,8 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
                 layout='responsive'
               />
             </Box>
-          </Box>
-        </Grid>
+          </Flex>
+        </Container>
 
 
         {/* {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))} */}
@@ -171,28 +124,21 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             xl: 'repeat(5, minmax(30px, auto))'
           }}
           bgColor='RGB(241, 239, 238)'
-        //pt={10}
-        //gap={6}
         >
           <SkipNavContent />
 
           <Flex
-            gridColumn={{ base: '1 / 8', 'xl': '1/5' }}
+            gridColumn={{ base: '1 / 8', 'xl': '1/6' }}
             gridRow={{ base: '1/3', 'xl': '1/4' }}
             minH={24}
             direction={['column']}
             boxSizing='border-box'
             bgColor='RGB(241, 239, 238)'
             position={'relative'}
-          //transform={'perspective(1200) rotateX(0deg) rotateY(15deg)'}
-
           >
             <Box
               w={'full'}
               position='relative'
-            //transform={'scale(93%)'}
-            //mx={5}
-            //boxShadow={'0px 6px 4px rgba(0,0,0, 0.25)'}
             >
               <Image
                 {...GetImage('image-51627288c9a428a675897f2ea60b7d531fb15ae4-874x1240-jpg')}
@@ -211,26 +157,18 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             >
               <Heading
                 color={'RGB(245, 245, 245)'}
-                fontSize={["6vw", "", "", "", "clamp(2rem, 4.5vw, 4rem)"]}
+                fontSize={["6vw", "", "", "", "clamp(2rem, 5.5vw, 10rem)"]}
                 // fontSize={["6vw", "", "", "", "3vw"]}
                 lineHeight='0.9'
                 textTransform="uppercase"
               >
                 Genders & Genres
               </Heading>
-              {/* <Text
-                color={'RGB(245, 245, 245)'}
-                fontSize={["1rem", "", "1.5rem", "", "clamp(1rem, 2vw, 1.5rem)"]}
-                lineHeight='1.2'
-                maxW={"6xl"}
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Text> */}
             </Box>
           </Flex>
 
           <Flex
-            gridColumn={{ base: '8 / 17', 'xl': '5/10' }}
+            gridColumn={{ base: '8 / 17', 'xl': '6/10' }}
             gridRow={{ base: '1/3', 'xl': '1/4' }}
             minH={24}
             zIndex='2'
@@ -247,13 +185,6 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
                 layout='fill'
                 objectFit='cover'
               />
-              {/* Hakekors
-              <Image
-                {...GetImage('image-f215b22598b883732a41f542a5d7d8685a57f611-5454x8188-jpg')}
-                alt='Test'
-                layout='fill'
-                objectFit='cover'
-              /> */}
             </Box>
             <Box
               p={0}
@@ -267,8 +198,8 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
               <Heading
                 px={3}
                 color={'white'}
-                bgColor='pink.400'
-                //bgColor='#d64a41'
+                //bgColor='pink.400'
+                bgColor='#f52496'
                 transform={'rotate(180deg)'}
                 fontSize={["6vw", "", "", "", "clamp(3.5rem, 3vw, 4rem)"]}
                 //fontSize={["6vw", "", "6vw", "6vw", "3.5vw"]}
@@ -444,9 +375,47 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
                 />
               </Box>
             </Flex>
+
+            <Flex
+              //h={['auto', 'auto', 'auto', '100vh']}
+              filter='contrast(80%) brightness(140%)'
+              my={32}
+            >
+              <Box w={'full'}>
+                <Image
+                  {...GetImage('image-7e9fb3f0c32f5c3fe4b62971d033fa643de29bfd-3402x6236-jpg')}
+                  alt='Test'
+                  layout='responsive'
+                  objectFit='cover'
+                />
+              </Box>
+              <Box w={'full'}>
+                <Image
+                  {...GetImage('image-4aaf7fb6ac6100449789b1a04def1ccf8794c5d7-3402x6236-jpg')}
+                  alt='Test'
+                  layout='responsive'
+                  objectFit='cover'
+                />
+              </Box>
+              <Box w={'full'}>
+                <Image
+                  {...GetImage('image-76d069d7f318c8fda66347fc4209e0cd4389c71e-3402x6236-jpg')}
+                  alt='Test'
+                  layout='responsive'
+                  objectFit='cover'
+                />
+              </Box>
+              <Box w={'full'}>
+                <Image
+                  {...GetImage('image-ad22c6cbae98421ad7c5536b288530f4d7d8f1d0-3402x6236-jpg')}
+                  alt='Test'
+                  layout='responsive'
+                  objectFit='cover'
+                />
+              </Box>
+            </Flex>
           </Flex>
         </Grid>
-
         {/* {children} */}
 
         <Footer />

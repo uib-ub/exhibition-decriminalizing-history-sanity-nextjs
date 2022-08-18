@@ -1,4 +1,3 @@
-export { default as ActorCollection } from './ActorCollection/'
 export { default as BigTextBlock } from './BigTextBlock'
 export { default as EventBlock } from './EventBlock'
 export { default as GridBlock } from './GridBlock'
