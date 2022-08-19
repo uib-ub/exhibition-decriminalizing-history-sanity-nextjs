@@ -1,18 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter, NextRouter } from 'next/router'
-import Image from 'next/image'
-import { getClient, GetImage } from '../lib/sanity.server'
-import Sections from '../components/Blocks/Sections'
+import { getClient } from '../lib/sanity.server'
 import FrontPageLayout from '../components/Layout/FrontPageLayout'
-import NavMegaMenu from '../components/Layout/NavMegaMenu'
-import { arrayToTree } from 'performant-array-to-tree'
-import { humanMadeObjectFields } from '../lib/queries/fragments'
 import { siteNav } from '../lib/queries/fragments'
 import { groq } from 'next-sanity'
 import { siteSettings } from '../lib/queries/fragments/siteSettings'
-import { Box, Container, Flex, Grid, GridItem, Heading, ListItem, Spacer, Text, UnorderedList } from '@chakra-ui/react'
 
 const fields = groq`
   ...,

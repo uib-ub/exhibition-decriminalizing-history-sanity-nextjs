@@ -23,8 +23,6 @@ const ObjectBlock = (props) => {
   const { label, description, item, source, variant } = props
   const height = 'clamp(40em, 50vh, 50em)'
 
-  console.log(JSON.stringify(props, null, 2))
-
   if (variant === 'static-individual-captions') {
     return (
       <Flex

@@ -1,15 +1,12 @@
-import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { getClient } from '../../lib/sanity.server'
-import Sections from '../../components/Blocks/Blocks'
-import Layout from '../../components/Layout'
 import { groq } from 'next-sanity'
-import { Box, Container, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/react'
+import { Box, Container, Flex, Grid, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import { urlFor } from '../../lib/sanity'
 
 function convertToArray(obj) {
+  if (!obj) return null
   return Object.keys(obj).map(key => ({
     name: key,
     ...obj[key],
