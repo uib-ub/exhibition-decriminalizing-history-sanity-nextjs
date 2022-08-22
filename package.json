@@ -22,7 +22,7 @@
     "@sanity/cli": "^2.29.3",
     "@sanity/image-url": "^1.0.1",
     "@turf/bbox": "^6.5.0",
-    "@yith/yith": "^1.0.29",
+    "@yith/yith": "^1.1.1",
     "deep-rename-keys": "^0.2.1",
     "framer-motion": "^6",
     "jsonld": "^7.0.0",
@@ -51,5 +51,12 @@
     "eslint-config-next": "12.1.5",
     "lerna": "^3.22.1",
     "typescript": "4.6.3"
+  },
+  "overrides": {
+    "mirador": {
+      "@material-ui/core": "4.12.4",
+      "@material-ui/icons": "4.11.3",
+      "@material-ui/lab": "4.0.0-alpha.61"
+    }
   }
 }

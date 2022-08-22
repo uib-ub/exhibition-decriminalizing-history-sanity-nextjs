@@ -11,5 +11,8 @@
     "usesCookies": "Denne nettsiden benytter informasjonskapsler.",
     "readAboutCookies": "Les mer om våre informasjonskapsler.",
     "menu": "Innhold"
+  },
+  "Register": {
+    "title": "Register"
   }
 }

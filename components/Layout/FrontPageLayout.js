@@ -31,11 +31,10 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
   return (
     <>
       <Meta />
-      <SkipNavLink>{t("skipToContent")}</SkipNavLink>
       {preview && <PreviewAlert />}
+      <SkipNavLink>{t("skipToContent")}</SkipNavLink>
       <Wrapper>
         <Container
-          centerContent
           bgColor={'black'}
           maxW='full'
           position={'relative'}
@@ -45,10 +44,9 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             fontSize={locale === 'no' ? 'clamp(1.5rem, 8vw, 4.5rem)' : "clamp(1.5rem, 7.5vw, 7vw)"}
             textTransform="uppercase"
             fontWeight={'800'}
-            letterSpacing={-6}
+            letterSpacing={-3}
             lineHeight={0.9}
             pb={1}
-            mx='auto'
           >
             <Link href={`/`}>
               {siteSettings?.label[locale]}
@@ -56,12 +54,50 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           </Heading>
 
           <Flex
-            zIndex={4}
             align='start'
             direction='row'
-            px={20}
             pb={10}
           >
+            <Flex
+              justify='center'
+              direction='column'
+              pb={10}
+            >
+              <Text
+                textTransform="uppercase"
+                bgColor='black'
+                color={'white'}
+                lineHeight='1.2'
+                mt='5'
+                p={2}
+                fontWeight={800}
+                fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 2.2vw, 3rem)', '']}
+              >
+                {siteSettings?.description[locale]}
+              </Text>
+
+              <Nav
+                value={siteNav}
+                justifyContent='start'
+                alignSelf='start'
+                zIndex='6'
+                fontWeight={400}
+                my={3}
+                fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 2.2vw, 3rem)', '']}
+              />
+
+              <Box
+                w={'clamp(80px, 32vw, 250px)'}
+                mt={10}
+              >
+                <Image
+                  {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
+                  alt='Skeivt kulturår 2022 og Universitetet i Bergen'
+                  layout='responsive'
+                />
+              </Box>
+            </Flex>
+
             <Box
               w={'full'}
               h={'full'}
@@ -76,39 +112,6 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
               />
             </Box>
 
-            <Flex
-              justify='center'
-              direction='column'
-              px={10}
-              pb={10}
-            >
-              <Text
-                textTransform="uppercase"
-                bgColor='black'
-                color={'white'}
-                lineHeight='1.2'
-                mt='5'
-                p={4}
-                fontSize={"clamp(0.8rem, 2vw, 3rem)"}
-              > {siteSettings?.description[locale]}
-              </Text>
-
-              <Nav value={siteNav} />
-            </Flex>
-
-            <Box
-              w={'clamp(150px, 42vw, 250px)'}
-              position='absolute'
-              bottom={10}
-              right={10}
-
-            >
-              <Image
-                {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
-                alt='Skeivt kulturår 2022 og Universitetet i Bergen'
-                layout='responsive'
-              />
-            </Box>
           </Flex>
         </Container>
 
@@ -417,7 +420,6 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           </Flex>
         </Grid>
         {/* {children} */}
-
         <Footer />
       </Wrapper>
     </>

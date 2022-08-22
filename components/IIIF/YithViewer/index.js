@@ -6,7 +6,9 @@ const YithViewer = ({ id, type = 'presentation', preview = '', size = 300 }) => 
 
   return (
     <Yith type={type} preview={preview} size={size}>
-      <Yith.Manifest id={id} />
+      {id.map(item => (
+        <Yith.Manifest key={item._key} id={item.manifest} />
+      ))}
     </Yith>
   )
 }

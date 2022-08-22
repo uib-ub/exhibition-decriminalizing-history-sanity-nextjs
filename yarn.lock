@@ -2742,10 +2742,10 @@
     "@typescript-eslint/types" "5.10.1"
     eslint-visitor-keys "^3.0.0"
 
-"@yith/yith@^1.0.29":
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/@yith/yith/-/yith-1.0.29.tgz#0786aa2c7c4ecf84105b85a8e3e86da83e7503d1"
-  integrity sha512-x/bMIvkT2XPT7sbzLIQo+gf6Ufiq+IucflfTZxgsgU1kXnNIrc2Jm0qFgS0udfz6VkKX4ZF0O788XaUI2OJT8w==
+"@yith/yith@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@yith/yith/-/yith-1.1.1.tgz#0dff572ce972769354b15b7ca54b9a24ef71007d"
+  integrity sha512-t7gjVu8KywSYGj+pIZxDmAxySFCrYkgUYu9ApbMWu0i0C84pFdC1QVc9LlQFL0fVxfg/T2X/DGwvVwpg4g+r8w==
   dependencies:
     "@hyperion-framework/parser" "^1.0.0"
     "@hyperion-framework/types" "^1.0.0"

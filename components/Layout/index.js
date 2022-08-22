@@ -1,4 +1,4 @@
-import { Box, Grid } from '@chakra-ui/react'
+import { Box, Flex, Grid, Spacer } from '@chakra-ui/react'
 import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
 import { useTranslations } from 'next-intl';
 import Header from './Header'
@@ -15,7 +15,6 @@ const Wrapper = ({ children, ...rest }) => {
       templateColumns='auto 1fr'
       templateAreas='
         "header header"
-        "nav nav"
         "main main"
         "footer footer"'
       {...rest}
@@ -31,15 +30,20 @@ export default function Layout({ children, site, nav, color, bgColor, preview = 
   return (
     <>
       <Meta />
+      {preview && <PreviewAlert />}
       <SkipNavLink>{t("skipToContent")}</SkipNavLink>
       <Wrapper
         color={color}
         bgColor={bgColor}
       >
-        {preview && <PreviewAlert />}
-        <Header gridArea="header" data={{ ...site, nav, color, bgColor, }} />
-
-        <Nav gridArea="nav" value={nav} />
+        <Flex
+          gridArea="header"
+          maxW={'full'}
+        >
+          <Header data={{ ...site, nav, color, bgColor, }} />
+          <Spacer />
+          <Nav value={nav} />
+        </Flex>
 
         <Box
           as="main"

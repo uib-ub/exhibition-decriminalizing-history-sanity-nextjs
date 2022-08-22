@@ -31,7 +31,7 @@ import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { useTranslations } from 'next-intl'
 import DrawerMenu from './DrawerMenu'
 
-export default function Nav({ value }) {
+export default function Nav({ value, justifyContent = 'end', alignSelf = 'end', ...rest }) {
   const { locale, defaultLocale } = useRouter()
   const t = useTranslations('Layout');
   // const { colorMode, toggleColorMode } = useColorMode()
@@ -40,16 +40,16 @@ export default function Nav({ value }) {
   }
 
   return (
-    <Grid
+    <Box
       as="nav"
+      gridArea={'header'}
       direction={'column'}
       maxW="full"
       alignItems={'stretch'}
       zIndex='6'
-      //justifyContent={'space-between'}
-      fontWeight={800}
-      fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 1.5vw, 2.2rem)', '']}
-      p={2}
+      fontWeight={400}
+      fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 1.5vw, 1rem)', '']}
+      {...rest}
     >
       <DrawerMenu>
         <Flex
@@ -61,77 +61,41 @@ export default function Nav({ value }) {
           direction={'column'}
         >
           {value && value.tree?.map((child) => (
-            <Box
+            <Text
               key={child._key}
-              as="li"
-              m='0'
-              px='5'
-              pt='1'
-              pb='10px'
-              w='208px'
-              h='80px'
-              bgColor={child.value.reference.backgroundColor?.hex ?? 'purple.300'}
+              p={2}
+              bgColor={child.value.reference.backgroundColor?.hex}
+              transition={'all .3s ease'}
+              _groupHover={{ color: 'pink.400' }}
+              fontWeight={800}
               color={child.value.reference.foregroundColor?.hex}
-              _odd={{
-                transform: "skew(0deg, -21deg)",
-                transformStyle: 'preserve-3d',
-                textAlign: 'right',
-                m: '0',
-                //bg: 'purple.300',
-              }}
-              _even={{
-                transform: "skew(0deg, 21deg)",
-                transformStyle: 'preserve-3d',
-                m: '0',
-                //bg: 'teal.200',
-              }}
-              fontWeight='900'
-
             >
-              <Link href={`/${child.value.reference.route}`}>
+              <Link
+                href={`/${child.value.reference.route}`}
+                passHref
+                role={'group'}
+              >
                 {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
               </Link>
-              <Divider my={2} />
-              <Divider my={2} />
-            </Box>
+            </Text>
           ))}
           <Box
-            as="li"
-            m='0'
-            px='5'
-            pt='1'
-            pb='10px'
-            w='208px'
-            h='80px'
-            _odd={{
-              transform: "skew(0deg, -21deg)",
-              transformStyle: 'preserve-3d',
-              textAlign: 'right',
-              m: '0',
-              bg: 'purple.300',
-            }}
-            _even={{
-              transform: "skew(0deg, 21deg)",
-              transformStyle: 'preserve-3d',
-              m: '0',
-              bg: 'teal.200',
-            }}
-            fontWeight='900'
-            color='white'
+            color={'white'}
+            px={2}
+            py={1}
+            display={{ base: 'none', md: 'block' }}
           >
             <LocaleSwitcher />
-            <Divider my={2} />
-            <Divider my={2} />
           </Box>
         </Flex>
       </DrawerMenu >
 
       <Flex
-        display={{ base: 'none', lg: 'flex' }}
+        display={{ base: 'none', md: 'flex' }}
         gap={0}
         wrap='wrap'
-        justifyContent={'center'}
-        alignSelf={'center'}
+        justifyContent={justifyContent}
+        alignSelf={alignSelf}
       >
         {value && value.tree?.map((child) => (
           <Text
@@ -140,7 +104,6 @@ export default function Nav({ value }) {
             bgColor={child.value.reference.backgroundColor?.hex}
             transition={'all .3s ease'}
             _groupHover={{ color: 'pink.400' }}
-            fontWeight={800}
             color={child.value.reference.foregroundColor?.hex}
           >
             <Link
@@ -153,169 +116,14 @@ export default function Nav({ value }) {
           </Text>
         ))}
         <Box
-          color={'white'}
-          //bgColor={'#ffd24f'}
+          bgColor={'white'}
+          color={'black'}
           px={2}
-          py={1}
-          display={{ base: 'none', md: 'block' }}
+          py={'7px'}
         >
           <LocaleSwitcher />
         </Box>
       </Flex>
-      {/* <Box
-        px={2}
-        py={1}
-        color={'white'}
-        //bgColor={'#ffd24f'}
-        textTransform={'uppercase'}
-        display={{ base: 'none', md: 'block' }}
-      >
-        <Popover
-          trigger={'hover'}
-          placement={'bottom-end'}
-        >
-          <PopoverTrigger>
-            <a>
-              {t('menu')}
-            </a>
-          </PopoverTrigger>
-
-          <PopoverContent
-            bgColor={'transparent'}
-            border={0}
-            rounded={'0'}
-            minW={'md'}
-          >
-            <Flex
-              gap={0}
-              wrap='wrap'
-              justifyContent={'center'}
-            >
-              {value && value.tree?.map((child) => (
-                <Link
-                  key={child._key}
-                  href={`/${child.value.reference.route}`}
-                  passHref
-                  role={'group'}
-                  display={'block'}
-                  rounded={'md'}
-                  bgColor={child.value.reference.backgroundColor?.hex}
-                  color={child.value.reference.foregroundColor?.hex}
-                >
-                  <Stack
-                    p={2}
-                    direction={'row'}
-                    align={'center'}
-                    bgColor={child.value.reference.backgroundColor?.hex}
-                  >
-                    <Box
-                      color={child.value.reference.foregroundColor?.hex}
-                    >
-                      <Text
-                        transition={'all .3s ease'}
-                        _groupHover={{ color: 'pink.400' }}
-                        fontWeight={800}
-
-                      >
-                        {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
-                      </Text>
-                      <Text fontSize={'sm'}>
-                        {child.value.reference.description?.[locale] || child.value.reference.description?.[defaultLocale] || 'Uten beskrivelse'}
-                      </Text>
-                    </Box>
-                  </Stack>
-                </Link>
-              ))}
-            </Flex>
-          </PopoverContent>
-        </Popover>
-
-      </Box> */}
-
-      {/* <Box
-        color={'white'}
-        //bgColor={'#ffd24f'}
-        textTransform={'uppercase'}
-        px={2}
-        py={1}
-        display={{ base: 'none', md: 'block' }}
-      >
-        <LocaleSwitcher />
-      </Box> */}
-    </Grid >
+    </Box>
   )
 }
-
-/* 
-<HStack
-        m={0}
-        as="ul"
-        style={{ listStyle: 'none' }}
-        display='inline-block'
-        pt='10'
-      >
-        {value && value.tree?.map((child: any, index: number) => (
-          <Box
-            animation={animation}
-            key={child._key}
-            as="li"
-            m='0'
-            px='5'
-            pt='1'
-            pb='10px'
-            w='208px'
-            _odd={{
-              transform: "skew(0deg, -17deg)",
-              transformStyle: 'preserve-3d',
-              textAlign: 'right',
-              m: '0',
-              bg: 'purple.300',
-
-            }}
-            _even={{
-              transform: "skew(0deg, 17deg)",
-              transformStyle: 'preserve-3d',
-              m: '0',
-              bg: 'teal.200',
-            }}
-            fontWeight='900'
-            color='white'
-          >
-            <Link href={`/${child.value.reference.route}`}>
-              {child.value.reference.label[locale!] || child.value.reference.label[defaultLocale!] || 'Uten tittel'}
-            </Link>
-            <Divider my={2} />
-            <Divider my={2} />
-          </Box>
-        ))}
-        <Box
-          animation={animation}
-          as="li"
-          m='0'
-          p='5'
-          pt='1'
-          pb='10px'
-          w='208px'
-          _odd={{
-            transform: "skew(deg, -17deg)",
-            transformStyle: 'preserve-3d',
-            m: '0',
-            bg: 'purple.300',
-            textAlign: 'right',
-
-          }}
-          _even={{
-            transform: "skew(0deg, 17deg)",
-            transformStyle: 'preserve-3d',
-            m: '0',
-            bg: 'teal.200',
-          }}
-          fontWeight='900'
-          color='white'
-        >
-          <LocaleSwitcher />
-          <Divider my={2} />
-          <Divider my={2} />
-        </Box>
-      </HStack>
-       */

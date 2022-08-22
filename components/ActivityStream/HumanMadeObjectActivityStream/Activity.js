@@ -21,7 +21,7 @@ import {
 import { SunIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import Timespan from '../../Timespan'
 import TextBlocks from '../../TextBlocks'
-import Map from '../../Map'
+/* import Map from '../../Map' */
 import HasType from '../../HasType'
 import { capitalize } from '../../../lib/functions'
 import { useRouter } from 'next/router'

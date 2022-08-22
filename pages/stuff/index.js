@@ -6,13 +6,19 @@ import Cards from '../../components/Cards'
 import { useTranslations } from 'next-intl';
 import { getClient } from '../../lib/sanity.server'
 import { humanMadeObjectsQuery } from '../../lib/queries'
+import { useRouter } from 'next/router'
 
 export default function Items({ data, preview }) {
+  const { locale, defaultLocale } = useRouter()
   const t = useTranslations('Items');
   const { items, siteSettings, siteNav } = data
 
   return (
-    <Layout preview={preview} site={siteSettings} nav={siteNav}>
+    <Layout
+      preview={preview}
+      site={siteSettings}
+      nav={siteNav}
+    >
       <NextSeo
         title="Ting"
         titleTemplate={`%s | ${data?.siteSettings?.title}`}
@@ -32,7 +38,7 @@ export default function Items({ data, preview }) {
         }}
       />
       <Head>
-        <title>{t("title")} – {siteSettings.title}</title>
+        <title>{t("title")} – {siteSettings.label[locale ?? defaultLocale]}</title>
       </Head>
 
       <Container

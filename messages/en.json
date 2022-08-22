@@ -11,5 +11,8 @@
     "usesCookies": "This site uses cookies.",
     "readAboutCookies": "Read more on how we use cookies.",
     "menu": "Content"
+  },
+  "Register": {
+    "title": "Index"
   }
 }

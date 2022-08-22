@@ -9,7 +9,6 @@ import Layout from '../components/Layout'
 import TextBlocks from '../components/TextBlocks'
 import { Container, Grid, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-// import { Container, Text, useColorModeValue } from '@chakra-ui/react'
 
 export async function getStaticPaths({ locales }) {
   const routesQuery = groq`
@@ -128,7 +127,10 @@ export default function Page({ data, preview }) {
       >
         <Grid
           maxW={'6xl'}
-          templateColumns='1em minmax(1.2rem, 1fr) 1em minmax(42ch, 82ch) 1em minmax(1.2rem, 1fr) 1em'
+          templateColumns={{
+            base: '1em minmax(1.2rem, 1fr) 1em 1fr 1em minmax(1.2rem, 1fr) 1em',
+            md: '1em minmax(1.2rem, 1fr) 1em minmax(42ch, 82ch) 1em minmax(1.2rem, 1fr) 1em',
+          }}
           margin='auto'
         >
           <Heading
@@ -137,14 +139,12 @@ export default function Page({ data, preview }) {
             my={8}
             gridColumn={'2 / -2'}
             mx='auto'
+            textAlign={'center'}
           >
             {page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}
           </Heading>
 
-
           {linguisticDocumentBody && <TextBlocks value={linguisticDocumentBody} variant="center-column" />}
-
-          {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
         </Grid>
       </Layout>
     </>

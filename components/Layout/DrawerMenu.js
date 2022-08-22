@@ -26,12 +26,12 @@ export default function DrawerMenu({ children }) {
       display={{ base: 'block', md: 'none' }}
     >
       <IconButton
-        display={{ base: 'block', lg: 'none' }}
+        display={{ base: 'block', md: 'none' }}
         onClick={() => onOpen()}
         icon={<HamburgerIcon w={10} h={10} />}
         size='lg'
-        w={10}
-        h={10}
+        w={8}
+        h={8}
         color={'pink.400'}
         variant={'link'}
       />
@@ -41,16 +41,11 @@ export default function DrawerMenu({ children }) {
         isOpen={isOpen}
         size="xs"
         onOverlayClick={onClose}
-      //motionPreset="scale"
+        motionPreset="scale"
       >
         <DrawerOverlay>
-          <DrawerContent
-            //bgColor="transparent"
-            bgColor="whiteAlpha.600"
-          >
-            <DrawerCloseButton
-              bgColor="yellow.400"
-            />
+          <DrawerContent>
+            <DrawerCloseButton />
             <DrawerBody>
               <Center>
                 {children}
