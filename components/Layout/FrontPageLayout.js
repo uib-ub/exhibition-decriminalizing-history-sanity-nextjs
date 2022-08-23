@@ -10,7 +10,7 @@ import Image from '../SanityImage';
 import { GetImage } from '../../lib/sanity.server';
 import { useRouter } from 'next/router';
 import { transform } from 'lodash';
-import Link from '../Link';
+import Link from 'next/link';
 
 const Wrapper = ({ children }) => {
   return (
@@ -36,21 +36,18 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
       <Wrapper>
         <Container
           bgColor={'black'}
+          color='rgba(255,255,255)'
           maxW='full'
           position={'relative'}
         >
           <Heading
             color='rgba(255,255,255)'
             fontSize={locale === 'no' ? 'clamp(1.5rem, 8vw, 4.5rem)' : "clamp(1.5rem, 7.5vw, 7vw)"}
-            textTransform="uppercase"
+            //textTransform="uppercase"
             fontWeight={'800'}
-            letterSpacing={-3}
-            lineHeight={0.9}
             pb={1}
           >
-            <Link href={`/`}>
-              {siteSettings?.label[locale]}
-            </Link>
+            {siteSettings?.label[locale]}
           </Heading>
 
           <Flex
@@ -81,7 +78,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
                 justifyContent='start'
                 alignSelf='start'
                 zIndex='6'
-                fontWeight={400}
+                fontWeight={700}
                 my={3}
                 fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 2.2vw, 3rem)', '']}
               />
@@ -103,6 +100,8 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
               h={'full'}
               display={['none', 'block']}
               position='relative'
+              flex={'0 0 40%'}
+              ml={3}
             >
               <Image
                 {...GetImage('image-ffe0010bd000b13d7335f4a826f5a2ff84a949f8-11799x18568-jpg')}
@@ -419,7 +418,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             </Flex>
           </Flex>
         </Grid>
-        {/* {children} */}
+        {children}
         <Footer />
       </Wrapper>
     </>

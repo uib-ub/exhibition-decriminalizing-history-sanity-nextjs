@@ -12,20 +12,22 @@ export default function HeroBlock(props) {
     return null
   }
 
-  const image = props.illustration.image
+  console.log(JSON.stringify(props, null, 2))
+
+  const image = props.item?.image ?? null
 
   return (
-    <Container maxW={['sm', '2xl', '4xl', '6xl']}>
+    <Container
+      gridColumn={'2/-2'}
+    >
       <Box
-        borderColor="gray.800"
-        borderWidth="1px"
         mb="2"
         mt="4"
         maxW="full"
         h={['50vh', null, null, '65vh', null]}
         position="relative"
       >
-        {image && <Image alt="" {...GetImage(image)} layout="fill" objectFit="cover" />}
+        {image && <Image alt="" {...GetImage(image)} layout="fill" objectFit="contain" />}
       </Box>
       <Container
         maxW="full"
@@ -58,8 +60,6 @@ export default function HeroBlock(props) {
           </Box>
         )}
       </Container>
-
-      <Divider opacity="1" mb="6" />
     </Container>
   )
 }

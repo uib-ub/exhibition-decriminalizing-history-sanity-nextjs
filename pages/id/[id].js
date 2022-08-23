@@ -65,7 +65,13 @@ export default function Document({ data, preview }) {
   // It'll be completely blank when they start!
 
   return (
-    <>
+    <Layout
+      site={page?.siteSettings}
+      preview={preview}
+      nav={page?.siteNav}
+      color={page?.item[0]?.image?.palette?.dominant?.foreground}
+      bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
+    >
       <NextSeo
         title={`${page?.item[0]?.label[locale ?? defaultLocale]} - ${page?.siteSettings?.label[locale ?? defaultLocale]}`}
         description={page?.item[0]?.excerpt}
@@ -74,7 +80,7 @@ export default function Document({ data, preview }) {
           url: `${process.env.NEXT_PUBLIC_DOMAIN}/${page?.item[0]._id}`,
           title: page?.item[0]?.label[locale],
           description: page?.item[0]?.excerpt,
-          // images: openGraphImages,
+          images: getOpenGraphImages(),
           site_name: page?.siteSettings?.label[locale],
         }}
         twitter={{
@@ -90,34 +96,24 @@ export default function Document({ data, preview }) {
         <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
       </Head>
 
-      <Layout
-        site={page?.siteSettings}
-        preview={preview}
-        nav={page?.siteNav}
+      <Container
+        maxW={'full'}
         color={page?.item[0]?.image?.palette?.dominant?.foreground}
         bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
       >
-        <Container
-          maxW={'full'}
-          color={page?.item[0]?.image?.palette?.dominant?.foreground}
-          bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
-        >
 
-          {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
+        {page?.item && <RenderDocument document={page?.item[0]} locale={locale} />}
 
-          {/* If this is a PREVIEW request coming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
-          {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
-            <>
-              <Heading>{page?.item[0]?.label ?? 'Missing title'}</Heading>
-              <p>dfsdf</p>
-              {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
-              {/* {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />} */}
-              <pre>{JSON.stringify(page, null, 2)}</pre>
-            </>
-          )}
-        </Container>
-      </Layout>
-    </>
+        {/* If this is a PREVIEW request coming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
+        {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
+          <>
+            <Heading>{page?.item[0]?.label ?? 'Missing title'}</Heading>
+            {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
+            {/* {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />} */}
+          </>
+        )}
+      </Container>
+    </Layout>
   )
 }
 

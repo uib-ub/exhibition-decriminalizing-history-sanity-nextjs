@@ -47,6 +47,7 @@ const activities = S.listItem()
         S.documentTypeListItem('Production').title('Produksjon'),
         S.documentTypeListItem('Creation').title('Skapelse (ikke fysisk)'),
         S.documentTypeListItem('Transformation').title('Transformasjon'),
+        S.documentTypeListItem('Modification').title('Modifikasjon'),
         S.documentTypeListItem('Destruction').title('Ødeleggelse'),
         S.documentTypeListItem('Measurement').title('Måling'),
         S.documentTypeListItem('Technique').title('Teknikk'),

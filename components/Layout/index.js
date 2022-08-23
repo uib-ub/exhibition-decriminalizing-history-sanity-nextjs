@@ -12,7 +12,7 @@ const Wrapper = ({ children, ...rest }) => {
     <Grid
       maxW={"full"}
       display="grid"
-      templateColumns='auto 1fr'
+      templateColumns='auto min-content'
       templateAreas='
         "header header"
         "main main"
@@ -39,20 +39,24 @@ export default function Layout({ children, site, nav, color, bgColor, preview = 
         <Flex
           gridArea="header"
           maxW={'full'}
+          align='start'
+          justifyContent={'space-between'}
+          mb={16}
         >
           <Header data={{ ...site, nav, color, bgColor, }} />
-          <Spacer />
-          <Nav value={nav} />
+          <Nav value={nav} direction='row' />
         </Flex>
 
         <Box
           as="main"
           gridArea="main"
           maxW='full'
+          pb={12}
         >
           <SkipNavContent />
           {children}
         </Box>
+
         <Footer />
       </Wrapper>
     </>

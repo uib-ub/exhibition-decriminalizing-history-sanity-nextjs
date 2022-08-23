@@ -25,18 +25,15 @@ export default function Footer(props) {
   return (
     <Container
       as="footer"
+      position={'relative'}
       gridArea="footer"
       maxW="full"
-      py="6"
+      py="16"
       px="0"
       bgColor={'pink.400'}
     >
 
       <Container maxW="2xl" px="4" centerContent>
-        <Box fontSize="xl">
-          <Link href={`/studio`} locale={false}>Studio</Link>
-        </Box>
-
         {content && (
           <RenderSections sections={content} />
         )}
@@ -49,17 +46,19 @@ export default function Footer(props) {
         </Container>
 
         <Box
-          w={'clamp(150px, 42vw, 250px)'}
+          w={'clamp(50px, 22vw, 250px)'}
           position='absolute'
-          bottom={10}
+          top={[-8, -8, -12, -14]}
           right={10}
           zIndex={800}
         >
-          <Image
-            {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
-            alt='Skeivt kulturår 2022 og Universitetet i Bergen'
-            layout='responsive'
-          />
+          <a href="https://uib.no">
+            <Image
+              {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
+              alt='Skeivt kulturår 2022 og Universitetet i Bergen'
+              layout='responsive'
+            />
+          </a>
         </Box>
 
       </Container>

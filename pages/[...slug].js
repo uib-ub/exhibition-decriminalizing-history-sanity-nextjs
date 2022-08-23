@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 import { usePreviewSubscription } from '../lib/sanity'
-import { filterDataToSingleItem } from '../lib/functions'
+import { filterDataToSingleItem, getOpenGraphImages } from '../lib/functions'
 import { getClient } from '../lib/sanity.server'
 import { groq } from 'next-sanity'
 import { routeQuery } from '../lib/queries/routeQuery'
 import Layout from '../components/Layout'
 import TextBlocks from '../components/TextBlocks'
-import { Container, Grid, Heading } from '@chakra-ui/react'
+import { Grid, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 export async function getStaticPaths({ locales }) {
@@ -65,7 +65,6 @@ export async function getStaticProps({ params, locale, preview = false }) {
   }
 }
 
-
 export default function Page({ data, preview }) {
   const { locale, defaultLocale } = useRouter()
   const { data: previewData } = usePreviewSubscription(data?.query, {
@@ -82,6 +81,7 @@ export default function Page({ data, preview }) {
   // console.log(JSON.stringify(page, null, 2))
 
   {/* If LinguisticDocument the content is in the body field */ }
+  const slug = page?.route[0]?.locale[0] ?? page?.route[0]?.fallback[0]
   const linguisticDocumentBody = page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body
 
   // Notice the optional?.chaining conditionals wrapping every piece of content?
@@ -89,65 +89,59 @@ export default function Page({ data, preview }) {
   // of data existing when Editors are creating new documents.
   // It'll be completely blank when they start!
   return (
-    <>
-      {/* <NextSeo
-        title={page?.route[0]?.page?.label ?? page?.route[0]?.page?.title}
-        titleTemplate={`%s | ${data?.siteSettings?.title}`}
-        defaultTitle={data?.siteSettings?.title}
-        description={page?.route[0]?.page?.excerpt}
-        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/${page?.route[0].slug.current}`}
+    <Layout
+      site={page?.siteSettings}
+      nav={page?.siteNav}
+      preview={preview}
+      color={page?.route[0]?.foregroundColor.hex}
+      bgColor={page?.route[0]?.backgroundColor.hex}
+    >
+
+      <NextSeo
+        title={slug?.label}
+        titleTemplate={`%s | ${page?.siteSettings?.label?.[locale ?? defaultLocale]}`}
+        defaultTitle={page?.siteSettings?.label?.[locale ?? defaultLocale]}
+        description={slug?.excerpt}
+        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}/${page?.route[0].slug.current}`}
         openGraph={{
-          url: `${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/${page?.route[0].slug.current}`,
-          title: page?.route[0]?.page?.label,
-          description: page?.route[0]?.page?.excerpt,
-          // images: openGraphImages,
+          type: 'article',
+          locale: locale,
+          url: `${process.env.NEXT_PUBLIC_DOMAIN}/${page?.route[0].slug.current}`,
+          title: slug?.label,
+          description: page?.route[0]?.excerpt,
+          images: getOpenGraphImages(),
           site_name: page?.siteSettings?.title,
-        }}
-        twitter={{
-          handle: '@UiB_UB',
-          site: '@UiB_UB',
-          cardType: 'summary_large_image',
         }}
       />
 
       <Head>
         <title>
-          {`${page?.route[0]?.page?.label ?? page?.route[0]?.page?.title}
-           - ${page?.siteSettings?.title}`}
+          {`${slug?.label} - ${page?.siteSettings?.label?.[locale ?? defaultLocale]}`}
         </title>
-      </Head> */}
+      </Head>
 
-
-      <Layout
-        site={page?.siteSettings}
-        nav={page?.siteNav}
-        preview={preview}
-        color={page?.route[0]?.foregroundColor.hex}
-        bgColor={page?.route[0]?.backgroundColor.hex}
+      <Grid
+        maxW={'6xl'}
+        templateColumns={{
+          base: '1em minmax(1.2rem, 1fr) 1em 1fr 1em minmax(1.2rem, 1fr) 1em',
+          md: '1em minmax(1.2rem, 1fr) 1em minmax(42ch, 82ch) 1em minmax(1.2rem, 1fr) 1em',
+        }}
+        margin='auto'
       >
-        <Grid
-          maxW={'6xl'}
-          templateColumns={{
-            base: '1em minmax(1.2rem, 1fr) 1em 1fr 1em minmax(1.2rem, 1fr) 1em',
-            md: '1em minmax(1.2rem, 1fr) 1em minmax(42ch, 82ch) 1em minmax(1.2rem, 1fr) 1em',
-          }}
-          margin='auto'
+        <Heading
+          as={'h1'}
+          fontSize={{ base: "4xl", md: '6xl', lg: '8xl' }}
+          my={8}
+          gridColumn={'2 / -2'}
+          mx='auto'
+          textAlign={'center'}
         >
-          <Heading
-            as={'h1'}
-            fontSize={{ base: "4xl", md: '6xl', lg: '8xl' }}
-            my={8}
-            gridColumn={'2 / -2'}
-            mx='auto'
-            textAlign={'center'}
-          >
-            {page?.route[0]?.label?.[locale] ?? page?.route[0]?.label?.[defaultLocale]}
-          </Heading>
+          {slug?.label}
+        </Heading>
 
-          {linguisticDocumentBody && <TextBlocks value={linguisticDocumentBody} variant="center-column" />}
-        </Grid>
-      </Layout>
-    </>
+        {linguisticDocumentBody && <TextBlocks value={linguisticDocumentBody} variant="center-column" />}
+      </Grid>
+    </Layout>
   )
 }
 

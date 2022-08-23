@@ -28,16 +28,18 @@ const ObjectBlock = (props) => {
     return (
       <Flex
         gridColumn={'2/-2'}
-        gap={4}
-        flexWrap='wrap'
-        align={'baseline'}
         maxW='full'
-        flex={'1 1 0'}
+        mb={10}
+        align={'baseline'}
+        justify={'space-evenly'}
+        flexWrap={'wrap'}
+        gap={4}
       >
         {item.map((i) => (
           <Box
             key={i._key}
             as='figure'
+            flex={'0 0 30%'}
           >
             {!i.internalRef && (
               <Image

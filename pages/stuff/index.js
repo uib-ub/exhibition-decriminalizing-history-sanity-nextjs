@@ -18,15 +18,17 @@ export default function Items({ data, preview }) {
       preview={preview}
       site={siteSettings}
       nav={siteNav}
+      color='white'
+      bgColor='gray.900'
     >
       <NextSeo
         title="Ting"
         titleTemplate={`%s | ${data?.siteSettings?.title}`}
         defaultTitle={data?.siteSettings?.title}
         description={data?.siteSettings?.openGraph?.description}
-        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/stuff`}
+        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}/stuff`}
         openGraph={{
-          url: `${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/stuff`,
+          url: `${process.env.NEXT_PUBLIC_DOMAIN}/stuff`,
           title: data?.siteSettings?.title,
           description: data?.siteSettings?.openGraph?.description,
           site_name: data?.siteSettings?.title,
@@ -41,19 +43,19 @@ export default function Items({ data, preview }) {
         <title>{t("title")} – {siteSettings.label[locale ?? defaultLocale]}</title>
       </Head>
 
+      <Heading
+        as={'h1'}
+        fontSize={{ base: "4xl", md: '6xl', lg: '8xl' }}
+        mb={8}
+        mx='auto'
+        textAlign={'center'}
+      >
+        {t('title')}
+      </Heading>
       <Container
         maxW={"full"}
         p={0}
-        pt={14}
       >
-        <Heading
-          size={"4xl"}
-          mb={5}
-          px={5}
-          color="green.500"
-        >
-          {t("title")}
-        </Heading>
 
         <Cards items={items} />
       </Container>

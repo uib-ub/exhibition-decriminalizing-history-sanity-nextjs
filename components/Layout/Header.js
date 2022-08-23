@@ -3,7 +3,6 @@ import Link from 'next/link'
 import {
   Box,
   Heading,
-  // Image,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
@@ -28,13 +27,11 @@ export default function Header(props) {
       {...rest}
     >
       <Heading
-        size={'md'}
-        fontWeight='400'
-      //textTransform="uppercase"
+        size={'lg'}
+        whiteSpace='nowrap'
       >
         <Link href="/">
-          #decrimhist
-          {/* <a>{label?.[locale] ?? label?.[defaultLocale]}</a> */}
+          {label?.[locale] ?? label?.[defaultLocale]}
         </Link>
       </Heading>
     </Box>

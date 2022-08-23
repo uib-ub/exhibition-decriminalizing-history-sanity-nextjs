@@ -66,6 +66,7 @@ const hiddenDocTypes = (listItem) =>
     'LinguisticDocument',
     'media.tag',
     'Transformation',
+    'Modification',
     'Production',
     'Measurement',
     'Joining',

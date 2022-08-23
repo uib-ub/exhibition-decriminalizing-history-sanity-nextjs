@@ -6,10 +6,23 @@ import Link from '../../components/Link'
 import { sortBy } from 'lodash'
 import { useRouter } from 'next/router'
 import { useTranslations } from 'next-intl'
-import { registryQuery } from '../../lib/queries'
 import { getClient } from '../../lib/sanity.server'
-/* import { getOpenGraphImages } from '../../lib/utils' */
+import { getOpenGraphImages } from '../../lib/functions'
+import { groq } from 'next-sanity'
+import { siteNav, siteSettings } from '../../lib/queries/fragments'
 
+const registryQuery = groq`
+  {
+    "items": *[_type in ["Concept", "ObjectType", "Actor", "Group"] && accessState == "open" && count(*[references(^._id)]) > 0] | order(label.no){ 
+      _id,
+      _type,
+      label,
+      "count": count(*[references(^._id)]),
+    },
+    ${siteNav},
+    ${siteSettings}
+  }
+`
 
 export async function getStaticProps({ preview = false, locale }) {
   const data = await getClient(preview).fetch(registryQuery, { language: locale })
@@ -24,19 +37,18 @@ export async function getStaticProps({ preview = false, locale }) {
 }
 
 
-export default function Register({ data, preview }) {
-  const { locale, defaultLocale } = useRouter()
-  const sortLanguage = `label[${locale}]` || `label[${defaultLocale}]` || `label.en`
-  const t = useTranslations('Register')
-  const tagColor = useColorModeValue('blackAlpha', 'red')
-
+export default function CatalogueIndex({ data, preview }) {
+  const { locale, defaultLocale, asPath } = useRouter()
   const { items, siteSettings, siteNav } = data
 
+  const t = useTranslations('Register')
+  const sortLanguage = `label[${locale}]` || `label[${defaultLocale}]` || `label.en`
   const sortedItems = sortBy(items, sortLanguage)
-  /*   const openGraphImages = getOpenGraphImages(
-      data?.siteSettings?.openGraph?.image,
-      data?.siteSettings?.title,
-    ) */
+
+  const openGraphImages = getOpenGraphImages(
+    data?.siteSettings?.openGraph?.image,
+    t('title'),
+  )
 
   return (
     <Layout
@@ -44,36 +56,36 @@ export default function Register({ data, preview }) {
       nav={siteNav}
       preview={preview}
     >
-      {/* <NextSeo
-        title="Register"
-        titleTemplate={`%s | ${data?.siteSettings?.title}`}
-        defaultTitle={data?.siteSettings?.title}
-        description={data?.siteSettings?.openGraph?.description}
-        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/register`}
+      <NextSeo
+        title={t('title')}
+        titleTemplate={`%s | ${data?.siteSettings?.label?.[locale ?? defaultLocale]}`}
+        defaultTitle={data?.siteSettings?.label?.[locale ?? defaultLocale]}
+        description={data?.siteSettings?.description[locale ?? defaultLocale]}
+        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}${asPath}`}
         openGraph={{
-          url: `${process.env.NEXT_PUBLIC_DOMAIN}${process.env.NEXT_PUBLIC_BASE_PATH}/register`,
-          title: data?.siteSettings?.title,
-          description: data?.siteSettings?.openGraph?.description,
+          url: `${process.env.NEXT_PUBLIC_DOMAIN}${asPath}`,
+          title: t('title'),
+          description: data?.siteSettings?.description[locale ?? defaultLocale],
           images: openGraphImages,
-          site_name: data?.siteSettings?.title,
+          site_name: data?.siteSettings?.label?.[locale ?? defaultLocale],
         }}
         twitter={{
           handle: '@UiB_UB',
           site: '@UiB_UB',
           cardType: 'summary_large_image',
         }}
-      /> */}
+      />
       <Head>
         <title>{t('title')} - {data.siteSettings?.label?.[locale ?? defaultLocale]}</title>
       </Head>
 
-      <Container my="5" maxW="6xl">
+      <Container mb="5" maxW="6xl">
         <Heading
-          fontSize={['2xl', '3xl', '4xl', '5xl']}
-          py="5"
-          mb="5"
-          borderBottom="solid 1px"
-          borderColor="gray.300"
+          as={'h1'}
+          fontSize={{ base: "4xl", md: '6xl', lg: '8xl' }}
+          my={8}
+          mx='auto'
+          textAlign={'center'}
         >
           {t('title')}
         </Heading>
@@ -107,7 +119,6 @@ export default function Register({ data, preview }) {
                   justifySelf="self-end"
                   order="2"
                   ml="3"
-                  colorScheme={tagColor}
                   fontSize="0.8em"
                 >
                   {item.count}

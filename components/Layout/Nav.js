@@ -22,7 +22,8 @@ import {
   PopoverTrigger,
   Text,
   Icon,
-  Grid
+  Grid,
+  Spacer
 } from '@chakra-ui/react'
 import ActiveLink from '../Link/ActiveLink'
 import { NextRouter, useRouter } from 'next/router'
@@ -31,7 +32,7 @@ import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { useTranslations } from 'next-intl'
 import DrawerMenu from './DrawerMenu'
 
-export default function Nav({ value, justifyContent = 'end', alignSelf = 'end', ...rest }) {
+export default function Nav({ value, justifyContent = 'end', alignSelf = 'end', direction = 'column', ...rest }) {
   const { locale, defaultLocale } = useRouter()
   const t = useTranslations('Layout');
   // const { colorMode, toggleColorMode } = useColorMode()
@@ -43,41 +44,70 @@ export default function Nav({ value, justifyContent = 'end', alignSelf = 'end', 
     <Box
       as="nav"
       gridArea={'header'}
-      direction={'column'}
-      maxW="full"
+      direction={direction}
       alignItems={'stretch'}
       zIndex='6'
-      fontWeight={400}
+      fontWeight={800}
       fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 1.5vw, 1rem)', '']}
       {...rest}
     >
+
+      <Flex
+        display={{ base: 'none', md: 'flex' }}
+        gap={0}
+        wrap='wrap'
+        justifyContent={justifyContent}
+        alignSelf={alignSelf}
+      >
+        {value && value.tree?.map((child) => (
+          <ActiveLink
+            key={child._key}
+            py={2}
+            px={6}
+            bgColor={child.value.reference.backgroundColor?.hex}
+            color={child.value.reference.foregroundColor?.hex}
+            href={`/${child.value.reference.route}`}
+            passHref
+            role={'group'}
+            activeProps={{ fontStyle: 'italic', fontWeight: 800, transform: 'translate(-12px, 4px)', boxShadow: '5px 5px 0px black', border: 'dotted 2px' }}
+          >
+            {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
+          </ActiveLink>
+        ))}
+        <Box
+          bgColor={'white'}
+          color={'black'}
+          px={6}
+          py={'7px'}
+        >
+          <LocaleSwitcher />
+        </Box>
+      </Flex>
+
       <DrawerMenu>
         <Flex
+          justifySelf={{ base: 'end', md: 'start' }}
           m={0}
           as="ul"
           style={{ listStyle: 'none' }}
-          display='inline-block'
           pt='10'
           direction={'column'}
+          justifyContent={justifyContent}
+          alignSelf={alignSelf}
         >
           {value && value.tree?.map((child) => (
-            <Text
+            <ActiveLink
               key={child._key}
               p={2}
               bgColor={child.value.reference.backgroundColor?.hex}
-              transition={'all .3s ease'}
-              _groupHover={{ color: 'pink.400' }}
-              fontWeight={800}
               color={child.value.reference.foregroundColor?.hex}
+              href={`/${child.value.reference.route}`}
+              passHref
+              role={'group'}
+              activeProps={{ fontStyle: 'italic' }}
             >
-              <Link
-                href={`/${child.value.reference.route}`}
-                passHref
-                role={'group'}
-              >
-                {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
-              </Link>
-            </Text>
+              {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
+            </ActiveLink>
           ))}
           <Box
             color={'white'}
@@ -88,42 +118,7 @@ export default function Nav({ value, justifyContent = 'end', alignSelf = 'end', 
             <LocaleSwitcher />
           </Box>
         </Flex>
-      </DrawerMenu >
-
-      <Flex
-        display={{ base: 'none', md: 'flex' }}
-        gap={0}
-        wrap='wrap'
-        justifyContent={justifyContent}
-        alignSelf={alignSelf}
-      >
-        {value && value.tree?.map((child) => (
-          <Text
-            key={child._key}
-            p={2}
-            bgColor={child.value.reference.backgroundColor?.hex}
-            transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
-            color={child.value.reference.foregroundColor?.hex}
-          >
-            <Link
-              href={`/${child.value.reference.route}`}
-              passHref
-              role={'group'}
-            >
-              {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
-            </Link>
-          </Text>
-        ))}
-        <Box
-          bgColor={'white'}
-          color={'black'}
-          px={2}
-          py={'7px'}
-        >
-          <LocaleSwitcher />
-        </Box>
-      </Flex>
+      </DrawerMenu>
     </Box>
   )
 }

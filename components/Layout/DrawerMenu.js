@@ -23,7 +23,7 @@ export default function DrawerMenu({ children }) {
 
   return (
     <Box
-      display={{ base: 'block', md: 'none' }}
+      display={{ base: 'flex', md: 'none' }}
     >
       <IconButton
         display={{ base: 'block', md: 'none' }}
