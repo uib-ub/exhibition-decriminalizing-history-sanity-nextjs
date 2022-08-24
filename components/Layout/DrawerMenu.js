@@ -18,7 +18,7 @@ import { CloseIcon } from '@chakra-ui/icons'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ActiveLink from '../Link/ActiveLink'
 
-export default function DrawerMenu({ children }) {
+export default function DrawerMenu({ children, iconColor = 'pink.100' }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -32,22 +32,30 @@ export default function DrawerMenu({ children }) {
         size='lg'
         w={8}
         h={8}
-        color={'pink.400'}
+        color={iconColor}
         variant={'link'}
       />
       <Drawer
         placement="right"
         onClose={onClose}
         isOpen={isOpen}
-        size="xs"
+        size="sm"
         onOverlayClick={onClose}
         motionPreset="scale"
       >
         <DrawerOverlay>
-          <DrawerContent>
-            <DrawerCloseButton />
+          <DrawerContent bgColor='blackAlpha.900'>
+            <DrawerCloseButton
+              bgColor={'pink.400'}
+              color={'white'}
+              _hover={{ bgColor: 'rgb(245,25,150)' }}
+              w={10}
+              h={10}
+              mt={3}
+              mr={3}
+            />
             <DrawerBody>
-              <Center>
+              <Center h={'full'}>
                 {children}
               </Center>
             </DrawerBody>

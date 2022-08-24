@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import Header from './Header'
 import PreviewAlert from './PreviewAlert'
 import Footer from './Footer'
-import Nav from './Nav'
+import { Nav, Drawer } from './Nav'
 import Meta from './Meta'
 
 const Wrapper = ({ children, ...rest }) => {
@@ -45,6 +45,7 @@ export default function Layout({ children, site, nav, color, bgColor, preview = 
         >
           <Header data={{ ...site, nav, color, bgColor, }} />
           <Nav value={nav} direction='row' />
+          <Drawer value={nav} />
         </Flex>
 
         <Box

@@ -9,7 +9,7 @@ export default function VideoBlock(props) {
   const { title, url } = props
 
   return (
-    <Container maxW="2xl" position="relative" my="10">
+    <Container gridColumn={'3/-3'} position="relative" my="10">
       <AspectRatio ratio={16 / 9} mb="3">
         {url ? (
           <iframe src={url} allowFullScreen title={title ?? 'Video uten tittel'} />

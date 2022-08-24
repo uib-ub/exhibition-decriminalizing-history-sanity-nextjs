@@ -29,39 +29,34 @@ export default function Footer(props) {
       gridArea="footer"
       maxW="full"
       py="16"
-      px="0"
+      px="4"
       bgColor={'pink.400'}
     >
 
-      <Container maxW="2xl" px="4" centerContent>
-        {content && (
-          <RenderSections sections={content} />
-        )}
+      {content && (
+        <RenderSections sections={content} />
+      )}
 
-        <Container p="0">
-          <Text textAlign="center">
-            {t('usesCookies')}{' '}
-            <Link href={`/cookie-policy`}>{t('readAboutCookies')}</Link>
-          </Text>
-        </Container>
+      <Text>
+        {t('usesCookies')}{' '}
+        <Link href={`/cookie-policy`}>{t('readAboutCookies')}</Link>
+      </Text>
 
-        <Box
-          w={'clamp(50px, 22vw, 250px)'}
-          position='absolute'
-          top={[-8, -8, -12, -14]}
-          right={10}
-          zIndex={800}
-        >
-          <a href="https://uib.no">
-            <Image
-              {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
-              alt='Skeivt kulturår 2022 og Universitetet i Bergen'
-              layout='responsive'
-            />
-          </a>
-        </Box>
-
-      </Container>
+      <Box
+        w={'clamp(100px, 32vw, 250px)'}
+        position='absolute'
+        top={[-10, -10, -12, -14]}
+        right={10}
+        zIndex={800}
+      >
+        <a href="https://uib.no">
+          <Image
+            {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
+            alt='Skeivt kulturår 2022 og Universitetet i Bergen'
+            layout='responsive'
+          />
+        </a>
+      </Box>
     </Container>
   )
 }

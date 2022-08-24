@@ -95,7 +95,6 @@ const ObjectBlock = (props) => {
                     pb={{ base: '2', md: '0' }}
                     mb="0"
                   >
-                    <Icon as={BsInfoCircle} mr="2" mt="2" />
                     <TextBlocks
                       value={i.source}
                     />
@@ -104,9 +103,9 @@ const ObjectBlock = (props) => {
 
                 {i.objectDescription && (
                   <Source
-                    display={{ base: 'none', md: 'block' }}
-                    key={i.objectDescription?._id ?? i._key}
                     {...i.objectDescription}
+                    display={{ base: 'none', md: 'block' }}
+
                   />
                 )}
               </Box>
@@ -138,7 +137,6 @@ const ObjectBlock = (props) => {
                           pb={{ base: '2', md: '0' }}
                           mb="0"
                         >
-                          <Icon as={BsInfoCircle} mr="2" mt="2" />
                           <TextBlocks
                             value={i.source}
                           />
@@ -163,6 +161,7 @@ const ObjectBlock = (props) => {
 
   return (
     <Block
+      key={item._key}
       as="figure"
       variant={variant}
     >
@@ -186,12 +185,43 @@ const ObjectBlock = (props) => {
 
           {variant === 'static' && (
             <Flex
-              gap={4}
-              flexWrap='0'
-              justify={'center'}
+              maxW='full'
+              mb={10}
               align={'baseline'}
+              justify={'space-evenly'}
+              flexWrap={'wrap'}
+              gap={4}
             >
-              {item.map((i) => (
+              {item.length > 1 && item.map((i) => (
+                <Box
+                  key={i._key}
+                  as='figure'
+                  flex={'0 0 30%'}
+                >
+                  {!i.internalRef && (
+                    <Image
+                      key={i._key}
+                      alt=""
+                      {...GetImage(i.image)}
+                      objectFit={'contain'}
+                    />
+                  )}
+                  {i.internalRef && (
+                    <Link
+                      key={i._key}
+                      href={`/id/${i.internalRef._ref}`}
+                    >
+                      <Image
+                        alt=""
+                        {...GetImage(i.image)}
+                        objectFit={'contain'}
+                      />
+                    </Link>
+                  )}
+                </Box>
+              ))}
+
+              {item.length === 1 && item.map((i) => (
                 <>
                   {!i.internalRef && (
                     <Image
@@ -223,8 +253,8 @@ const ObjectBlock = (props) => {
       <Flex
         as='figcaption'
         direction="column"
-        mx='auto'
         maxW={'2xl'}
+        mx='auto'
         textAlign='center'
       >
         {label && (
@@ -250,8 +280,9 @@ const ObjectBlock = (props) => {
             fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'md' }}
             pb={{ base: '2', md: '0' }}
             mb="0"
+            mx='auto'
+            textAlign='center'
           >
-            <Icon as={BsInfoCircle} mr="2" mt="2" />
             <TextBlocks
               value={source}
             />

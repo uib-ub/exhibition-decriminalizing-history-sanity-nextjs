@@ -23,12 +23,12 @@ export default function Header(props) {
       gridArea="header"
       color={color}
       bgColor={bgColor}
-      p={2}
+      py={2}
+      mx={'1em'}
       {...rest}
     >
       <Heading
-        size={'lg'}
-        whiteSpace='nowrap'
+        size={'md'}
       >
         <Link href="/">
           {label?.[locale] ?? label?.[defaultLocale]}
