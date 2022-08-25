@@ -1,6 +1,5 @@
-import Head from 'next/head'
 import { NextSeo } from 'next-seo'
-import { Container, Grid, Heading } from '@chakra-ui/react'
+import { Grid, Heading } from '@chakra-ui/react'
 import Layout from '../../components/Layout'
 import Cards from '../../components/Cards'
 import { useTranslations } from 'next-intl';
@@ -11,6 +10,7 @@ import { useRouter } from 'next/router'
 export default function Items({ data, preview }) {
   const { locale, defaultLocale } = useRouter()
   const t = useTranslations('Items');
+
   const { items, siteSettings, siteNav } = data
 
   return (
@@ -21,17 +21,18 @@ export default function Items({ data, preview }) {
       color='white'
       bgColor='gray.900'
     >
+
       <NextSeo
         title={t("title")}
-        titleTemplate={`%s | ${data?.siteSettings?.title}`}
-        defaultTitle={data?.siteSettings?.title}
-        description={data?.siteSettings?.openGraph?.description}
+        titleTemplate={`%s | ${data?.siteSettings?.label?.[locale ?? defaultLocale]}`}
+        defaultTitle={data?.siteSettings?.label?.[locale ?? defaultLocale]}
+        description={data?.siteSettings?.description[locale ?? defaultLocale]}
         canonical={`${process.env.NEXT_PUBLIC_DOMAIN}/stuff`}
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_DOMAIN}/stuff`,
-          title: data?.siteSettings?.title,
-          description: data?.siteSettings?.openGraph?.description,
-          site_name: data?.siteSettings?.title,
+          title: t("title"),
+          description: data?.siteSettings?.description[locale ?? defaultLocale],
+          site_name: data?.siteSettings?.label?.[locale ?? defaultLocale],
         }}
         twitter={{
           handle: '@UiB_UB',
@@ -39,9 +40,7 @@ export default function Items({ data, preview }) {
           cardType: 'summary_large_image',
         }}
       />
-      <Head>
-        <title>{t("title")} – {siteSettings.label[locale ?? defaultLocale]}</title>
-      </Head>
+
       <Grid
         maxW={'6xl'}
         templateColumns={{

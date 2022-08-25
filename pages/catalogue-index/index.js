@@ -36,7 +36,6 @@ export async function getStaticProps({ preview = false, locale }) {
   }
 }
 
-
 export default function CatalogueIndex({ data, preview }) {
   const { locale, defaultLocale, asPath } = useRouter()
   const { items, siteSettings, siteNav } = data
@@ -52,9 +51,11 @@ export default function CatalogueIndex({ data, preview }) {
 
   return (
     <Layout
-      site={siteSettings}
-      nav={siteNav}
+      siteSettings={siteSettings}
+      siteNav={siteNav}
       preview={preview}
+      color={'black'}
+      bgColor={'white'}
     >
       <NextSeo
         title={t('title')}
@@ -75,9 +76,6 @@ export default function CatalogueIndex({ data, preview }) {
           cardType: 'summary_large_image',
         }}
       />
-      <Head>
-        <title>{t('title')} - {data.siteSettings?.label?.[locale ?? defaultLocale]}</title>
-      </Head>
 
       <Container mb="5" maxW="6xl">
         <Heading

@@ -8,30 +8,9 @@ import {
   GridItem,
   Box,
   Tag,
-  /* Code,
-  Icon,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-  Link, */
   LinkBox,
   LinkOverlay,
-  Spacer,
-  //useDisclosure,
-  useColorModeValue,
 } from '@chakra-ui/react'
-import { urlFor } from '../../lib/sanity'
-/* import { BiDotsVerticalRounded } from 'react-icons/bi'
-import { FiExternalLink } from 'react-icons/fi'
-import { VscJson } from 'react-icons/vsc' */
 import TextBlocks from '../TextBlocks'
 import Palette from '../Palette'
 import CardImage from './CardImage'
@@ -41,10 +20,6 @@ import { useRouter } from 'next/router'
 
 export default function Card(props) {
   const { locale, defaultLocale } = useRouter()
-  const bg = useColorModeValue('white', 'transparent')
-  const color = useColorModeValue('gray.600', 'gray.200')
-  const borderColor = useColorModeValue('gray.200', 'gray.700')
-  const tagColor = useColorModeValue('blackAlpha', 'red')
 
   if (!props) {
     return null
@@ -163,18 +138,17 @@ export default function Card(props) {
         </Box>
 
         {hasType && (
-          <HStack spacing={4} mb="2" mr="2">
+          <Flex spacing={4} gap={1} wrap={'wrap'}>
             {hasType.map((type) => (
               <Tag
                 key={type._id}
-
                 fontSize={['xs', 'xs', 'xs', 'xs']}
-                colorScheme={tagColor}
+                whiteSpace={'nowrap'}
               >
                 {type.label[locale] ?? type.label[defaultLocale]}
               </Tag>
             ))}
-          </HStack>
+          </Flex>
         )}
       </LinkBox>
     </GridItem >

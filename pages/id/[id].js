@@ -89,12 +89,6 @@ export default function Document({ data, preview }) {
           cardType: 'summary_large_image',
         }}
       />
-      <Head>
-        <title>
-          {`${page?.item[0]?.label[locale] || page?.item[0]?.label}`} - {page?.siteSettings?.label[locale]}
-        </title>
-        <script type="application/ld+json">{JSON.stringify(page?.item, null, 2)}</script>
-      </Head>
 
       <Container
         maxW={'full'}

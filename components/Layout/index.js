@@ -44,7 +44,7 @@ export default function Layout({ children, siteSettings, siteNav, color, bgColor
           mb={[3, 8, 12, 16]}
           mx={'1em'}
         >
-          <Header data={{ ...siteSettings, siteNav, color, bgColor, }} />
+          <Header data={{ ...siteSettings, siteNav, color, bgColor }} />
           <Nav value={siteNav} direction='row' />
         </Flex>
 

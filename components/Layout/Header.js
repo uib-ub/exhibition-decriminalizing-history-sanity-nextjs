@@ -16,7 +16,7 @@ export default function Header(props) {
     return null
   }
 
-  const { data, ...rest } = props
+  const { data, color, bgColor, ...rest } = props
   const { label, siteNav } = data
 
   return (
@@ -27,10 +27,11 @@ export default function Header(props) {
       pt={{ base: 3, sm: 3, md: 3 }}
       gap={5}
       {...rest}
+      color={color}
+      bgColor={bgColor}
     >
       <Heading
-        color='rgba(255,255,255)'
-        fontSize={locale === 'no' ? 'clamp(1rem, 3vw, 3rem)' : "clamp(0.5rem, 2vw, 2vw)"}
+        fontSize={locale === 'no' ? 'clamp(1rem, 3vw, 3rem)' : "clamp(1rem, 3vw, 3vw)"}
         fontWeight={'800'}
         pb={1}
       >

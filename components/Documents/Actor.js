@@ -102,9 +102,6 @@ export default function Actor(item) {
       {item.mentionedIn.length != 0 && (
         <>
           <Divider mb="10" />
-          <Heading as="h2" mb="3">
-            Koblet til...
-          </Heading>
           <Cards items={item.mentionedIn} />
         </>
       )}

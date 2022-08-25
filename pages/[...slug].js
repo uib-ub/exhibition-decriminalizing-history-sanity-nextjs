@@ -114,12 +114,6 @@ export default function Page({ data, preview }) {
         }}
       />
 
-      <Head>
-        <title>
-          {`${slug?.label} - ${page?.siteSettings?.label?.[locale ?? defaultLocale]}`}
-        </title>
-      </Head>
-
       <Grid
         maxW={'6xl'}
         templateColumns={{
