@@ -107,10 +107,9 @@ export default function Card(props) {
   return (
     <GridItem
       as="article"
-
       bgColor={palette?.lightVibrant?.background}
       color={palette?.lightVibrant?.foreground}
-      p={5}
+      p={[2, 2, 4, 4]}
       {...spanObj}
     >
       <LinkBox>
@@ -120,7 +119,10 @@ export default function Card(props) {
           </Box>
         )}
 
-        <Box pt="2" pb="2">
+        <Box
+          pt="2"
+          pb="2"
+        >
           <Heading
             mt="1"
             as="h3"

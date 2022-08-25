@@ -2,9 +2,7 @@ import { Grid } from '@chakra-ui/react'
 import Card from './Card'
 
 export default function Cards(props) {
-  if (!props && props.items) {
-    return null
-  }
+  if (!props && props.items) return null
 
   const { items, ...rest } = props
 

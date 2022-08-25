@@ -4,19 +4,19 @@ import { useTranslations } from 'next-intl';
 import Header from './Header'
 import PreviewAlert from './PreviewAlert'
 import Footer from './Footer'
-import { Nav, Drawer } from './Nav'
+import Nav from './Nav'
 import Meta from './Meta'
 
 const Wrapper = ({ children, ...rest }) => {
   return (
     <Grid
       maxW={"full"}
-      display="grid"
       templateColumns='auto min-content'
       templateAreas='
         "header header"
         "main main"
-        "footer footer"'
+        "footer footer"
+      '
       {...rest}
     >
       {children}
@@ -24,7 +24,7 @@ const Wrapper = ({ children, ...rest }) => {
   )
 }
 
-export default function Layout({ children, site, nav, color, bgColor, preview = false }) {
+export default function Layout({ children, siteSettings, siteNav, color, bgColor, preview = false }) {
   const t = useTranslations("Layout");
 
   return (
@@ -41,11 +41,11 @@ export default function Layout({ children, site, nav, color, bgColor, preview = 
           maxW={'full'}
           align='start'
           justifyContent={'space-between'}
-          mb={16}
+          mb={[3, 8, 12, 16]}
+          mx={'1em'}
         >
-          <Header data={{ ...site, nav, color, bgColor, }} />
-          <Nav value={nav} direction='row' />
-          <Drawer value={nav} />
+          <Header data={{ ...siteSettings, siteNav, color, bgColor, }} />
+          <Nav value={siteNav} direction='row' />
         </Flex>
 
         <Box

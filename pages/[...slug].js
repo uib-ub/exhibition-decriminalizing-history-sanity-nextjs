@@ -90,8 +90,8 @@ export default function Page({ data, preview }) {
   // It'll be completely blank when they start!
   return (
     <Layout
-      site={page?.siteSettings}
-      nav={page?.siteNav}
+      siteSettings={page?.siteSettings}
+      siteNav={page?.siteNav}
       preview={preview}
       color={page?.route[0]?.foregroundColor.hex}
       bgColor={page?.route[0]?.backgroundColor.hex}

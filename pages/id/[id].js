@@ -66,9 +66,9 @@ export default function Document({ data, preview }) {
 
   return (
     <Layout
-      site={page?.siteSettings}
+      siteSettings={page?.siteSettings}
       preview={preview}
-      nav={page?.siteNav}
+      siteNav={page?.siteNav}
       color={page?.item[0]?.image?.palette?.dominant?.foreground}
       bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
     >

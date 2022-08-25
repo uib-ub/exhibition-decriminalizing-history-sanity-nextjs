@@ -186,7 +186,7 @@ const ObjectBlock = (props) => {
           {variant === 'static' && (
             <Flex
               maxW='full'
-              mb={10}
+
               align={'baseline'}
               justify={'space-evenly'}
               flexWrap={'wrap'}

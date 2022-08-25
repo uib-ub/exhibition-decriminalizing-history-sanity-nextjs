@@ -3,16 +3,15 @@ import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
 import { useTranslations } from 'next-intl';
 import PreviewAlert from './PreviewAlert'
 import Footer from './Footer'
-import { Nav, Drawer } from './Nav'
+import Nav from './Nav'
+import Header from './Header'
 import Meta from './Meta'
 import Image from '../SanityImage';
 import { GetImage } from '../../lib/sanity.server';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function FrontPageLayout({ children, siteSettings, siteNav, locale, preview = false }) {
   const t = useTranslations("Layout");
-  const { locales, defaultLocale } = useRouter()
   const bgImage = { ...GetImage('image-ffe0010bd000b13d7335f4a826f5a2ff84a949f8-11799x18568-jpg') }
 
   return (
@@ -20,6 +19,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
       <Meta />
       {preview && <PreviewAlert />}
       <SkipNavLink>{t("skipToContent")}</SkipNavLink>
+
       <Container
         bgColor={'black'}
         maxW='full'
@@ -31,7 +31,8 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
         backgroundSize={'cover'}
       >
         <SkipNavContent />
-        <Flex
+
+        {/* <Flex
           as='header'
           justify={'space-between'}
           align='center'
@@ -46,8 +47,10 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           >
             {siteSettings?.label[locale]}
           </Heading>
-          <Drawer value={siteNav} />
-        </Flex>
+          <DrawerMenu value={siteNav} />
+        </Flex> */}
+
+        <Header data={{ ...siteSettings, siteNav }} />
 
         <Text
           textTransform="uppercase"
@@ -83,7 +86,6 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             layout='responsive'
           />
         </Box>
-
       </Container>
 
 

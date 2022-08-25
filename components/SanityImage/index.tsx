@@ -19,6 +19,7 @@ type SanityImageProps = {
 
 export default function SanityImage({
   image,
+  alt,
   layout,
   placeholder = "blur",
   ...props
@@ -26,5 +27,5 @@ export default function SanityImage({
   const imageProps = useNextSanityImage(sanityClient, image);
 
   /* eslint-disable */
-  return <Image {...imageProps} {...props} alt={image?.caption ?? ""} layout={layout} placeholder={placeholder} />;
+  return <Image {...imageProps} {...props} alt={alt ?? image?.caption} layout={layout} placeholder={placeholder} />;
 }

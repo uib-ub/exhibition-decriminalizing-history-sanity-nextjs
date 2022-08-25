@@ -2,9 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import {
   Box,
+  Flex,
   Heading,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import DrawerMenu from './DrawerMenu'
 
 
 export default function Header(props) {
@@ -15,25 +17,28 @@ export default function Header(props) {
   }
 
   const { data, ...rest } = props
-  const { label, color, bgColor /* logo, */ } = data
+  const { label, siteNav } = data
 
   return (
-    <Box
-      as="header"
-      gridArea="header"
-      color={color}
-      bgColor={bgColor}
-      py={2}
-      mx={'1em'}
+    <Flex
+      as='header'
+      w={'full'}
+      justify={'space-between'}
+      pt={{ base: 3, sm: 3, md: 3 }}
+      gap={5}
       {...rest}
     >
       <Heading
-        size={'md'}
+        color='rgba(255,255,255)'
+        fontSize={locale === 'no' ? 'clamp(1rem, 3vw, 3rem)' : "clamp(0.5rem, 2vw, 2vw)"}
+        fontWeight={'800'}
+        pb={1}
       >
         <Link href="/">
-          {label?.[locale] ?? label?.[defaultLocale]}
+          {label?.[locale ?? defaultLocale]}
         </Link>
       </Heading>
-    </Box>
+      <DrawerMenu value={siteNav} />
+    </Flex>
   )
 }
