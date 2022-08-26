@@ -22,7 +22,7 @@ export default function Header(props) {
   return (
     <Flex
       as='header'
-      w={'full'}
+      w={{ base: 'full', md: 'min-content' }}
       justify={'space-between'}
       pt={{ base: 3, sm: 3, md: 3 }}
       gap={5}
@@ -31,7 +31,8 @@ export default function Header(props) {
       bgColor={bgColor}
     >
       <Heading
-        fontSize={locale === 'no' ? 'clamp(1rem, 3vw, 3rem)' : "clamp(1rem, 3vw, 3vw)"}
+        as={'h1'}
+        fontSize={locale === 'no' ? 'clamp(1rem, 2vw, 3rem)' : "clamp(1rem, 2vw, 3vw)"}
         fontWeight={'800'}
         pb={1}
       >

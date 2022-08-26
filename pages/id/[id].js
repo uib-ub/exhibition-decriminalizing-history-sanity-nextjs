@@ -91,6 +91,7 @@ export default function Document({ data, preview }) {
       />
 
       <Container
+        as={'article'}
         maxW={'full'}
         color={page?.item[0]?.image?.palette?.dominant?.foreground}
         bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
@@ -101,9 +102,12 @@ export default function Document({ data, preview }) {
         {/* If this is a PREVIEW request coming from a LinguisticDocument or a Page in SANITY, the content is in the body field */}
         {preview && ['LinguisticDocument', 'Page'].includes(page?.item[0]?._type) && (
           <>
-            <Heading>{page?.item[0]?.label ?? 'Missing title'}</Heading>
+            <Heading
+              as={'h2'}
+            >
+              {page?.item[0]?.label ?? 'Missing title'}
+            </Heading>
             {page?.item[0]?.body && <TextBlocks value={page.item[0].body} />}
-            {/* {(page?.route[0]?.locale[0]?.body ?? page?.route[0]?.fallback[0]?.body) && <TextBlocks value={page.route[0].locale[0]?.body ?? page.route[0].fallback[0]?.body} />} */}
           </>
         )}
       </Container>

@@ -50,7 +50,10 @@ export default function Actor(item) {
         )}
 
         <Box pt="2">
-          <Heading fontSize={['2xl', '4xl', '4xl', '5xl']}>
+          <Heading
+            as={'h2'}
+            fontSize={['2xl', '4xl', '4xl', '5xl']}
+          >
             <a>{item.label[locale] ?? item.label[defaultLocale]}</a>
           </Heading>
 

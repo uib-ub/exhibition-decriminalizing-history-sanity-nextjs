@@ -1,4 +1,4 @@
-import { Text } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 import { PortableText } from '@portabletext/react'
 import {
   BigTextBlock,
@@ -44,14 +44,21 @@ const myPortableTextComponents = (variant = '') => {
       Place: ({ value }) => <PlaceInsert {...value} />,
     },
 
-    block:
-      ({ children }) => (
+    block: {
+      normal: ({ children }) => (
         <Text
           variant={variant}
         >
           {children}
-        </Text >
+        </Text>
       ),
+      h1: ({ children }) => <Heading as={'h1'} gridColumn={{ base: '2 / -2', md: '4 / -4' }}>{children}</Heading>,
+      h2: ({ children }) => <Heading as={'h2'} gridColumn={{ base: '2 / -2', md: '4 / -4' }}>{children}</Heading>,
+      h3: ({ children }) => <Heading as={'h3'} gridColumn={{ base: '2 / -2', md: '4 / -4' }}>{children}</Heading>,
+      h4: ({ children }) => <Heading as={'h4'} gridColumn={{ base: '2 / -2', md: '4 / -4' }}>{children}</Heading>,
+      h5: ({ children }) => <Heading as={'h5'} gridColumn={{ base: '2 / -2', md: '4 / -4' }}>{children}</Heading>,
+      h6: ({ children }) => <Heading as={'h6'} gridColumn={{ base: '2 / -2', md: '4 / -4' }}>{children}</Heading>,
+    },
 
 
     marks: {

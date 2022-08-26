@@ -26,7 +26,12 @@ export default function Source(props) {
       role="group"
     >
 
-      <Icon as={BsInfoCircle} mr="2" mt="1" />
+      <Icon
+        as={BsInfoCircle}
+        mr="2"
+        mt="1"
+        aria-hidden
+      />
       <Text>
         <i>
           <Link href={`/id/${_id}`} isExternal>
@@ -42,6 +47,7 @@ export default function Source(props) {
           _groupHover={{
             animation: pointingAnimation
           }}
+          aria-hidden
         />
       </Text>
     </Flex>

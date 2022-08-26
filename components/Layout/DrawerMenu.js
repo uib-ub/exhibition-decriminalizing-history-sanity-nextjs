@@ -1,6 +1,5 @@
 import {
   Box,
-  IconButton,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -9,30 +8,31 @@ import {
   useDisclosure,
   Center,
   Flex,
+  Button,
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
 import React from 'react'
 import ActiveLink from '../Link/ActiveLink'
 import { LocaleSwitcher } from '../Locale'
 import { useRouter } from 'next/router'
+import { useTranslations } from 'next-intl'
 
 export default function DrawerMenu({ value, justifyContent = 'space-evenly', alignSelf = 'end', direction = 'column', iconColor = 'pink.100', ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
   const { locale, defaultLocale } = useRouter()
+  const t = useTranslations('Layout')
 
   return (
     <>
-      <IconButton
+      <Button
         ref={btnRef}
         display={{ base: 'block', md: 'none' }}
         onClick={() => onOpen()}
-        icon={<HamburgerIcon w={10} h={10} />}
-        size='lg'
         alignSelf={'flex-start'}
-        color={iconColor}
         variant={'link'}
-      />
+      >
+        {t('menu')}
+      </Button>
       <Drawer
         placement="right"
         onClose={onClose}

@@ -7,6 +7,7 @@ import Link from '../../Link'
 import TextBlocks from '..'
 import Source from './shared/Source'
 import { BsInfoCircle } from 'react-icons/bs'
+import { useRouter } from 'next/router'
 
 const MiradorWithNoSSR = dynamic(() => import('../../IIIF/MiradorViewer'), {
   ssr: false,
@@ -17,9 +18,13 @@ const YithWithNoSSR = dynamic(() => import('../../IIIF/YithViewer'), {
 })
 
 const ObjectBlock = (props) => {
+  const { locale, defaultLocale } = useRouter()
+
   if (!props || props.disabled === true) {
     return null
   }
+
+  /* console.log(JSON.stringify(props, null, 2)) */
 
   const { label, description, item, source, variant } = props
   const height = 'clamp(40em, 50vh, 20em)'
@@ -43,9 +48,9 @@ const ObjectBlock = (props) => {
           >
             {!i.internalRef && (
               <Image
-                alt=""
                 {...GetImage(i.image)}
                 objectFit={'contain'}
+                alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
               />
             )}
             {i.internalRef && (
@@ -54,9 +59,9 @@ const ObjectBlock = (props) => {
                 href={`/id/${i.internalRef._ref}`}
               >
                 <Image
-                  alt=""
                   {...GetImage(i.image)}
                   objectFit={'contain'}
+                  alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                 />
               </Link>
             )}
@@ -70,6 +75,7 @@ const ObjectBlock = (props) => {
             >
               {i.label && (
                 <Heading
+                  as={'h3'}
                   fontWeight="800"
                   fontSize={{ base: "xl", md: '2xl' }}
                   mb={1}
@@ -91,10 +97,16 @@ const ObjectBlock = (props) => {
 
                 {i.source && (
                   <Flex
-                    fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'md' }}
+                    fontSize={{ base: 'sm', sm: 'xs', md: 'md', xl: 'md' }}
                     pb={{ base: '2', md: '0' }}
                     mb="0"
                   >
+                    <Icon
+                      as={BsInfoCircle}
+                      mr="2"
+                      mt="1"
+                      aria-hidden
+                    />
                     <TextBlocks
                       value={i.source}
                     />
@@ -161,23 +173,23 @@ const ObjectBlock = (props) => {
 
   return (
     <Block
-      key={item._key}
       as="figure"
+      key={item._key}
       variant={variant}
+      w='full'
     >
       {item?.length === 0 && <Flex>Missing figure</Flex>}
 
       {item && (
         <Box
-          w="100%"
           position="relative"
           alignSelf={'start'}
           mb={4}
         >
 
-          {variant === 'yith' && (
-            <YithWithNoSSR id={item} />
-          )}
+          {/* {variant === 'yith' && (
+            <YithWithNoSSR items={item} />
+          )} */}
 
           {variant === 'mirador' && (
             <MiradorWithNoSSR gridArea="image" variant="basic" manifests={item} height={height} />
@@ -201,9 +213,9 @@ const ObjectBlock = (props) => {
                   {!i.internalRef && (
                     <Image
                       key={i._key}
-                      alt=""
                       {...GetImage(i.image)}
                       objectFit={'contain'}
+                      alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                     />
                   )}
                   {i.internalRef && (
@@ -212,9 +224,9 @@ const ObjectBlock = (props) => {
                       href={`/id/${i.internalRef._ref}`}
                     >
                       <Image
-                        alt=""
                         {...GetImage(i.image)}
                         objectFit={'contain'}
+                        alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                       />
                     </Link>
                   )}
@@ -226,7 +238,7 @@ const ObjectBlock = (props) => {
                   {!i.internalRef && (
                     <Image
                       key={i._key}
-                      alt=""
+                      alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                       {...GetImage(i.image)}
                       objectFit={'contain'}
                     />
@@ -237,7 +249,7 @@ const ObjectBlock = (props) => {
                       href={`/id/${i.internalRef._ref}`}
                     >
                       <Image
-                        alt=""
+                        alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                         {...GetImage(i.image)}
                         objectFit={'contain'}
                       />
@@ -259,6 +271,7 @@ const ObjectBlock = (props) => {
       >
         {label && (
           <Heading
+            as={'h3'}
             fontWeight="700"
             fontSize={{ base: "2xl", md: '3xl', lg: '4xl' }}
             mb={1}
@@ -277,12 +290,18 @@ const ObjectBlock = (props) => {
 
         {source && (
           <Flex
-            fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'md' }}
+            fontSize={{ base: 'md', sm: 'md', md: 'md', xl: 'md' }}
             pb={{ base: '2', md: '0' }}
             mb="0"
             mx='auto'
             textAlign='center'
           >
+            <Icon
+              as={BsInfoCircle}
+              mr="2"
+              mt="1"
+              aria-hidden
+            />
             <TextBlocks
               value={source}
             />

@@ -10,7 +10,10 @@ export default function Link({ href, children, ...rest }) {
 
   return (
     <NextLink href={href} passHref prefetch={false} {...rest}>
-      <ChakraLink color={color}>{children}</ChakraLink>
+      <ChakraLink
+        color={color}
+        textDecoration={'underline'}
+      >{children}</ChakraLink>
     </NextLink>
   )
 }

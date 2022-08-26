@@ -123,7 +123,7 @@ export default function Page({ data, preview }) {
         margin='auto'
       >
         <Heading
-          as={'h1'}
+          as={'h2'}
           fontSize={{ base: "6xl", md: '6xl', lg: '8xl' }}
           my={[2, 4, 8, 8]}
           gridColumn={'2 / -2'}

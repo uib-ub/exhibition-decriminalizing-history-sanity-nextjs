@@ -24,8 +24,13 @@ export default function HumanMadeObject(item) {
 
   return (
     <Container maxW={"4xl"}>
-      <Heading pt="14" mb={5} fontSize={'5xl'}>
-        {item.label[locale] || item.label[defaultLocale] || 'Missing default language label'}
+      <Heading
+        as={'h2'}
+        pt="14"
+        mb={5}
+        fontSize={'5xl'}
+      >
+        {item.label[locale ?? defaultLocale] ?? 'Missing default language label'}
       </Heading>
 
       <Grid

@@ -15,47 +15,44 @@ export default function Nav({ value, justifyContent = 'end', alignSelf = 'end', 
   }
 
   return (
-    <Box
+    <Flex
       as="nav"
       display={{ base: 'none', md: 'flex' }}
       gridArea={'header'}
       direction={direction}
       alignItems={'stretch'}
       zIndex='6'
-      fontWeight={600}
+      fontWeight={700}
       fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 1.5vw, 1rem)', '']}
       {...rest}
+      gap={0}
+      wrap='wrap'
+      justifyContent={justifyContent}
+      alignSelf={alignSelf}
     >
-      <Flex
-        gap={0}
-        wrap='wrap'
-        justifyContent={justifyContent}
-        alignSelf={alignSelf}
-      >
-        {value && value.tree?.map((child) => (
-          <ActiveLink
-            key={child._key}
-            py={2}
-            px={6}
-            bgColor={child.value.reference.backgroundColor?.hex}
-            color={child.value.reference.foregroundColor?.hex}
-            href={`/${child.value.reference.route}`}
-            passHref
-            role={'group'}
-            activeProps={{ fontStyle: 'italic', fontWeight: 800, transform: 'translate(-12px, 4px)', boxShadow: '5px 5px 0px black', border: 'dotted 2px' }}
-          >
-            {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
-          </ActiveLink>
-        ))}
-        <Box
-          bgColor={'white'}
-          color={'black'}
-          px={6}
-          py={'7px'}
+      {value && value.tree?.map((child) => (
+        <ActiveLink
+          key={child._key}
+          py={2}
+          px={4}
+          bgColor={child.value.reference.backgroundColor?.hex}
+          color={child.value.reference.foregroundColor?.hex}
+          href={`/${child.value.reference.route}`}
+          passHref
+          activeProps={{ fontStyle: 'italic', fontWeight: 800, border: 'dotted 2px' }}
         >
-          <LocaleSwitcher />
-        </Box>
-      </Flex>
-    </Box>
+          {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
+        </ActiveLink>
+      ))}
+      <Box
+        bgColor={'white'}
+        color={'black'}
+        px={6}
+        py={'7px'}
+      >
+        <LocaleSwitcher />
+      </Box>
+    </Flex>
+
   )
 }
