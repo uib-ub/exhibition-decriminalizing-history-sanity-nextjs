@@ -23,7 +23,7 @@ export default function HumanMadeObject(item) {
   const { locale, defaultLocale } = useRouter()
 
   return (
-    <Container maxW={"4xl"}>
+    <Container maxW={"6xl"}>
       <Heading
         as={'h2'}
         pt="14"
@@ -34,7 +34,7 @@ export default function HumanMadeObject(item) {
       </Heading>
 
       <Grid
-        maxW={'4xl'}
+        maxW={'6xl'}
         gridGap={{ base: 0 }}
         alignContent="start"
         gridTemplateAreas={{ base: '"image" "metadata"' }}
