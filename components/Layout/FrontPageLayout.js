@@ -9,6 +9,7 @@ import Meta from './Meta'
 import Image from '../SanityImage';
 import { GetImage } from '../../lib/sanity.server';
 import Link from 'next/link';
+import DrawerMenu from './DrawerMenu';
 
 export default function FrontPageLayout({ children, siteSettings, siteNav, locale, preview = false }) {
   const t = useTranslations("Layout");
@@ -50,7 +51,25 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           <DrawerMenu value={siteNav} />
         </Flex> */}
 
-        <Header data={{ ...siteSettings, siteNav }} />
+        <Flex
+          as='header'
+          w={{ base: 'full' }}
+          justify={'space-between'}
+          pt={{ base: 3, sm: 3, md: 3 }}
+          gap={5}
+        >
+          <Heading
+            as={'h1'}
+            fontSize={locale === 'no' ? 'clamp(1rem, 2vw, 3rem)' : "clamp(1rem, 7vw, 7vw)"}
+            fontWeight={'800'}
+            pb={1}
+            color='white'
+          >
+            {siteSettings.label?.[locale]}
+          </Heading>
+          <DrawerMenu value={siteNav} />
+        </Flex>
+
 
         <Text
           textTransform="uppercase"
@@ -67,6 +86,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
 
         <Nav
           value={siteNav}
+          direction='row'
           justifyContent='start'
           alignSelf='start'
           zIndex='6'
@@ -130,7 +150,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             flexGrow={1}
           >
             <Heading
-              color={'RGB(245, 245, 245)'}
+              color={'RGB(0,0,0)'}
               fontSize={["6vw", "", "", "", "clamp(2rem, 5.5vw, 10rem)"]}
               lineHeight='0.9'
               textTransform="uppercase"

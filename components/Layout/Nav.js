@@ -7,7 +7,7 @@ import ActiveLink from '../Link/ActiveLink'
 import { useRouter } from 'next/router'
 import { LocaleSwitcher } from '../Locale'
 
-export default function Nav({ value, justifyContent = 'end', alignSelf = 'end', direction = 'column', ...rest }) {
+export default function Nav({ value, justifyContent = 'start', alignSelf = 'start', direction = 'column', ...rest }) {
   const { locale, defaultLocale } = useRouter()
 
   if (!value) {

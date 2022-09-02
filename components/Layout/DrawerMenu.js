@@ -15,8 +15,9 @@ import ActiveLink from '../Link/ActiveLink'
 import { LocaleSwitcher } from '../Locale'
 import { useRouter } from 'next/router'
 import { useTranslations } from 'next-intl'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
-export default function DrawerMenu({ value, justifyContent = 'space-evenly', alignSelf = 'end', direction = 'column', iconColor = 'pink.100', ...rest }) {
+export default function DrawerMenu({ value, justifyContent = 'space-evenly', alignSelf = 'center', direction = 'column', iconColor = 'pink.100', ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
   const { locale, defaultLocale } = useRouter()
@@ -25,11 +26,14 @@ export default function DrawerMenu({ value, justifyContent = 'space-evenly', ali
   return (
     <>
       <Button
+        leftIcon={<HamburgerIcon />}
         ref={btnRef}
         display={{ base: 'block', md: 'none' }}
         onClick={() => onOpen()}
-        alignSelf={'flex-start'}
+        color='white'
         variant={'link'}
+        size='lg'
+        {...rest}
       >
         {t('menu')}
       </Button>
@@ -62,7 +66,7 @@ export default function DrawerMenu({ value, justifyContent = 'space-evenly', ali
                   justify={justifyContent}
                   alignSelf={alignSelf}
                   style={{ listStyle: 'none' }}
-                  fontWeight={600}
+                  fontWeight={700}
                   fontSize={'xl'}
                   {...rest}
                 >
@@ -78,7 +82,7 @@ export default function DrawerMenu({ value, justifyContent = 'space-evenly', ali
                       href={`/${child.value.reference.route}`}
                       passHref
                       role={'group'}
-                      activeProps={{ fontStyle: 'italic', fontWeight: 800, transform: 'translate(-5px, -5px)', boxShadow: '5px 5px 0px rgba(255, 255, 255, .5)', border: 'dotted 2px' }}
+                      activeProps={{ fontStyle: 'italic', fontWeight: 800, border: 'dotted 2px' }}
                     >
                       {child.value.reference.label[locale] || child.value.reference.label[defaultLocale] || 'Uten tittel'}
                     </ActiveLink>

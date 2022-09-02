@@ -28,7 +28,7 @@ export default function Footer(props) {
       position={'relative'}
       gridArea="footer"
       maxW="full"
-      py="16"
+      py="20"
       px="4"
       bgColor={'pink.400'}
     >
@@ -43,9 +43,9 @@ export default function Footer(props) {
       </Text>
 
       <Box
-        w={'clamp(100px, 32vw, 250px)'}
+        w={'clamp(120px, 30vw, 250px)'}
         position='absolute'
-        top={[-10, -10, -12, -14]}
+        top={[-10, -12, -14, -16]}
         right={10}
         zIndex={800}
       >

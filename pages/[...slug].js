@@ -123,13 +123,12 @@ export default function Page({ data, preview }) {
         margin='auto'
       >
         <Heading
-          as={'h2'}
+          as={'h1'}
           fontSize={{ base: "6xl", md: '6xl', lg: '8xl' }}
           my={[2, 4, 8, 8]}
           gridColumn={'2 / -2'}
           mx='auto'
           textAlign={'center'}
-          textShadow='8px 8px 1px rgba(0, 0, 0, .6)'
         >
           {slug?.label}
         </Heading>

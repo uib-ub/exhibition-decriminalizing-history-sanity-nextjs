@@ -1,6 +1,8 @@
 import { sanityClient, previewClient } from '../../../lib/sanity.server'
 const getClient = (preview) => (preview ? previewClient : sanityClient)
 
+const SERVICE_URL = 'https://decriminalizing-history.uib.no/api/manifest/'
+
 /* 
   Construct IIIF Image uri
 */
@@ -30,9 +32,15 @@ const constructManifest = async (object) => {
 
   const manifest = {
     '@context': 'http://iiif.io/api/presentation/3/context.json',
-    id: `https://example.org/iiif/${iiified._id}/manifest`,
+    id: `${SERVICE_URL}{iiified._id}`,
     type: 'Manifest',
     label: { no: [`${iiified.label.no}`], en: [`${iiified.label.en}`] },
+    metadata: [
+      {
+        label: { en: ["Creator"] },
+        value: { en: ["Anne Artist (1776-1824)"] }
+      }
+    ],
     provider: [
       {
         id: 'https://www.uib.no/ub',
@@ -61,7 +69,7 @@ const constructManifest = async (object) => {
         ],
       },
     ],
-    rights: 'https://creativecommons.org/licenses/by/4.0/',
+    rights: iiified.license,
     requiredStatement: {
       label: {
         no: ['Kreditering'],
@@ -75,25 +83,25 @@ const constructManifest = async (object) => {
     items: [
       ...iiified.images.map((image, index) => {
         return {
-          id: `https://example.org/iiif/${iiified._id}/canvas/${index + 1}`,
+          id: `${SERVICE_URL}${iiified._id}/canvas/p${index + 1}`,
           type: 'Canvas',
           label: {
-            none: [`${index + 1}`],
+            none: [`p${index + 1}`],
           },
           width: image.width,
           height: image.height,
           items: [
             {
-              id: `https://example.org/iiif/${iiified._id}/page/${index + 1}`,
+              id: `${SERVICE_URL}${iiified._id}/page/p${index + 1}/${index + 1}`,
               type: 'AnnotationPage',
               items: [
                 {
-                  id: `https://example.org/iiif/${iiified._id}/annotation/p${index + 1}`,
+                  id: `${SERVICE_URL}${iiified._id}/annotation/${index + 1}-image`,
                   type: 'Annotation',
                   motivation: 'painting',
-                  target: `https://example.org/iiif/${iiified._id}/canvas/${index + 1}`,
+                  target: `${SERVICE_URL}${iiified._id}/canvas/p${index + 1}`,
                   body: {
-                    id: image.url,
+                    id: `${image.url}/full/full/0/default.jpg`,
                     type: 'Image',
                     format: 'image/jpeg',
                     service: {
@@ -111,7 +119,7 @@ const constructManifest = async (object) => {
     ],
     structures: [
       {
-        id: `https://example.org/iiif/${iiified._id}/seq/s1`,
+        id: `${SERVICE_URL}${iiified._id}/seq/s1`,
         type: 'Range',
         label: {
           en: ['Table of contents'],
@@ -120,7 +128,7 @@ const constructManifest = async (object) => {
           ...iiified.images.map((image, index) => {
             return {
               type: 'Canvas',
-              id: `https://example.org/iiif/${iiified._id}/canvas/${index + 1}`,
+              id: `${SERVICE_URL}${iiified._id}/canvas/p${index + 1}`,
             }
           }),
         ],
@@ -145,6 +153,7 @@ export default async function handler(req, res) {
       `*[_id == $id] {
         _id,
         label,
+        license,
         "images": coalesce(
           digitallyShownBy[].asset-> {
             url, 

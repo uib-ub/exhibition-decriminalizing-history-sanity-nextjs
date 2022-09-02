@@ -36,17 +36,17 @@ export default function Layout({ children, siteSettings, siteNav, color, bgColor
         color={color}
         bgColor={bgColor}
       >
-        <Flex
+        <Grid
           gridArea="header"
           maxW={'full'}
           align='start'
-          justifyContent={'space-between'}
+          //justifyContent={'space-between'}
           mb={[3, 8, 12, 16]}
-          mx={'1em'}
+          gridTemplateAreas={{ base: `'headerTitle'`, md: `'headerTitle nav'` }}
         >
-          <Header data={{ ...siteSettings, siteNav, color, bgColor }} />
-          <Nav value={siteNav} direction='row' />
-        </Flex>
+          <Header gridArea='headerTitle' data={{ ...siteSettings, siteNav, color, bgColor }} />
+          <Nav gridArea='nav' value={siteNav} direction='row' />
+        </Grid>
 
         <Box
           as="main"
