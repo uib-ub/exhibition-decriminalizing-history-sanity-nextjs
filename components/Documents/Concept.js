@@ -9,7 +9,7 @@ export default function Concept(item) {
   return (
     <Container maxW="full" py="10">
       <Heading
-        as={h2}
+        as={'h2'}
         pb="10"
         fontSize={['2xl', '4xl', '5xl', '6xl']}
       >
