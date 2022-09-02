@@ -32,7 +32,7 @@ const constructManifest = async (object) => {
 
   const manifest = {
     '@context': 'http://iiif.io/api/presentation/3/context.json',
-    id: `${SERVICE_URL}{iiified._id}`,
+    id: `${SERVICE_URL}${iiified._id}`,
     type: 'Manifest',
     label: { no: [`${iiified.label.no}`], en: [`${iiified.label.en}`] },
     metadata: [
