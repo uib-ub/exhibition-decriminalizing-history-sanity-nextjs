@@ -34,20 +34,7 @@ const theme = extendTheme({
   },
   styles: {
     global: {
-      // styles for the `body`
-      body: {
-        /* bg: `
-        linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-        linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
-        linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)
-        `, */
-        //bg: 'blackAlpha.800',
-        //bg: '#FFFFF5',
-        // color: 'purple.900',
-      },
-      // styles for the `a`
       a: {
-        //color: 'teal.900',
         _hover: {
           textDecoration: 'underline',
         },
@@ -66,7 +53,7 @@ const theme = extendTheme({
           fontSize: { base: '2xl', sm: '2xl', md: '3xl', lg: '4xl' },
           lineHeight: 'shorter',
           mb: '1em',
-        }
+        },
       }
     },
   },

@@ -17,6 +17,65 @@ const YithWithNoSSR = dynamic(() => import('../../IIIF/YithViewer'), {
   ssr: false,
 })
 
+const FigCaption = ({ children, label, description, source, item }) => {
+  return (
+    <Flex
+      as='figcaption'
+      direction="column"
+      maxW={'2xl'}
+      mx='auto'
+      textAlign='center'
+      fontSize={{ base: 'md', sm: 'md', md: 'md', xl: 'lg' }}
+    >
+      {label && (
+        <Heading
+          as={'h3'}
+          fontWeight="700"
+          fontSize={{ base: "2xl", md: '3xl', lg: '4xl' }}
+          mb={1}
+        >
+          {label}
+        </Heading>
+      )}
+
+      {description && (
+        <TextBlocks
+          value={description}
+        />
+      )}
+
+      <Spacer />
+
+      {!item.internalRef && source && (
+        <Flex
+
+          pb={{ base: '2', md: '0' }}
+          mb="0"
+          mx='auto'
+          textAlign='center'
+        >
+          <Icon
+            as={BsInfoCircle}
+            mr="2"
+            mt="1"
+            aria-hidden
+          />
+          <TextBlocks
+            value={source}
+          />
+        </Flex>
+      )}
+      {!source && item && item.map((o) => (
+        <Source
+          key={o.objectDescription?._id ?? o._key}
+          {...o.objectDescription}
+        />
+      ))}
+      {children}
+    </Flex>
+  )
+}
+
 const ObjectBlock = (props) => {
   const { locale, defaultLocale } = useRouter()
 
@@ -66,62 +125,7 @@ const ObjectBlock = (props) => {
               </Link>
             )}
 
-            <Flex
-              as='figcaption'
-              direction="column"
-              mx='auto'
-              maxW={'2xl'}
-              textAlign='center'
-            >
-              {i.label && (
-                <Heading
-                  as={'h3'}
-                  fontWeight="800"
-                  fontSize={{ base: "xl", md: '2xl' }}
-                  mb={1}
-                >
-                  {i.label}
-                </Heading>
-              )}
-
-              {i.description && (
-                <TextBlocks
-                  value={i.description}
-                />
-              )}
-
-              <Spacer />
-              <Box
-                display={{ base: 'none', md: 'flex' }}
-              >
-
-                {i.source && (
-                  <Flex
-                    fontSize={{ base: 'sm', sm: 'xs', md: 'md', xl: 'md' }}
-                    pb={{ base: '2', md: '0' }}
-                    mb="0"
-                  >
-                    <Icon
-                      as={BsInfoCircle}
-                      mr="2"
-                      mt="1"
-                      aria-hidden
-                    />
-                    <TextBlocks
-                      value={i.source}
-                    />
-                  </Flex>
-                )}
-
-                {i.objectDescription && (
-                  <Source
-                    {...i.objectDescription}
-                    display={{ base: 'none', md: 'block' }}
-
-                  />
-                )}
-              </Box>
-
+            <FigCaption label={i.label} description={i.description} source={i.source} item={[i]}>
               <Box
                 display={{ base: 'block', md: 'none' }}
               >
@@ -164,7 +168,8 @@ const ObjectBlock = (props) => {
                   </PopoverContent>
                 </Popover>
               </Box>
-            </Flex>
+
+            </FigCaption>
           </Box>
         ))}
       </Flex>
@@ -198,7 +203,6 @@ const ObjectBlock = (props) => {
           {variant === 'static' && (
             <Flex
               maxW='full'
-
               align={'baseline'}
               justify={'space-evenly'}
               flexWrap={'wrap'}
@@ -262,58 +266,8 @@ const ObjectBlock = (props) => {
         </Box>
       )}
 
-      <Flex
-        as='figcaption'
-        direction="column"
-        maxW={'2xl'}
-        mx='auto'
-        textAlign='center'
-      >
-        {label && (
-          <Heading
-            as={'h3'}
-            fontWeight="700"
-            fontSize={{ base: "2xl", md: '3xl', lg: '4xl' }}
-            mb={1}
-          >
-            {label}
-          </Heading>
-        )}
+      <FigCaption label={label} description={description} source={source} item={item} />
 
-        {description && (
-          <TextBlocks
-            value={description}
-          />
-        )}
-
-        <Spacer />
-
-        {source && (
-          <Flex
-            fontSize={{ base: 'md', sm: 'md', md: 'md', xl: 'md' }}
-            pb={{ base: '2', md: '0' }}
-            mb="0"
-            mx='auto'
-            textAlign='center'
-          >
-            <Icon
-              as={BsInfoCircle}
-              mr="2"
-              mt="1"
-              aria-hidden
-            />
-            <TextBlocks
-              value={source}
-            />
-          </Flex>
-        )}
-        {item && item.map((o) => (
-          <Source
-            key={o.objectDescription?._id ?? o._key}
-            {...o.objectDescription}
-          />
-        ))}
-      </Flex>
     </Block>
   )
 }

@@ -35,12 +35,12 @@ const constructManifest = async (object) => {
     id: `${SERVICE_URL}${iiified._id}`,
     type: 'Manifest',
     label: { no: [`${iiified.label.no}`], en: [`${iiified.label.en}`] },
-    metadata: [
+    /* metadata: [
       {
         label: { en: ["Creator"] },
         value: { en: ["Anne Artist (1776-1824)"] }
       }
-    ],
+    ], */
     provider: [
       {
         id: 'https://www.uib.no/ub',
@@ -104,11 +104,13 @@ const constructManifest = async (object) => {
                     id: `${image.url}/full/full/0/default.jpg`,
                     type: 'Image',
                     format: 'image/jpeg',
-                    service: [{
-                      id: image.url,
-                      type: 'ImageService2',
-                      profile: 'level2',
-                    }],
+                    service: [
+                      {
+                        id: image.url,
+                        type: 'ImageService2',
+                        profile: 'level2',
+                      }
+                    ],
                   },
                 },
               ],

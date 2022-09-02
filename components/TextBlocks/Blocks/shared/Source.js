@@ -18,7 +18,7 @@ export default function Source(props) {
 
   return (
     <Flex
-      fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'md' }}
+      fontSize={{ base: 'md', sm: 'md', md: 'lg', xl: 'lg' }}
       pb={{ base: '2', md: '0' }}
       mx='auto'
       mt={2}
