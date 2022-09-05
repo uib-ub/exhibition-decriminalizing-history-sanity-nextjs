@@ -104,6 +104,8 @@ const constructManifest = async (object) => {
                     id: `${image.url}/full/full/0/default.jpg`,
                     type: 'Image',
                     format: 'image/jpeg',
+                    width: image.width,
+                    height: image.height,
                     service: [
                       {
                         id: image.url,
