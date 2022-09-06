@@ -16,7 +16,7 @@ export default function CurrentOwner({ owners }) {
       <Heading as="dt" fontWeight="semibold" pb="2" size={'md'}>
         {t('currentOwner')}
       </Heading>
-      <Wrap as="dd" marginBottom={5}>
+      <Wrap as="dd" mb={{ base: 8, lg: 0 }}>
         {owners.map((owner) => (
           <WrapItem key={owner._id}>
             <Link fontSize="sm" key={owner._id} href={`/id/${owner._id}`}>

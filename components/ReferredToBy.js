@@ -42,7 +42,7 @@ export default function ReferredToBy({ value, description }) {
             <br />
             <small>{ref.language.label[locale ?? defaultLocale]}</small>
           </Heading>
-          <Wrap as="dd" marginBottom={5}>
+          <Wrap as="dd" mb={{ base: 8, lg: 0 }}>
             <WrapItem>
               <TextBlocks
                 value={ref.body}

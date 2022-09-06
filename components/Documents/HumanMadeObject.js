@@ -44,11 +44,16 @@ export default function HumanMadeObject(item) {
 
           {item?.description && <Description description={item.description} />}
 
-
-          <Grid as="dl" pt="4" templateColumns={['2fr', '2fr', 'min-content auto']} alignItems='baseline' gap={8}>
+          <Grid
+            as="dl"
+            mt="12"
+            templateColumns={['2fr', '2fr', 'min-content auto']}
+            alignItems='baseline'
+            gap={[1, 1, 4, 12]}
+          >
             {item.hasType && <HasType types={item.hasType} />}
 
-            {item?.referredToBy && (<ReferredToBy value={item.referredToBy} />)}
+            {item?.referredToBy && <ReferredToBy value={item.referredToBy} />}
 
             {item.activityStream && <ActivityStream stream={item.activityStream} />}
 

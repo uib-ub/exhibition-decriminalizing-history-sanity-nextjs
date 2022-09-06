@@ -16,7 +16,7 @@ export default function Subject({ subjects }) {
       <Heading as="dt" fontWeight="semibold" pb="2" size={'md'}>
         {t('subject')}
       </Heading>
-      <Wrap as="dd" marginBottom={5}>
+      <Wrap as="dd" mb={{ base: 8, lg: 0 }}>
         {subjects.map((subject) => (
           <WrapItem key={subject._id}>
             <Tag size="lg" colorScheme={'cyan'}>

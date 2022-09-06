@@ -16,7 +16,7 @@ export default function HasType({ types }) {
       <Heading as="dt" fontWeight="semibold" pb="2" size={'md'}>
         {t('classification')}
       </Heading>
-      <Wrap as="dd" marginBottom={5}>
+      <Wrap as="dd" mb={{ base: 8, lg: 0 }}>
         {types.map((type) => (
           <WrapItem key={type._id}>
             <Tag key={type._id} size="lg">

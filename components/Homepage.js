@@ -16,7 +16,7 @@ export default function Homepage(props) {
       <Heading as="dt" fontWeight="semibold" size="md" pb="2">
         {t('homepage')}
       </Heading>
-      <Wrap as="dd" marginBottom={5}>
+      <Wrap as="dd" mb={{ base: 8, lg: 0 }}>
         <WrapItem>
           <Link fontSize="md" href={homepage} isExternal>
             {homepage} <ExternalLinkIcon mx="2px" />
