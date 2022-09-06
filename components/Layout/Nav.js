@@ -47,8 +47,8 @@ export default function Nav({ value, justifyContent = 'start', alignSelf = 'star
       <Box
         bgColor={'white'}
         color={'black'}
-        px={6}
-        py={'7px'}
+        px={4}
+        py={2}
       >
         <LocaleSwitcher />
       </Box>

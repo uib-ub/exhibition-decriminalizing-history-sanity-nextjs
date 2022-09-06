@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router';
 import { Heading, Wrap, WrapItem } from '@chakra-ui/react'
 import Link from './Link'
+import { useTranslations } from 'next-intl';
 
 export default function CurrentOwner({ owners }) {
   const { locale, defaultLocale } = useRouter();
+  const t = useTranslations('Item')
 
   if (!owners) {
     return null
@@ -11,10 +13,10 @@ export default function CurrentOwner({ owners }) {
 
   return (
     <>
-      <Heading as="dt" fontFamily="Montserrat" fontWeight="semibold" fontSize="sm" pb="2">
-        Eier
+      <Heading as="dt" fontWeight="semibold" pb="2" size={'md'}>
+        {t('currentOwner')}
       </Heading>
-      <Wrap as="dd" fontFamily="Montserrat" marginBottom={5}>
+      <Wrap as="dd" marginBottom={5}>
         {owners.map((owner) => (
           <WrapItem key={owner._id}>
             <Link fontSize="sm" key={owner._id} href={`/id/${owner._id}`}>

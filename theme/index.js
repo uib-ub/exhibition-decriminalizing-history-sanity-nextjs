@@ -54,6 +54,9 @@ const theme = extendTheme({
           lineHeight: 'shorter',
           mb: '1em',
         },
+        'item-texts': {
+          fontSize: { base: 'lg', sm: 'lg', md: '2xl', lg: '2xl' },
+        }
       }
     },
   },

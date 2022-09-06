@@ -25,11 +25,14 @@ export default function Footer(props) {
   return (
     <Container
       as="footer"
-      position={'relative'}
       gridArea="footer"
+      position={'relative'}
       maxW="full"
       py="20"
-      px="4"
+      px="5"
+      fontSize={'2xl'}
+      fontWeight={'700'}
+      color={'white'}
       bgColor={'pink.400'}
     >
 
@@ -49,7 +52,7 @@ export default function Footer(props) {
         right={10}
         zIndex={800}
       >
-        <a href="https://uib.no">
+        <a href="https://www.uib.no/skeivtkultur%C3%A5r">
           <Image
             {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
             alt='Skeivt kulturår 2022 og Universitetet i Bergen'

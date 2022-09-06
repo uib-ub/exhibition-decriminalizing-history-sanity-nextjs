@@ -6,7 +6,6 @@ import {
   Heading,
 } from '@chakra-ui/react'
 import ReferredToBy from '../ReferredToBy'
-import Palette from '../Palette'
 import Depicts from '../Depicts'
 import ActivityStream from '../ActivityStream/HumanMadeObjectActivityStream'
 import HasType from '../HasType'
@@ -15,7 +14,8 @@ import Subject from '../Subject'
 import CurrentOwner from '../CurrentOwner'
 import Description from '../Description'
 import { useRouter } from 'next/router'
-import CanvasPanel from '../IIIF/CanvasPanel'
+import Measurement from '../Measurement'
+import ConsistsOf from '../ConsistsOf'
 
 const MiradorWithNoSSR = dynamic(() => import('../IIIF/MiradorViewer'), { ssr: false })
 
@@ -26,9 +26,9 @@ export default function HumanMadeObject(item) {
     <Container maxW={"6xl"}>
       <Heading
         as={'h2'}
-        pt="14"
+        pt="10"
         mb={5}
-        fontSize={'5xl'}
+        size={'3xl'}
       >
         {item.label[locale ?? defaultLocale] ?? 'Missing default language label'}
       </Heading>
@@ -42,16 +42,15 @@ export default function HumanMadeObject(item) {
       >
         <Container maxW="full" gridArea="metadata" p="0">
 
-          {item.description && <Description description={item.description} />}
+          {item?.description && <Description description={item.description} />}
 
-          {item?.referredToBy && (
-            <Box mt={5}>
-              <ReferredToBy array={item.referredToBy} />
-            </Box>
-          )}
 
-          <Grid as="dl" pt="4" templateColumns={['2fr', '2fr', '160px auto']}>
+          <Grid as="dl" pt="4" templateColumns={['2fr', '2fr', 'min-content auto']} alignItems='baseline' gap={8}>
             {item.hasType && <HasType types={item.hasType} />}
+
+            {item?.referredToBy && (<ReferredToBy value={item.referredToBy} />)}
+
+            {item.activityStream && <ActivityStream stream={item.activityStream} />}
 
             {item.subject && <Subject subjects={item.subject} />}
 
@@ -60,6 +59,10 @@ export default function HumanMadeObject(item) {
             {item.homepage && <Homepage homepage={item.homepage} />}
 
             {item.hasCurrentOwner && <CurrentOwner owners={item.hasCurrentOwner} />}
+
+            {item.consistsOf && <ConsistsOf value={item.consistsOf} />}
+
+            {item.measurement && <Measurement value={item.measurement} />}
           </Grid>
         </Container>
 

@@ -6,6 +6,17 @@
   "Items": {
     "title": "Ting"
   },
+  "Item": {
+    "classification": "Klassifisert som",
+    "subject": "Emner",
+    "homepage": "Hjemmeside",
+    "currentOwner": "Eier",
+    "depicts": "Avbilder",
+    "members": "Medlemmer",
+    "activitystream": "Hendelser",
+    "measurement": "Måling",
+    "material": "Material"
+  },
   "Layout": {
     "skipToContent": "Hopp til innholdet",
     "usesCookies": "Denne nettsiden benytter informasjonskapsler.",

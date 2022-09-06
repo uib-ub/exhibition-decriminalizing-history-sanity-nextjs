@@ -6,6 +6,17 @@
   "Items": {
     "title": "Stuff"
   },
+  "Item": {
+    "classification": "Klassifikasjon",
+    "subject": "Subjects",
+    "homepage": "Homepage",
+    "currentOwner": "Owner",
+    "depicts": "Depicts",
+    "members": "Members",
+    "activitystream": "Events",
+    "measurement": "Measurement",
+    "material": "Material"
+  },
   "Layout": {
     "skipToContent": "Skip to content",
     "usesCookies": "This site uses cookies.",

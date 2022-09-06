@@ -3,24 +3,24 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Link from './Link'
 
-export default function Subject({ subjects }) {
+export default function ConsistsOf({ value }) {
   const { locale, defaultLocale } = useRouter();
   const t = useTranslations('Item')
 
-  if (!subjects) {
+  if (!value) {
     return null
   }
 
   return (
     <>
       <Heading as="dt" fontWeight="semibold" pb="2" size={'md'}>
-        {t('subject')}
+        {t('material')}
       </Heading>
       <Wrap as="dd" marginBottom={5}>
-        {subjects.map((subject) => (
-          <WrapItem key={subject._id}>
+        {value.map((m) => (
+          <WrapItem key={m._id}>
             <Tag size="lg" colorScheme={'cyan'}>
-              <Link href={`/id/${subject._id}`}>{subject.label[locale] || subject.label[defaultLocale] || 'Missing default language label'}</Link>
+              <Link href={`/id/${m._id}`}>{m.label[locale] || m.label[defaultLocale] || 'Missing default language label'}</Link>
             </Tag>
           </WrapItem>
         ))}

@@ -85,12 +85,13 @@ const ObjectBlock = (props) => {
 
   /* console.log(JSON.stringify(props, null, 2)) */
 
-  const { label, description, item, source, variant } = props
+  const { _key, label, description, item, source, variant } = props
   const height = 'clamp(40em, 50vh, 20em)'
 
   if (variant === 'static-individual-captions') {
     return (
       <Flex
+        key={_key}
         gridColumn={'2/-2'}
         maxW='full'
         mb={10}
@@ -173,6 +174,81 @@ const ObjectBlock = (props) => {
           </Box>
         ))}
       </Flex>
+    )
+  }
+
+  if (variant === 'static-compare') {
+    return (
+      <Block
+        as="figure"
+        key={item._key}
+        variant={variant}
+        w='full'
+      >
+        {item?.length === 0 && <Flex>Missing figure</Flex>}
+
+        {item && (
+          <Box
+            position="relative"
+            alignSelf={'start'}
+            mb={4}
+          >
+            <Flex
+              maxW='full'
+              align={'baseline'}
+              justify={'space-evenly'}
+              flexWrap={'wrap'}
+              gap={4}
+            >
+              {item.length > 1 && item.map((i) => (
+                <Box
+                  key={i._key}
+                  as='figure'
+                  flex={'0 0 30%'}
+                  height={height}
+                >
+                  {i.image && (
+                    <Image
+                      key={i._key}
+                      {...GetImage(i.image)}
+                      objectFit={'contain'}
+                      alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
+                    />
+                  )}
+                </Box>
+              ))}
+
+              {item.length === 1 && item.map((i) => (
+                <>
+                  {!i.internalRef && (
+                    <Image
+                      key={i._key}
+                      alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
+                      {...GetImage(i.image)}
+                      objectFit={'contain'}
+                    />
+                  )}
+                  {i.internalRef && (
+                    <Link
+                      key={i._key}
+                      href={`/id/${i.internalRef._ref}`}
+                    >
+                      <Image
+                        alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
+                        {...GetImage(i.image)}
+                        objectFit={'contain'}
+                      />
+                    </Link>
+                  )}
+                </>
+              ))}
+            </Flex>
+          </Box>
+        )}
+
+        <FigCaption label={label} description={description} source={source} item={item} />
+
+      </Block>
     )
   }
 

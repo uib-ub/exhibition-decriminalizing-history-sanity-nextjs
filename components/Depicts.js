@@ -2,9 +2,11 @@ import { useRouter } from 'next/router';
 import { urlFor } from '../lib/sanity'
 import { Avatar, Heading, Wrap, Tag, TagLabel } from '@chakra-ui/react'
 import Link from './Link'
+import { useTranslations } from 'next-intl';
 
 export default function Depicts({ depicted }) {
   const { locale, defaultLocale } = useRouter();
+  const t = useTranslations('Item')
 
   if (!depicted) {
     return null
@@ -12,10 +14,10 @@ export default function Depicts({ depicted }) {
 
   return (
     <>
-      <Heading as="dt" fontFamily="Montserrat" fontWeight="semibold" fontSize="sm" pb="2">
-        Avbilder
+      <Heading as="dt" fontWeight="semibold" pb="2" size={'md'}>
+        {t('depicts')}
       </Heading>
-      <Wrap as="dd" fontFamily="Montserrat" marginBottom={5}>
+      <Wrap as="dd" marginBottom={5}>
         {depicted.map((actor) => (
           <Tag key={actor._id} size="sm" colorScheme="">
             <Avatar

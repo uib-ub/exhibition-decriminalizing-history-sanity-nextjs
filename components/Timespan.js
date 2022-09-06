@@ -23,7 +23,7 @@ export default function Timespan(props) {
               {time.beginOfTheBegin && <Date>{time.beginOfTheBegin}</Date>}
 
               {time.beginOfTheBegin && time.endOfTheBegin && (
-                <Box textAlign="center" color="gray.500" lineHeight="0.3">
+                <Box textAlign="center" lineHeight="0.3">
                   &nbsp;/&nbsp;
                 </Box>
               )}
@@ -34,7 +34,7 @@ export default function Timespan(props) {
 
           {(time.beginOfTheBegin || time.endOfTheBegin) &&
             (time.beginOfTheEnd || time.endOfTheEnd) && (
-              <Box alignSelf="center" fontSize="2xl" px="1" color="gray.500" lineHeight="0.3">
+              <Box alignSelf="center" fontSize="2xl" px="1" lineHeight="0.3">
                 &nbsp;–&nbsp;
               </Box>
             )}
@@ -44,7 +44,7 @@ export default function Timespan(props) {
               {time.beginOfTheEnd && <Date>{time.beginOfTheEnd}</Date>}
 
               {time.beginOfTheEnd && time.endOfTheEnd && (
-                <Box textAlign="center" color="gray.500" lineHeight="0.3">
+                <Box textAlign="center" lineHeight="0.3">
                   &nbsp;/&nbsp;
                 </Box>
               )}
@@ -76,7 +76,7 @@ export default function Timespan(props) {
 
           {(timespan.beginOfTheBegin || timespan.endOfTheBegin) &&
             (timespan.beginOfTheEnd || timespan.endOfTheEnd) && (
-              <Box alignSelf="center" fontSize="2xl" px="1" color="gray.500" lineHeight="0.3">
+              <Box alignSelf="center" fontSize="2xl" px="1" lineHeight="0.3">
                 &nbsp;–&nbsp;
               </Box>
             )}
@@ -86,7 +86,7 @@ export default function Timespan(props) {
               {timespan.beginOfTheEnd && <Date>{timespan.beginOfTheEnd}</Date>}
 
               {timespan.beginOfTheEnd && timespan.endOfTheEnd && (
-                <Box textAlign="center" color="gray.500" lineHeight="0.3">
+                <Box textAlign="center" lineHeight="0.3">
                   &nbsp;/&nbsp;
                 </Box>
               )}

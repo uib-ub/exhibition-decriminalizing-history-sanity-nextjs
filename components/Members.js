@@ -2,9 +2,11 @@ import { urlFor } from '../lib/sanity'
 import { Avatar, Box, Heading, Wrap, Tag, TagLabel } from '@chakra-ui/react'
 import Link from './Link'
 import { useRouter } from 'next/router';
+import { useTranslations } from 'next-intl';
 
 export default function Members({ data }) {
   const { locale, defaultLocale } = useRouter();
+  const t = useTranslations('Item')
 
   if (!data) {
     return null
@@ -12,10 +14,10 @@ export default function Members({ data }) {
 
   return (
     <Box mt="6">
-      <Heading as="dt" fontFamily="Montserrat" fontWeight="semibold" fontSize="sm" pb="2">
-        Medlemmer
+      <Heading as="dt" fontWeight="semibold" pb="2" size={'md'}>
+        {t('members')}
       </Heading>
-      <Wrap as="dd" fontFamily="Montserrat" marginBottom={5}>
+      <Wrap as="dd" marginBottom={5}>
         {data.map((actor) => (
           <Tag key={actor._id} size="sm" colorScheme="">
             <Avatar

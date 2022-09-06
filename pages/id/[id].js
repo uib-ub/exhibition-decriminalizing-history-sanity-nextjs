@@ -93,7 +93,7 @@ export default function Document({ data, preview }) {
       <Container
         as={'article'}
         maxW={'full'}
-        color={page?.item[0]?.image?.palette?.dominant?.foreground}
+        color={page?.item[0]?.image?.palette?.vibrant?.foreground}
         bgColor={page?.item[0]?.image?.palette?.vibrant?.background}
       >
 

@@ -49,7 +49,7 @@ export default function EventBlock(props) {
           </Heading>
 
           {item.timespan && (
-            <Box fontFamily="Montserrat">
+            <Box>
               Tid:{' '}
               <Timespan
                 display="inline-block"

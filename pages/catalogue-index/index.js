@@ -84,7 +84,6 @@ export default function CatalogueIndex({ data, preview }) {
           my={[2, 4, 8, 8]}
           mx='auto'
           textAlign={'center'}
-          textShadow='8px 8px 1px rgba(245, 24, 150, .6)'
         >
           {t('title')}
         </Heading>

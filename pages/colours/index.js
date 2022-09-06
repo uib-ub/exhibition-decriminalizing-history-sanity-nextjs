@@ -105,7 +105,6 @@ const Colours = ({ data, locale, preview }) => {
           return (
             <>
               <Box>
-                <Text >{item.description ?? 'Uten tittel'}</Text>
                 <Image
                   alt=''
                   src={urlFor(item).height(200).width(200).url()}
@@ -136,6 +135,7 @@ const Colours = ({ data, locale, preview }) => {
                     h={'full'}
                     key={colour.name}
                     bgColor={colour.foreground}
+                    color={colour.foreground}
                   >
                     <Text
                       m={3}
@@ -143,7 +143,6 @@ const Colours = ({ data, locale, preview }) => {
                       py={16}
                       display={'block'}
                       bgColor={colour.background}
-                      color={colour.title}
                     >{colour.name}</Text>
                   </Flex>
 

@@ -56,7 +56,6 @@ export default function Items({ data, preview }) {
           my={[2, 4, 8, 8]}
           mx='auto'
           textAlign={'center'}
-          textShadow='8px 8px 1px rgba(0, 0, 0, .6)'
           gridColumn={'2/-2'}
         >
           {t('title')}

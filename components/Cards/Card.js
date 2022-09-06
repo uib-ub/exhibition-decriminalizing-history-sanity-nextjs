@@ -101,7 +101,7 @@ export default function Card(props) {
           <Heading
             mt="1"
             as="h3"
-            fontSize={['sm', 'md', 'lg', 'xl', '2xl']}
+            fontSize={['sm', 'md', 'lg', 'xl', 'xl']}
             lineHeight="tight"
           >
             <NextLink href={`${getBase(_type)}${encodeURIComponent(_id)}`} passHref>
@@ -142,8 +142,10 @@ export default function Card(props) {
             {hasType.map((type) => (
               <Tag
                 key={type._id}
-                fontSize={['xs', 'xs', 'xs', 'xs']}
+                size='lg'
                 whiteSpace={'nowrap'}
+                colorScheme='purple'
+                borderRadius="0"
               >
                 {type.label[locale] ?? type.label[defaultLocale]}
               </Tag>

@@ -60,7 +60,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
         >
           <Heading
             as={'h1'}
-            fontSize={locale === 'no' ? 'clamp(1rem, 2vw, 3rem)' : "clamp(1rem, 7vw, 7vw)"}
+            fontSize={locale === 'no' ? 'clamp(1rem, 6vw, 5vw)' : "clamp(1rem, 7vw, 7vw)"}
             fontWeight={'800'}
             pb={1}
             color='white'
