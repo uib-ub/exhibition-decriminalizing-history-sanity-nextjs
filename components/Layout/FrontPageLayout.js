@@ -116,8 +116,8 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           'repeat(16, 1fr)'
         ]}
         templateRows={{
-          base: 'repeat(13, minmax(30px, auto))',
-          xl: 'repeat(5, minmax(30px, auto))'
+          base: 'repeat(16, minmax(30px, auto))',
+          xl: 'repeat(8, minmax(30px, auto))'
         }}
         bgColor='RGB(241, 239, 238)'
       >
@@ -229,9 +229,10 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           >
             <Heading
               color={'RGB(232, 255, 251)'}
-              fontSize={["4vw", "7vw", "7vw", "5vw", "clamp(1rem, 3rem, 2.5rem)"]}
+              fontSize={["4.5vw", "4.5vw", "4.5vw", "4.5vw", "clamp(1rem, 3rem, 2.5rem)"]}
               lineHeight={1}
-              py={[1]}
+              pt={[1]}
+              pb={[3]}
               textTransform="uppercase"
               textAlign={'center'}
             //fontWeight={300}
@@ -282,7 +283,6 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
             </Heading>
           </Flex>
         </Flex>
-
 
         <Flex
           gridColumn={{ base: '1 / 17' }}
@@ -359,45 +359,72 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
               />
             </Box>
           </Flex>
-
-          {/* <Flex
-            filter='contrast(80%) brightness(140%)'
-            my={32}
-          >
-            <Box w={'full'}>
-              <Image
-                {...GetImage('image-7e9fb3f0c32f5c3fe4b62971d033fa643de29bfd-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              />
-            </Box>
-            <Box w={'full'}>
-              <Image
-                {...GetImage('image-4aaf7fb6ac6100449789b1a04def1ccf8794c5d7-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              />
-            </Box>
-            <Box w={'full'}>
-              <Image
-                {...GetImage('image-76d069d7f318c8fda66347fc4209e0cd4389c71e-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              />
-            </Box>
-            <Box w={'full'}>
-              <Image
-                {...GetImage('image-ad22c6cbae98421ad7c5536b288530f4d7d8f1d0-3402x6236-jpg')}
-                alt='Test'
-                layout='responsive'
-                objectFit='cover'
-              />
-            </Box>
-          </Flex> */}
         </Flex>
+
+        <Flex
+          gridColumn={{ base: '1 / 17' }}
+          gridRow={{ base: '14/17', 'xl': '6/7' }}
+          zIndex='2'
+          position={'relative'}
+          bgColor='black'
+        >
+
+          <Box w={'full'}>
+            <Image
+              {...GetImage('image-1c9b69c8bb67fdcc43dd61a21856c494d0357154-1653x3000-jpg')}
+              alt='Test'
+              layout='responsive'
+              objectFit='cover'
+            />
+          </Box>
+          <Box w={'full'}>
+            <Image
+              {...GetImage('image-75cce87bd8c292c204bae9a4aca6819f89e588e1-1653x3000-jpg')}
+              alt='Test'
+              layout='responsive'
+              objectFit='cover'
+            />
+          </Box>
+          <Box w={'full'}>
+            <Image
+              {...GetImage('image-8e4250792475376584996a4e0edce99547dfd832-1653x3000-jpg')}
+              alt='Test'
+              layout='responsive'
+              objectFit='cover'
+            />
+          </Box>
+          <Box w={'full'}>
+            <Image
+              {...GetImage('image-18c49ab7adff6a59c5a8c6e755e974a467bb3c51-1653x3000-jpg')}
+              alt='Test'
+              layout='responsive'
+              objectFit='cover'
+            />
+          </Box>
+
+          <Box
+            p={0}
+            position={'absolute'}
+            bottom={['2%']}
+            left='50%'
+            transform='translate(-50%, -50%)'
+            zIndex={1}
+          >
+            <Heading
+              px={3}
+              color={'white'}
+              bgColor={'black'}
+              fontSize={"clamp(2rem, 9vw, 9rem)"}
+              textTransform="uppercase"
+            >
+              <Link href={`/lhbt`}>
+                LBHT+
+              </Link>
+            </Heading>
+          </Box>
+        </Flex>
+
+
       </Grid>
       {children}
       <Footer />
