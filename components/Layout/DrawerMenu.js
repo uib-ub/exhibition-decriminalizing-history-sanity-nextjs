@@ -26,13 +26,16 @@ export default function DrawerMenu({ value, justifyContent = 'space-evenly', ali
   return (
     <>
       <Button
-        leftIcon={<HamburgerIcon />}
+        leftIcon={<HamburgerIcon transform={'translateY(3px)'} />}
         ref={btnRef}
         display={{ base: 'block', md: 'none' }}
         onClick={() => onOpen()}
-        color='white'
-        variant={'link'}
         size='lg'
+        mt={[2, 2, 4, 4]}
+        borderRadius={0}
+        color='white'
+        bgColor='#A30A6E'
+        _hover={{ bgColor: 'blackAlpha.900' }}
         {...rest}
       >
         {t('menu')}
@@ -51,7 +54,7 @@ export default function DrawerMenu({ value, justifyContent = 'space-evenly', ali
             <DrawerCloseButton
               bgColor={'pink.400'}
               color={'white'}
-              _hover={{ bgColor: 'rgb(245,25,150)' }}
+              _hover={{ bgColor: '#A30A6E' }}
               w={10}
               h={10}
               mt={3}

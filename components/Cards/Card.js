@@ -100,7 +100,7 @@ export default function Card(props) {
         >
           <Heading
             mt="1"
-            as="h3"
+            as="h2"
             fontSize={['sm', 'md', 'lg', 'xl', 'xl']}
             lineHeight="tight"
           >

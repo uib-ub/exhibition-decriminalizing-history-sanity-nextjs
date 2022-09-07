@@ -25,11 +25,11 @@ export default function Production(props) {
 
       {timespan && <Timespan fontWeight="bolder" timespan={timespan} />}
 
-      <Wrap mt={3}>
+      <Wrap as='div' mt={3}>
         {contributionAssignedBy?.length > 0 && (
           <>
             {contributionAssignedBy.map((assignment) => (
-              <Tag key={assignment.assignedActor._id} size={'lg'} borderRadius='full'>
+              <Tag as={'li'} key={assignment.assignedActor._id} size={'lg'} borderRadius='full'>
                 <Avatar
                   size="xs"
                   ml={-1}

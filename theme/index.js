@@ -47,6 +47,9 @@ const theme = extendTheme({
   components: {
     Block,
     Text: {
+      baseStyle: {
+        mb: '0.5em'
+      },
       variants: {
         'center-column': {
           gridColumn: { base: '2 / -2', md: '4 / -4' },

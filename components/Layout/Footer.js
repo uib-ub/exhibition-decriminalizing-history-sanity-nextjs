@@ -30,7 +30,7 @@ export default function Footer(props) {
       maxW="full"
       py="20"
       px="5"
-      fontSize={'2xl'}
+      fontSize={{ base: 'lg', md: '2xl' }}
       fontWeight={'700'}
       color={'white'}
       bgColor={'pink.400'}

@@ -31,25 +31,6 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
         bgRepeat="no-repeat"
         backgroundSize={'cover'}
       >
-        <SkipNavContent />
-
-        {/* <Flex
-          as='header'
-          justify={'space-between'}
-          align='center'
-          pt={{ base: 3, sm: 3, md: 0 }}
-          gap={5}
-        >
-          <Heading
-            color='rgba(255,255,255)'
-            fontSize={locale === 'no' ? 'clamp(1.5rem, 7vw, 4.5rem)' : "clamp(0.5rem, 7.5vw, 7vw)"}
-            fontWeight={'800'}
-            pb={1}
-          >
-            {siteSettings?.label[locale]}
-          </Heading>
-          <DrawerMenu value={siteNav} />
-        </Flex> */}
 
         <Flex
           as='header'
@@ -70,19 +51,34 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           <DrawerMenu value={siteNav} />
         </Flex>
 
-
-        <Text
-          textTransform="uppercase"
-          bgColor='black'
-          color={'white'}
-          lineHeight='1.2'
-          mt='5'
-          p={2}
-          fontWeight={700}
-          fontSize={['', '1.5rem', 'clamp(1.6rem, 1.5vw, 1.2rem)', 'clamp(1.8rem, 2.2vw, 3rem)', '']}
+        <Box
+          as={'aside'}
         >
-          {siteSettings?.description[locale]}
-        </Text>
+          <Text
+            textTransform="uppercase"
+            bgColor='black'
+            color={'white'}
+            lineHeight='1.2'
+            mt='5'
+            p={2}
+            fontWeight={700}
+            fontSize={['', '1.5rem', 'clamp(1.6rem, 1.5vw, 1.2rem)', 'clamp(1.8rem, 2.2vw, 3rem)', '']}
+          >
+            {siteSettings?.description[locale]}
+          </Text>
+          <Box
+            w={'clamp(180px, 32vw, 250px)'}
+            position='absolute'
+            bottom={5}
+            left={5}
+          >
+            <Image
+              {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
+              alt='Skeivt kulturår 2022 og Universitetet i Bergen'
+              layout='responsive'
+            />
+          </Box>
+        </Box>
 
         <Nav
           value={siteNav}
@@ -94,24 +90,13 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
           fontSize={['', '1rem', 'clamp(1rem, 1.5vw, 1.2rem)', 'clamp(1rem, 2.2vw, 3rem)', '']}
         />
 
-        <Box
-          w={'clamp(180px, 32vw, 250px)'}
-          position='absolute'
-          bottom={5}
-          left={5}
-        >
-          <Image
-            {...GetImage('image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png')}
-            alt='Skeivt kulturår 2022 og Universitetet i Bergen'
-            layout='responsive'
-          />
-        </Box>
       </Container>
 
 
       {/* {page?.content && page?.content.map((i: any) => (<TextBlocks key={i._key} value={i.content} />))} */}
 
       <Grid
+        as='main'
         templateColumns={[
           'repeat(16, 1fr)'
         ]}

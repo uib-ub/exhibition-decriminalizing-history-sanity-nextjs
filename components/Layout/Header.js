@@ -31,7 +31,7 @@ export default function Header(props) {
     >
       <Heading
         as={'h2'}
-        fontSize={locale === 'no' ? 'clamp(1rem, 2vw, 26.4px)' : "clamp(1.2rem, 2vw, 28.4px)"}
+        fontSize={locale === 'no' ? 'clamp(1rem, 2vw, 26.4px)' : "clamp(1.2rem, 2vw, 26.4px)"}
         w='min-content'
         fontWeight={'800'}
         pb={1}

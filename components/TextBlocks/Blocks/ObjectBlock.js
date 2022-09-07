@@ -13,10 +13,6 @@ const MiradorWithNoSSR = dynamic(() => import('../../IIIF/MiradorViewer'), {
   ssr: false,
 })
 
-const YithWithNoSSR = dynamic(() => import('../../IIIF/YithViewer'), {
-  ssr: false,
-})
-
 const FigCaption = ({ children, label, description, source, item }) => {
   return (
     <Flex
@@ -29,7 +25,7 @@ const FigCaption = ({ children, label, description, source, item }) => {
     >
       {label && (
         <Heading
-          as={'h3'}
+          as={'h2'}
           fontWeight="700"
           fontSize={{ base: "2xl", md: '3xl', lg: '4xl' }}
           mb={1}
@@ -39,36 +35,20 @@ const FigCaption = ({ children, label, description, source, item }) => {
       )}
 
       {description && (
-        <TextBlocks
-          value={description}
-        />
+        <Box mb={4}>
+          <TextBlocks
+            value={description}
+          />
+        </Box>
       )}
 
       <Spacer />
 
-      {!item.internalRef && source && (
-        <Flex
-
-          pb={{ base: '2', md: '0' }}
-          mb="0"
-          mx='auto'
-          textAlign='center'
-        >
-          <Icon
-            as={BsInfoCircle}
-            mr="2"
-            mt="1"
-            aria-hidden
-          />
-          <TextBlocks
-            value={source}
-          />
-        </Flex>
-      )}
-      {!source && item && item.map((o) => (
+      {item && item.map((o) => (
         <Source
           key={o.objectDescription?._id ?? o._key}
           {...o.objectDescription}
+          source={source}
         />
       ))}
       {children}
@@ -82,8 +62,6 @@ const ObjectBlock = (props) => {
   if (!props || props.disabled === true) {
     return null
   }
-
-  /* console.log(JSON.stringify(props, null, 2)) */
 
   const { _key, label, description, item, source, variant } = props
   const height = 'clamp(40em, 50vh, 20em)'
@@ -116,9 +94,11 @@ const ObjectBlock = (props) => {
             {i.internalRef && (
               <Link
                 key={i._key}
+                ariaLabelledBy={i._key}
                 href={`/id/${i.internalRef._ref}`}
               >
                 <Image
+                  id={i._key}
                   {...GetImage(i.image)}
                   objectFit={'contain'}
                   alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
@@ -185,9 +165,9 @@ const ObjectBlock = (props) => {
         variant={variant}
         w='full'
       >
-        {item?.length === 0 && <Flex>Missing figure</Flex>}
+        {item?.length === 0 && <Flex>Missing figures or not exactly two figures!</Flex>}
 
-        {item && (
+        {item.length === 2 && (
           <Box
             position="relative"
             alignSelf={'start'}
@@ -197,15 +177,14 @@ const ObjectBlock = (props) => {
               maxW='full'
               align={'baseline'}
               justify={'space-evenly'}
-              flexWrap={'wrap'}
-              gap={4}
+              gap={0}
             >
-              {item.length > 1 && item.map((i) => (
+              {item.map((i) => (
                 <Box
+                  position="relative"
                   key={i._key}
                   as='figure'
-                  flex={'0 0 30%'}
-                  height={height}
+                  maxH='70vh'
                 >
                   {i.image && (
                     <Image
@@ -217,38 +196,13 @@ const ObjectBlock = (props) => {
                   )}
                 </Box>
               ))}
-
-              {item.length === 1 && item.map((i) => (
-                <>
-                  {!i.internalRef && (
-                    <Image
-                      key={i._key}
-                      alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
-                      {...GetImage(i.image)}
-                      objectFit={'contain'}
-                    />
-                  )}
-                  {i.internalRef && (
-                    <Link
-                      key={i._key}
-                      href={`/id/${i.internalRef._ref}`}
-                    >
-                      <Image
-                        alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
-                        {...GetImage(i.image)}
-                        objectFit={'contain'}
-                      />
-                    </Link>
-                  )}
-                </>
-              ))}
             </Flex>
-          </Box>
+          </Box >
         )}
 
         <FigCaption label={label} description={description} source={source} item={item} />
 
-      </Block>
+      </Block >
     )
   }
 
@@ -301,9 +255,11 @@ const ObjectBlock = (props) => {
                   {i.internalRef && (
                     <Link
                       key={i._key}
+                      ariaLabelledBy={i._key}
                       href={`/id/${i.internalRef._ref}`}
                     >
                       <Image
+                        id={i._key}
                         {...GetImage(i.image)}
                         objectFit={'contain'}
                         alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
@@ -326,9 +282,11 @@ const ObjectBlock = (props) => {
                   {i.internalRef && (
                     <Link
                       key={i._key}
+                      ariaLabelledBy={i._key}
                       href={`/id/${i.internalRef._ref}`}
                     >
                       <Image
+                        id={i._key}
                         alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                         {...GetImage(i.image)}
                         objectFit={'contain'}
