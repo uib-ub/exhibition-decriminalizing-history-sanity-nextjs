@@ -348,7 +348,7 @@ export default function FrontPageLayout({ children, siteSettings, siteNav, local
 
         <Flex
           gridColumn={{ base: '1 / 17' }}
-          gridRow={{ base: '14/17', 'xl': '6/7' }}
+          gridRow={{ base: '14/17', 'xl': '6/9' }}
           zIndex='2'
           position={'relative'}
           bgColor='black'

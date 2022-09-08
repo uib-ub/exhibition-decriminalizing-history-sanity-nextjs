@@ -41,6 +41,10 @@ export default function Footer(props) {
       )}
 
       <Text>
+        {t('footerText')}
+      </Text>
+
+      <Text>
         {t('accessibilityStatementText')}{' '}
         <Link href={`/accessibility-statement`}>{t('accessibilityStatementLink')}</Link>
       </Text>
