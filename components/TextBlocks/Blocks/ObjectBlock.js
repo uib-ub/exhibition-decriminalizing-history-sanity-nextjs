@@ -13,9 +13,9 @@ const MiradorWithNoSSR = dynamic(() => import('../../IIIF/MiradorViewer'), {
   ssr: false,
 })
 
-const FigCaption = ({ children, label, description, source, item }) => {
+const FigCaption = ({ children, label, description, item }) => {
   return (
-    <Flex
+    <Box
       as='figcaption'
       direction="column"
       maxW={'2xl'}
@@ -42,17 +42,10 @@ const FigCaption = ({ children, label, description, source, item }) => {
         </Box>
       )}
 
-      <Spacer />
+      {item && <Source {...item} />}
 
-      {item && item.map((o) => (
-        <Source
-          key={o.objectDescription?._id ?? o._key}
-          {...o.objectDescription}
-          source={source}
-        />
-      ))}
       {children}
-    </Flex>
+    </Box>
   )
 }
 
@@ -106,7 +99,21 @@ const ObjectBlock = (props) => {
               </Link>
             )}
 
-            <FigCaption label={i.label} description={i.description} source={i.source} item={[i]}>
+            <FigCaption label={i.label} description={i.description} item={[i]}>
+              <Box
+                display={{ base: 'none', md: 'block' }}
+                fontSize={{ base: 'md', sm: 'md', md: 'md', xl: 'lg' }}
+                pb={{ base: '2', md: '0' }}
+                mx='auto'
+                mt={2}
+                mb={0}
+                maxW={'full'}
+              >
+                <TextBlocks
+                  value={i.source}
+                />
+              </Box>
+
               <Box
                 display={{ base: 'block', md: 'none' }}
               >
@@ -149,7 +156,6 @@ const ObjectBlock = (props) => {
                   </PopoverContent>
                 </Popover>
               </Box>
-
             </FigCaption>
           </Box>
         ))}
@@ -200,8 +206,21 @@ const ObjectBlock = (props) => {
           </Box >
         )}
 
-        <FigCaption label={label} description={description} source={source} item={item} />
-
+        <FigCaption label={label} description={description} source={source}>
+          <Box
+            display={{ base: 'none', md: 'block' }}
+            fontSize={{ base: 'md', sm: 'md', md: 'md', xl: 'lg' }}
+            pb={{ base: '2', md: '0' }}
+            mx='auto'
+            mt={2}
+            mb={0}
+            maxW={'full'}
+          >
+            <TextBlocks
+              value={source}
+            />
+          </Box>
+        </FigCaption>
       </Block >
     )
   }
@@ -300,7 +319,50 @@ const ObjectBlock = (props) => {
         </Box>
       )}
 
-      <FigCaption label={label} description={description} source={source} item={item} />
+      <FigCaption label={label} description={description}>
+        {item && item.filter(i => i.objectDescription).map((item, i) => (
+          <Box
+            key={item.objectDescription?._id}
+            fontSize={{ base: 'md', sm: 'md', md: 'lg', xl: 'lg' }}
+            pb={{ base: '2', md: '0' }}
+            mx='auto'
+            mt={2}
+            mb={0}
+            maxW={'full'}
+          >
+            <Text>
+              <Icon
+                as={BsInfoCircle}
+                mr="2"
+                mt="0"
+                display={'inline'}
+                aria-hidden
+              />
+              <i>
+                <Link href={`/id/${item.objectDescription?._id}`} color='unset' isExternal>
+                  {item.objectDescription?.label[locale] || item.objectDescription?.label[defaultLocale] || 'Missing default language label'}
+                </Link>
+              </i>
+
+              {item.objectDescription?.hasCurrentOwner?.length && `. ${item.objectDescription?.hasCurrentOwner[0].label[locale] ?? item.objectMetadata?.hasCurrentOwner[0].label[defaultLocale]}.`}
+            </Text>
+          </Box>
+        ))}
+
+        <Box
+          display={{ base: 'none', md: 'block' }}
+          fontSize={{ base: 'md', sm: 'md', md: 'md', xl: 'lg' }}
+          pb={{ base: '2', md: '0' }}
+          mx='auto'
+          mt={2}
+          mb={0}
+          maxW={'full'}
+        >
+          <TextBlocks
+            value={source}
+          />
+        </Box>
+      </FigCaption>
 
     </Block>
   )
