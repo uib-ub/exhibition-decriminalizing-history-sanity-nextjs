@@ -41,9 +41,15 @@ export default function Footer(props) {
       )}
 
       <Text>
+        {t('accessibilityStatementText')}{' '}
+        <Link href={`/accessibility-statement`}>{t('accessibilityStatementLink')}</Link>
+      </Text>
+
+      <Text>
         {t('usesCookies')}{' '}
         <Link href={`/cookie-policy`}>{t('readAboutCookies')}</Link>
       </Text>
+
 
       <Box
         w={'clamp(120px, 30vw, 250px)'}

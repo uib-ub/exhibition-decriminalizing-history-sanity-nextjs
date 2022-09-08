@@ -21,6 +21,8 @@
     "skipToContent": "Skip to content",
     "usesCookies": "This site uses cookies.",
     "readAboutCookies": "Read more on how we use cookies.",
+    "accessibilityStatementText": "",
+    "accessibilityStatementLink": "Accessibility statement",
     "menu": "Menu"
   },
   "Register": {

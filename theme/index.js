@@ -5,9 +5,6 @@ import { mode } from '@chakra-ui/theme-tools'
 const Block = {
   baseStyle: {
     gridColumn: { base: '2 / -2' },
-    /* display: 'grid',
-    gridTemplateColumns: { base: 'auto', lg: "1fr minmax(1.2rem, 30ch)" },
-    gridTemplateRows: { base: 'auto, auto', lg: "auto" }, */
     my: 10
   },
   variants: {

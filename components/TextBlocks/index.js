@@ -1,4 +1,5 @@
-import { Heading, Text } from '@chakra-ui/react'
+import { Heading, OrderedList, Text, UnorderedList } from '@chakra-ui/react'
+import Link from '../Link'
 import { PortableText } from '@portabletext/react'
 import {
   BigTextBlock,
@@ -60,16 +61,39 @@ const myPortableTextComponents = (variant = '') => {
       h6: ({ children }) => <Heading as={'h6'} gridColumn={{ base: '2 / -2', md: '4 / -4' }}>{children}</Heading>,
     },
 
-
     marks: {
       link: ({ children, value }) => {
         const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
         return (
-          <a href={value.href} rel={rel}>
+          <Link href={value.href} rel={rel}>
             {children}
-          </a>
+          </Link>
         )
       },
+    },
+
+    list: {
+      // Ex. 1: customizing common list types
+      bullet: ({ children }) => (
+        <UnorderedList
+          gridColumn={{ base: '2 / -2', md: '4 / -4' }}
+          fontSize={{ base: '2xl', sm: '2xl', md: '3xl', lg: '4xl' }}
+          lineHeight='shorter'
+          mb='1em'
+        >
+          {children}
+        </UnorderedList>
+      ),
+      number: ({ children }) => (
+        <OrderedList
+          gridColumn={{ base: '2 / -2', md: '4 / -4' }}
+          fontSize={{ base: '2xl', sm: '2xl', md: '3xl', lg: '4xl' }}
+          lineHeight='shorter'
+          mb='1em'
+        >
+          {children}
+        </OrderedList>
+      ),
     },
   }
 }
