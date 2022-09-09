@@ -8,6 +8,12 @@ const STUDIO_REWRITE = {
       : '/studio/index.html',
 }
 
+const IIIF_IMAGE_REWRITE = {
+  source: '/images/:path*',
+  destination: 'https://cdn.sanity.io/images/:path*'
+
+}
+
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
@@ -18,7 +24,7 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io']
   },
-  rewrites: () => [STUDIO_REWRITE],
+  rewrites: () => [STUDIO_REWRITE, IIIF_IMAGE_REWRITE],
   async headers() {
     return [
       {

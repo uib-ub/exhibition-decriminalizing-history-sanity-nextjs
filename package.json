@@ -25,7 +25,6 @@
     "@yith/yith": "^1.1.1",
     "deep-rename-keys": "^0.2.1",
     "framer-motion": "^6",
-    "http-proxy": "^1.18.1",
     "jsonld": "^7.0.0",
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.8.2",
