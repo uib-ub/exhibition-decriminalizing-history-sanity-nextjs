@@ -2,7 +2,7 @@ import { sanityClient, previewClient } from '../../../lib/sanity.server'
 const getClient = (preview) => (preview ? previewClient : sanityClient)
 
 const MANIFEST_SERVICE_URL = 'https://decriminalizing-history.uib.no/api/manifest'
-const IMAGE_SERVICE_URL = 'decriminalizing-history.uib.no'
+const IMAGE_SERVICE_URL = 'decriminalizing-history.uib.no/api/image/'
 
 /* 
   Construct IIIF Image uri

@@ -30,6 +30,7 @@
     "mapbox-gl": "^2.8.2",
     "mirador": "^3.3.0",
     "next": "^12.2.5",
+    "next-http-proxy-middleware": "^1.2.4",
     "next-intl": "^2.7.4",
     "next-sanity": "^0.8.2",
     "next-sanity-image": "^4.1.0",
