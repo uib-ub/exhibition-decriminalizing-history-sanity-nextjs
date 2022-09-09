@@ -9,9 +9,7 @@ export default function Source(props) {
   const { locale, defaultLocale } = useRouter()
   const { _id, label, hasCurrentOwner, preferredIdentifier, source } = props
 
-  console.log(JSON.stringify(props, null, 2))
-
-  if (!_id || !label) return null
+  if ((!_id && !label) || !source) return null
 
   return (
     <Box

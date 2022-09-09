@@ -1,7 +1,8 @@
 import { sanityClient, previewClient } from '../../../lib/sanity.server'
 const getClient = (preview) => (preview ? previewClient : sanityClient)
 
-const SERVICE_URL = 'https://decriminalizing-history.uib.no/api/manifest/'
+const MANIFEST_SERVICE_URL = 'decriminalizing-history.uib.no/api/manifest'
+const IMAGE_SERVICE_URL = 'https://decriminalizing-history.uib.no/api/image'
 
 /* 
   Construct IIIF Image uri
@@ -10,7 +11,7 @@ const fixIIIFUrl = (i) => {
   const url = new URL(i)
   const p = url.pathname.split('/')
   const imageUrl =
-    url.protocol + '//' + url.hostname + p.slice(0, -1).join('/') + '/iiif/' + p.slice(-1)
+    url.protocol + '//' + IMAGE_SERVICE_URL + p.slice(0, -1).join('/') + '/iiif/' + p.slice(-1)
   return imageUrl
 }
 
@@ -32,7 +33,7 @@ const constructManifest = async (object) => {
 
   const manifest = {
     '@context': 'http://iiif.io/api/presentation/3/context.json',
-    id: `${SERVICE_URL}${iiified._id}`,
+    id: `${MANIFEST_SERVICE_URL}/${iiified._id}`,
     type: 'Manifest',
     label: { no: [`${iiified.label.no}`], en: [`${iiified.label.en}`] },
     /* metadata: [
@@ -83,7 +84,7 @@ const constructManifest = async (object) => {
     items: [
       ...iiified.images.map((image, index) => {
         return {
-          id: `${SERVICE_URL}${iiified._id}/canvas/p${index + 1}`,
+          id: `${MANIFEST_SERVICE_URL}/${iiified._id}/canvas/p${index + 1}`,
           type: 'Canvas',
           label: {
             none: [`p${index + 1}`],
@@ -92,14 +93,14 @@ const constructManifest = async (object) => {
           height: image.height,
           items: [
             {
-              id: `${SERVICE_URL}${iiified._id}/page/p${index + 1}/${index + 1}`,
+              id: `${MANIFEST_SERVICE_URL}/${iiified._id}/page/p${index + 1}/${index + 1}`,
               type: 'AnnotationPage',
               items: [
                 {
-                  id: `${SERVICE_URL}${iiified._id}/annotation/${index + 1}-image`,
+                  id: `${MANIFEST_SERVICE_URL}/${iiified._id}/annotation/${index + 1}-image`,
                   type: 'Annotation',
                   motivation: 'painting',
-                  target: `${SERVICE_URL}${iiified._id}/canvas/p${index + 1}`,
+                  target: `${MANIFEST_SERVICE_URL}/${iiified._id}/canvas/p${index + 1}`,
                   body: {
                     id: `${image.url}/full/full/0/default.jpg`,
                     type: 'Image',
@@ -123,7 +124,7 @@ const constructManifest = async (object) => {
     ],
     structures: [
       {
-        id: `${SERVICE_URL}${iiified._id}/seq/s1`,
+        id: `${MANIFEST_SERVICE_URL}/${iiified._id}/seq/s1`,
         type: 'Range',
         label: {
           en: ['Table of contents'],
@@ -132,7 +133,7 @@ const constructManifest = async (object) => {
           ...iiified.images.map((image, index) => {
             return {
               type: 'Canvas',
-              id: `${SERVICE_URL}${iiified._id}/canvas/p${index + 1}`,
+              id: `${MANIFEST_SERVICE_URL}/${iiified._id}/canvas/p${index + 1}`,
             }
           }),
         ],
