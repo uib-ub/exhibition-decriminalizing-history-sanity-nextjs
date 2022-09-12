@@ -78,7 +78,7 @@ export default function Page({ data, preview }) {
 
   // Client-side uses the same query, so we may need to filter it down again
   const page = filterDataToSingleItem(previewData, preview)
-  console.log(JSON.stringify(page, null, 2))
+  //console.log(JSON.stringify(page, null, 2))
 
   {/* If LinguisticDocument the content is in the body field */ }
   const slug = page?.route[0]?.locale[0] ?? page?.route[0]?.fallback[0]

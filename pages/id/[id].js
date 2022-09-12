@@ -156,7 +156,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
 
   // Helper function to reduce all returned documents down to just one
   const page = filterDataToSingleItem(data, preview)
-  console.log(JSON.stringify(page, null, 2))
+  // console.log(JSON.stringify(page, null, 2))
 
   return {
     props: {
