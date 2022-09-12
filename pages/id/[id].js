@@ -19,6 +19,22 @@ import { Container, Heading } from '@chakra-ui/react'
 import { getOpenGraphImages } from '../../lib/functions'
 import ErrorPage from 'next/error'
 
+
+const getTexts = (value, locale) => {
+  if (!value) return null
+  const norwegianTexts = value.filter(x => x.language.identifiedByISO6393 === 'no')
+  const englishTexts = value.filter(x => x.language.identifiedByISO6393 === 'en')
+
+  if (locale === 'en' && englishTexts.length > 0) {
+    return englishTexts[0]
+  }
+  if (locale === 'no' && norwegianTexts.length > 0) {
+    return norwegianTexts[0]
+  }
+
+  return null
+}
+
 /**
  * Helper function to return the correct version of the document
  * If we're in "preview mode" and have multiple documents, return the draft
@@ -79,14 +95,9 @@ export default function Document({ data, preview }) {
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_DOMAIN}/${page?.item[0]._id}`,
           title: page?.item[0]?.label[locale],
-          description: page?.item[0]?.excerpt,
-          images: getOpenGraphImages(),
+          description: getTexts(page?.item[0]?.referredToBy, locale ?? defaultLocale),
+          images: getOpenGraphImages(page?.item[0]?.image),
           site_name: page?.siteSettings?.label[locale],
-        }}
-        twitter={{
-          handle: '@UiB_UB',
-          site: '@UiB_UB',
-          cardType: 'summary_large_image',
         }}
       />
 
@@ -145,6 +156,7 @@ export async function getStaticProps({ params, locale, preview = false }) {
 
   // Helper function to reduce all returned documents down to just one
   const page = filterDataToSingleItem(data, preview)
+  console.log(JSON.stringify(page, null, 2))
 
   return {
     props: {

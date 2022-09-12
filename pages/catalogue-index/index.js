@@ -44,10 +44,10 @@ export default function CatalogueIndex({ data, preview }) {
   const sortLanguage = `label[${locale}]` || `label[${defaultLocale}]` || `label.en`
   const sortedItems = sortBy(items, sortLanguage)
 
-  const openGraphImages = getOpenGraphImages(
-    data?.siteSettings?.openGraph?.image,
-    t('title'),
-  )
+  const desc = {
+    no: 'Liste over emner i denne utstillingen.',
+    en: 'List of subjects used in this in exhibition.'
+  }
 
   return (
     <Layout
@@ -66,8 +66,7 @@ export default function CatalogueIndex({ data, preview }) {
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_DOMAIN}${asPath}`,
           title: t('title'),
-          description: data?.siteSettings?.description[locale ?? defaultLocale],
-          images: openGraphImages,
+          description: desc[locale ?? defaultLocale],
           site_name: data?.siteSettings?.label?.[locale ?? defaultLocale],
         }}
         twitter={{

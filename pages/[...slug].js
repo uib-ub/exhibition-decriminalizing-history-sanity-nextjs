@@ -78,7 +78,7 @@ export default function Page({ data, preview }) {
 
   // Client-side uses the same query, so we may need to filter it down again
   const page = filterDataToSingleItem(previewData, preview)
-  // console.log(JSON.stringify(page, null, 2))
+  console.log(JSON.stringify(page, null, 2))
 
   {/* If LinguisticDocument the content is in the body field */ }
   const slug = page?.route[0]?.locale[0] ?? page?.route[0]?.fallback[0]
@@ -102,15 +102,15 @@ export default function Page({ data, preview }) {
         titleTemplate={`%s | ${page?.siteSettings?.label?.[locale ?? defaultLocale]}`}
         defaultTitle={page?.siteSettings?.label?.[locale ?? defaultLocale]}
         description={slug?.excerpt}
-        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}/${page?.route[0].slug.current}`}
+        canonical={`${process.env.NEXT_PUBLIC_DOMAIN}/${page?.route[0].slug}`}
         openGraph={{
           type: 'article',
           locale: locale,
-          url: `${process.env.NEXT_PUBLIC_DOMAIN}/${page?.route[0].slug.current}`,
+          url: `${process.env.NEXT_PUBLIC_DOMAIN}/${page?.route[0].slug}`,
           title: slug?.label,
           description: page?.route[0]?.excerpt,
           images: getOpenGraphImages(),
-          site_name: page?.siteSettings?.title,
+          site_name: page?.siteSettings?.label?.[locale ?? defaultLocale],
         }}
       />
 

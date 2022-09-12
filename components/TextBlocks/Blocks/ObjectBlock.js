@@ -75,7 +75,7 @@ const ObjectBlock = (props) => {
           <Box
             key={i._key}
             as='figure'
-            flex={'0 0 30%'}
+            flex={{ base: '0 0 100%', md: '0 0 30%' }}
           >
             {!i.internalRef && (
               <Image
@@ -101,7 +101,6 @@ const ObjectBlock = (props) => {
 
             <FigCaption label={i.label} description={i.description} item={[i]}>
               <Box
-                display={{ base: 'none', md: 'block' }}
                 fontSize={{ base: 'md', sm: 'md', md: 'md', xl: 'lg' }}
                 pb={{ base: '2', md: '0' }}
                 mx='auto'
@@ -112,49 +111,6 @@ const ObjectBlock = (props) => {
                 <TextBlocks
                   value={i.source}
                 />
-              </Box>
-
-              <Box
-                display={{ base: 'block', md: 'none' }}
-              >
-                <Popover
-                  color='black'
-                >
-                  <PopoverTrigger>
-                    <Text
-                      fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'md' }}
-                    >
-                      <a><Icon as={BsInfoCircle} mr="2" mt="3" /> Attribution</a>
-                    </Text>
-                  </PopoverTrigger>
-                  <PopoverContent
-                    m={'1em'}
-                  >
-                    <PopoverArrow />
-                    <PopoverCloseButton />
-                    <PopoverBody
-                      color='black'
-                    >
-                      {i.source && (
-                        <Flex
-                          fontSize={{ base: 'sm', sm: 'sm', md: 'md', xl: 'md' }}
-                          pb={{ base: '2', md: '0' }}
-                          mb="0"
-                        >
-                          <TextBlocks
-                            value={i.source}
-                          />
-                        </Flex>
-                      )}
-                      {i.objectDescription && (
-                        <Source
-                          key={i.objectDescription?._id ?? i._key}
-                          {...i.objectDescription}
-                        />
-                      )}
-                    </PopoverBody>
-                  </PopoverContent>
-                </Popover>
               </Box>
             </FigCaption>
           </Box>
