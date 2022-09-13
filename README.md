@@ -30,4 +30,4 @@ This site is deployed on Vercel.
   * https://decriminalizing-history.uib.no
 * Studio
   * https://decriminalizing-history.uib.no/studio
-  s
+  
