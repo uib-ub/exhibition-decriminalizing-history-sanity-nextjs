@@ -109,7 +109,7 @@ export default function MiradorViewer(props) {
     gridArea,
     catalog,
     height = '50vh',
-    bgColor = '#eeeeee',
+    //bgColor = '#eeeeee',
   } = props
 
   const { variantSettings, plugins } = getVariant(variant)
@@ -133,7 +133,7 @@ export default function MiradorViewer(props) {
         showZoomControls: false, // Remove default zoom and add plugin
       },
       selectedTheme: mode,
-      themes: {
+      /* themes: {
         dark: {
           palette: {
             type: 'dark',
@@ -146,7 +146,7 @@ export default function MiradorViewer(props) {
             shades: {
               dark: '#000000',
               main: '#424242',
-              light: bgColor ?? '#616161',
+              light: '#616161',
             },
           },
         },
@@ -160,13 +160,13 @@ export default function MiradorViewer(props) {
               main: '#789a5b',
             },
             shades: {
-              dark: bgColor ?? '#000000',
-              main: bgColor ?? '#424242',
-              light: bgColor ?? '#616161',
+              dark: '#000000',
+              main: '#424242',
+              light: '#616161',
             },
           },
         },
-      },
+      }, */
       galleryView: {
         height: 220,
       },
@@ -185,10 +185,10 @@ export default function MiradorViewer(props) {
       // console.log(`unmounting... ${ID}`)
       miradorInstance = null
     }
-  }, [ID, catalog, mode, plugins, windows, workspaceControlPanel, bgColor])
+  }, [ID, catalog, mode, plugins, windows, workspaceControlPanel])
 
   return (
-    <Box h={height} position="relative" gridArea={gridArea} bgColor={bgColor}>
+    <Box h={height} position="relative" gridArea={gridArea} >
       <Box h="100%" id={ID} />
     </Box>
   )
