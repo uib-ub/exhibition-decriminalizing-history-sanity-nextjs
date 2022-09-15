@@ -44,10 +44,12 @@ export default function ReferredToBy({ value, description }) {
           </Heading>
           <Wrap as="dd" mb={{ base: 8, lg: 0 }}>
             <WrapItem>
-              <TextBlocks
-                value={ref.body}
-                variant={'item-texts'}
-              />
+              <Box>
+                <TextBlocks
+                  value={ref.body}
+                  variant={'item-texts'}
+                />
+              </Box>
             </WrapItem>
           </Wrap>
         </React.Fragment>
