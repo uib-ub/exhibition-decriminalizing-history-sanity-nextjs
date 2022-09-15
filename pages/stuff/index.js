@@ -13,11 +13,6 @@ export default function Items({ data, preview }) {
 
   const { items, siteSettings, siteNav } = data
 
-  desc = {
-    no: 'Samling av dokumentene og kunstverkene valgt ut til denne utstillingen',
-    en: 'A collection of curated objects chosen for this exhibition.',
-  }
-
   return (
     <Layout
       preview={preview}
@@ -30,12 +25,12 @@ export default function Items({ data, preview }) {
         title={t("title")}
         titleTemplate={`%s | ${data?.siteSettings?.label?.[locale ?? defaultLocale]}`}
         defaultTitle={data?.siteSettings?.label?.[locale ?? defaultLocale]}
-        description={desc[locale ?? defaultLocale]}
+        description={t('metaDescription')}
         canonical={`${process.env.NEXT_PUBLIC_DOMAIN}/stuff`}
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_DOMAIN}/stuff`,
           title: t("title"),
-          description: desc[locale ?? defaultLocale],
+          description: t('metaDescription'),
           site_name: data?.siteSettings?.label?.[locale ?? defaultLocale],
         }}
       />

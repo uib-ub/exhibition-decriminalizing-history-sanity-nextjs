@@ -4,7 +4,8 @@
     "description": "This is the home page."
   },
   "Items": {
-    "title": "Stuff"
+    "title": "Stuff",
+    "metaDescription": "A collection of curated objects chosen for this exhibition."
   },
   "Item": {
     "classification": "Klassifikasjon",

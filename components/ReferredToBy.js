@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 import React from 'react'
 
 const getTexts = (value, locale) => {
-  const norwegianTexts = value.filter(x => x.language.identifiedByISO6393 === 'no')
-  const englishTexts = value.filter(x => x.language.identifiedByISO6393 === 'en')
+  const norwegianTexts = value.filter(x => x.language?.identifiedByISO6393 === 'no')
+  const englishTexts = value.filter(x => x.language?.identifiedByISO6393 === 'en')
 
   if (locale === 'en' && englishTexts.length > 0) {
     return englishTexts

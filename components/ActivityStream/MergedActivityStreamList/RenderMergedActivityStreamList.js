@@ -26,11 +26,11 @@ function RenderMergedActivityStreamList(props) {
 
   return (
     <>
-      {filteredStream.map((event) => {
+      {filteredStream.map((event, i) => {
         const EventComponent = resolveEvents(event)
         if (!EventComponent) {
           return (
-            <Alert status="error">
+            <Alert key={i} status="error">
               <AlertIcon />
               <AlertTitle mr={2}>Missing event!</AlertTitle>
               <AlertDescription>

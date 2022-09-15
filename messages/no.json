@@ -4,7 +4,8 @@
     "description": "Dette er første siden."
   },
   "Items": {
-    "title": "Ting"
+    "title": "Ting",
+    "metaDescription": "Samling av dokumentene og kunstverkene valgt ut til denne utstillingen"
   },
   "Item": {
     "classification": "Klassifisert som",

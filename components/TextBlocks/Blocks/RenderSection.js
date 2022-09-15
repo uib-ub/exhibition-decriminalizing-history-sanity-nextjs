@@ -26,11 +26,11 @@ function RenderSections(props) {
 
   return (
     <>
-      {filteredSections.map((section) => {
+      {filteredSections.map((section, i) => {
         const SectionComponent = resolveSections(section)
         if (!SectionComponent) {
           return (
-            <Alert status="error">
+            <Alert key={i} status="error">
               <AlertIcon />
               <AlertTitle mr={2}>Missing section!</AlertTitle>
               <AlertDescription>
