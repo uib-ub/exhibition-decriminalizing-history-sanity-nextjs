@@ -15,18 +15,23 @@ export default {
       options: {
         data: [
           {
-            title: 'GitHub repo',
-            value: 'https://github.com/seidhr/muna',
+            title: 'UiB git repo',
+            value: 'https://git.app.uib.no/uib-ub/spesialsamlingene/utstillinger/exhibition-decriminalizing-history-sanity-nextjs',
+            category: 'Code',
+          },
+          {
+            title: 'Github repo',
+            value: 'https://github.com/uib-ub/exhibition-decriminalizing-history-sanity-nextjs',
             category: 'Code',
           },
           {
             title: 'Web',
-            value: 'https://decriminalizing-history.vercel.app',
+            value: 'https://decriminalizing-history.uib.no',
             category: 'Links',
           },
           {
             title: 'Studio',
-            value: 'https://decriminalizing-history.vercel.app/studio',
+            value: 'https://decriminalizing-history.uib.no/studio',
             category: 'Links',
           },
         ],
