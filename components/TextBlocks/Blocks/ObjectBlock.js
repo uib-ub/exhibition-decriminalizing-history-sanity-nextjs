@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { Box, Button, Flex, Grid, Heading, Icon, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spacer, Text } from '@chakra-ui/react'
 import Block from './Block'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import { GetImage } from '../../../lib/sanity.server'
 import Link from '../../Link'
 import TextBlocks from '..'
@@ -216,14 +216,14 @@ const ObjectBlock = (props) => {
               {item.length > 1 && item.map((i) => (
                 <Box
                   key={i._key}
-                  as='figure'
-                  flex={'0 0 30%'}
+                  flex={{ base: '0 0 100%', md: '0 0 30%' }}
                 >
                   {!i.internalRef && (
                     <Image
                       key={i._key}
                       {...GetImage(i.image)}
-                      objectFit={'contain'}
+                      sizes='80vh'
+                      style={{ objectFit: 'contain', maxWidth: 'auto', maxHeight: '80vh' }}
                       alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                     />
                   )}
@@ -234,9 +234,10 @@ const ObjectBlock = (props) => {
                       href={`/id/${i.internalRef._ref}`}
                     >
                       <Image
-                        id={i._key}
+                        key={i._key}
                         {...GetImage(i.image)}
-                        objectFit={'contain'}
+                        sizes='80vh'
+                        style={{ objectFit: 'contain', maxWidth: 'auto', maxHeight: '80vh' }}
                         alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                       />
                     </Link>
@@ -249,9 +250,10 @@ const ObjectBlock = (props) => {
                   {!i.internalRef && (
                     <Image
                       key={i._key}
-                      alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                       {...GetImage(i.image)}
-                      objectFit={'contain'}
+                      sizes='80vh'
+                      style={{ objectFit: 'contain', maxWidth: 'auto', maxHeight: '80vh' }}
+                      alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                     />
                   )}
                   {i.internalRef && (
@@ -261,10 +263,11 @@ const ObjectBlock = (props) => {
                       href={`/id/${i.internalRef._ref}`}
                     >
                       <Image
-                        id={i._key}
-                        alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
+                        key={i._key}
                         {...GetImage(i.image)}
-                        objectFit={'contain'}
+                        sizes='80vh'
+                        style={{ objectFit: 'contain', maxWidth: 'auto', maxHeight: '80vh' }}
+                        alt={i.image?.alt?.[locale ?? defaultLocale] ?? ''}
                       />
                     </Link>
                   )}
