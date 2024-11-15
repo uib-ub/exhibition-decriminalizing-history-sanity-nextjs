@@ -1,9 +1,8 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { createDeskHierarchy } from '@sanity/hierarchical-document-list'
 //import * as Structure from '@sanity/document-internationalization/lib/structure'
-import { FaSitemap, FaRoute } from 'react-icons/fa'
+import { FaGlasses, FaSitemap, FaRoute } from 'react-icons/fa'
 import { CgTemplate } from 'react-icons/cg'
-import { FaGlasses } from 'react-icons/fa'
 import { BsFileRichtext } from 'react-icons/bs'
 import blog from './blog'
 import config from 'config:@sanity/document-internationalization';
@@ -38,7 +37,8 @@ export default S.listItem()
             S.documentList('Page')
               .title('Sider')
               .schemaType('Page')
-              .filter(`_type == "Page" && !(_id match "**home") && __i18n_lang == $baseLanguage`)
+              .filter(`_type == "Page" && !(_id match "**home")`)
+              //.filter(`_type == "Page" && !(_id match "**home") && __i18n_lang == $baseLanguage`)
               .params({ baseLanguage: config.base })
               .canHandleIntent(S.documentTypeList('Page').getCanHandleIntent())
           ),
@@ -57,7 +57,8 @@ export default S.listItem()
                     S.documentList('LinguisticDocument')
                       .title('Alle tekster')
                       .schemaType('LinguisticDocument')
-                      .filter(`_type == "LinguisticDocument" && __i18n_lang == $baseLanguage`)
+                      .filter(`_type == "LinguisticDocument"`)
+                      //.filter(`_type == "LinguisticDocument" && __i18n_lang == $baseLanguage`)
                       .params({ baseLanguage: config.base })
                       .canHandleIntent(S.documentTypeList('LinguisticDocument').getCanHandleIntent())
                   ),
