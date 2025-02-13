@@ -1,33 +1,36 @@
-Decriminalizing History is a physical and web exhibition launced 1. September 2022. The exhibition is a collaboration between the University of Bergen Library and David Carrillo-Rangel. 
+# Decriminalizing History
+
+Decriminalizing History is a physical and digital exhibition launced 1. September 2022. The exhibition is a collaboration between the University of Bergen Library and David Carrillo-Rangel. 
 
 It is a [Next.js](https://nextjs.org/) project bootstrapped with a [`Sanity studio`](https://sanity.io).
 
-## Getting Started
 
-First, run the development server:
+## Development
 
 ```bash
-yarn dev
+npm install
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the website.
-Open [http://localhost:3333](http://localhost:3333) with your browser to see the Sanity studio.
+## Issues
 
-## Learn More
+We are using the Sanity Image API in the generated manifests. The sizes in `info.json` are not in the power of two, which is required by OpenSeadragon. See https://github.com/openseadragon/openseadragon/issues/2618.
 
-To learn more about Next.js, take a look at the following resources:
+To fix this, we need to override the openseadragon version in the `package.json` file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+  // ... existing code ...
+  "overrides": {
+    "openseadragon": "4.0.0",
+    "@samvera/clover-iiif": {
+      "openseadragon": "4.0.0"
+    }
+  },
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deployment
-
-This site is deployed on Vercel.
+## URLs
 
 * Web
   * https://decriminalizing-history.uib.no
 * Studio
-  * https://decriminalizing-history.uib.no/studio
-  
+  * https://decrimhist.sanity.studio/studio/
