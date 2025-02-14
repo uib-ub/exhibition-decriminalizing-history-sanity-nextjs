@@ -4,8 +4,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import {
   VisualEditing,
-  toPlainText,
-  type PortableTextBlock,
 } from "next-sanity";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -67,7 +65,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'no' }, { lang: 'es' }]
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({
