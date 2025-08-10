@@ -32,6 +32,7 @@ import { media } from 'sanity-plugin-media';
 } satisfies DocumentLocation; */
 
 export default defineConfig({
+  name: 'decrimhist',
   basePath: studioUrl,
   projectId,
   dataset,
