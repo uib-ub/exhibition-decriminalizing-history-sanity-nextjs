@@ -27,7 +27,7 @@ export default async function StuffPage({ params }: { params: Promise<{ locale: 
       </p>
 
       <div
-        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full my-10 mx-auto max-w-screen-2xl'
+        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full my-10 mx-auto max-w-(--breakpoint-2xl)'
       >
         {data.map((item: any) => {
           const spans = calculateSpans(item.aspectRatio)
@@ -40,7 +40,7 @@ export default async function StuffPage({ params }: { params: Promise<{ locale: 
                 color: item.palette?.lightVibrant?.foreground
               }}
             >
-              <div className='relative w-full aspect-[var(--aspect-ratio)]' style={{ '--aspect-ratio': item.aspectRatio } as React.CSSProperties}>
+              <div className='relative w-full aspect-(--aspect-ratio)' style={{ '--aspect-ratio': item.aspectRatio } as React.CSSProperties}>
                 <Image
                   src={urlForImage(item.image)?.url() as string}
                   alt={item.label[locale]}

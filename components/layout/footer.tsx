@@ -37,7 +37,7 @@ export default function Footer() {
 
 
       <div
-        className="w-[clamp(200px,40vw,250px)] absolute -top-[40px] md:-top-[65px]  right-[20px] z-[800]"
+        className="w-[clamp(200px,40vw,250px)] absolute -top-[40px] md:-top-[65px]  right-[20px] z-800"
       >
         <a href="https://www.uib.no/skeivtkultur%C3%A5r">
           <Image

@@ -1,4 +1,15 @@
 {
+  "name": "decrimhist",
+  "version": "1.0.0",
+  "description": "Decriminalizing History",
+  "author": "This exhibition is a celebration of diversity but also a declaration of queer independence, making visible rights and fights that still affects us.",
+  "license": "MIT",
+  "homepage": "https://decriminalizing-history.uib.no/en",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uib-ub/exhibition-decriminalizing-history-sanity-nextjs"
+  },
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next --turbo",
@@ -24,9 +35,9 @@
     "@sanity/preview-url-secret": "^2.0.0",
     "@sanity/table": "^1.1.3",
     "@sanity/vision": "^4.3.0",
+    "@tailwindcss/postcss": "^4.1.11",
     "@tailwindcss/typography": "^0.5.15",
     "@vercel/speed-insights": "^1.0.13",
-    "autoprefixer": "^10.4.20",
     "capitalize": "^2.0.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -52,13 +63,14 @@
     "server-only": "^0.0.1",
     "styled-components": "^6.1.13",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^4.1.11",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.2",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.16",
+    "@types/lodash": "^4.17.20",
     "@types/node": "^22.7.8",
     "@types/openseadragon": "^3.0.10",
     "@types/react": "^19.0.0",

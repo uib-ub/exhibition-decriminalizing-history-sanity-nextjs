@@ -81,7 +81,7 @@ export default function FrontPage({
               className="object-cover"
             />
           </div>
-          <div className="bg-[rgba(85,205,252)] py-2 xl:py-3 px-2 xl:px-4 flex-grow">
+          <div className="bg-[rgba(85,205,252)] py-2 xl:py-3 px-2 xl:px-4 grow">
             <h2 className="text-black font-extrabold text-[6vw] xl:text-[clamp(2rem,5.5vw,10rem)] leading-[0.9] uppercase">
               <Link href="/genders-and-genres">Genders & Genres</Link>
             </h2>
@@ -98,7 +98,7 @@ export default function FrontPage({
               className="object-cover"
             />
           </div>
-          <div className="absolute top-[2%] right-1 xl:right-3 z-10 rotate-[2deg]">
+          <div className="absolute top-[2%] right-1 xl:right-3 z-10 rotate-2">
             <h2 className="py-5 text-white font-extrabold bg-[#f52496] rotate-180 text-[6vw] xl:text-[clamp(3.5rem,3vw,4rem)] uppercase [writing-mode:vertical-rl] [text-orientation:sideways-right]">
               <Link href="/fuck-the-polite">Fuck the polite</Link>
             </h2>
@@ -159,7 +159,7 @@ export default function FrontPage({
                 className="object-cover"
               />
             </div>
-            <div className="w-full relative [filter:contrast(185%)]">
+            <div className="w-full relative filter-[contrast(185%)]">
               <Image
                 src={urlForImage({ asset: { _ref: 'image-97a253e4e9fd1c6911fe2e5410ca51d12e7edd43-559x792-jpg' } })?.url() as string}
                 alt="Test"

@@ -17,13 +17,13 @@ export default async function Header({ locale }: { locale: string }) {
       className={`flex flex-row items-start relative w-full justify-between text-[${site.color}] bg-black`}
     >
       <h1
-        className={`flex-grow w-min pb-1 py-2 px-4 self-stretch place-content-center bg-black font-extrabold text-white ${locale === 'no' ? 'text-[clamp(1rem,4vw,25px)]' : 'text-[clamp(1.2rem,5vw,26.4px)]'}`}
+        className={`grow w-min pb-1 py-2 px-4 self-stretch place-content-center bg-black font-extrabold text-white ${locale === 'no' ? 'text-[clamp(1rem,4vw,25px)]' : 'text-[clamp(1.2rem,5vw,26.4px)]'}`}
       >
         <Link color='white' href="/">
           {site.label?.[locale] ?? site.label?.en ?? site.label?.no}
         </Link>
       </h1>
-      <nav className="hidden md:flex flex-row items-stretch z-[6] font-bold text-base md:text-[clamp(1rem,1.5vw,1.2rem)] lg:text-[clamp(1rem,1.5vw,1rem)] gap-0 flex-wrap justify-start self-start">
+      <nav className="hidden md:flex flex-row items-stretch z-6 font-bold text-base md:text-[clamp(1rem,1.5vw,1.2rem)] lg:text-[clamp(1rem,1.5vw,1rem)] gap-0 flex-wrap justify-start self-start">
         {nav.tree?.map((item: any) => (
           <div
             key={item._key}

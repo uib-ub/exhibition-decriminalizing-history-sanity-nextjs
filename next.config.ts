@@ -1,15 +1,15 @@
+import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  env: {
-    // Matches the behavior of `sanity dev` which sets styled-components to use the fastest way of inserting CSS rules in both dev and production. It's default behavior is to disable it in dev mode.
-    SC_DISABLE_SPEEDY: "false",
-  },
+const nextConfig: NextConfig = {
   images: {
-    domains: ['cdn.sanity.io']
+    remotePatterns: [
+      new URL('https://cdn.sanity.io/**'),
+      new URL('https://data.ub.uib.no/**'),
+    ],
   },
 };
 

@@ -29,7 +29,7 @@ export default function Menu({ nav, locale }: { nav: any, locale: string }) {
             <DrawerClose>Close</DrawerClose>
           </DrawerHeader>
           <ScrollArea className="h-[calc(100vh-10rem)]">
-            <nav className="flex flex-col items-stretch z-[6] font-bold text-base md:text-[clamp(1rem,1.5vw,1.2rem)] lg:text-[clamp(1rem,1.5vw,1rem)] gap-0 flex-wrap justify-start self-start">
+            <nav className="flex flex-col items-stretch z-6 font-bold text-base md:text-[clamp(1rem,1.5vw,1.2rem)] lg:text-[clamp(1rem,1.5vw,1rem)] gap-0 flex-wrap justify-start self-start">
               {nav.tree?.map((item: any) => (
                 <div
                   key={item._key}

@@ -46,7 +46,7 @@ export default async function CatalogueIndex({ params }: { params: Promise<{ loc
                 </span>
                 <span className="border-b border-dotted border-gray-300 mb-[0.35em] mx-2 group-hover:border-gray-400 flex-1" />
               </div>
-              <Badge variant="secondary" className="flex-shrink-0 mb-[0.25em]">
+              <Badge variant="secondary" className="shrink-0 mb-[0.25em]">
                 {item.count}
               </Badge>
             </li>

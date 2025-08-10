@@ -114,7 +114,7 @@ const ObjectBlock = (props) => {
                     <Image
                       key={i._key}
                       src={urlForImage(i.image)?.url()}
-                      className="object-contain !relative h-full w-auto"
+                      className="object-contain relative! h-full w-auto"
                       fill
                       alt={i.image?.alt?.[locale] ?? ''}
                     />
@@ -170,7 +170,7 @@ const ObjectBlock = (props) => {
                       key={i._key}
                       src={urlForImage(i.image)?.url()}
                       fill
-                      className="object-contain !relative"
+                      className="object-contain relative!"
                       alt={i.image?.alt?.[locale] ?? ''}
                     />
                   )}
@@ -184,7 +184,7 @@ const ObjectBlock = (props) => {
                         key={i._key}
                         src={urlForImage(i.image)?.url()}
                         fill
-                        className="object-contain !relative"
+                        className="object-contain relative!"
                         alt={i.image?.alt?.[locale] ?? ''}
                       />
                     </Link>
@@ -201,7 +201,7 @@ const ObjectBlock = (props) => {
                     <Image
                       src={urlForImage(i.image)?.url()}
                       fill
-                      className="object-contain !relative"
+                      className="object-contain relative!"
                       alt={i.image?.alt?.[locale] ?? ''}
                     />
                   )}
@@ -213,7 +213,7 @@ const ObjectBlock = (props) => {
                       <Image
                         src={urlForImage(i.image)?.url()}
                         fill
-                        className="object-contain !relative"
+                        className="object-contain relative!"
                         alt={i.image?.alt?.[locale] ?? ''}
                       />
                     </Link>
