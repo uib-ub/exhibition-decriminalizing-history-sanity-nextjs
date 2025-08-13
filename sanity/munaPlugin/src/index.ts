@@ -115,7 +115,6 @@ import { default as LocalizedKeyword } from "./schemas/strings/LocalizedKeyword"
 import { default as LocalizedSlug } from "./schemas/strings/LocalizedSlug";
 import { default as LocalizedString } from "./schemas/strings/LocalizedString";
 import { default as LocalizedText } from "./schemas/strings/LocalizedText";
-import { default as Timespan } from "./schemas/classes/timespan/Timespan"
 
 export const schemaTypes = [
 	// TYPES
@@ -137,7 +136,6 @@ export const schemaTypes = [
 	IdentifierType,
 	DimensionType,
 	MeasurementUnit,
-	Timespan,
 	Language,
 	LinguisticDocument,
 	TextType,

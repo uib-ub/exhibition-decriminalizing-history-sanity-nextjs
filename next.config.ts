@@ -7,8 +7,16 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      new URL('https://cdn.sanity.io/**'),
-      new URL('https://data.ub.uib.no/**'),
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'data.ub.uib.no',
+        pathname: '/**',
+      }
     ],
   },
 };

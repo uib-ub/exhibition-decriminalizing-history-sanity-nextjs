@@ -42,7 +42,7 @@ export default function FrontPage({
               <ActiveLink
                 key={item._key}
                 href={`${locale}/${item.value.reference.route}`}
-                className="px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-4 block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)]"
+                className="px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-1 block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)]"
                 style={{
                   backgroundColor: item.value.reference.backgroundColor?.hex,
                   color: item.value.reference.foregroundColor?.hex
@@ -52,7 +52,7 @@ export default function FrontPage({
               </ActiveLink>
             ))}
 
-            <div className='px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-4 block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)] bg-pink-500'>
+            <div className='px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-1 block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)] bg-pink-500'>
               <LocaleSwitcher />
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function FrontPage({
             />
           </div>
           <div className="absolute top-[2%] right-1 xl:right-3 z-10 rotate-2">
-            <h2 className="py-5 text-white font-extrabold bg-[#f52496] rotate-180 text-[6vw] xl:text-[clamp(3.5rem,3vw,4rem)] uppercase [writing-mode:vertical-rl] [text-orientation:sideways-right]">
+            <h2 className="py-1 px-4 text-white font-extrabold bg-[#f52496] rotate-180 text-[6vw] xl:text-[clamp(3.5rem,3vw,4rem)] uppercase [writing-mode:vertical-rl] [text-orientation:sideways-right]">
               <Link href="/fuck-the-polite">Fuck the polite</Link>
             </h2>
           </div>

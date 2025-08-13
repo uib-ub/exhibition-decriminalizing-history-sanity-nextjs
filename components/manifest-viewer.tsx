@@ -10,16 +10,14 @@ const Viewer = dynamic(
   }
 );
 
+const MANIFEST_SERVICE_URL = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:3000'
+  : 'https://decriminalizing-history.uib.no'
+
 const ManifestViewer = ({ manifest, canvasId }: { manifest: string, canvasId?: string }) => {
   let manifestUrl = manifest
-  if (manifest.includes('ub-iiif.vercel.app/api/manifest/marcus/')) {
-    manifestUrl = manifest.replace(
-      'https://ub-iiif.vercel.app/api/manifest/marcus/',
-      'https://api.ub.uib.no/items/'
-    ) + '?as=iiif'
-  }
   if (manifest.startsWith('/api')) {
-    manifestUrl = `http://localhost:3000${manifest}`
+    manifestUrl = `${MANIFEST_SERVICE_URL}${manifest}`
   }
 
   let iiif = null
@@ -38,13 +36,13 @@ const ManifestViewer = ({ manifest, canvasId }: { manifest: string, canvasId?: s
   } else {
     iiif = manifestUrl
   }
-  console.log(iiif)
+
   return (
-    <div style={{ position: "relative", height: "700x", zIndex: "0" }}>
+    <div style={{ position: "relative", zIndex: "0" }}>
       <Viewer
         iiifContent={iiif}
         options={{
-          canvasHeight: '700px',
+          canvasHeight: '600px',
           background: 'black',
           showIIIFBadge: false,
           showTitle: false,

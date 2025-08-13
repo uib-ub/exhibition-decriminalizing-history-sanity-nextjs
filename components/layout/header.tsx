@@ -17,7 +17,7 @@ export default async function Header({ locale }: { locale: string }) {
       className={`flex flex-row items-start relative w-full justify-between text-[${site.color}] bg-black`}
     >
       <h1
-        className={`grow w-min pb-1 py-2 px-4 self-stretch place-content-center bg-black font-extrabold text-white ${locale === 'no' ? 'text-[clamp(1rem,4vw,25px)]' : 'text-[clamp(1.2rem,5vw,26.4px)]'}`}
+        className={`grow w-min pb-1 py-1 px-4 self-stretch place-content-center bg-black font-extrabold text-white ${locale === 'no' ? 'text-[clamp(1rem,4vw,25px)]' : 'text-[clamp(1.2rem,5vw,26.4px)]'}`}
       >
         <Link color='white' href="/">
           {site.label?.[locale] ?? site.label?.en ?? site.label?.no}
@@ -31,7 +31,7 @@ export default async function Header({ locale }: { locale: string }) {
           >
             <ActiveLink
               href={`/${item.value.reference.route}`}
-              className="px-2 py-4 block"
+              className="px-2 py-3 block"
               style={{
                 backgroundColor: item.value.reference.backgroundColor?.hex,
                 color: item.value.reference.foregroundColor?.hex
@@ -41,7 +41,7 @@ export default async function Header({ locale }: { locale: string }) {
             </ActiveLink>
           </div>
         ))}
-        <div className={`px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-4 bg-pink-500 text-base md:text-[clamp(1rem,1.5vw,1.2rem)] lg:text-[clamp(1rem,1.5vw,1rem)]`}>
+        <div className={`px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-3 bg-pink-500 text-base md:text-[clamp(1rem,1.5vw,1.2rem)] lg:text-[clamp(1rem,1.5vw,1rem)]`}>
           <LocaleSwitcher />
         </div>
       </nav>

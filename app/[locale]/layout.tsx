@@ -21,9 +21,7 @@ import Footer from '@/components/layout/footer';
 import { siteSettings } from '@/sanity/lib/queries/fragments/siteSettings';
 
 const openSans = Open_Sans({
-  variable: "--font-open-sans",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -85,7 +83,7 @@ export default async function RootLayout({
   const { isEnabled: isDraftMode } = await draftMode();
 
   return (
-    <html lang={locale} className={`${openSans.variable} font-sans bg-white text-black`}>
+    <html lang={locale} className={`${openSans.className} font-sans bg-white text-black`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           {isDraftMode && <AlertBanner />}

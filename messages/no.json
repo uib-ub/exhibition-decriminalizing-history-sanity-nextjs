@@ -8,15 +8,15 @@
     "metaDescription": "Samling av dokumentene og kunstverkene valgt ut til denne utstillingen"
   },
   "Item": {
-    "classification": "Klassifisert som",
-    "subject": "Emner",
-    "homepage": "Hjemmeside",
-    "currentOwner": "Eier",
-    "depicts": "Avbilder",
-    "members": "Medlemmer",
-    "activitystream": "Hendelser",
-    "measurement": "Måling",
-    "material": "Material"
+    "classification": "Klassifisert som:",
+    "subject": "Emner:",
+    "homepage": "Hjemmeside:",
+    "currentOwner": "Eier:",
+    "depicts": "Avbilder:",
+    "members": "Medlemmer:",
+    "activitystream": "Hendelser:",
+    "measurement": "Måling:",
+    "material": "Material:"
   },
   "Layout": {
     "skipToContent": "Hopp til innholdet",

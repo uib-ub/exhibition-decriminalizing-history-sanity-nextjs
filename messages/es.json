@@ -8,15 +8,15 @@
     "metaDescription": "Colección de documentos y obras de arte seleccionados para esta exposición"
   },
   "Item": {
-    "classification": "Clasificado como",
-    "subject": "Temas",
-    "homepage": "Página web",
-    "currentOwner": "Propietario",
-    "depicts": "Representa",
-    "members": "Miembros",
-    "activitystream": "Eventos",
-    "measurement": "Medidas",
-    "material": "Material"
+    "classification": "Clasificado como:",
+    "subject": "Temas:",
+    "homepage": "Página web:",
+    "currentOwner": "Propietario:",
+    "depicts": "Representa:",
+    "members": "Miembros:",
+    "activitystream": "Eventos:",
+    "measurement": "Medidas:",
+    "material": "Material:"
   },
   "Layout": {
     "skipToContent": "Saltar al contenido",

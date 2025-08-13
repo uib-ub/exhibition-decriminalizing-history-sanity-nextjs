@@ -140,7 +140,11 @@ export const humanMadeObjectsQuery = groq`*[_type == "HumanMadeObject"] | order(
     label
   },
   image,
-  "excerpt": pt::text(referredToBy[0].body),
+  referredToBy[] {
+    ...,
+    "language": language->.identifiedByISO6393,
+    "excerpt": pt::text(body)
+  },
   hasCurrentOwner[0]->{
     _id,
     label,

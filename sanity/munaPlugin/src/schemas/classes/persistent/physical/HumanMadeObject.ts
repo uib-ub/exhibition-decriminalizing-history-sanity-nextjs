@@ -232,7 +232,7 @@ export default defineType({
         imageHotspot: {
           // see `Image and description path` setup below
           imagePath: `image`,
-          descriptionPath: `label`,
+          descriptionPath: `details`,
           // see `Custom tooltip` setup below
           tooltip: undefined,
         }

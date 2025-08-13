@@ -22,7 +22,6 @@ const getTexts = (value, locale) => {
 
 export default function ReferredToBy({ value, locale = 'en' }) {
 
-
   if (!value || !Array.isArray(value)) {
     return null
   }
@@ -33,16 +32,16 @@ export default function ReferredToBy({ value, locale = 'en' }) {
     <>
       {texts?.map((ref) => (
         <React.Fragment key={ref._key ? ref._key : ref._id}>
-          <dt className="font-semibold pb-2 text-md border-b lg:border-none">
+          <dt className="font-semibold pb-2 text-md md:text-lg lg:text-xl">
             {ref.hasType[0]?.label[locale]}
             <br />
             <small>{ref.language.label[locale]}</small>
           </dt>
-          <dd className="flex flex-wrap gap-2 mb-8 lg:mb-0">
+          <dd className="flex flex-wrap gap-2 mb-0 lg:mb-0 ps-0 lg:ps-4 pb-4">
             <div>
               <TextBlocks
                 value={ref.body}
-                className="text-md md:text-md lg:text-md"
+                className="text-md md:text-md lg:text-md font-light"
               />
             </div>
           </dd>

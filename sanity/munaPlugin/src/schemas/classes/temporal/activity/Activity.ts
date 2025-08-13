@@ -72,7 +72,7 @@ export default defineType({
       name: 'subType',
       title: 'What kind of activity?',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
       options: {
         list: [
           { title: 'Beginning of existence', value: 'crm:BeginningOfExistence' },

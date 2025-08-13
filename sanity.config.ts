@@ -3,10 +3,11 @@
  * This config is used to set up Sanity Studio that's mounted on the `app/(sanity)/studio/[[...tool]]/page.tsx` route
  */
 import { visionTool } from "@sanity/vision";
-import { PluginOptions, SchemaTypeDefinition, defineConfig } from "sanity";
+import { SchemaTypeDefinition, defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { dashboardTool, projectInfoWidget, projectUsersWidget } from "@sanity/dashboard";
 import { documentListWidget } from 'sanity-plugin-dashboard-widget-document-list'
+import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
 
 import { apiVersion, dataset, projectId, studioUrl } from "@/sanity/lib/api";
 import { defaultDocumentNode, structure } from '@/sanity/structure';
@@ -18,6 +19,8 @@ import { table } from '@sanity/table';
 import { codeInput } from '@sanity/code-input';
 import { colorInput } from '@sanity/color-input';
 import { media } from 'sanity-plugin-media';
+import { timespanInput } from '@seidhr/sanity-plugin-timespan-input';
+
 // import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 /* import {
   presentationTool,
@@ -89,7 +92,9 @@ export default defineConfig({
         projectUsersWidget(),
       ]
     }),
+    timespanInput(),
     hierarchicalDocumentList(),
+    imageHotspotArrayPlugin(),
     documentInternationalization({
       // Required:
       supportedLanguages: [
@@ -128,5 +133,5 @@ export default defineConfig({
     colorInput(),
     table(),
     media(),
-  ].filter(Boolean) as PluginOptions[],
+  ].filter(Boolean),
 });

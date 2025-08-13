@@ -8,15 +8,15 @@
     "metaDescription": "A collection of curated objects chosen for this exhibition."
   },
   "Item": {
-    "classification": "Klassifikasjon",
-    "subject": "Subjects",
-    "homepage": "Homepage",
-    "currentOwner": "Owner",
-    "depicts": "Depicts",
-    "members": "Members",
-    "activitystream": "Events",
-    "measurement": "Measurement",
-    "material": "Material"
+    "classification": "Klassifikasjon:",
+    "subject": "Subjects:",
+    "homepage": "Homepage:",
+    "currentOwner": "Owner:",
+    "depicts": "Depicts:",
+    "members": "Members:",
+    "activitystream": "Events:",
+    "measurement": "Measurement:",
+    "material": "Material:"
   },
   "Layout": {
     "skipToContent": "Skip to content",

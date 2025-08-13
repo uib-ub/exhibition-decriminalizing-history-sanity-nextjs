@@ -18,7 +18,7 @@ export default async function StuffPage({ params }: { params: Promise<{ locale: 
   })
 
   return (
-    <div className='mb-20 bg-[#1a202c] text-white min-h-[calc(100vh-110px)] p-4 md:p-8'>
+    <div className='bg-[#1a202c] text-white min-h-[calc(100vh-110px)] p-4 md:p-8'>
       <h1 className='text-center font-bold text-3xl md:text-4xl lg:text-8xl mb-5'>
         {t('title')}
       </h1>
@@ -34,7 +34,7 @@ export default async function StuffPage({ params }: { params: Promise<{ locale: 
           return (
             <Card
               key={item._id}
-              className={`grid grid-rows-[auto_auto_1fr_auto] grid-cols-1 ${spans.classes} border-none rounded-none`}
+              className={`grid grid-rows-[auto_auto_1fr_auto] grid-cols-1 gap-2 py-0 pb-4 ${spans.classes} border-none rounded-none`}
               style={{
                 backgroundColor: item.palette?.lightVibrant?.background,
                 color: item.palette?.lightVibrant?.foreground
@@ -61,7 +61,7 @@ export default async function StuffPage({ params }: { params: Promise<{ locale: 
 
               <CardContent>
                 {item?.creation?.[0]?.creators && (
-                  <p className='text-md font-bold '>
+                  <p className='text-md font-bold'>
                     {item.creation[0].creators
                       .map((creator: any, index: number) => (
                         <span key={creator._id}>
@@ -71,7 +71,16 @@ export default async function StuffPage({ params }: { params: Promise<{ locale: 
                       ))}
                   </p>
                 )}
-                {item?.excerpt && <CardDescription className='text-black mt-2'>{item.excerpt}</CardDescription>}
+                {item?.referredToBy &&
+                  <CardDescription className='text-black mt-2'>
+                    {item.referredToBy.filter((item: any) =>
+                      item.language === locale &&
+                      item.hasType.some((type: any) => type._ref === 'd4b31289-91f4-484d-a905-b3fb0970413c') &&
+                      item.accessState === 'open' &&
+                      item.editorialState === 'published'
+                    )?.[0]?.excerpt}
+                  </CardDescription>
+                }
               </CardContent>
 
               <CardFooter>
