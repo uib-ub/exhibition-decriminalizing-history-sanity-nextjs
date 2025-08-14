@@ -2,8 +2,10 @@
 
 import clsx from 'clsx';
 import { useParams } from 'next/navigation';
+import { Locale } from 'next-intl';
 import { ChangeEvent, ReactNode, useTransition } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
+import { LanguagesIcon } from 'lucide-react';
 
 type Props = {
   children: ReactNode;
@@ -22,27 +24,30 @@ export default function LocaleSwitcherSelect({
   const params = useParams();
 
   function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value;
-    const currentLocale = params?.locale as string;
-    const newPath = pathname.replace(`/${currentLocale}`, '');
+    const nextLocale = event.target.value as Locale;
     startTransition(() => {
-      router.replace(newPath, { locale: nextLocale });
+      router.replace(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        // are used in combination with a given `pathname`. Since the two will
+        // always match for the current route, we can skip runtime checks.
+        { pathname, params },
+        { locale: nextLocale }
+      );
     });
   }
 
   return (
     <label
       className={clsx(
-        'relative text-white font-bold bg-pink-500',
-        isPending && 'transition-opacity disabled:opacity-30'
+        'relative text-gray-400 flex flex-row items-center gap-2 px-2 py-3 align-middle',
+        isPending && 'transition-opacity [&:disabled]:opacity-30'
       )}
     >
       <p className="sr-only">{label}</p>
+      <LanguagesIcon className='w-5 h-5 text-white' />
       <select
-        className="inline-flex appearance-none bg-transparent text-white font-bold"
-        // @ts-ignore fieldSizing is a new CSS property
-        style={{ fieldSizing: 'content' }}
-        value={params?.locale as string ?? defaultValue}
+        className="inline-flex appearance-none bg-transparent  text-white font-bold"
+        defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}
       >

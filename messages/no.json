@@ -25,7 +25,8 @@
     "readAboutCookies": "Les mer om våre informasjonskapsler.",
     "accessibilityStatementText": "",
     "accessibilityStatementLink": "Tilgjengelighetserklæring",
-    "menu": "Meny"
+    "menu": "Meny",
+    "close": "Lukk"
   },
   "Register": {
     "title": "Register",

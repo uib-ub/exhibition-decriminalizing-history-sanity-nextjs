@@ -25,7 +25,8 @@
     "readAboutCookies": "Lea más sobre nuestras cookies.",
     "accessibilityStatementText": "",
     "accessibilityStatementLink": "Declaración de accesibilidad",
-    "menu": "Menú"
+    "menu": "Menú",
+    "close": "Cerrar"
   },
   "Register": {
     "title": "Registro",

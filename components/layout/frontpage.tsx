@@ -30,7 +30,7 @@ export default function FrontPage({
           <h1 className={`text-white ${locale === 'no' ? 'text-[clamp(1rem,6vw,5vw)]' : 'text-[clamp(1rem,7vw,7vw)]'} font-extrabold pb-1`}>
             {siteSettings.label[locale] ?? siteSettings.label['en'] ?? siteSettings.label['no']}
           </h1>
-          <Menu nav={siteNav} locale={locale} />
+          <Menu nav={siteNav} />
         </div>
 
         <aside>
@@ -41,8 +41,8 @@ export default function FrontPage({
             {siteNav.tree?.map((item: any) => (
               <ActiveLink
                 key={item._key}
-                href={`${locale}/${item.value.reference.route}`}
-                className="px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-1 block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)]"
+                href={`/${item.value.reference.route}`}
+                className="px-2 py-3 block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)]"
                 style={{
                   backgroundColor: item.value.reference.backgroundColor?.hex,
                   color: item.value.reference.foregroundColor?.hex
@@ -52,12 +52,12 @@ export default function FrontPage({
               </ActiveLink>
             ))}
 
-            <div className='px-2 py-2 md:px-3 md:py-3 lg:px-4 lg:py-1 block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)] bg-pink-500'>
+            <div className='block font-bold text-lg md:text-[clamp(1.5rem,1.5vw,1.2rem)] lg:text-[clamp(1.8rem,2.2vw,2rem)] bg-pink-500'>
               <LocaleSwitcher />
             </div>
           </div>
 
-          <div className='w-[clamp(180px,32vw,250px)] absolute bottom-5 left-5'>
+          <div className='w-[clamp(180px,32vw,250px)] absolute bottom-5 right-5'>
             <Image
               src={urlForImage({ asset: { _ref: 'image-95a25d7f3e11d0f0b59be9ced8e2d41645213069-2521x1308-png' } })?.url() as string}
               alt='Skeivt kulturår 2022 og Universitetet i Bergen'
