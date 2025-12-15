@@ -8,15 +8,15 @@
     "metaDescription": "Samling av dokumentene og kunstverkene valgt ut til denne utstillingen"
   },
   "Item": {
-    "classification": "Klassifisert som",
-    "subject": "Emner",
-    "homepage": "Hjemmeside",
-    "currentOwner": "Eier",
-    "depicts": "Avbilder",
-    "members": "Medlemmer",
-    "activitystream": "Hendelser",
-    "measurement": "Måling",
-    "material": "Material"
+    "classification": "Klassifisert som:",
+    "subject": "Emner:",
+    "homepage": "Hjemmeside:",
+    "currentOwner": "Eier:",
+    "depicts": "Avbilder:",
+    "members": "Medlemmer:",
+    "activitystream": "Hendelser:",
+    "measurement": "Måling:",
+    "material": "Material:"
   },
   "Layout": {
     "skipToContent": "Hopp til innholdet",
@@ -25,9 +25,21 @@
     "readAboutCookies": "Les mer om våre informasjonskapsler.",
     "accessibilityStatementText": "",
     "accessibilityStatementLink": "Tilgjengelighetserklæring",
-    "menu": "Meny"
+    "menu": "Meny",
+    "close": "Lukk"
   },
   "Register": {
-    "title": "Register"
+    "title": "Register",
+    "description": "Liste over emner i denne utstillingen."
+  },
+  "Common": {
+    "notFound": {
+      "title": "404 - Side ikke funnet",
+      "description": "Siden du leter etter, finnes ikke."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Velg språk",
+    "locale": "{locale, select, en {Engelsk} no {Norsk} es {Spansk} other {Ukjent}}"
   }
 }

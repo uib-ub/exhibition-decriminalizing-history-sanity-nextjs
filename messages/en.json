@@ -8,15 +8,15 @@
     "metaDescription": "A collection of curated objects chosen for this exhibition."
   },
   "Item": {
-    "classification": "Klassifikasjon",
-    "subject": "Subjects",
-    "homepage": "Homepage",
-    "currentOwner": "Owner",
-    "depicts": "Depicts",
-    "members": "Members",
-    "activitystream": "Events",
-    "measurement": "Measurement",
-    "material": "Material"
+    "classification": "Klassifikasjon:",
+    "subject": "Subjects:",
+    "homepage": "Homepage:",
+    "currentOwner": "Owner:",
+    "depicts": "Depicts:",
+    "members": "Members:",
+    "activitystream": "Events:",
+    "measurement": "Measurement:",
+    "material": "Material:"
   },
   "Layout": {
     "skipToContent": "Skip to content",
@@ -25,9 +25,21 @@
     "readAboutCookies": "Read more on how we use cookies.",
     "accessibilityStatementText": "",
     "accessibilityStatementLink": "Accessibility statement",
-    "menu": "Menu"
+    "menu": "Menu",
+    "close": "Close"
   },
   "Register": {
-    "title": "Index"
+    "title": "Index",
+    "description": "List of subjects in this exhibition."
+  },
+  "Common": {
+    "notFound": {
+      "title": "404 - Page not found",
+      "description": "The page you are looking for does not exist."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Select language",
+    "locale": "{locale, select, en {English} no {Norwegian} es {Spanish} other {Unknown}}"
   }
 }
